@@ -1,0 +1,434 @@
+/* ==========================================================================
+   LADY LUXE × Neumorphism UI — "midnight atelier" re-skin
+   The neumorphic experiment: soft dual shadows on deep red/violet.
+   Load order: neumorphism.css → lady-luxe.css → this file
+   ========================================================================== */
+
+:root {
+  /* surface system — raised neumorphic planes on midnight violet */
+  --primary: #3A021F;                       /* kit's "primary" IS the surface color here */
+  --soft: #35021D;
+  --white: #EDE7C7;
+  --secondary: #D4AF37;                     /* accent = metallic gold */
+  --dark: #1E0110;
+  --default: #30001A;
+  --black: #30001A;
+  --light: #4A0230;
+  --gray: rgba(237, 231, 199, .55);
+  --gray-100: #3A021F;
+  --gray-200: #440227;
+  --gray-300: #4A0230;
+  --gray-400: #5C0338;
+  --gray-500: #6E0441;
+}
+
+body {
+  background: linear-gradient(180deg, #2A0116 0%, #30001A 38%, #3C0221 100%) fixed !important;
+  color: var(--ll-cream) !important;
+  font-family: var(--ll-font-body) !important;
+}
+
+/* ---- neumorphic shadow pair: dark depth + faint gold sheen ------------- */
+.shadow-soft {
+  box-shadow:
+    12px 12px 26px rgba(0, 0, 0, .62),
+    -8px -8px 22px rgba(212, 175, 55, .07),
+    inset 0 0 0 1px rgba(212, 175, 55, .10) !important;
+}
+.shadow-inset {
+  box-shadow:
+    inset 7px 7px 14px rgba(0, 0, 0, .55),
+    inset -6px -6px 12px rgba(212, 175, 55, .05) !important;
+}
+.shadow-soft-lg {
+  box-shadow:
+    20px 20px 44px rgba(0, 0, 0, .66),
+    -12px -12px 34px rgba(212, 175, 55, .08),
+    inset 0 0 0 1px rgba(212, 175, 55, .10) !important;
+}
+
+/* ---- surfaces ----------------------------------------------------------- */
+.bg-soft { background-color: #35021D !important; }
+.bg-primary { background-color: #3A021F !important; }
+.bg-secondary { background-color: rgba(212, 175, 55, .08) !important; }
+.bg-dark { background-color: #24000F !important; }
+.bg-white { background-color: #3A021F !important; }
+
+.border-light { border-color: rgba(212, 175, 55, .14) !important; }
+.border-dark { border-color: rgba(0, 0, 0, .45) !important; }
+
+/* ---- typography --------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 { color: var(--ll-cream) !important; }
+.h1, .h2, .h3, .h4, .h5, .h6 { color: var(--ll-cream) !important; }
+p, span, li, label, small, td, th { color: inherit; }
+.text-dark { color: var(--ll-cream) !important; }
+.text-light { color: var(--ll-cream) !important; }
+.text-muted { color: rgba(237, 231, 199, .45) !important; }
+.text-secondary { color: var(--ll-gold) !important; }
+.text-primary { color: var(--ll-cream) !important; }
+.lead { color: rgba(237, 231, 199, .72) !important; }
+.lead strong { color: var(--ll-cream) !important; }
+
+/* ---- nav ----------------------------------------------------------------- */
+.navbar-theme-primary .nav-link { color: rgba(237, 231, 199, .8) !important; }
+.navbar-theme-primary .nav-link:hover,
+.navbar-theme-primary .nav-link:focus { color: var(--ll-gold) !important; }
+.navbar-brand { background-color: #3A021F !important; }
+.dropdown-menu { background-color: #3A021F !important; }
+.dropdown-menu .dropdown-item { color: rgba(237, 231, 199, .8) !important; }
+.dropdown-menu .dropdown-item:hover { color: var(--ll-gold) !important; background: rgba(212, 175, 55, .06) !important; }
+.dropdown-item.inside-bg, .inside-bg { background-color: #35021D !important; }
+
+/* ---- buttons -------------------------------------------------------------- */
+.btn { border-radius: 999px !important; font-family: var(--ll-font-body); }
+.btn-primary {
+  background-color: var(--ll-gold) !important;
+  color: var(--ll-midnight) !important;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-size: .78rem;
+  border: 1px solid var(--ll-gold) !important;
+  box-shadow: 0 10px 28px rgba(212, 175, 55, .18) !important;
+}
+.btn-primary:hover {
+  background-color: var(--ll-cream) !important;
+  border-color: var(--ll-cream) !important;
+  color: var(--ll-midnight) !important;
+}
+.btn-secondary {
+  background-color: transparent !important;
+  color: var(--ll-gold) !important;
+  border: 1px solid var(--ll-gold-40) !important;
+}
+.btn-secondary:hover { border-color: var(--ll-gold) !important; color: var(--ll-cream) !important; }
+.btn-primary.text-secondary { color: var(--ll-midnight) !important; }
+.btn-dark { background-color: #24000F !important; color: var(--ll-cream) !important; }
+
+/* ---- icon boxes / cards --------------------------------------------------- */
+.icon-shape { background-color: #3A021F !important; color: var(--ll-gold) !important; }
+.icon-shape span { color: var(--ll-gold) !important; }
+.card { background-color: #3A021F !important; }
+.bg-primary .card { background-color: #35021D !important; }
+
+/* ---- forms ------------------------------------------------------------------ */
+.form-control {
+  background-color: #35021D !important;
+  color: var(--ll-cream) !important;
+  border-color: rgba(212, 175, 55, .14) !important;
+}
+.form-control:focus {
+  border-color: var(--ll-gold) !important;
+  box-shadow: inset 3px 3px 8px rgba(0,0,0,.5), inset -2px -2px 6px rgba(212,175,55,.06) !important;
+}
+
+/* ---- accents ----------------------------------------------------------------- */
+.badge.badge-dark { background-color: #24000F !important; color: var(--ll-cream) !important; }
+.badge.badge-secondary { background-color: var(--ll-gold) !important; color: var(--ll-midnight) !important; }
+.footer-dark { background-color: #24000F !important; }
+#producthunt-badge { display: none !important; }
+
+/* ---- hero video backdrop (faded) --------------------------------------- */
+.ll-hero { position: relative; }
+.ll-hero-backdrop,
+.ll-hero-fade {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.ll-hero-backdrop { overflow: hidden; }
+.ll-hero-backdrop video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .30;                          /* faded backdrop */
+  filter: saturate(.85) brightness(.9);
+}
+/* fades the video into the midnight background + softens the top edge */
+.ll-hero-fade {
+  background:
+    linear-gradient(180deg, rgba(42, 1, 22, .82) 0%, rgba(42, 1, 22, .28) 45%, rgba(48, 0, 26, .94) 100%),
+    linear-gradient(90deg, rgba(48, 0, 26, .55) 0%, transparent 50%, rgba(48, 0, 26, .55) 100%);
+}
+
+/* ---- video card section tuning for this kit ---------------------------------- */
+#collection .ll-video-card,
+#collection .ll-photo-card { background-color: #3A021F; }
+
+/* ---- Lady Luxe custom navbar --------------------------------------------------- */
+.navbar-brand { background: transparent !important; box-shadow: none !important; border: none !important; padding: .4rem 0 !important; }
+.navbar-brand .ll-script,
+.collapse-brand .ll-script {
+  text-transform: none !important;      /* kit force-uppercases the brand — breaks the script face */
+  text-shadow: 0 2px 18px rgba(212, 175, 55, .25);
+}
+.navbar-nav .nav-link {
+  font-family: var(--ll-font-body) !important;
+  font-weight: 700;
+  font-size: .74rem;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: var(--ll-cream-70) !important;
+  padding: .6rem 1rem !important;
+}
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus { color: var(--ll-gold) !important; }
+.navbar-toggler { border-color: var(--ll-gold-40) !important; }
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(212,175,55,.9)' stroke-linecap='round' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* ==========================================================================
+   COLLECTION MARQUEE — darker boutique band with gilded hairline edges
+   ========================================================================== */
+.ll-marquee-section {
+  position: relative;
+  background: linear-gradient(180deg, #1B000D 0%, #24000F 26%, #24000F 74%, #1B000D 100%) !important;
+}
+/* gilded hairlines capping the dark band */
+.ll-marquee-section::before,
+.ll-marquee-section::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1200px, 82%);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, .28), transparent);
+  pointer-events: none;
+}
+.ll-marquee-section::before { top: 0; }
+.ll-marquee-section::after  { bottom: 0; }
+
+/* slight vertical padding relief so the band reads as a deliberate stage */
+.ll-marquee-section { padding-top: 4.2rem; padding-bottom: 4.6rem; }
+
+/* marquee stage tuning on this kit's surfaces */
+.ll-marquee--collection .ll-video-card,
+.ll-marquee--collection .ll-photo-card {
+  background-color: #2E0118;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, .65), inset 0 0 0 1px rgba(212, 175, 55, .08);
+}
+.ll-marquee--collection .ll-video-card:hover,
+.ll-marquee--collection .ll-photo-card:hover {
+  box-shadow: 0 28px 70px rgba(0, 0, 0, .75), 0 0 44px rgba(212, 175, 55, .14),
+              inset 0 0 0 1px rgba(212, 175, 55, .16);
+}
+
+/* ==========================================================================
+   LADY LUXE SITE CHROME — header emblem, footer, newsletter, sub-pages
+   ========================================================================== */
+
+/* ---- header emblem + script word --------------------------------------- */
+.navbar-brand { display: flex; align-items: center; gap: .7rem; }
+.ll-emblem {
+  height: 46px;
+  width: auto;
+  border-radius: 8px;
+  mix-blend-mode: screen;            /* gold lifts off its baked dark ground */
+  box-shadow: 0 4px 18px rgba(212, 175, 55, .12);
+  transition: transform .4s ease;
+}
+.ll-emblem:hover { transform: scale(1.05); }
+.ll-brand-word {
+  font-size: 2rem;
+  line-height: 1;
+  white-space: nowrap;
+  text-shadow: 0 2px 18px rgba(212, 175, 55, .25);
+}
+.collapse-brand .ll-emblem { height: 38px; }
+
+/* active nav link state */
+.navbar-nav .nav-link.active {
+  color: var(--ll-gold) !important;
+}
+.navbar-nav .nav-link.active::after {
+  content: '';
+  display: block;
+  height: 1px;
+  margin-top: 2px;
+  background: var(--ll-gold);
+  transform: scaleX(.6);
+  transform-origin: left;
+}
+
+/* ---- footer -------------------------------------------------------------- */
+.ll-footer {
+  position: relative;
+  background: linear-gradient(180deg, #24000F 0%, #1B000D 100%);
+  border-top: 1px solid rgba(212, 175, 55, .18);
+  padding: 4.5rem 0 2.5rem;
+  margin-top: 0;
+  color: var(--ll-cream);
+}
+.ll-footer::before {                /* gilded hairline capping the footer */
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: min(1200px, 82%);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, .4), transparent);
+}
+.ll-footer-brand { display: flex; align-items: center; gap: .8rem; text-decoration: none; }
+.ll-footer-brand:hover { text-decoration: none; }
+.ll-footer p { color: rgba(237, 231, 199, .65); font-size: .92rem; line-height: 1.7; }
+.ll-footer hr { border-color: rgba(212, 175, 55, .12); margin: 3rem 0 1.5rem; }
+.ll-footer .footer-links a { color: var(--ll-cream-70); font-size: .9rem; }
+.ll-footer .footer-links a:hover { color: var(--ll-gold); text-decoration: none; }
+
+/* ---- social pills --------------------------------------------------------- */
+.ll-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(212, 175, 55, .3);
+  color: rgba(237, 231, 199, .75) !important;
+  font-size: 1rem;
+  transition: all .35s ease;
+  text-decoration: none;
+}
+.ll-social:hover {
+  border-color: var(--ll-gold);
+  color: var(--ll-gold) !important;
+  background: rgba(212, 175, 55, .08);
+  box-shadow: 0 6px 22px rgba(212, 175, 55, .18);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+.ll-ico { display: inline-block; width: .95em; height: .95em; }
+
+/* ---- contact lists -------------------------------------------------------- */
+.ll-contact li { display: flex; flex-direction: column; margin-bottom: 1rem; }
+.ll-contact li span {
+  font-family: var(--ll-font-body);
+  font-weight: 700;
+  font-size: .68rem;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--ll-gold-40);
+  margin-bottom: .25rem;
+}
+.ll-contact li a {
+  font-family: var(--ll-font-body);
+  color: var(--ll-cream);
+  font-size: .95rem;
+  text-decoration: none;
+  transition: color .3s ease;
+  word-break: break-all;
+}
+.ll-contact li a:hover { color: var(--ll-gold); }
+.ll-contact--page li { padding-bottom: 1.1rem; border-bottom: 1px solid rgba(212, 175, 55, .1); }
+.ll-contact--page li:last-child { border-bottom: none; }
+
+/* ---- newsletter ----------------------------------------------------------- */
+.ll-newsletter .form-control {
+  background: rgba(237, 231, 199, .05);
+  border: 1px solid rgba(212, 175, 55, .25);
+  color: var(--ll-cream);
+  font-family: var(--ll-font-body);
+  border-radius: 999px 0 0 999px;
+  padding: .8rem 1.2rem;
+}
+.ll-newsletter .form-control::placeholder { color: rgba(237, 231, 199, .35); }
+.ll-newsletter .form-control:focus {
+  background: rgba(237, 231, 199, .08);
+  border-color: var(--ll-gold);
+  box-shadow: none;
+  color: var(--ll-cream);
+  outline: none;
+}
+.ll-newsletter .input-group-append .btn { border-radius: 0 999px 999px 0; }
+.ll-newsletter small { color: rgba(237, 231, 199, .4); }
+
+/* ---- sub-page hero -------------------------------------------------------- */
+.ll-page-hero {
+  position: relative;
+  padding: 9rem 0 4.5rem;
+  background:
+    radial-gradient(ellipse 70% 55% at 50% -10%, rgba(156, 7, 53, .35), transparent 65%),
+    linear-gradient(180deg, #1B000D 0%, #24000F 100%);
+  overflow: hidden;
+}
+.ll-page-hero::after {              /* faint gold horizon line */
+  content: '';
+  position: absolute;
+  bottom: 0; left: 50%;
+  transform: translateX(-50%);
+  width: min(900px, 70%);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, .3), transparent);
+}
+.ll-page-hero .display-2 { font-size: clamp(2.6rem, 6vw, 4.6rem); }
+
+/* ---- posh grid ------------------------------------------------------------ */
+.ll-posh-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.6rem;
+}
+.ll-posh-slot {
+  aspect-ratio: 3 / 4;
+  border: 1px dashed rgba(212, 175, 55, .25);
+  border-radius: 18px;
+  background: rgba(27, 0, 13, .55);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .8rem;
+  transition: border-color .35s ease;
+}
+.ll-posh-slot:hover { border-color: var(--ll-gold-40); }
+.ll-posh-slot .ll-felipa { font-size: 1.3rem; }
+
+/* ---- journal cards --------------------------------------------------------- */
+.ll-journal-card {
+  height: 100%;
+  padding: 1.8rem;
+  border: 1px solid rgba(212, 175, 55, .12);
+  border-radius: 18px;
+  background: rgba(27, 0, 13, .45);
+  transition: transform .45s cubic-bezier(.2,.7,.3,1), border-color .35s ease, box-shadow .45s ease;
+  cursor: pointer;
+}
+.ll-journal-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--ll-gold-40);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, .5);
+}
+.ll-journal-card p { color: rgba(237, 231, 199, .6); font-size: .92rem; margin: 0; }
+
+/* ---- contact form card ------------------------------------------------------ */
+.ll-contact-form-card {
+  background: rgba(27, 0, 13, .55) !important;
+  border: 1px solid rgba(212, 175, 55, .15) !important;
+  border-radius: 18px !important;
+}
+.ll-contact-form-card .form-control,
+.ll-contact-form-card .custom-select {
+  background: rgba(237, 231, 199, .05);
+  border: 1px solid rgba(212, 175, 55, .22);
+  color: var(--ll-cream);
+  border-radius: 10px;
+  font-family: var(--ll-font-body);
+  padding: .85rem 1.1rem;
+}
+.ll-contact-form-card .form-control::placeholder { color: rgba(237, 231, 199, .35); }
+.ll-contact-form-card .form-control:focus,
+.ll-contact-form-card .custom-select:focus {
+  border-color: var(--ll-gold);
+  box-shadow: none;
+  outline: none;
+  background: rgba(237, 231, 199, .08);
+}
+.ll-contact-form-card .custom-select { color: var(--ll-cream); }
+.ll-contact-form-card select option { background: #24000F; color: var(--ll-cream); }
+
+@media (prefers-reduced-motion: reduce) {
+  .ll-emblem, .ll-social, .ll-journal-card, .ll-posh-slot { transition: none !important; }
+}

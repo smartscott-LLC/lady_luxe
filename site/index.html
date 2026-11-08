@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Lady Luxe — Maison de Couture</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Lady Luxe — a maison de couture. Evening wear cut from garnet silk, duchesse satin and hand-embroidered gold.">
+
+    <!-- Favicons (brand kit) -->
+    <link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../brand/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../brand/favicon-16.png">
+
+    <!-- Font Awesome (kit vendor) -->
+    <link rel="stylesheet" href="../html&amp;css/vendor/@fortawesome/fontawesome-free/css/all.min.css">
+
+    <!-- Load order: kit CSS → brand foundation → neumorphic re-skin -->
+    <link rel="stylesheet" href="../html&amp;css/css/neumorphism.css">
+    <link rel="stylesheet" href="../brand/lady-luxe.css?v=2">
+    <link rel="stylesheet" href="../brand/theme-neumorphism.css?v=2">
+
+    <!-- Page-local layout (hero height & type scale only — styling lives in the brand kit) -->
+    <style>
+        .ll-hero { min-height: 96vh; display: flex; align-items: center; padding-top: 7.5rem; padding-bottom: 4.5rem; }
+        .ll-hero .ll-display { font-size: clamp(3.4rem, 9vw, 7rem); }
+        .ll-hero .ll-sub { font-size: clamp(1.15rem, 2.2vw, 1.6rem); }
+        .ll-hero .lead { max-width: 34rem; }
+        #maison .ll-journal-card h3 { margin-bottom: .6rem; }
+        .ll-footer-bottom { display: flex; flex-wrap: wrap; gap: .75rem 2rem; justify-content: space-between; align-items: center; color: rgba(237, 231, 199, .4); font-size: .8rem; }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===================== NAVIGATION ===================== -->
+    <header class="header-global">
+        <nav id="navbar-main" aria-label="Primary navigation" class="navbar navbar-main navbar-expand-lg navbar-theme-primary headroom navbar-light navbar-transparent">
+            <div class="container position-relative">
+                <a class="navbar-brand" href="./index.html">
+                    <img class="ll-emblem" src="../brand/lady-luxe-emblem.webp" alt="Lady Luxe emblem">
+                    <span class="ll-script ll-brand-word">Lady Luxe</span>
+                </a>
+                <div class="navbar-collapse collapse" id="navbar_global">
+                    <div class="navbar-collapse-header">
+                        <div class="row">
+                            <div class="col-6 collapse-brand">
+                                <a href="./index.html" class="navbar-brand">
+                                    <img class="ll-emblem" src="../brand/lady-luxe-emblem.webp" alt="Lady Luxe emblem">
+                                    <span class="ll-script">Lady Luxe</span>
+                                </a>
+                            </div>
+                            <div class="col-6 collapse-close">
+                                <a href="#navbar_global" class="fas fa-times" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" title="close" aria-label="Toggle navigation"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="navbar-nav navbar-nav-hover align-items-lg-center ml-lg-auto">
+                        <li class="nav-item"><a class="nav-link active" href="./index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#collection" data-scroll>Collection</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#maison" data-scroll>Maison</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact" data-scroll>Contact</a></li>
+                        <li class="nav-item d-lg-block ml-lg-4">
+                            <a href="#contact" class="btn btn-primary" data-scroll><span class="mr-1"><i class="fas fa-feather-alt"></i></span> Book a Fitting</a>
+                        </li>
+                    </ul>
+                </div>
+                <button class="navbar-toggler ml-2" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ===================== HERO ===================== -->
+        <section class="ll-hero" aria-label="Lady Luxe — introduction">
+            <div class="ll-hero-backdrop">
+                <video autoplay muted loop playsinline preload="auto" src="../brand/videos/hero-atelier-b.mp4"></video>
+            </div>
+            <div class="ll-hero-fade"></div>
+            <div class="container position-relative" style="z-index: 2;">
+                <p class="ll-eyebrow mb-3">Maison de Couture</p>
+                <h1 class="ll-script ll-display mb-2">Lady Luxe</h1>
+                <p class="ll-felipa ll-sub mb-4">Evening wear cut from garnet silk, duchesse satin &amp; hand-embroidered gold.</p>
+                <div class="ll-divider" style="max-width: 22rem; margin-left: 0;">
+                    <span></span>
+                </div>
+                <p class="lead mb-5">Every piece leaves the atelier finished by a single pair of hands — numbered, archived, and made for rooms with low light and long memories.</p>
+                <a href="#collection" class="ll-btn ll-btn--solid mr-3 mb-3 mb-md-0" data-scroll>Explore the Collection</a>
+                <a href="#maison" class="ll-btn mb-3 mb-md-0" data-scroll>The Maison</a>
+            </div>
+        </section>
+
+        <!-- ===================== COLLECTION MARQUEE ===================== -->
+        <section id="collection" class="ll-marquee-section ll-marquee--collection" aria-label="Current collection">
+            <div class="container text-center mb-5">
+                <p class="ll-eyebrow mb-3">Autumn — Winter</p>
+                <h2 class="ll-script" style="font-size: clamp(2.2rem, 5vw, 3.4rem);">The Midnight Collection</h2>
+                <p class="ll-felipa mt-3" style="color: var(--ll-cream-70);">Four pieces, each captured in motion. Hover a card to watch the cloth move.</p>
+            </div>
+            <div class="ll-marquee">
+                <div class="ll-marquee__track">
+                    <div class="ll-marquee__group">
+
+                        <a class="ll-video-card" href="#collection">
+                            <div class="ll-video-card__media">
+                                <video preload="none" muted playsinline loop src="../brand/videos/clip-1-garnet-drift.mp4"></video>
+                                <div class="ll-video-card__scrim"></div>
+                            </div>
+                            <span class="ll-video-card__hint">Hover to reveal</span>
+                            <div class="ll-video-card__info">
+                                <div>
+                                    <p class="ll-video-card__name">Garnet Drift</p>
+                                    <p class="ll-video-card__tag">Silk evening wrap</p>
+                                </div>
+                                <span class="ll-video-card__price">$1,250</span>
+                            </div>
+                            <div class="ll-video-card__progress"><i></i></div>
+                        </a>
+
+                        <a class="ll-video-card" href="#collection">
+                            <div class="ll-video-card__media">
+                                <video preload="none" muted playsinline loop src="../brand/videos/clip-2-crimson-spiral.mp4"></video>
+                                <div class="ll-video-card__scrim"></div>
+                            </div>
+                            <span class="ll-video-card__hint">Hover to reveal</span>
+                            <div class="ll-video-card__info">
+                                <div>
+                                    <p class="ll-video-card__name">Crimson Spiral</p>
+                                    <p class="ll-video-card__tag">Duchesse satin gown</p>
+                                </div>
+                                <span class="ll-video-card__price">$2,890</span>
+                            </div>
+                            <div class="ll-video-card__progress"><i></i></div>
+                        </a>
+
+                        <a class="ll-video-card" href="#collection">
+                            <div class="ll-video-card__media">
+                                <video preload="none" muted playsinline loop src="../brand/videos/clip-3-noir-rose.mp4"></video>
+                                <div class="ll-video-card__scrim"></div>
+                            </div>
+                            <span class="ll-video-card__hint">Hover to reveal</span>
+                            <div class="ll-video-card__info">
+                                <div>
+                                    <p class="ll-video-card__name">Noir Rose</p>
+                                    <p class="ll-video-card__tag">Velvet opera coat</p>
+                                </div>
+                                <span class="ll-video-card__price">$1,975</span>
+                            </div>
+                            <div class="ll-video-card__progress"><i></i></div>
+                        </a>
+
+                        <a class="ll-video-card" href="#collection">
+                            <div class="ll-video-card__media">
+                                <video preload="none" muted playsinline loop src="../brand/videos/clip-4-gold-veil.mp4"></video>
+                                <div class="ll-video-card__scrim"></div>
+                            </div>
+                            <span class="ll-video-card__hint">Hover to reveal</span>
+                            <div class="ll-video-card__info">
+                                <div>
+                                    <p class="ll-video-card__name">Gold Veil</p>
+                                    <p class="ll-video-card__tag">Hand-embroidered veil</p>
+                                </div>
+                                <span class="ll-video-card__price">$3,400</span>
+                            </div>
+                            <div class="ll-video-card__progress"><i></i></div>
+                        </a>
+
+                        <!-- photo-only pieces: same card, still image instead of film -->
+                        <a class="ll-photo-card" href="#collection">
+                            <div class="ll-video-card__media">
+                                <img src="../brand/stills/midnight-peony.jpg" alt="Midnight Peony — crepe halter gown" loading="lazy">
+                                <div class="ll-video-card__scrim"></div>
+                            </div>
+                            <span class="ll-video-card__hint">Hover to view</span>
+                            <div class="ll-video-card__info">
+                                <div>
+                                    <p class="ll-video-card__name">Midnight Peony</p>
+                                    <p class="ll-video-card__tag">Crepe halter gown</p>
+                                </div>
+                                <span class="ll-video-card__price">$2,150</span>
+                            </div>
+                        </a>
+
+                        <a class="ll-photo-card" href="#collection">
+                            <div class="ll-video-card__media">
+                                <img src="../brand/stills/noir-amour.jpg" alt="Noir Amour — draped velvet column" loading="lazy">
+                                <div class="ll-video-card__scrim"></div>
+                            </div>
+                            <span class="ll-video-card__hint">Hover to view</span>
+                            <div class="ll-video-card__info">
+                                <div>
+                                    <p class="ll-video-card__name">Noir Amour</p>
+                                    <p class="ll-video-card__tag">Draped velvet column</p>
+                                </div>
+                                <span class="ll-video-card__price">$2,480</span>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="container text-center mt-5">
+                <a href="#contact" class="ll-btn" data-scroll>Request the Lookbook</a>
+            </div>
+        </section>
+
+        <!-- ===================== MAISON ===================== -->
+        <section id="maison" class="section section-lg" aria-label="The maison">
+            <div class="container">
+                <div class="row justify-content-center text-center mb-5">
+                    <div class="col-lg-8">
+                        <p class="ll-eyebrow mb-3">Est. MMXXV</p>
+                        <h2 class="ll-script" style="font-size: clamp(2.2rem, 5vw, 3.4rem);">The Maison</h2>
+                        <div class="ll-divider"><span></span></div>
+                        <p class="lead">A small house, on purpose. Three disciplines, one standard.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 mb-4 mb-md-0">
+                        <article class="ll-journal-card">
+                            <h3 class="ll-felipa h5">Bespoke Fittings</h3>
+                            <p>Two to five fittings, pattern cut on the body. Every commission is drafted from scratch — nothing is graded from a block.</p>
+                        </article>
+                    </div>
+                    <div class="col-md-4 mb-4 mb-md-0">
+                        <article class="ll-journal-card">
+                            <h3 class="ll-felipa h5">Made-to-Measure</h3>
+                            <p>The house silhouette, set to your measurements. Silk, satin and velvet are chosen from the archive and cut within the week.</p>
+                        </article>
+                    </div>
+                    <div class="col-md-4">
+                        <article class="ll-journal-card">
+                            <h3 class="ll-felipa h5">The Archive</h3>
+                            <p>Every piece is photographed, numbered and logged. A Lady Luxe gown is not a purchase — it is an entry in the record.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer id="contact" class="ll-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <a href="./index.html" class="ll-footer-brand mb-4">
+                        <img class="ll-emblem" src="../brand/lady-luxe-emblem.webp" alt="Lady Luxe emblem">
+                        <span class="ll-script ll-brand-word">Lady Luxe</span>
+                    </a>
+                    <p>A maison de couture for the midnight hours. Evening wear in garnet, amaranth and gold — cut, finished and archived by hand.</p>
+                    <div class="mt-4">
+                        <a class="ll-social mr-2" href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a class="ll-social mr-2" href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                        <a class="ll-social" href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-5 mb-lg-0">
+                    <h3 class="ll-eyebrow mb-4">Atelier</h3>
+                    <ul class="list-unstyled ll-contact ll-contact--page">
+                        <li>
+                            <span>Address</span>
+                            <a href="#">14 Rue de Minuit, Paris 4e</a>
+                        </li>
+                        <li>
+                            <span>Email</span>
+                            <a href="mailto:atelier@ladyluxe.example">atelier@ladyluxe.example</a>
+                        </li>
+                        <li>
+                            <span>Telephone</span>
+                            <a href="tel:+33142000000">+33 1 42 00 00 00</a>
+                        </li>
+                        <li>
+                            <span>Hours</span>
+                            <a href="#">By appointment only</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-5 col-md-8">
+                    <h3 class="ll-eyebrow mb-4">The Private List</h3>
+                    <p style="color: rgba(237, 231, 199, .65); font-size: .92rem;">Collection previews and archive releases, before anyone else. Two letters a season, no more.</p>
+                    <form class="ll-newsletter mt-4" id="ll-newsletter-form" novalidate>
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Your email address" aria-label="Email address" required>
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="submit">Join</button>
+                            </div>
+                        </div>
+                        <small class="d-block mt-3">We keep your address to ourselves. Always.</small>
+                    </form>
+                </div>
+            </div>
+            <hr>
+            <div class="ll-footer-bottom">
+                <span>© 2026 Lady Luxe. All rights reserved.</span>
+                <span>Cut in Paris · Finished by hand</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===================== SCRIPTS ===================== -->
+    <script src="../html&amp;css/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="../html&amp;css/vendor/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../html&amp;css/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../html&amp;css/vendor/headroom.js/dist/headroom.min.js"></script>
+    <script src="../html&amp;css/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="../html&amp;css/vendor/waypoints/lib/jquery.waypoints.min.js"></script>
+    <script src="../html&amp;css/vendor/jquery.counterup/jquery.counterup.min.js"></script>
+    <script src="../html&amp;css/vendor/onscreen/dist/on-screen.umd.min.js"></script>
+    <script src="../html&amp;css/vendor/nouislider/distribute/nouislider.min.js"></script>
+    <script src="../html&amp;css/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script src="../html&amp;css/vendor/jarallax/dist/jarallax.min.js"></script>
+    <script src="../html&amp;css/vendor/jquery-countdown/dist/jquery.countdown.min.js"></script>
+    <script src="../html&amp;css/assets/js/neumorphism.js"></script>
+
+    <!-- Lady Luxe hover-video + marquee engine -->
+    <script src="../brand/lady-luxe.js"></script>
+    <script>
+        // Newsletter: static demo — accept the submission in place
+        document.getElementById('ll-newsletter-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            var btn = this.querySelector('button[type="submit"]');
+            btn.textContent = 'Joined ✓';
+            btn.disabled = true;
+        });
+    </script>
+
+</body>
+
+</html>
