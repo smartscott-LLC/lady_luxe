@@ -163,7 +163,7 @@ create policy "update own member record" on public.members for update to authent
 
 -- Catalog: world-readable once live; drafts stay admin-only (service role bypasses RLS).
 create policy "read live collections" on public.collections for select to anon, authenticated using (live = true);
-create policy "read live products"    on public.products    for select to anon, authenticated using (live = true or status = 'live');
+create policy "read live products"    on public.products    for select to anon, authenticated using (status = 'live');
 create policy "read live variants"    on public.variants    for select to anon, authenticated using (live = true);
 create policy "read live bundles"     on public.bundles     for select to anon, authenticated using (live = true);
 create policy "read bundle items"     on public.bundle_items for select to anon, authenticated using (true);
