@@ -1,0 +1,29 @@
+/* Brand kit + neumorphism CSS are imported in layout.tsx via the bundler.
+   This file carries the page-local layout styles from the original design. */
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Hero height & type scale (page-local styles from the original design) */
+.ll-hero {
+  min-height: 96vh;
+  display: flex;
+  align-items: center;
+  padding-top: 7.5rem;
+  padding-bottom: 4.5rem;
+}
+.ll-hero .ll-display { font-size: clamp(3.4rem, 9vw, 7rem); }
+.ll-hero .ll-sub { font-size: clamp(1.15rem, 2.2vw, 1.6rem); }
+.ll-hero .lead { max-width: 34rem; }
+#maison .ll-journal-card h3 { margin-bottom: .6rem; }
+.ll-footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem 2rem;
+  justify-content: space-between;
+  align-items: center;
+  color: rgba(237, 231, 199, .4);
+  font-size: .8rem;
+}

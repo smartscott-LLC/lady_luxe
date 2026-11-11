@@ -1,0 +1,123 @@
+/* ==========================================================================
+   LADY LUXE × Axio — "midnight atelier" re-skin
+   Mirrors css/colors/color-1.css selector structure with Luxe values.
+   Load order: main.css → color-1.css → lady-luxe.css → this file
+   ========================================================================== */
+
+::selection { background-color: var(--ll-gold); color: var(--ll-midnight); text-shadow: none; }
+::-webkit-scrollbar { background: var(--ll-amaranth); }
+::-webkit-scrollbar-track { background-color: var(--ll-midnight); }
+::-webkit-scrollbar-thumb { background-color: var(--ll-gold); }
+
+body {
+  color: var(--ll-cream);
+  background-color: var(--ll-midnight);
+  font-family: var(--ll-font-body);
+}
+
+/* ---- headline ------------------------------------------------------------- */
+.headline__title {
+  font-family: var(--ll-font-script) !important;
+  font-weight: 400 !important;
+  color: var(--ll-gold) !important;
+  text-shadow: 0 2px 30px rgba(212, 175, 55, .25);
+  letter-spacing: .01em;
+}
+.clip .words-wrapper::after { background-color: var(--ll-gold); }  /* animated cursor bar */
+.headline__subtitle {
+  font-family: var(--ll-font-body);
+  font-weight: 700;
+  font-size: .74rem;
+  letter-spacing: .42em;
+  text-transform: uppercase;
+  color: rgba(237, 231, 199, .55) !important;
+}
+.headline__description {
+  font-family: var(--ll-font-body);
+  color: rgba(237, 231, 199, .72) !important;
+}
+
+/* ---- general type ------------------------------------------------------------ */
+h1 { color: var(--ll-gold); font-family: var(--ll-font-script); font-weight: 400; }
+h2 { color: var(--ll-cream); font-family: var(--ll-font-display); }
+h2::after { background-color: var(--ll-gold); }
+h3, h3.light, h4, h4.light { color: var(--ll-cream); font-family: var(--ll-font-body); }
+a { color: var(--ll-gold); }
+a.light { color: var(--ll-cream); }
+.no-touch a:hover { color: var(--ll-cream); }
+.no-touch a:hover.light { color: var(--ll-gold); }
+p { color: rgba(237, 231, 199, .78); }
+p.light { color: var(--ll-cream); }
+p.copyright { color: rgba(237, 231, 199, .45); }
+p.copyright a { color: var(--ll-cream); }
+.aside__title { color: var(--ll-cream) !important; font-family: var(--ll-font-display); }
+.aside__text { color: rgba(237, 231, 199, .7) !important; font-family: var(--ll-font-body); }
+.popup__title { color: var(--ll-cream); }
+.popup__subtitle { color: rgba(237, 231, 199, .6); }
+
+/* ---- media layers ---------------------------------------------------------------- */
+.color-layer-medium { background: rgba(48, 0, 26, .42); }
+.color-layer-dark { background: rgba(24, 0, 13, .78); }
+.bg-light { background-color: #35021D; }
+.bg-medium { background-color: #3A021F; }
+.bg-dark { background-color: #24000F; }
+.section-main { background-color: var(--ll-midnight); }
+
+/* ---- menu overlay -------------------------------------------------------------------- */
+.menu { background: rgba(24, 0, 13, .97); }
+.navigation li a { color: var(--ll-cream); font-family: var(--ll-font-body); }
+.no-touch .navigation li:hover a { color: var(--ll-gold); }
+.menu-close, .menu-close i { color: var(--ll-gold); }
+
+/* ---- buttons ---------------------------------------------------------------------------- */
+.button {
+  font-family: var(--ll-font-body) !important;
+  font-weight: 700;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  font-size: .72rem;
+}
+.button-solid-light { background-color: var(--ll-gold); color: var(--ll-midnight); }
+.no-touch .button-solid-light:hover { background-color: var(--ll-cream); color: var(--ll-midnight); }
+.button-solid-dark { background-color: var(--ll-gold); color: var(--ll-midnight); }
+.button-outline-light { color: var(--ll-gold); border: 1px solid rgba(212, 175, 55, .5); }
+.no-touch .button-outline-light:hover { color: var(--ll-cream); border-color: var(--ll-gold); }
+.button-outline-dark { color: var(--ll-gold); border: 1px solid rgba(212, 175, 55, .5); }
+.button-square { border: 1px solid rgba(212, 175, 55, .5); color: var(--ll-gold); }
+
+/* ---- forms ------------------------------------------------------------------------------- */
+.form-dark input, .form-dark textarea {
+  color: var(--ll-cream);
+  border-bottom: 1px solid rgba(212, 175, 55, .35);
+  font-family: var(--ll-font-body);
+}
+.form-dark ::-webkit-input-placeholder { color: rgba(237, 231, 199, .35); }
+.form-light input, .form-light textarea {
+  color: var(--ll-cream);
+  border-bottom: 1px solid rgba(212, 175, 55, .35);
+  font-family: var(--ll-font-body);
+}
+.form-light ::-webkit-input-placeholder { color: rgba(237, 231, 199, .35); }
+.inputs-description { color: rgba(237, 231, 199, .45); }
+
+/* ---- gallery / countdown / popups ----------------------------------------------------------- */
+.my-gallery__descr { color: rgba(237, 231, 199, .78); }
+.my-gallery__descr h4, .my-gallery__descr h4 small { color: var(--ll-cream); }
+.pswp__caption__center h4, .pswp__caption__center h4 small { color: var(--ll-cream); }
+.pswp__caption__center p { color: rgba(237, 231, 199, .7); }
+.pswp__counter { color: rgba(237, 231, 199, .6); }
+#countdown { color: var(--ll-gold); font-family: var(--ll-font-display); }
+.help-text { color: rgba(237, 231, 199, .5); font-family: var(--ll-font-body); }
+
+/* ---- socials ---------------------------------------------------------------------------------- */
+.socials li a { color: rgba(237, 231, 199, .7); border: 1px solid rgba(212, 175, 55, .35); border-radius: 999px; }
+.no-touch .socials li a:hover { color: var(--ll-gold); border-color: var(--ll-gold); }
+
+/* ---- loader -------------------------------------------------------------------------------------- */
+.loader { background-color: var(--ll-midnight); }
+.loading-text { color: rgba(212, 175, 55, .6); font-family: var(--ll-font-body); }
+.loading-dots .dot { background-color: var(--ll-gold); }
+
+/* ---- video cards on the works grid ------------------------------------------------------------------ */
+.works .ll-grid { row-gap: 2.2rem; }
+.works .ll-video-card__name { color: var(--ll-cream); }
