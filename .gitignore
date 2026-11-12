@@ -31,3 +31,6 @@ tmp/
 ._*
 Thumbs.db
 desktop.ini
+
+# ---- Next build output ----
+.next/
