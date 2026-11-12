@@ -28,8 +28,8 @@ export default function RootLayout({
           rel="stylesheet"
           href="/vendor/@fortawesome/fontawesome-free/css/all.min.css"
         />
-        {/* Combined brand + kit stylesheet: neumorphism → brand → theme */}
-        <link rel="stylesheet" href="/css/luxe-all.css" />
+        {/* Combined brand + kit stylesheet: neumorphism → brand → theme (bump v on brand edits) */}
+        <link rel="stylesheet" href="/css/luxe-all.css?v=3" />
       </head>
       <body>
         {children}

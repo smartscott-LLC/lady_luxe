@@ -73,6 +73,9 @@
     root.querySelectorAll('.ll-marquee__track').forEach(function (track) {
       if (track.dataset.llMarquee) return;
       track.dataset.llMarquee = '1';
+      /* a framework (React/Next) may render the loop twin itself —
+         skip cloning when a second group already exists (keeps hydration clean) */
+      if (track.querySelectorAll('.ll-marquee__group').length > 1) return;
       var group = track.querySelector('.ll-marquee__group');
       if (!group) return;
       var clone = group.cloneNode(true);
@@ -88,5 +91,16 @@
     bindHoverVideos: bind,
     bindMarquees: bindMarquees
   };
-  document.addEventListener('DOMContentLoaded', function () { bind(document); });
+
+  /* Auto-bind on plain sites only. The <html> element opts in via
+     data-ll-autobind — framework apps (Next/React) do NOT set it, because a
+     bind that runs before hydration mutates the DOM and breaks it. Framework
+     callers invoke window.LadyLuxe.bindHoverVideos() after hydration instead. */
+  if (document.documentElement.hasAttribute('data-ll-autobind')) {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function () { bind(document); });
+    } else {
+      bind(document);
+    }
+  }
 })();

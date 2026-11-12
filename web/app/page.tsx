@@ -1,45 +1,14 @@
+import { Suspense } from "react";
+import { createClient } from "@/utils/supabase/server";
 import HeroVideo from "@/components/HeroVideo";
 import LuxeRuntime from "@/components/LuxeRuntime";
 import NewsletterForm from "@/components/NewsletterForm";
 
-const COLLECTION = [
-  {
-    name: "Garnet Drift",
-    tag: "Silk evening wrap",
-    price: "$1,250",
-    video: "/brand/videos/clip-1-garnet-drift.mp4",
-  },
-  {
-    name: "Crimson Spiral",
-    tag: "Duchesse satin gown",
-    price: "$2,890",
-    video: "/brand/videos/clip-2-crimson-spiral.mp4",
-  },
-  {
-    name: "Noir Rose",
-    tag: "Velvet opera coat",
-    price: "$1,975",
-    video: "/brand/videos/clip-3-noir-rose.mp4",
-  },
-  {
-    name: "Gold Veil",
-    tag: "Hand-embroidered veil",
-    price: "$3,400",
-    video: "/brand/videos/clip-4-gold-veil.mp4",
-  },
-  {
-    name: "Midnight Peony",
-    tag: "Crepe halter gown",
-    price: "$2,150",
-    still: "/brand/stills/midnight-peony.jpg",
-  },
-  {
-    name: "Noir Amour",
-    tag: "Draped velvet column",
-    price: "$2,480",
-    still: "/brand/stills/noir-amour.jpg",
-  },
-];
+export const metadata = {
+  title: "Lady Luxe — Maison de Couture",
+  description:
+    "A maison de couture for the midnight hours. Evening wear in garnet, amaranth and gold — composed, numbered and archived by the house.",
+};
 
 const DESKS = [
   { label: "Owner", email: "owner@ladyluxeclub.com" },
@@ -62,6 +31,29 @@ const MAISON = [
     copy: "Members of the Circle see each release first — early access, private pricing, and first refusal on numbered pieces.",
   },
 ];
+
+async function getEnsembles() {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("bundles")
+    .select("sku, name, price, media, story, bundle_items(count)")
+    .eq("live", true)
+    .order("price", { ascending: false });
+
+  if (error || !data) return [];
+
+  return data.map((b) => ({
+    sku: b.sku,
+    name: b.name,
+    price: b.price,
+    img: Array.isArray(b.media) ? b.media[0]?.url ?? "" : "",
+    story: b.story ?? "",
+    pieces: b.bundle_items?.[0]?.count ?? 0,
+  }));
+}
+
+const money = (n) =>
+  new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", minimumFractionDigits: 2 }).format(n ?? 0);
 
 export default function Home() {
   return (
@@ -103,31 +95,20 @@ export default function Home() {
               </div>
               <ul className="navbar-nav navbar-nav-hover align-items-lg-center ml-lg-auto">
                 <li className="nav-item">
-                  <a className="nav-link active" href="/">
-                    Home
-                  </a>
+                  <a className="nav-link active" href="/">Home</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#collection" data-scroll>
-                    Collection
-                  </a>
+                  <a className="nav-link" href="#collection" data-scroll>Collection</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#maison" data-scroll>
-                    Maison
-                  </a>
+                  <a className="nav-link" href="#maison" data-scroll>Maison</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#contact" data-scroll>
-                    Contact
-                  </a>
+                  <a className="nav-link" href="#contact" data-scroll>Contact</a>
                 </li>
                 <li className="nav-item d-lg-block ml-lg-4">
                   <a href="#contact" className="btn btn-primary" data-scroll>
-                    <span className="mr-1">
-                      <i className="fas fa-feather-alt" />
-                    </span>{" "}
-                    Book a Fitting
+                    <span className="mr-1"><i className="fas fa-feather-alt" /></span> Book a Fitting
                   </a>
                 </li>
               </ul>
@@ -177,59 +158,9 @@ export default function Home() {
         </section>
 
         {/* ===================== COLLECTION MARQUEE ===================== */}
-        <section
-          id="collection"
-          className="ll-marquee-section ll-marquee--collection"
-          aria-label="Current collection"
-        >
-          <div className="container text-center mb-5">
-            <p className="ll-eyebrow mb-3">Autumn — Winter</p>
-            <h2 className="ll-script" style={{ fontSize: "clamp(2.2rem, 5vw, 3.4rem)" }}>
-              The Midnight Collection
-            </h2>
-            <p className="ll-felipa mt-3" style={{ color: "var(--ll-cream-70)" }}>
-              Each piece captured in motion. Hover a card to watch the cloth move.
-            </p>
-          </div>
-          <div className="ll-marquee">
-            <div className="ll-marquee__track">
-              <div className="ll-marquee__group">
-                {COLLECTION.map((piece) => (
-                  <a key={piece.name} className="ll-video-card" href="#collection">
-                    <div className="ll-video-card__media">
-                      {"video" in piece && piece.video ? (
-                        <video preload="none" muted playsInline loop src={piece.video} />
-                      ) : (
-                        <img src={piece.still} alt={`${piece.name} — ${piece.tag}`} loading="lazy" />
-                      )}
-                      <div className="ll-video-card__scrim" />
-                    </div>
-                    <span className="ll-video-card__hint">
-                      {"video" in piece && piece.video ? "Hover to reveal" : "Hover to view"}
-                    </span>
-                    <div className="ll-video-card__info">
-                      <div>
-                        <p className="ll-video-card__name">{piece.name}</p>
-                        <p className="ll-video-card__tag">{piece.tag}</p>
-                      </div>
-                      <span className="ll-video-card__price">{piece.price}</span>
-                    </div>
-                    {"video" in piece && piece.video ? (
-                      <div className="ll-video-card__progress">
-                        <i />
-                      </div>
-                    ) : null}
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
-          <div className="container text-center mt-5">
-            <a href="#contact" className="ll-btn" data-scroll>
-              Request the Lookbook
-            </a>
-          </div>
-        </section>
+        <Suspense fallback={<MarqueeFallback />}>
+          <CollectionMarquee />
+        </Suspense>
 
         {/* ===================== MAISON ===================== */}
         <section id="maison" className="section section-lg" aria-label="The maison">
@@ -240,9 +171,7 @@ export default function Home() {
                 <h2 className="ll-script" style={{ fontSize: "clamp(2.2rem, 5vw, 3.4rem)" }}>
                   The Maison
                 </h2>
-                <div className="ll-divider">
-                  <span />
-                </div>
+                <div className="ll-divider"><span /></div>
                 <p className="lead">A small house, on purpose. Three disciplines, one standard.</p>
               </div>
             </div>
@@ -318,5 +247,100 @@ export default function Home() {
 
       <LuxeRuntime />
     </>
+  );
+}
+
+/* ===================== COLLECTION (dynamic) =====================
+   Fetched live from Supabase. Under cacheComponents, dynamic data
+   belongs inside a Suspense boundary — the shell renders instantly
+   and the marquee streams in when the catalog answers. */
+function MarqueeFallback() {
+  return (
+    <section
+      id="collection"
+      className="ll-marquee-section ll-marquee--collection"
+      aria-label="Current collection"
+    >
+      <div className="container text-center mb-5">
+        <p className="ll-eyebrow mb-3">Autumn — Winter</p>
+        <h2 className="ll-script" style={{ fontSize: "clamp(2.2rem, 5vw, 3.4rem)" }}>
+          The Midnight Collection
+        </h2>
+        <p className="ll-felipa mt-3" style={{ color: "var(--ll-cream-70)" }}>
+          The collection is being dressed…
+        </p>
+      </div>
+      <div className="ll-marquee" style={{ minHeight: "420px" }} />
+    </section>
+  );
+}
+
+async function CollectionMarquee() {
+  const ensembles = await getEnsembles();
+
+  return (
+    <section
+      id="collection"
+      className="ll-marquee-section ll-marquee--collection"
+      aria-label="Current collection"
+    >
+      <div className="container text-center mb-5">
+        <p className="ll-eyebrow mb-3">Autumn — Winter</p>
+        <h2 className="ll-script" style={{ fontSize: "clamp(2.2rem, 5vw, 3.4rem)" }}>
+          The Midnight Collection
+        </h2>
+        <p className="ll-felipa mt-3" style={{ color: "var(--ll-cream-70)" }}>
+          {ensembles.length} ensembles, each composed by the house. Hover a card to meet it.
+        </p>
+      </div>
+      <div className="ll-marquee">
+        <div className="ll-marquee__track">
+          {/* two groups: the visible set + its seamless loop twin.
+              lady-luxe.js skips cloning when a second group already exists,
+              so hydration stays clean (SSR and client render identical DOM). */}
+          {[false, true].map((twin) => (
+            <div
+              key={twin ? "clone" : "primary"}
+              className="ll-marquee__group"
+              aria-hidden={twin || undefined}
+            >
+              {ensembles.length === 0 && (
+                <p className="lead px-4" style={{ color: "var(--ll-cream-70)" }}>
+                  The collection is being dressed — return shortly.
+                </p>
+              )}
+              {ensembles.map((ens) => (
+                <a
+                  key={ens.sku}
+                  className="ll-video-card"
+                  href="#collection"
+                  tabIndex={twin ? -1 : undefined}
+                >
+                  <div className="ll-video-card__media">
+                    {ens.img && <img src={ens.img} alt={twin ? "" : ens.name} loading="lazy" />}
+                    <div className="ll-video-card__scrim" />
+                  </div>
+                  {!twin && <span className="ll-video-card__hint">Numbered piece</span>}
+                  <div className="ll-video-card__info">
+                    <div>
+                      <p className="ll-video-card__name">{ens.name}</p>
+                      <p className="ll-video-card__tag">
+                        {ens.pieces}-piece ensemble · composed by the house
+                      </p>
+                    </div>
+                    <span className="ll-video-card__price">{money(ens.price)}</span>
+                  </div>
+                </a>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="container text-center mt-5">
+        <a href="#contact" className="ll-btn" data-scroll>
+          Request the Lookbook
+        </a>
+      </div>
+    </section>
   );
 }

@@ -32449,6 +32449,7 @@ article a:hover {
   overflow: hidden;
 }
 .ll-video-card__media video,
+.ll-video-card__media img,
 .ll-photo-card .ll-video-card__media img {
   position: relative;
   z-index: 1;
@@ -32456,10 +32457,13 @@ article a:hover {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+.ll-video-card__media video {
   transform: scale(1.06);
   transition: transform 6s ease;   /* slow push-in while the clip plays */
 }
 .ll-video-card:hover .ll-video-card__media video,
+.ll-video-card:hover .ll-video-card__media img,
 .ll-photo-card:hover .ll-video-card__media img { transform: scale(1.12); }
 
 /* gilded resting tone — visible until the clip's first frame paints;

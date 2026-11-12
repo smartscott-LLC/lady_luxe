@@ -19,9 +19,11 @@ export default function LuxeRuntime() {
     bind();
     const t1 = setTimeout(bind, 300);
     const t2 = setTimeout(bind, 1200);
+    const t3 = setTimeout(bind, 3000); // streamed Suspense content lands late
     return () => {
       clearTimeout(t1);
       clearTimeout(t2);
+      clearTimeout(t3);
     };
   }, []);
 
