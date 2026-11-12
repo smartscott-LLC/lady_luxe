@@ -1,0 +1,161 @@
+[
+ {
+  "ensemble": "MIDNIGHT",
+  "color": "Black",
+  "trade_gbp": 55.69,
+  "retail_usd": 125.5,
+  "pieces": [
+   {
+    "component": "push-up bra",
+    "sku": "ROZAMEHENDIBLACKPUSHUP-G",
+    "name": "Roza Mehendi Push Up Bra Black",
+    "trade": 17.72,
+    "stock": 46
+   },
+   {
+    "component": "brief",
+    "sku": "ROZAMEHENDIBLACKBRIEF-G",
+    "name": "Roza Mehendi Brief Black",
+    "trade": 9.09,
+    "stock": 6
+   },
+   {
+    "component": "suspender belt",
+    "sku": "ROZAMEHENDIBLACKSUSPBELT-G",
+    "name": "Roza Mehendi Suspender Belt Black",
+    "trade": 12.95,
+    "stock": 13
+   },
+   {
+    "component": "chemise",
+    "sku": "ROZAMEHENDIBLACKCHEMISE-G",
+    "name": "Roza Mehendi Chemise Black",
+    "trade": 15.93,
+    "stock": 14
+   }
+  ]
+ },
+ {
+  "ensemble": "GARNET",
+  "color": "Claret",
+  "trade_gbp": 55.68,
+  "retail_usd": 125.5,
+  "pieces": [
+   {
+    "component": "push-up bra",
+    "sku": "ROZAMEHENDICLARETPUSHUPBRA-G",
+    "name": "Roza Mehendi Push Up Bra Claret",
+    "trade": 17.72,
+    "stock": 40
+   },
+   {
+    "component": "brief",
+    "sku": "ROZAMEHENDICLARETBRIEF-G",
+    "name": "Roza Mehendi Brief Claret",
+    "trade": 9.08,
+    "stock": 6
+   },
+   {
+    "component": "suspender belt",
+    "sku": "ROZAMEHENDICLARETSUSPBELT-G",
+    "name": "Roza Mehendi Suspender Belt Claret",
+    "trade": 12.95,
+    "stock": 15
+   },
+   {
+    "component": "chemise",
+    "sku": "ROZAMEHENDICLARETCHEMISE-G",
+    "name": "Roza Mehendi Chemise Claret",
+    "trade": 15.93,
+    "stock": 10
+   }
+  ]
+ },
+ {
+  "ensemble": "NOIR",
+  "color": "Black",
+  "trade_gbp": 44.41,
+  "retail_usd": 100.0,
+  "pieces": [
+   {
+    "component": "soft-cup bra",
+    "sku": "ROZALAGERTASOFTCUPBLACK-G",
+    "name": "Roza Lagerta Soft Cup Black",
+    "trade": 14.2,
+    "stock": 33
+   },
+   {
+    "component": "brief",
+    "sku": "ROZALAGERTAPUSHUPBLACK-G",
+    "name": "Roza Lagerta Push Up Black",
+    "trade": 16.18,
+    "stock": 30
+   },
+   {
+    "component": "suspender belt",
+    "sku": "ROZALAGERTASUSPBELTBLACK-G",
+    "name": "Roza Lagerta Suspender Belt Black",
+    "trade": 14.03,
+    "stock": 3
+   }
+  ]
+ },
+ {
+  "ensemble": "NOIR NO.2",
+  "color": "Black",
+  "trade_gbp": 37.62,
+  "retail_usd": 85.0,
+  "pieces": [
+   {
+    "component": "push-up bra",
+    "sku": "ROZAKENABLACKPUSHUP-G",
+    "name": "Roza Kena Black Push Up Bra",
+    "trade": 16.41,
+    "stock": 26
+   },
+   {
+    "component": "brief",
+    "sku": "ROZAKENABLACKBRIEF-G",
+    "name": "Roza Kena Black Brief",
+    "trade": 8.26,
+    "stock": 7
+   },
+   {
+    "component": "suspender belt",
+    "sku": "ROZAKENABLACKSUSPBELT-G",
+    "name": "Roza Kena Black Suspender Belt",
+    "trade": 12.95,
+    "stock": 6
+   }
+  ]
+ },
+ {
+  "ensemble": "PETAL",
+  "color": "Pink",
+  "trade_gbp": 36.36,
+  "retail_usd": 82.0,
+  "pieces": [
+   {
+    "component": "soft-cup bra",
+    "sku": "ROZACARYCAPINKSOFT-G",
+    "name": "Roza Caryca Soft Cup Bra Pink",
+    "trade": 15.15,
+    "stock": 26
+   },
+   {
+    "component": "brief",
+    "sku": "ROZACARYCABRIEFPINK-G",
+    "name": "Roza Caryca Brief Pink",
+    "trade": 8.26,
+    "stock": 10
+   },
+   {
+    "component": "suspender belt",
+    "sku": "ROZACARYCASUSPBELTPINK-G",
+    "name": "Roza Caryca Suspender Belt Pink",
+    "trade": 12.95,
+    "stock": 9
+   }
+  ]
+ }
+]
