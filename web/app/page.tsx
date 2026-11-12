@@ -52,7 +52,7 @@ async function getEnsembles() {
   }));
 }
 
-const money = (n) =>
+const money = (n: number | null | undefined) =>
   new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", minimumFractionDigits: 2 }).format(n ?? 0);
 
 export default function Home() {
