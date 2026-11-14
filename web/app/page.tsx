@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { createClient } from "@/utils/supabase/server";
 import HeroVideo from "@/components/HeroVideo";
 import LuxeRuntime from "@/components/LuxeRuntime";
+import LuxeMarquee from "@/components/LuxeMarquee";
 import NewsletterForm from "@/components/NewsletterForm";
 
 export const metadata = {
@@ -283,6 +284,7 @@ async function CollectionMarquee() {
       id="collection"
       className="ll-marquee-section ll-marquee--collection"
       aria-label="Current collection"
+      data-ll-sentinel="1"
     >
       <div className="container text-center mb-5">
         <p className="ll-eyebrow mb-3">Autumn — Winter</p>
@@ -295,9 +297,10 @@ async function CollectionMarquee() {
       </div>
       <div className="ll-marquee">
         <div className="ll-marquee__track">
-          {/* two groups: the visible set + its seamless loop twin.
-              lady-luxe.js skips cloning when a second group already exists,
-              so hydration stays clean (SSR and client render identical DOM). */}
+          {/* two groups: the visible set + its seamless loop twin, both SSR'd.
+              lady-luxe.js leaves a two-group track untouched (zero DOM writes),
+              so a bind is hydration-safe whenever it fires. <LuxeMarquee />
+              below binds the cards only after THIS boundary has hydrated. */}
           {[false, true].map((twin) => (
             <div
               key={twin ? "clone" : "primary"}
@@ -336,6 +339,7 @@ async function CollectionMarquee() {
           ))}
         </div>
       </div>
+      {/* hydration sentinel — binds the marquee cards post-hydration (see LuxeMarquee.tsx) */}
       <div className="container text-center mt-5">
         <a href="#contact" className="ll-btn" data-scroll>
           Request the Lookbook

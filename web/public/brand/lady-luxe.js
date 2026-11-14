@@ -62,7 +62,14 @@
   function bind(root) {
     root = root || document;
     bindMarquees(root);   /* clone groups first so cloned cards get armed too */
-    root.querySelectorAll('.ll-video-card').forEach(armCard);
+    var armed = document.documentElement.hasAttribute('data-ll-armed');
+    root.querySelectorAll('.ll-video-card').forEach(function (card) {
+      /* framework sentinel regions (data-ll-sentinel) bind from their own
+         hydrated boundary — never from a bind that could still race React's
+         hydration (stamping a streamed card pre-hydration trips warnings) */
+      if (!armed && card.closest('[data-ll-sentinel]')) return;
+      armCard(card);
+    });
   }
 
   /* ---- collection marquee ---------------------------------------------- */
@@ -71,10 +78,17 @@
   function bindMarquees(root) {
     if (REDUCED) return;
     root.querySelectorAll('.ll-marquee__track').forEach(function (track) {
-      if (track.dataset.llMarquee) return;
-      track.dataset.llMarquee = '1';
+      /* a framework (React/Next) may render the loop twin itself — skip
+         cloning when a second group already exists. The bound-marker is
+         stamped ONLY when we actually clone: on a React-rendered track a
+         bind must leave zero DOM writes, so it can never mutate streamed
+         HTML before React hydrates it (that trips hydration warnings). */
+      if (!document.documentElement.hasAttribute('data-ll-armed') &&
+          track.closest('[data-ll-sentinel]')) return; /* its sentinel clones it */
+      if (track.querySelectorAll('.ll-marquee__group').length > 1) return;
       var group = track.querySelector('.ll-marquee__group');
       if (!group) return;
+      track.dataset.llMarquee = '1';
       var clone = group.cloneNode(true);
       clone.setAttribute('aria-hidden', 'true');
       clone.querySelectorAll('video').forEach(function (v) {
@@ -88,5 +102,16 @@
     bindHoverVideos: bind,
     bindMarquees: bindMarquees
   };
-  document.addEventListener('DOMContentLoaded', function () { bind(document); });
+
+  /* Auto-bind on plain sites only. The <html> element opts in via
+     data-ll-autobind — framework apps (Next/React) do NOT set it, because a
+     bind that runs before hydration mutates the DOM and breaks it. Framework
+     callers invoke window.LadyLuxe.bindHoverVideos() after hydration instead. */
+  if (document.documentElement.hasAttribute('data-ll-autobind')) {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function () { bind(document); });
+    } else {
+      bind(document);
+    }
+  }
 })();

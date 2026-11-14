@@ -33,10 +33,9 @@ export default function RootLayout({
       </head>
       <body>
         {children}
-        {/* Kit vendor bundle — jQuery → Popper → Bootstrap → Headroom → kit init */}
+        {/* Kit vendor bundle — jQuery → Popper → Bootstrap → Headroom → kit init.
+            The Lady Luxe engine is loaded by <LuxeRuntime /> (single owner). */}
         <Script src="/js/kit.bundle.js" strategy="afterInteractive" />
-        {/* Lady Luxe hover-video / marquee engine */}
-        <Script src="/js/lady-luxe.js" strategy="afterInteractive" />
       </body>
     </html>
   );
