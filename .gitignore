@@ -34,3 +34,7 @@ desktop.ini
 
 # ---- Next build output ----
 .next/
+
+# turntable working dirs
+/build/
+/output/
