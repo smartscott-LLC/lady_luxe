@@ -230,7 +230,11 @@ class Logger:
             with self.jsonl_path.open("a", encoding="utf-8") as fh:
                 fh.write(json.dumps(record, ensure_ascii=False, default=str) + "\n")
         if self.json_format:
-            self.console.print(json.dumps(record, ensure_ascii=False, default=str))
+            # Raw stdout write, never rich: rich would wrap long lines at the
+            # 80-column pipe default, splitting each JSON record and breaking
+            # every line-oriented consumer (the GUI pump included).
+            sys.stdout.write(json.dumps(record, ensure_ascii=False, default=str) + "\n")
+            sys.stdout.flush()
         elif level in ("warn", "error"):
             flat = " ".join(f"{k}={v}" for k, v in data.items())
             self.console.print(

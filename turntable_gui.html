@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lady Luxe — Turntable Studio</title>
+<style>
+  :root {
+    --bg: #17141a; --panel: #201c26; --panel2: #262130; --line: #322b3d;
+    --gold: #c9a962; --gold-dim: #8a744a; --text: #e8e2d9; --muted: #9a9184;
+    --ok: #7fb069; --warn: #d9a05b; --bad: #d96b5b;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    background: var(--bg); color: var(--text);
+    font: 15px/1.5 "Georgia", serif; min-height: 100vh; padding: 28px 20px 60px;
+  }
+  .wrap { max-width: 1060px; margin: 0 auto; }
+  header { text-align: center; margin-bottom: 26px; }
+  h1 { font-size: 30px; font-weight: normal; letter-spacing: 3px; color: var(--gold); }
+  h1 span { font-style: italic; }
+  .sub { color: var(--muted); font-size: 13px; letter-spacing: 1px; margin-top: 4px; }
+  .panel {
+    background: var(--panel); border: 1px solid var(--line);
+    border-radius: 14px; padding: 20px; margin-bottom: 22px;
+  }
+  .drop {
+    border: 2px dashed var(--gold-dim); border-radius: 12px;
+    padding: 34px 20px; text-align: center; cursor: pointer; transition: all .2s;
+    color: var(--muted);
+  }
+  .drop.hover { border-color: var(--gold); background: rgba(201,169,98,.06); color: var(--text); }
+  .drop strong { color: var(--gold); font-weight: normal; }
+  .opts { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 16px; align-items: end; }
+  .opt { display: flex; flex-direction: column; gap: 4px; }
+  .opt label { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); }
+  select, input[type=number], input[type=text] {
+    background: var(--panel2); color: var(--text); border: 1px solid var(--line);
+    border-radius: 8px; padding: 8px 10px; font: inherit; min-width: 130px;
+  }
+  button {
+    background: linear-gradient(160deg, #2c2536, #241f2d); color: var(--gold);
+    border: 1px solid var(--gold-dim); border-radius: 8px; padding: 9px 18px;
+    font: inherit; cursor: pointer; letter-spacing: 1px;
+  }
+  button:hover { border-color: var(--gold); }
+  button:disabled { opacity: .4; cursor: default; }
+  .row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .chip {
+    display: inline-block; padding: 2px 10px; border-radius: 20px; font-size: 12px;
+    letter-spacing: 1px; border: 1px solid var(--line);
+  }
+  .queued { color: var(--muted); } .running { color: var(--warn); border-color: var(--warn); }
+  .done { color: var(--ok); border-color: var(--ok); }
+  .dry-run { color: var(--gold); border-color: var(--gold-dim); }
+  .failed, .cancelled { color: var(--bad); border-color: var(--bad); }
+  .job {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 12px 16px; margin-bottom: 10px;
+  }
+  .job .top { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+  .job .name { color: var(--text); }
+  .job .stage { color: var(--muted); font-size: 13px; font-style: italic; margin-top: 3px; }
+  .job .err { color: var(--bad); font-size: 13px; margin-top: 4px; }
+  .bar { height: 3px; background: var(--line); border-radius: 2px; margin-top: 10px; overflow: hidden; }
+  .bar i { display: block; height: 100%; background: var(--gold); width: 0; transition: width .6s; }
+  .bar.ind i { width: 40% !important; animation: slide 1.4s infinite linear; }
+  @keyframes slide { from { transform: translateX(-100%);} to { transform: translateX(350%);} }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
+  .card { background: var(--panel2); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  .card video { width: 100%; display: block; aspect-ratio: 3/4; object-fit: cover; background: #000; }
+  .card .body { padding: 12px 14px; }
+  .card .title { font-size: 14px; margin-bottom: 6px; }
+  .poses { display: flex; flex-wrap: wrap; gap: 5px; margin: 8px 0; }
+  .pose { font-size: 11px; color: var(--gold); border: 1px solid var(--gold-dim); border-radius: 12px; padding: 1px 8px; }
+  .meta { color: var(--muted); font-size: 12px; }
+  .links { margin-top: 9px; display: flex; gap: 8px; flex-wrap: wrap; }
+  .links a {
+    color: var(--gold); text-decoration: none; font-size: 13px;
+    border: 1px solid var(--gold-dim); border-radius: 8px; padding: 4px 12px;
+  }
+  .links a:hover { border-color: var(--gold); }
+  .seam-ok { color: var(--ok); } .seam-warn { color: var(--warn); }
+  .empty { color: var(--muted); font-style: italic; text-align: center; padding: 14px; }
+  .hint { color: var(--muted); font-size: 12px; margin-top: 10px; }
+  h2 { font-size: 16px; letter-spacing: 2px; color: var(--gold); font-weight: normal; margin-bottom: 12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>LADY <span>LUXE</span></h1>
+    <div class="sub">TURNTABLE STUDIO — photo in, 360° pose-hold film out</div>
+  </header>
+
+  <div class="panel">
+    <div class="drop" id="drop">
+      Drop product photos here, or <strong>click to browse</strong><br>
+      <span style="font-size:12px">.png · .jpg · .webp — full-body shots make the best turntables</span>
+      <input type="file" id="file" multiple accept=".png,.jpg,.jpeg,.webp" hidden>
+    </div>
+    <div class="opts">
+      <div class="opt">
+        <label>Background</label>
+        <select id="bgMode">
+          <option value="keep">Keep photo's own</option>
+          <option value="generate">Generate studio set</option>
+        </select>
+      </div>
+      <div class="opt" id="presetWrap" style="display:none">
+        <label>Set</label>
+        <select id="bgPreset">
+          <option value="limestone">Limestone gallery</option>
+          <option value="cyclorama">Ivory cyclorama</option>
+          <option value="velvet">Velvet suite</option>
+        </select>
+      </div>
+      <div class="opt">
+        <label>Duration (s)</label>
+        <input type="number" id="duration" value="10" min="5.5" max="15" step="0.5">
+      </div>
+      <div class="opt">
+        <label>LoRAs (slug:strength, comma)</label>
+        <input type="text" id="loras" placeholder="default pair" style="min-width:230px">
+      </div>
+      <div class="opt">
+        <label>&nbsp;</label>
+        <div class="row">
+          <button id="dryBtn" title="Plan + quote only — nothing is submitted">Dry-run</button>
+        </div>
+      </div>
+    </div>
+    <div class="hint">Inbox watcher is on: anything dropped in <code>~/turntable-inbox/</code> processes automatically with these defaults.</div>
+  </div>
+
+  <div class="panel">
+    <h2>QUEUE</h2>
+    <div id="jobs"><div class="empty">nothing queued</div></div>
+  </div>
+
+  <div class="panel">
+    <h2>DELIVERED TURNTABLES</h2>
+    <div id="results" class="grid"></div>
+  </div>
+</div>
+
+<script>
+const $ = (id) => document.getElementById(id);
+let pollTimer = null;
+
+$("drop").addEventListener("click", () => $("file").click());
+$("drop").addEventListener("dragover", (e) => { e.preventDefault(); $("drop").classList.add("hover"); });
+$("drop").addEventListener("dragleave", () => $("drop").classList.remove("hover"));
+$("drop").addEventListener("drop", (e) => { e.preventDefault(); $("drop").classList.remove("hover"); send(e.dataTransfer.files); });
+$("file").addEventListener("change", (e) => { send(e.target.files); e.target.value = ""; });
+$("bgMode").addEventListener("change", () => {
+  $("presetWrap").style.display = $("bgMode").value === "generate" ? "flex" : "none";
+});
+
+async function send(fileList) {
+  if (!fileList || !fileList.length) return;
+  const fd = new FormData();
+  for (const f of fileList) fd.append("files", f);
+  fd.append("bg_mode", $("bgMode").value);
+  fd.append("duration", $("duration").value);
+  fd.append("bg_preset", $("bgPreset").value);
+  fd.append("dry_run", "false");
+  fd.append("loras", $("loras").value);
+  const r = await fetch("/api/upload", { method: "POST", body: fd });
+  if (!r.ok) { const e = await r.json(); alert(e.detail || "upload failed"); }
+  refresh();
+}
+
+$("dryBtn").addEventListener("click", async () => {
+  const fd = new FormData();
+  const files = await new Promise((res) => {
+    const inp = document.createElement("input");
+    inp.type = "file"; inp.multiple = true; inp.accept = ".png,.jpg,.jpeg,.webp";
+    inp.onchange = () => res(inp.files); inp.click();
+  });
+  if (!files.length) return;
+  for (const f of files) fd.append("files", f);
+  fd.append("bg_mode", $("bgMode").value);
+  fd.append("duration", $("duration").value);
+  fd.append("bg_preset", $("bgPreset").value);
+  fd.append("dry_run", "true");
+  fd.append("loras", $("loras").value);
+  await fetch("/api/upload", { method: "POST", body: fd });
+  refresh();
+});
+
+const STAGE_PCT = {
+  "starting": 4, "normalized": 8, "background set": 22,
+  "keyframes (90° done)": 38, "keyframes (180° done)": 54, "keyframes (270° done)": 70,
+  "render complete — packaging": 94, "packaged": 97,
+};
+
+function jobCard(j) {
+  const pct = STAGE_PCT[j.stage] || (j.status === "done" || j.status === "dry-run" ? 100 : 0);
+  const indet = j.status === "running" && !STAGE_PCT[j.stage];
+  const chip = `<span class="chip ${j.status}">${j.status.toUpperCase()}</span>`;
+  const cost = j.cost_usd != null ? ` · $${(+j.cost_usd).toFixed(2)}` : "";
+  const spark = j.spark != null ? ` · ${(+j.spark).toFixed(1)} SPARK` : "";
+  const err = j.error ? `<div class="err">${escape(j.error)}</div>` : "";
+  const cancel = (j.status === "queued" || j.status === "running")
+    ? `<button onclick="cancelJob('${j.id}')" style="padding:2px 10px;font-size:12px">cancel</button>` : "";
+  return `<div class="job">
+    <div class="top"><span class="name">${escape(j.name)}</span><span class="row">${chip}${cost}${spark} ${cancel}</span></div>
+    <div class="stage">${escape(j.stage || j.status)}${j.frames ? " · " + j.frames + " frames" : ""}</div>
+    ${err}
+    <div class="bar ${indet ? "ind" : ""}"><i style="width:${pct}%"></i></div>
+  </div>`;
+}
+
+function escape(s) {
+  return String(s == null ? "" : s).replace(/[&<>"']/g, (c) =>
+    ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
+async function cancelJob(id) {
+  await fetch(`/api/job/${id}/cancel`, { method: "POST" });
+  refresh();
+}
+
+function resultCard(r) {
+  if (!r.mp4) return "";
+  const href = (p) => "/files/" + String(p).replace(/^\.\//, "");
+  const poses = (r.poses || []).map((p) =>
+    `<span class="pose">${p.angle}° ${(+p.time_s).toFixed(1)}s</span>`).join("");
+  const rms = r.seam_rms != null
+    ? `<span class="${r.seam_rms <= 2 ? "seam-ok" : "seam-warn"}">loop seam ${r.seam_rms}</span>` : "";
+  return `<div class="card">
+    <video src="${href(r.mp4)}" muted loop playsinline preload="metadata"></video>
+    <div class="body">
+      <div class="title">${escape(r.asset)}</div>
+      <div class="meta">${r.frames} frames · ${(+r.duration_s).toFixed(1)}s · ${rms}</div>
+      <div class="poses">${poses}</div>
+      <div class="links">
+        <a href="${href(r.mp4)}" download>mp4</a>
+        ${r.webm ? `<a href="${href(r.webm)}" download>webm</a>` : ""}
+        <a href="${href(r.manifest)}" download>manifest</a>
+      </div>
+    </div>
+  </div>`;
+}
+
+function wireVideos() {
+  document.querySelectorAll(".card video").forEach((v) => {
+    if (v.dataset.wired) return;
+    v.dataset.wired = "1";
+    v.addEventListener("mouseenter", () => v.play().catch(() => {}));
+    v.addEventListener("mouseleave", () => v.pause());  // pause, never reset
+  });
+}
+
+async function refresh() {
+  try {
+    const [jr, rr] = await Promise.all([
+      fetch("/api/jobs").then((r) => r.json()),
+      fetch("/api/results").then((r) => r.json()),
+    ]);
+    const jobs = jr.jobs || [];
+    $("jobs").innerHTML = jobs.length
+      ? jobs.slice(0, 12).map(jobCard).join("")
+      : '<div class="empty">nothing queued</div>';
+    $("results").innerHTML = (rr.results || []).length
+      ? rr.results.map(resultCard).join("")
+      : '<div class="empty">no turntables yet — drop a photo above</div>';
+    wireVideos();
+  } catch (e) { /* server restarting; keep last view */ }
+}
+
+refresh();
+pollTimer = setInterval(refresh, 2000);
+</script>
+</body>
+</html>
