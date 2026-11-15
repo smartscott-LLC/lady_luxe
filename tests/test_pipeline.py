@@ -130,6 +130,9 @@ def make_args(tmp_path: Path, image: Path, **overrides: Any) -> argparse.Namespa
         if isinstance(value, bool):
             if value:
                 argv.append(flag)
+        elif isinstance(value, (list, tuple)):
+            for item in value:
+                argv += [flag, str(item)]
         elif value is not None:
             argv += [flag, str(value)]
     args = gt.build_parser().parse_args(argv)
@@ -160,6 +163,31 @@ def test_cli_seed_env_override(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) 
     args = make_args(tmp_path, image, seed=123)
     settings = gt.build_settings(args)
     assert settings.seed == 123  # explicit flag beats env
+
+
+def test_default_loras_are_fast_h3_flf2v_pair() -> None:
+    assert gt.DEFAULT_VIDEO_MODEL == "minimax-h3-fastvideo-int8_flf2v_turbo"
+    slugs = [slug for slug, _ in gt.DEFAULT_LORAS]
+    assert slugs == ["h3-mystic-xxx-v5", "h3-vbvr-video-reasoning"]
+    strengths = [s for _, s in gt.DEFAULT_LORAS]
+    assert all(0.0 <= s <= 1.0 for s in strengths)
+    assert strengths[0] <= 0.6  # Mystic X artifact threshold
+
+
+def test_lora_flag_parsing(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    image = _make_image(tmp_path / "in.jpg")
+    args = make_args(tmp_path, image, lora=["h3-mystic-xxx-v5:0.4", "h3-vbvr-video-reasoning"])
+    monkeypatch.delenv("SOGNI_TURNTABLE_LORAS", raising=False)
+    settings = gt.build_settings(args)
+    assert settings.loras == (("h3-mystic-xxx-v5", 0.4), ("h3-vbvr-video-reasoning", 0.8))
+
+
+def test_lora_env_parsing(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    image = _make_image(tmp_path / "in.jpg")
+    monkeypatch.setenv("SOGNI_TURNTABLE_LORAS", "h3-mystic-xxx-v5:0.3")
+    args = make_args(tmp_path, image)
+    settings = gt.build_settings(args)
+    assert settings.loras == (("h3-mystic-xxx-v5", 0.3),)
 
 
 def test_cli_canvas_snaps_to_h3_rules(tmp_path: Path) -> None:

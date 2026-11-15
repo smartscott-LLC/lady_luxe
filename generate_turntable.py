@@ -81,13 +81,20 @@ H3_MAX_DURATION = MINIMAX_H3_MAX_FRAMES / FPS   # ≈15.0833 s
 MIN_DIMENSION = 512                      # Krea identity-edit custom-size floor
 MAX_DIMENSION = 2048                     # Krea identity-edit custom-size ceiling
 
-DEFAULT_VIDEO_MODEL = "minimax-h3-fl2va-fp8_flf2v_turbo"
+DEFAULT_VIDEO_MODEL = "minimax-h3-fastvideo-int8_flf2v_turbo"  # FastH3 Turbo, 4 steps
 VIDEO_MODEL_CHOICES = (
     "minimax-h3-fl2va-fp8_flf2v",
     "minimax-h3-fl2va-fp8_flf2v_balanced",
     "minimax-h3-fl2va-fp8_flf2v_turbo",
     "minimax-h3-fastvideo-int8_flf2v_turbo",
     "minimax-h3-fastvideo-int8_flf2v_turbo_2stage",
+)
+# Catalog LoRAs verified against the user's account (compatible with every
+# FastH3 flf2v id). Mystic X v5: keep ≤ 0.6 — users report artifacts above 0.8.
+# VBVR Video Reasoning: prompt-adherence LoRA; wants literal, stepwise prompts.
+DEFAULT_LORAS: tuple[tuple[str, float], ...] = (
+    ("h3-mystic-xxx-v5", 0.5),
+    ("h3-vbvr-video-reasoning", 0.8),
 )
 DEFAULT_EDIT_MODEL = "krea2_identity_edit_v1_2"
 EDIT_MODEL_FALLBACK = "dark_beast_krea2_identity_edit_v1_2"
@@ -158,18 +165,19 @@ ANGLE_EDIT_PROMPT = (
 )
 
 VIDEO_PROMPT = (
-    "luxury fashion editorial cinematography: the model performs one slow, "
-    "controlled 360-degree pirouette on a fixed mark, full body in frame, "
-    "tripod-locked camera, no zoom, no pan, no cuts. She settles and holds a "
-    "deliberate editorial pose at each quarter turn — front, right profile, back, "
-    "left profile — then continues the rotation smoothly. Fabric flows naturally "
-    "with the turn; garment design, color, fit and silhouette stay perfectly "
-    "consistent through the full rotation; face, identity and body proportions "
-    "unchanged; studio lighting, floor and contact shadows consistent throughout; "
-    "the clip ends exactly on the opening front pose for a seamless loop. "
-    "Photorealistic, high detail, stable, no morphing, no flicker, no warping. "
-    "Avoid: garment morphing, outfit changes, face drift, extra limbs, camera "
-    "shake, zooming, scene cuts, stutter{extra}"
+    "luxury fashion editorial video. Starting state: the model stands still, "
+    "facing the camera, full body head-to-heel in frame, holding an editorial "
+    "pose. Action, in order: she rotates 90 degrees right and holds still in a "
+    "profile pose; continues rotating to show her back and holds still showing "
+    "the rear of the garment; continues rotating 90 degrees to the left profile "
+    "and holds; completes the final quarter turn and stops exactly on the "
+    "starting front pose, motionless. End state: identical to the first frame, "
+    "so the clip loops seamlessly. The camera is tripod-locked: no zoom, no "
+    "pan, no cuts, no shake. Fabric moves naturally only while she turns; "
+    "garment design, color, fit and silhouette stay identical through the full "
+    "rotation; her face, identity and body proportions never change; studio "
+    "lighting, floor and contact shadows stay constant. Photorealistic, high "
+    "detail, no morphing, no flicker, no warping{extra}"
 )
 
 NEGATIVE_EDIT_PROMPT = (
@@ -413,6 +421,9 @@ def build_parser() -> argparse.ArgumentParser:
         "--network", choices=("fast", "relaxed"), default=DEFAULT_NETWORK, help="Supernet queue"
     )
     parser.add_argument("--video-model", default=DEFAULT_VIDEO_MODEL, choices=VIDEO_MODEL_CHOICES)
+    parser.add_argument("--lora", action="append", default=None, metavar="SLUG[:STRENGTH]",
+        help="Video LoRA to attach (repeatable). Defaults: "
+        + " ".join(f"{slug}:{strength}" for slug, strength in DEFAULT_LORAS))
     parser.add_argument("--edit-model", default=None, help="Identity edit model "
         f"(default {DEFAULT_EDIT_MODEL})")
     parser.add_argument("--edit-steps", type=int, default=DEFAULT_EDIT_STEPS)
@@ -488,6 +499,7 @@ class Settings(BaseModel):
     seed: int = DEFAULT_SEED
     network: str = DEFAULT_NETWORK
     video_model: str = DEFAULT_VIDEO_MODEL
+    loras: tuple[tuple[str, float], ...] = DEFAULT_LORAS
     edit_model: str = DEFAULT_EDIT_MODEL
     edit_steps: int = DEFAULT_EDIT_STEPS
     edit_guidance: float = DEFAULT_EDIT_GUIDANCE
@@ -622,6 +634,30 @@ def build_settings(args: argparse.Namespace) -> Settings:
         "network": os.environ.get("SOGNI_TURNTABLE_NETWORK", DEFAULT_NETWORK),
     }
     seed_env = os.environ.get("SOGNI_TURNTABLE_SEED")
+    lora_env = os.environ.get("SOGNI_TURNTABLE_LORAS", "").strip()
+    loras = DEFAULT_LORAS
+    if lora_env:
+        try:
+            loras = tuple(
+                (p, float(s)) for p, s in (
+                    (lambda part: (part.split(":")[0].strip(), float(part.split(":")[1]) if ":" in part else 0.8))(part)
+                    for part in lora_env.split(",") if part.strip()
+                )
+            )
+        except (ValueError, IndexError):
+            raise PipelineUsageError(f"SOGNI_TURNTABLE_LORAS must be slug:strength pairs, got {lora_env!r}") from None
+    if args.lora:
+        parsed: list[tuple[str, float]] = []
+        for spec in args.lora:
+            slug, _, strength = spec.partition(":")
+            slug = slug.strip()
+            if not slug:
+                raise PipelineUsageError(f"--lora needs a slug, got {spec!r}")
+            try:
+                parsed.append((slug, float(strength) if strength else 0.8))
+            except ValueError:
+                raise PipelineUsageError(f"--lora strength must be a number, got {spec!r}") from None
+        loras = tuple(parsed)
     payload: dict[str, Any] = {
         "input_path": args.input,
         "output_dir": args.output_dir,
@@ -639,6 +675,7 @@ def build_settings(args: argparse.Namespace) -> Settings:
         ),
         "network": args.network if args.network != DEFAULT_NETWORK else env_defaults["network"],
         "video_model": args.video_model if args.video_model != DEFAULT_VIDEO_MODEL else env_defaults["video_model"],
+        "loras": loras,
         "edit_model": args.edit_model or env_defaults["edit_model"],
         "edit_steps": args.edit_steps,
         "edit_guidance": args.edit_guidance,
@@ -1481,6 +1518,8 @@ class GenerationGateway:
                 reference_image=str(reference_image),
                 reference_image_end=str(reference_image_end),
                 keyframes=keyframes,
+                loras=[slug for slug, _strength in self.settings.loras] or None,
+                lora_strengths=[strength for _slug, strength in self.settings.loras] or None,
                 seed=seed,
                 network=self.settings.network,
             )
@@ -1972,6 +2011,7 @@ class Pipeline:
                 "edit_model": settings.edit_model,
                 "network": settings.network,
                 "seed": settings.seed,
+                "loras": [{"slug": slug, "strength": strength} for slug, strength in settings.loras],
                 "fps": probe.fps or settings.fps,
                 "frames": probe.frames or plan.total_frames,
                 "duration_s": round((probe.frames or plan.total_frames) / settings.fps, 4),
