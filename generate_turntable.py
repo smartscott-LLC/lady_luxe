@@ -1399,6 +1399,17 @@ class GenerationGateway:
             urls = list(project.result_urls)
             url = urls[0] if urls else None
         if not url:
+            withheld = any(
+                bool(getattr(job, "is_nsfw", False))
+                or bool(getattr(job, "_data", {}).get("sensitiveContentWithheld"))
+                for job in jobs
+            )
+            if withheld:
+                raise PipelineError(
+                    "Sogni's account-level Sensitive Content Filter withheld the "
+                    "result. Disable it in your Sogni account settings "
+                    "(portal -> account -> content) and re-run this job."
+                )
             raise PipelineError(
                 f"project {project.id} completed without a result URL "
                 f"(status={project.status}, error={project.error})"
