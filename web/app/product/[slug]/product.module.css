@@ -1,0 +1,150 @@
+.page {
+  min-height: 100vh;
+  background: #17141a;
+  color: #e8e2d9;
+  padding: 48px 24px 96px;
+}
+
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.crumbs {
+  display: flex;
+  gap: 10px;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #9a9184;
+  margin-bottom: 28px;
+}
+
+.crumbs a {
+  color: #c9a962;
+  text-decoration: none;
+}
+
+.crumbs a:hover {
+  text-decoration: underline;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(300px, 460px) 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+@media (max-width: 760px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+.stageColumn {
+  position: sticky;
+  top: 32px;
+}
+
+@media (max-width: 760px) {
+  .stageColumn {
+    position: static;
+  }
+}
+
+.hero {
+  width: 100%;
+  border-radius: 16px;
+  display: block;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+.infoColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 8px;
+}
+
+.brand {
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #c9a962;
+}
+
+.name {
+  font-size: 40px;
+  line-height: 1.1;
+  font-weight: normal;
+  color: #e8e2d9;
+  margin: 0;
+}
+
+.tag {
+  font-style: italic;
+  color: #9a9184;
+  margin: 0;
+}
+
+.price {
+  font-size: 28px;
+  color: #c9a962;
+  margin: 8px 0 0;
+}
+
+.currency {
+  font-size: 14px;
+  color: #9a9184;
+  letter-spacing: 0.1em;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.badge {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #7fb069;
+  border: 1px solid rgba(127, 176, 105, 0.45);
+  border-radius: 999px;
+  padding: 4px 12px;
+}
+
+.story {
+  color: #b8b0a4;
+  line-height: 1.7;
+  max-width: 52ch;
+  margin: 8px 0 0;
+}
+
+.cta {
+  margin-top: 12px;
+  padding: 16px 28px;
+  font: inherit;
+  font-size: 15px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #17141a;
+  background: linear-gradient(160deg, #e8c987, #c9a962);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.cta:disabled {
+  cursor: not-allowed;
+  filter: saturate(0.6) brightness(0.85);
+}
+
+.fine {
+  font-size: 12px;
+  color: #9a9184;
+  max-width: 46ch;
+}

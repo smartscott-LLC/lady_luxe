@@ -1,0 +1,79 @@
+.wrap {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.stage {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #17141a;
+  box-shadow:
+    inset 1px 1px 2px rgba(255, 255, 255, 0.06),
+    inset -1px -1px 2px rgba(0, 0, 0, 0.5),
+    0 18px 40px rgba(0, 0, 0, 0.45);
+  aspect-ratio: 3 / 4;
+}
+
+.film {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+}
+
+.hint {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(232, 226, 217, 0.75);
+  background: rgba(23, 20, 26, 0.55);
+  border: 1px solid rgba(201, 169, 98, 0.35);
+  border-radius: 999px;
+  padding: 4px 12px;
+  pointer-events: none;
+  backdrop-filter: blur(4px);
+}
+
+.poses {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pose,
+.poseActive {
+  font: inherit;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: #c9a962;
+  background: transparent;
+  border: 1px solid rgba(201, 169, 98, 0.4);
+  border-radius: 999px;
+  padding: 6px 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pose:hover {
+  border-color: #c9a962;
+}
+
+.poseActive {
+  background: rgba(201, 169, 98, 0.14);
+  border-color: #c9a962;
+  color: #e8c987;
+}
+
+.caption {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(154, 145, 132, 0.9);
+}
