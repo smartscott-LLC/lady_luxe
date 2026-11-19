@@ -35,7 +35,7 @@ export default function AddToBag({
         JSON.stringify([{ sku, name, price, quantity: 1 }]),
       );
     }
-    router.push("/checkout");
+    router.push("/bag");
   };
 
   return (

@@ -107,9 +107,12 @@ export default function Home() {
                 <li className="nav-item">
                   <a className="nav-link" href="#contact" data-scroll>Contact</a>
                 </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="/bag">Bag</a>
+                </li>
                 <li className="nav-item d-lg-block ml-lg-4">
-                  <a href="#contact" className="btn btn-primary" data-scroll>
-                    <span className="mr-1"><i className="fas fa-feather-alt" /></span> Book a Fitting
+                  <a href="https://smartforms.ladyluxeclub.com/forms/lady_luxe" className="btn btn-primary">
+                    <span className="mr-1"><i className="fas fa-feather-alt" /></span> Concierge
                   </a>
                 </li>
               </ul>
