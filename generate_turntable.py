@@ -146,16 +146,20 @@ BACKGROUND_EDIT_PROMPT = (
 ANGLE_PROMPTS: dict[int, str] = {
     90: (
         "rotate the subject to a full 90-degree right profile view: body facing "
-        "screen right, head in profile, editorial posture, arms relaxed"
+        "screen right, head in profile, editorial posture, arms relaxed. "
+        "Exactly one woman in frame, standing alone"
     ),
     180: (
         "rotate the subject to a full 180-degree back view: her back to camera, "
-        "showing the rear design of the garment, straps, closures and back "
-        "details clearly, head turned slightly over her shoulder"
+        "showing the rear design of the garment and any closures, ties or back "
+        "details clearly, her face not visible or only partially visible in "
+        "profile. Exactly one woman in frame, standing alone, facing away from "
+        "the camera"
     ),
     270: (
         "rotate the subject to a full 270-degree left profile view: body facing "
-        "screen left, head in profile, editorial posture, arms relaxed"
+        "screen left, head in profile, editorial posture, arms relaxed. "
+        "Exactly one woman in frame, standing alone"
     ),
 }
 ANGLE_EDIT_PROMPT = (
@@ -184,8 +188,10 @@ NEGATIVE_EDIT_PROMPT = (
     "different face, altered facial features, changed body proportions, distorted "
     "anatomy, extra limbs, missing limbs, deformed hands, mutated fingers, warped "
     "garment, changed outfit, removed clothing, added clothing, morphing fabric, "
-    "changed hair color, changed hairstyle, different person, blurry, low quality, "
-    "jpeg artifacts, watermark, text, logo, cropped head, cropped feet"
+    "changed hair color, changed hairstyle, different person, duplicated person, "
+    "two women, twins, multiple copies of the same person, cloned figure, "
+    "reflected copy, mirror double, blurry, low quality, jpeg artifacts, "
+    "watermark, text, logo, cropped head, cropped feet"
 )
 
 
