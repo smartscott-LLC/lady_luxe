@@ -124,7 +124,8 @@
   margin: 8px 0 0;
 }
 
-.cta {
+.cta,
+.add-to-bag {
   margin-top: 12px;
   padding: 16px 28px;
   font: inherit;
@@ -138,9 +139,8 @@
   cursor: pointer;
 }
 
-.cta:disabled {
-  cursor: not-allowed;
-  filter: saturate(0.6) brightness(0.85);
+.add-to-bag:hover {
+  filter: brightness(1.08);
 }
 
 .fine {

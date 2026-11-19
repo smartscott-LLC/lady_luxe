@@ -1,0 +1,286 @@
+"use client";
+
+import { useCallback, useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import styles from "./checkout.module.css";
+
+type CartLine = { sku: string; name: string; price: number; quantity: number };
+type OrderResult = {
+  order_id: string;
+  total: number;
+  duty: number;
+  shipping: number;
+  receipt_url?: string;
+};
+
+const CART_KEY = "lady-luxe-cart";
+// Production Square env (SQUARE_ENV=production in project .env).
+const SQUARE_APP_ID = process.env.NEXT_PUBLIC_SQUARE_APP_ID ?? "";
+const SQUARE_LOCATION_ID = process.env.NEXT_PUBLIC_SQUARE_LOCATION_ID ?? "";
+const SQUARE_SDK_URL = "https://web.squarecdn.com/v1/square.js";
+
+declare global {
+  interface Window {
+    Square?: {
+      payments: (
+        appId: string,
+        locationId: string,
+      ) => Promise<{
+        card: (opts?: Record<string, unknown>) => Promise<{
+          attach: (el: Element | string) => Promise<void>;
+          tokenize: () => Promise<{
+            status: string;
+            token?: string;
+            errors?: unknown[];
+          }>;
+        }>;
+      }>;
+    };
+  }
+}
+
+function loadSquareSdk(): Promise<void> {
+  return new Promise((resolve, reject) => {
+    if (window.Square) return resolve();
+    const existing = document.querySelector(`script[src="${SQUARE_SDK_URL}"]`);
+    if (existing) {
+      existing.addEventListener("load", () => resolve());
+      return;
+    }
+    const script = document.createElement("script");
+    script.src = SQUARE_SDK_URL;
+    script.onload = () => resolve();
+    script.onerror = () => reject(new Error("Square SDK failed to load"));
+    document.head.appendChild(script);
+  });
+}
+
+function readCart(): CartLine[] {
+  try {
+    const raw = localStorage.getItem(CART_KEY);
+    return raw ? JSON.parse(raw) : [];
+  } catch {
+    return [];
+  }
+}
+
+export default function CheckoutPage() {
+  const [cart, setCart] = useState<CartLine[]>([]);
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<
+    "idle" | "card-loading" | "ready" | "submitting" | "paid" | "error"
+  >("idle");
+  const [result, setResult] = useState<OrderResult | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const cardRef = useRef<{
+    tokenize: () => Promise<{ status: string; token?: string; errors?: unknown[] }>;
+  } | null>(null);
+
+  useEffect(() => {
+    setCart(readCart());
+  }, []);
+
+  // Mount the Square card form once the cart page is shown.
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        setStatus((s) => (s === "idle" ? "card-loading" : s));
+        await loadSquareSdk();
+        const payments = await window.Square!.payments(
+          SQUARE_APP_ID,
+          SQUARE_LOCATION_ID,
+        );
+        const card = await payments.card({});
+        await card.attach("#card-container");
+        if (!cancelled) {
+          cardRef.current = card;
+          setStatus("ready");
+        }
+      } catch (err) {
+        if (!cancelled) {
+          setError(
+            "Card form could not load. " +
+              (SQUARE_APP_ID
+                ? String(err)
+                : "NEXT_PUBLIC_SQUARE_APP_ID / NEXT_PUBLIC_SQUARE_LOCATION_ID are not set in web/.env.local."),
+          );
+          setStatus("error");
+        }
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const subtotal = cart.reduce((s, l) => s + l.price * l.quantity, 0);
+  const shipping = subtotal >= 150 || subtotal === 0 ? 0 : 9.95;
+
+  const setQty = (sku: string, quantity: number) => {
+    const next = cart
+      .map((l) => (l.sku === sku ? { ...l, quantity } : l))
+      .filter((l) => l.quantity > 0);
+    setCart(next);
+    localStorage.setItem(CART_KEY, JSON.stringify(next));
+  };
+
+  const submit = useCallback(async () => {
+    setError(null);
+    if (!email || !/\S+@\S+\.\S+/.test(email)) {
+      setError("Enter a valid email for the receipt.");
+      return;
+    }
+    if (!cardRef.current) {
+      setError("Card form is not ready yet.");
+      return;
+    }
+    setStatus("submitting");
+    try {
+      const tokenize = await cardRef.current.tokenize();
+      if (tokenize.status !== "OK" || !tokenize.token) {
+        setStatus("ready");
+        setError("Card could not be verified. Check the details and retry.");
+        return;
+      }
+      const resp = await fetch(
+        `${process.env.NEXT_PUBLIC_SUPABASE_URL}/functions/v1/checkout`,
+        {
+          method: "POST",
+          headers: {
+            apikey: process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ?? "",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email,
+            paymentToken: tokenize.token,
+            items: cart.map((l) => ({
+              sku: l.sku,
+              quantity: l.quantity,
+            })),
+          }),
+        },
+      );
+      const data = await resp.json();
+      if (!resp.ok) throw new Error(data.error || "Payment was not accepted.");
+      setCart([]);
+      localStorage.removeItem(CART_KEY);
+      setResult(data);
+      setStatus("paid");
+    } catch (err) {
+      setStatus("ready");
+      setError(String(err instanceof Error ? err.message : err));
+    }
+  }, [cart, email]);
+
+  if (status === "paid" && result) {
+    return (
+      <main className={styles.page}>
+        <div className={styles.done}>
+          <h1>Thank you</h1>
+          <p>
+            Order <strong>{result.order_id.slice(0, 8)}</strong> is confirmed —
+            ${result.total.toFixed(2)} charged. Duties ($
+            {result.duty.toFixed(2)}) were prepaid by Lady Luxe.
+          </p>
+          {result.receipt_url && (
+            <a href={result.receipt_url} target="_blank" rel="noreferrer">
+              View your Square receipt
+            </a>
+          )}
+          <p className={styles.fine}>
+            Your order is forwarded to our atelier for fulfilment. Tracking
+            follows by email.
+          </p>
+          <Link href="/" className={styles.continue}>
+            Continue browsing
+          </Link>
+        </div>
+      </main>
+    );
+  }
+
+  return (
+    <main className={styles.page}>
+      <div className={styles.inner}>
+        <h1 className={styles.title}>Checkout</h1>
+
+        {cart.length === 0 ? (
+          <p className={styles.empty}>
+            Your bag is empty.{" "}
+            <Link href="/" className={styles.link}>
+              Browse the collection
+            </Link>
+          </p>
+        ) : (
+          <div className={styles.grid}>
+            <div className={styles.lines}>
+              {cart.map((l) => (
+                <div key={l.sku} className={styles.line}>
+                  <div>
+                    <p className={styles.lineName}>{l.name}</p>
+                    <p className={styles.linePrice}>
+                      ${l.price.toFixed(2)} × {l.quantity}
+                    </p>
+                  </div>
+                  <div className={styles.qty}>
+                    <button onClick={() => setQty(l.sku, l.quantity - 1)}>
+                      −
+                    </button>
+                    <button onClick={() => setQty(l.sku, l.quantity + 1)}>
+                      +
+                    </button>
+                  </div>
+                </div>
+              ))}
+              <div className={styles.totals}>
+                <p>
+                  <span>Subtotal</span>
+                  <span>${subtotal.toFixed(2)}</span>
+                </p>
+                <p>
+                  <span>Shipping &amp; Handling</span>
+                  <span>{shipping === 0 ? "Free" : `$${shipping.toFixed(2)}`}</span>
+                </p>
+                <p className={styles.duty}>
+                  <span>Duties (prepaid by Lady Luxe)</span>
+                  <span>collected at checkout</span>
+                </p>
+              </div>
+            </div>
+
+            <div className={styles.panel}>
+              <label className={styles.label}>
+                Email
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className={styles.email}
+                  placeholder="you@example.com"
+                />
+              </label>
+              <div id="card-container" className={styles.cardBox} />
+              {error && <p className={styles.error}>{error}</p>}
+              <button
+                className={styles.pay}
+                onClick={submit}
+                disabled={status !== "ready" || status === "submitting"}
+              >
+                {status === "submitting"
+                  ? "Processing…"
+                  : status === "card-loading"
+                    ? "Loading card form…"
+                    : `Pay $${(subtotal + shipping).toFixed(2)}`}
+              </button>
+              <p className={styles.fine}>
+                Duties &amp; import charges are prepaid by Lady Luxe — shown on
+                your receipt, never re-billed.
+              </p>
+            </div>
+          </div>
+        )}
+      </div>
+    </main>
+  );
+}

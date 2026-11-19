@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { createClient } from "@/utils/supabase/server";
 import TurntablePlayer, { TurntableMedia } from "@/components/TurntablePlayer";
+import AddToBag from "@/components/AddToBag";
 import styles from "./product.module.css";
 
 const RETAIL_MARKUP = 2.4;
@@ -99,9 +100,7 @@ function ProductView({ product }: { product: Product }) {
               <p className={styles.story}>{product.story}</p>
             )}
 
-            <button className={styles.cta} type="button" disabled>
-              Add to bag — checkout arriving
-            </button>
+            <AddToBag sku={product.sku} name={product.name} price={retail} />
             <p className={styles.fine}>
               Duties &amp; import charges are prepaid by Lady Luxe — the price
               above is the price.
