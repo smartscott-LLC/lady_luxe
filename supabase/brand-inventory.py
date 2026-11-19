@@ -148,10 +148,12 @@ def main():
             verdict = "set-exempt"
         elif floor and usd < floor:
             verdict = f"BELOW ${floor}"
-            flags.append(rows[-1])
         else:
             verdict = "ok"
-        rows.append({**it, "rrp_f": rrp, "usd": usd, "retail": retail, "verdict": verdict})
+        enriched = {**it, "rrp_f": rrp, "usd": usd, "retail": retail, "verdict": verdict}
+        rows.append(enriched)
+        if verdict.startswith("BELOW"):
+            flags.append(enriched)
 
     out = [
         f"# {brand.title()} — curation sheet",
