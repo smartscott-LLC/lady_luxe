@@ -131,21 +131,21 @@ function ProductView({ product }: { product: Product }) {
   );
 }
 
-export default async function ProductPage({
+export default function ProductPage({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  const { slug } = await params;
   return (
     <Suspense fallback={<div className={styles.page} />}>
-      <ProductLoader slug={slug} />
+      <ProductLoader params={params} />
     </Suspense>
   );
 }
 
-/** Data access lives inside the Suspense boundary so the route can prerender. */
-async function ProductLoader({ slug }: { slug: string }) {
+/** Data access (params + Supabase) lives inside the Suspense boundary so the route can prerender. */
+async function ProductLoader({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const product = await getProduct(slug);
   if (!product) notFound();
   return <ProductView product={product} />;
