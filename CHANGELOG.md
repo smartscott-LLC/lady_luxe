@@ -6,8 +6,17 @@ Format follows [Keep a Changelog](https://keepachangelog.com); dates in UTC-6.
 ## [Unreleased]
 
 ### In progress
+- BN6673 Burgundy Peignoir turntable rendering (~58 SPARK)
 - Storefront product pages with hover-film playback (manifest-driven pose
   snapping, hover play / pause-not-resume via the brand engine)
+
+### Added (2026-11-19)
+- Turntables #2 and #3 verified: YX880 Leopard Robe (seam 2.21) and YX882
+  Mesh Bra Set (2.35) — each 10.125s / 243 frames, ~58 SPARK quoted
+- `docs/sogni-api-endpoints.md`: full Sogni REST surface (86 endpoints,
+  saved from docs.sogni.ai)
+- Fixed docs mix-up: master context file had been renamed to
+  `api_reference.md`; restored to `docs/PROJECT-CONTEXT.md`
 
 ## [2026-11-16]
 

@@ -129,11 +129,18 @@ Turntable Studio (localhost:3002) ──spawns──▶ generate_turntable.py �
 
 ## Product/backlog state
 
+- **Turntable production (Nov 19):** three films delivered and verified —
+  Sasha Set BN6715 (seam 2.31), YX880 Leopard Robe (2.21), YX882 Mesh Bra Set
+  (2.35) — each 10.125s / 243 frames / ~58 SPARK quoted. BN6673 Burgundy
+  Peignoir rendering. Balance portal reads 925.0 (settlement lag — true spend
+  ~175 SPARK). Sasha film is live on the storefront product page
+  (`/product/LL-BEAUTYNIGHTBN6715-G`). Dev server on :3000 was cancelled by
+  the owner at some point — restart with `cd web && npm run dev` when needed.
 - **Frontline batch** (from `/home/server/Downloads/catalog/frontline`, 167
   shots): 59 items fully identified + priced — see
   `supabase/frontline-curation.md` (keep/kill sheet) and
   `supabase/frontline-inventory.json`. 13 items flagged below floor. Owner has
-  not yet marked keepers. First proven turntable: **Sasha-set-1 (BN6715)**.
+  not yet marked keepers.
 - YesX staged picks: YX895/YX896/YX882 now have photos in the frontline batch;
   YX735Q, YX807 still lack photos.
 - **Launch-critical remaining:** Square checkout Edge Function (cart → pay →
