@@ -126,6 +126,13 @@ Turntable Studio (localhost:3002) ──spawns──▶ generate_turntable.py �
    build already installed at `/usr/local/bin/{ffmpeg,ffprobe}` (7.0.2).
 9. Sogni balance endpoint's `net` fields are period ledgers (can read 0); the
    subscription SPARK pool is separate. `sogni-agent doctor --json` shows it.
+10. **Subject duplication in turntables:** the video model can duplicate the
+    model (two copies side-by-side) when the SOURCE 180°/270° keyframe is
+    already duplicated. Diagnose by inspecting `build/<asset>/keyframes/` —
+    if the keyframe is bad, the video faithfully replicated it. Failure mode
+    shows on loose/flowy garments (satin robes) where the silhouette has weak
+    anchors. Fix: re-run with a different `--seed` (no `--resume`) to
+    regenerate keyframes. Do NOT `--resume` over a bad keyframe.
 
 ## Product/backlog state
 

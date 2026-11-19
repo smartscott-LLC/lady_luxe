@@ -13,6 +13,9 @@ Format follows [Keep a Changelog](https://keepachangelog.com); dates in UTC-6.
 ### Added (2026-11-19)
 - Turntables #2 and #3 verified: YX880 Leopard Robe (seam 2.21) and YX882
   Mesh Bra Set (2.35) — each 10.125s / 243 frames, ~58 SPARK quoted
+- BN6673 Burgundy Peignoir: first render failed (subject duplicated in the
+  180° keyframe — loose satin garment failure mode); retrying with a
+  different seed. Failure pattern recorded in PROJECT-CONTEXT.md gotchas
 - `docs/sogni-api-endpoints.md`: full Sogni REST surface (86 endpoints,
   saved from docs.sogni.ai)
 - Fixed docs mix-up: master context file had been renamed to
