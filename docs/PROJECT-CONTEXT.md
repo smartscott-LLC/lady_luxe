@@ -127,12 +127,15 @@ Turntable Studio (localhost:3002) ──spawns──▶ generate_turntable.py �
 9. Sogni balance endpoint's `net` fields are period ledgers (can read 0); the
    subscription SPARK pool is separate. `sogni-agent doctor --json` shows it.
 10. **Subject duplication in turntables:** the video model can duplicate the
-    model (two copies side-by-side) when the SOURCE 180°/270° keyframe is
-    already duplicated. Diagnose by inspecting `build/<asset>/keyframes/` —
-    if the keyframe is bad, the video faithfully replicated it. Failure mode
-    shows on loose/flowy garments (satin robes) where the silhouette has weak
-    anchors. Fix: re-run with a different `--seed` (no `--resume`) to
-    regenerate keyframes. Do NOT `--resume` over a bad keyframe.
+    model (two copies side-by-side). **Root cause found Nov 19:** the 180°
+    prompt's "head turned slightly over her shoulder" clause was ambiguous;
+    the edit model rendered both interpretations side by side. Fixed
+    permanently in `generate_turntable.py` (v3, commit 9ab763a): all angle
+    prompts say "exactly one woman in frame, standing alone", the 180° prompt
+    drops the over-shoulder clause (face partially visible in profile), and
+    the negative prompt gained the duplication family. Diagnose by inspecting
+    `build/<asset>/keyframes/` — if the keyframe is duplicated, the video
+    faithfully replicates it. A seed change does NOT fix it.
 
 ## Product/backlog state
 
