@@ -137,13 +137,16 @@ export default async function ProductPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const product = await getProduct(slug);
-
-  if (!product) notFound();
-
   return (
     <Suspense fallback={<div className={styles.page} />}>
-      <ProductView product={product} />
+      <ProductLoader slug={slug} />
     </Suspense>
   );
+}
+
+/** Data access lives inside the Suspense boundary so the route can prerender. */
+async function ProductLoader({ slug }: { slug: string }) {
+  const product = await getProduct(slug);
+  if (!product) notFound();
+  return <ProductView product={product} />;
 }
