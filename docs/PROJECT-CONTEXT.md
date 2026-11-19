@@ -54,6 +54,9 @@ Turntable Studio (localhost:3002) ──spawns──▶ generate_turntable.py �
 
 | Path | What it is |
 |---|---|
+| `docs/sogni-api-endpoints.md` | Full Sogni REST API surface (86 endpoints, saved from docs.sogni.ai — generation, project status, media utils, personal LoRAs, chat, balances, analytics) |
+| `docs/PROJECT-CONTEXT.md` | This file — the master memory |
+|---|---|
 | `web/` | Next.js 16 storefront (Vercel Root Directory = `web`). Single page so far: hero video, marquee, Maison, newsletter |
 | `web/components/` | `HeroVideo`, `LuxeMarquee` (hydration sentinel), `LuxeRuntime` (owns engine script), `useLuxeBind` |
 | `web/public/js/lady-luxe.js` | Hover-video/marquee engine. **Keep in sync with `brand/lady-luxe.js`** (brand/ is source of truth) |
