@@ -1,0 +1,1134 @@
+[
+ {
+  "key": "0014",
+  "sku": "GRACYA0014ANASTASIAWHITE32-G",
+  "title": "Gracya Anastasia Corset",
+  "brand": "Gracya",
+  "shots": [
+   "0014_38.jpg"
+  ],
+  "rrp": "105.49",
+  "trade": "47.79",
+  "rrp_f": 105.49,
+  "usd": 133.97,
+  "retail": 114.7,
+  "verdict": "ok"
+ },
+ {
+  "key": "0014_closeup",
+  "sku": "GRACYA0014ANASTASIAWHITE32-G",
+  "title": "Gracya Anastasia Corset",
+  "brand": "Gracya",
+  "shots": [
+   "0014_closeup_1.jpg"
+  ],
+  "rrp": "105.49",
+  "trade": "47.79",
+  "rrp_f": 105.49,
+  "usd": 133.97,
+  "retail": 114.7,
+  "verdict": "ok"
+ },
+ {
+  "key": "0017",
+  "sku": "GRACYA0017MADONNAWHITE32-G",
+  "title": "Gracya Madonna Corset",
+  "brand": "Gracya",
+  "shots": [
+   "0017.jpg"
+  ],
+  "rrp": "108.49",
+  "trade": "49.27",
+  "rrp_f": 108.49,
+  "usd": 137.78,
+  "retail": 118.25,
+  "verdict": "ok"
+ },
+ {
+  "key": "0030_cream",
+  "sku": "GRACYA0030NATALIECREAM32-G",
+  "title": "Gracya Natalie Cream",
+  "brand": "Gracya",
+  "shots": [
+   "0030_cream.jpg"
+  ],
+  "rrp": "49.99",
+  "trade": "22.72",
+  "rrp_f": 49.99,
+  "usd": 63.49,
+  "retail": 54.53,
+  "verdict": "BELOW $70"
+ },
+ {
+  "key": "0030_white",
+  "sku": "",
+  "title": "",
+  "brand": "Gracya",
+  "shots": [
+   "0030_white.jpg"
+  ],
+  "rrp": "",
+  "trade": "",
+  "rrp_f": 0.0,
+  "usd": 0.0,
+  "retail": 0,
+  "verdict": "NO PRICE"
+ },
+ {
+  "key": "005",
+  "sku": "",
+  "title": "",
+  "brand": "Gracya",
+  "shots": [
+   "005.jpg"
+  ],
+  "rrp": "",
+  "trade": "",
+  "rrp_f": 0.0,
+  "usd": 0.0,
+  "retail": 0,
+  "verdict": "NO PRICE"
+ },
+ {
+  "key": "100",
+  "sku": "",
+  "title": "",
+  "brand": "Gracya",
+  "shots": [
+   "100.jpg"
+  ],
+  "rrp": "",
+  "trade": "",
+  "rrp_f": 0.0,
+  "usd": 0.0,
+  "retail": 0,
+  "verdict": "NO PRICE"
+ },
+ {
+  "key": "104",
+  "sku": "GRACYA104VICTORIAWHITE-G",
+  "title": "Gracya Victoria Bra White",
+  "brand": "Gracya",
+  "shots": [
+   "104_1.jpg",
+   "104_105_1.jpg",
+   "104_105_2.jpg",
+   "104_2.jpg"
+  ],
+  "rrp": "28.99",
+  "trade": "13.13",
+  "rrp_f": 28.99,
+  "usd": 36.82,
+  "retail": 31.51,
+  "verdict": "BELOW $70"
+ },
+ {
+  "key": "105",
+  "sku": "GRACYA105VICTORIAWHITE-G",
+  "title": "Gracya Victoria Thong White",
+  "brand": "Gracya",
+  "shots": [
+   "105_1.jpg",
+   "105_2.jpg"
+  ],
+  "rrp": "21.99",
+  "trade": "9.89",
+  "rrp_f": 21.99,
+  "usd": 27.93,
+  "retail": 23.74,
+  "verdict": "BELOW $70"
+ },
+ {
+  "key": "128",
+  "sku": "GRACYA128BUTTERFLY30-G",
+  "title": "Gracya Butterfly Bra",
+  "brand": "Gracya",
+  "shots": [
+   "128.jpg"
+  ],
+  "rrp": "",
+  "trade": "",
+  "rrp_f": 0.0,
+  "usd": 0.0,
+  "retail": 0,
+  "verdict": "NO PRICE"
+ },
+ {
+  "key": "129",
+  "sku": "GRACYA129CINDY32-G",
+  "title": "Gracya Cindy Push Up Bra",
+  "brand": "Gracya",
+  "shots": [
+   "129.jpg"
+  ],
+  "rrp": "24.49",
+  "trade": "11.11",
+  "rrp_f": 24.49,
+  "usd": 31.1,
+  "retail": 26.66,
+  "verdict": "BELOW $70"
+ },
+ {
+  "key": "129__129s",
+  "sku": "GRACYA129CINDY32-G",
+  "title": "Gracya Cindy Push Up Bra",
+  "brand": "Gracya",
+  "shots": [
+   "129__129S.jpg"
+  ],
+  "rrp": "24.49",
+  "trade": "11.11",
+  "rrp_f": 24.49,
+  "usd": 31.1,
+  "retail": 26.66,
+  "verdict": "BELOW $70"
+ },
+ {
+  "key": "129s",
+  "sku": "GRACYA129SCINDYTHONG-G",
+  "title": "Gracya Cindy Thong",
+  "brand": "Gracya",
+  "shots": [
+   "129s.jpg"
+  ],
+  "rrp": "14.99",
+  "trade": "6.78",
+  "rrp_f": 14.99,
+  "usd": 19.04,
+  "retail": 16.27,
+  "verdict": "BELOW $70"
+ },
+ {
+  "key": "130",
+  "sku": "GRACYA130OLA32-G",
+  "title": "Gracya Ola Push Up Bra",
+  "brand": "Gracya",
+  "shots": [
+   "130.jpg"
+  ],
+  "rrp": "34.49",
+  "trade": "15.57",
+  "rrp_f": 34.49,
+  "usd": 43.8,
+  "retail": 37.37,
+  "verdict": "BELOW $70"
+ },
+ {
+  "key": "130__130s",
+  "sku": "GRACYA130OLA32-G",
+  "title": "Gracya Ola Push Up Bra",
+  "brand": "Gracya",
+  "shots": [
+   "130__130s.jpg"
+  ],
+  "rrp": "34.49",
+  "trade": "15.57",
+  "rrp_f": 34.49,
+  "usd": 43.8,
+  "retail": 37.37,
+  "verdict": "BELOW $70"
+ },
+ {
+  "key": "130s",
+  "sku": "GRACYA130OLA32-G",
+  "title": "Gracya Ola Push Up Bra",
+  "brand": "Gracya",
+  "shots": [
+   "130s.jpg"
+  ],
+  "rrp": "34.49",
+  "trade": "15.57",
+  "rrp_f": 34.49,
+  "usd": 43.8,
+  "retail": 37.37,
+  "verdict": "BELOW $70"
+ },
+ {
+  "key": "131",
+  "sku": "",
+  "title": "",
+  "brand": "Gracya",
+  "shots": [
+   "131.jpg"
+  ],
+  "rrp": "",
+  "trade": "",
+  "rrp_f": 0.0,
+  "usd": 0.0,
+  "retail": 0,
+  "verdict": "NO PRICE"
+ },
+ {
+  "key": "131f",
+  "sku": "GRACYA131FPAOLABRIEF-G",
+  "title": "Gracya Paola Brief",
+  "brand": "Gracya",
+  "shots": [
+   "131f.jpg"
+  ],
+  "rrp": "24.99",
+  "trade": "11.36",
+  "rrp_f": 24.99,
+  "usd": 31.74,
+  "retail": 27.26,
+  "verdict": "BELOW $70"
+ },
+ {
+  "key": "133",
+  "sku": "GRACYA133MADONNA30-G",
+  "title": "Gracya Madonna Bra",
+  "brand": "Gracya",
+  "shots": [
+   "133_02.jpg"
+  ],
+  "rrp": "68.49",
+  "trade": "31.00",
+  "rrp_f": 68.49,
+  "usd": 86.98,
+  "retail": 74.4,
+  "verdict": "ok"
+ },
+ {
+  "key": "133_133s_133p",
+  "sku": "GRACYA133MADONNA30-G",
+  "title": "Gracya Madonna Bra",
+  "brand": "Gracya",
+  "shots": [
+   "133_133s_133p.jpg"
+  ],
+  "rrp": "68.49",
+  "trade": "31.00",
+  "rrp_f": 68.49,
+  "usd": 86.98,
+  "retail": 74.4,
+  "verdict": "ok"
+ },
+ {
+  "key": "137",
+  "sku": "GRACYA137ROKOKOII30-G",
+  "title": "Gracya Rokoko II Bra",
+  "brand": "Gracya",
+  "shots": [
+   "137.jpg"
+  ],
+  "rrp": "49.99",
+  "trade": "22.72",
+  "rrp_f": 49.99,
+  "usd": 63.49,
+  "retail": 54.53,
+  "verdict": "BELOW $70"
+ },
+ {
+  "key": "137_137s_137p",
+  "sku": "GRACYA137ROKOKOII30-G",
+  "title": "Gracya Rokoko II Bra",
+  "brand": "Gracya",
+  "shots": [
+   "137_137s_137p.jpg"
+  ],
+  "rrp": "49.99",
+  "trade": "22.72",
+  "rrp_f": 49.99,
+  "usd": 63.49,
+  "retail": 54.53,
+  "verdict": "BELOW $70"
+ },
+ {
+  "key": "138s",
+  "sku": "GRACYA138SCRYSTAL-G",
+  "title": "Gracya Crystal Thong",
+  "brand": "Gracya",
+  "shots": [
+   "138s.jpg"
+  ],
+  "rrp": "32.49",
+  "trade": "14.57",
+  "rrp_f": 32.49,
+  "usd": 41.26,
+  "retail": 34.97,
+  "verdict": "BELOW $70"
+ },
+ {
+  "key": "139",
+  "sku": "GRACYA139JONQUIL30-G",
+  "title": "Gracya Jonquil Bra",
+  "brand": "Gracya",
+  "shots": [
+   "139.jpg"
+  ],
+  "rrp": "69.99",
+  "trade": "31.81",
+  "rrp_f": 69.99,
+  "usd": 88.89,
+  "retail": 76.34,
+  "verdict": "ok"
+ },
+ {
+  "key": "139_139s_139p",
+  "sku": "GRACYA139JONQUIL30-G",
+  "title": "Gracya Jonquil Bra",
+  "brand": "Gracya",
+  "shots": [
+   "139_139s_139p.jpg",
+   "139_139s_139p_1.jpg"
+  ],
+  "rrp": "69.99",
+  "trade": "31.81",
+  "rrp_f": 69.99,
+  "usd": 88.89,
+  "retail": 76.34,
+  "verdict": "ok"
+ },
+ {
+  "key": "139s_139p",
+  "sku": "GRACYA139JONQUILWHITE-G",
+  "title": "Gracya Jonquil Bra White",
+  "brand": "Gracya",
+  "shots": [
+   "139s_139p.jpg",
+   "139s_139p_2.jpg"
+  ],
+  "rrp": "69.99",
+  "trade": "31.81",
+  "rrp_f": 69.99,
+  "usd": 88.89,
+  "retail": 76.34,
+  "verdict": "ok"
+ },
+ {
+  "key": "140",
+  "sku": "GRACYA140GLOW30-G",
+  "title": "Gracya Glow Balcony Bra",
+  "brand": "Gracya",
+  "shots": [
+   "140.jpg"
+  ],
+  "rrp": "43.49",
+  "trade": "19.63",
+  "rrp_f": 43.49,
+  "usd": 55.23,
+  "retail": 47.11,
+  "verdict": "BELOW $70"
+ },
+ {
+  "key": "140_140s",
+  "sku": "GRACYA140GLOW30-G",
+  "title": "Gracya Glow Balcony Bra",
+  "brand": "Gracya",
+  "shots": [
+   "140_140s.jpg"
+  ],
+  "rrp": "43.49",
+  "trade": "19.63",
+  "rrp_f": 43.49,
+  "usd": 55.23,
+  "retail": 47.11,
+  "verdict": "BELOW $70"
+ },
+ {
+  "key": "b",
+  "sku": "GRACYAB01WHITE30-G",
+  "title": "Lucy Bra White",
+  "brand": "Gracya",
+  "shots": [
+   "b01.jpg",
+   "b135.jpg",
+   "b151.jpg",
+   "b164.jpg",
+   "b184.jpg",
+   "b186.jpg",
+   "b189.jpg",
+   "b190.jpg"
+  ],
+  "rrp": "29.99",
+  "trade": "13.54",
+  "rrp_f": 29.99,
+  "usd": 38.09,
+  "retail": 32.5,
+  "verdict": "BELOW $70"
+ },
+ {
+  "key": "b01_cream",
+  "sku": "GRACYAB01CREAM30-G",
+  "title": "Gracya Lucy Bra Cream",
+  "brand": "Gracya",
+  "shots": [
+   "b01_cream.jpg"
+  ],
+  "rrp": "29.99",
+  "trade": "13.54",
+  "rrp_f": 29.99,
+  "usd": 38.09,
+  "retail": 32.5,
+  "verdict": "BELOW $70"
+ },
+ {
+  "key": "b01_sb01_pb01_cream",
+  "sku": "GRACYAB01WHITE30-G",
+  "title": "Lucy Bra White",
+  "brand": "Gracya",
+  "shots": [
+   "b01_sb01_pb01_cream.jpg",
+   "b01_sb01_pb01_cream_77.jpg"
+  ],
+  "rrp": "29.99",
+  "trade": "13.54",
+  "rrp_f": 29.99,
+  "usd": 38.09,
+  "retail": 32.5,
+  "verdict": "BELOW $70"
+ },
+ {
+  "key": "b151_s",
+  "sku": "GRACYAB151CARMINIA32-G",
+  "title": "Gracya Carmina Bra",
+  "brand": "Gracya",
+  "shots": [
+   "b151_s151.jpg"
+  ],
+  "rrp": "39.99",
+  "trade": "18.17",
+  "rrp_f": 39.99,
+  "usd": 50.79,
+  "retail": 43.61,
+  "verdict": "BELOW $70"
+ },
+ {
+  "key": "b162_f",
+  "sku": "GRACYAB162BLISS32-G",
+  "title": "Gracya B162 Bliss Bra",
+  "brand": "Gracya",
+  "shots": [
+   "b162_f162.jpg"
+  ],
+  "rrp": "79.99",
+  "trade": "36.35",
+  "rrp_f": 79.99,
+  "usd": 101.59,
+  "retail": 87.24,
+  "verdict": "ok"
+ },
+ {
+  "key": "b164_f",
+  "sku": "GRACYAB164VENUS30-G",
+  "title": "Gracya  Venus Bra",
+  "brand": "Gracya",
+  "shots": [
+   "b164_f164.jpg"
+  ],
+  "rrp": "58.99",
+  "trade": "26.76",
+  "rrp_f": 58.99,
+  "usd": 74.92,
+  "retail": 64.22,
+  "verdict": "ok"
+ },
+ {
+  "key": "b165_f",
+  "sku": "",
+  "title": "",
+  "brand": "Gracya",
+  "shots": [
+   "b165_f165.jpg"
+  ],
+  "rrp": "",
+  "trade": "",
+  "rrp_f": 0.0,
+  "usd": 0.0,
+  "retail": 0,
+  "verdict": "NO PRICE"
+ },
+ {
+  "key": "b184_s184_p",
+  "sku": "",
+  "title": "",
+  "brand": "Gracya",
+  "shots": [
+   "b184_s184_p184.jpg"
+  ],
+  "rrp": "",
+  "trade": "",
+  "rrp_f": 0.0,
+  "usd": 0.0,
+  "retail": 0,
+  "verdict": "NO PRICE"
+ },
+ {
+  "key": "b186_s186_p",
+  "sku": "GRACYAB186BRA32-G",
+  "title": "Gracya Mon Amour Bra",
+  "brand": "Gracya",
+  "shots": [
+   "b186_s186_p186.jpg"
+  ],
+  "rrp": "53.49",
+  "trade": "24.30",
+  "rrp_f": 53.49,
+  "usd": 67.93,
+  "retail": 58.32,
+  "verdict": "BELOW $70"
+ },
+ {
+  "key": "b189_s",
+  "sku": "GRACYAB189CLEO30-G",
+  "title": "Gracya Cleo Bra",
+  "brand": "Gracya",
+  "shots": [
+   "b189_s189.jpg"
+  ],
+  "rrp": "23.99",
+  "trade": "10.74",
+  "rrp_f": 23.99,
+  "usd": 30.47,
+  "retail": 25.78,
+  "verdict": "BELOW $70"
+ },
+ {
+  "key": "b190_f",
+  "sku": "",
+  "title": "",
+  "brand": "Gracya",
+  "shots": [
+   "b190_f190.jpg"
+  ],
+  "rrp": "",
+  "trade": "",
+  "rrp_f": 0.0,
+  "usd": 0.0,
+  "retail": 0,
+  "verdict": "NO PRICE"
+ },
+ {
+  "key": "bh",
+  "sku": "GRACYABH01ROKOKO30-G",
+  "title": "Gracya Rokoko Bra",
+  "brand": "Gracya",
+  "shots": [
+   "bh01.jpg"
+  ],
+  "rrp": "35.49",
+  "trade": "15.90",
+  "rrp_f": 35.49,
+  "usd": 45.07,
+  "retail": 38.16,
+  "verdict": "BELOW $70"
+ },
+ {
+  "key": "bh01_sbh01_pbh",
+  "sku": "GRACYABH01ROKOKO30-G",
+  "title": "Gracya Rokoko Bra",
+  "brand": "Gracya",
+  "shots": [
+   "bh01_sbh01_pbh01.jpg"
+  ],
+  "rrp": "35.49",
+  "trade": "15.90",
+  "rrp_f": 35.49,
+  "usd": 45.07,
+  "retail": 38.16,
+  "verdict": "BELOW $70"
+ },
+ {
+  "key": "f",
+  "sku": "GRACYAF146EVELYNBRIEF-G",
+  "title": "Gracya Evelyn Brief",
+  "brand": "Gracya",
+  "shots": [
+   "f146.jpg",
+   "f162.jpg",
+   "f164.jpg",
+   "f165.jpg",
+   "f166.jpg"
+  ],
+  "rrp": "39.99",
+  "trade": "18.01",
+  "rrp_f": 39.99,
+  "usd": 50.79,
+  "retail": 43.22,
+  "verdict": "BELOW $70"
+ },
+ {
+  "key": "g",
+  "sku": "GRACYAG05WENECJA-G",
+  "title": "Gracya Wenecja Brief",
+  "brand": "Gracya",
+  "shots": [
+   "g05.jpg"
+  ],
+  "rrp": "26.49",
+  "trade": "11.92",
+  "rrp_f": 26.49,
+  "usd": 33.64,
+  "retail": 28.61,
+  "verdict": "BELOW $70"
+ },
+ {
+  "key": "g04_g",
+  "sku": "GRACYAG04WENECJA30-G",
+  "title": "Gracya Wenecja Corset",
+  "brand": "Gracya",
+  "shots": [
+   "g04_g05.jpg"
+  ],
+  "rrp": "69.99",
+  "trade": "31.81",
+  "rrp_f": 69.99,
+  "usd": 88.89,
+  "retail": 76.34,
+  "verdict": "ok"
+ },
+ {
+  "key": "gracya_0014_anastasia_white_floating-scaled",
+  "sku": "GRACYA0014ANASTASIAWHITE32-G",
+  "title": "Gracya Anastasia Corset",
+  "brand": "Gracya",
+  "shots": [
+   "gracya_0014_anastasia_white_floating-scaled.jpg"
+  ],
+  "rrp": "105.49",
+  "trade": "47.79",
+  "rrp_f": 105.49,
+  "usd": 133.97,
+  "retail": 114.7,
+  "verdict": "ok"
+ },
+ {
+  "key": "gracya_0014_anastasia_white_floating02-scaled",
+  "sku": "GRACYA0014ANASTASIAWHITE32-G",
+  "title": "Gracya Anastasia Corset",
+  "brand": "Gracya",
+  "shots": [
+   "gracya_0014_anastasia_white_floating02-scaled.jpg"
+  ],
+  "rrp": "105.49",
+  "trade": "47.79",
+  "rrp_f": 105.49,
+  "usd": 133.97,
+  "retail": 114.7,
+  "verdict": "ok"
+ },
+ {
+  "key": "gracya_0017_madonna_corset_floating-scaled",
+  "sku": "GRACYA0017MADONNAWHITE32-G",
+  "title": "Gracya Madonna Corset",
+  "brand": "Gracya",
+  "shots": [
+   "gracya_0017_madonna_corset_floating-scaled.jpg"
+  ],
+  "rrp": "108.49",
+  "trade": "49.27",
+  "rrp_f": 108.49,
+  "usd": 137.78,
+  "retail": 118.25,
+  "verdict": "ok"
+ },
+ {
+  "key": "gracya_0017_madonna_corset_floating02-scaled",
+  "sku": "GRACYA0017MADONNAWHITE32-G",
+  "title": "Gracya Madonna Corset",
+  "brand": "Gracya",
+  "shots": [
+   "gracya_0017_madonna_corset_floating02-scaled.jpg"
+  ],
+  "rrp": "108.49",
+  "trade": "49.27",
+  "rrp_f": 108.49,
+  "usd": 137.78,
+  "retail": 118.25,
+  "verdict": "ok"
+ },
+ {
+  "key": "gracya_005_naomi_body_white_floating02_1-scaled",
+  "sku": "GRACYA005NAOMI32-G",
+  "title": "Gracya Naomi Body White",
+  "brand": "Gracya",
+  "shots": [
+   "gracya_005_naomi_body_white_floating02_1-scaled.jpg"
+  ],
+  "rrp": "59.49",
+  "trade": "26.94",
+  "rrp_f": 59.49,
+  "usd": 75.55,
+  "retail": 64.66,
+  "verdict": "ok"
+ },
+ {
+  "key": "gracya_005_naomi_body_white_floating_1-scaled",
+  "sku": "GRACYA005NAOMI32-G",
+  "title": "Gracya Naomi Body White",
+  "brand": "Gracya",
+  "shots": [
+   "gracya_005_naomi_body_white_floating_1-scaled.jpg"
+  ],
+  "rrp": "59.49",
+  "trade": "26.94",
+  "rrp_f": 59.49,
+  "usd": 75.55,
+  "retail": 64.66,
+  "verdict": "ok"
+ },
+ {
+  "key": "gracya_b",
+  "sku": "GRACYAB164VENUS30-G",
+  "title": "Gracya  Venus Bra",
+  "brand": "Gracya",
+  "shots": [
+   "Gracya_b164.jpg",
+   "gracya_b186.jpg"
+  ],
+  "rrp": "58.99",
+  "trade": "26.76",
+  "rrp_f": 58.99,
+  "usd": 74.92,
+  "retail": 64.22,
+  "verdict": "ok"
+ },
+ {
+  "key": "gracya_b01_cream_floating02_1-scaled",
+  "sku": "GRACYAB01CREAM30-G",
+  "title": "Gracya Lucy Bra Cream",
+  "brand": "Gracya",
+  "shots": [
+   "gracya_b01_cream_floating02_1-scaled.jpg"
+  ],
+  "rrp": "29.99",
+  "trade": "13.54",
+  "rrp_f": 29.99,
+  "usd": 38.09,
+  "retail": 32.5,
+  "verdict": "BELOW $70"
+ },
+ {
+  "key": "gracya_b01_cream_floating_1-scaled",
+  "sku": "GRACYAB01CREAM30-G",
+  "title": "Gracya Lucy Bra Cream",
+  "brand": "Gracya",
+  "shots": [
+   "gracya_b01_cream_floating_1-scaled.jpg"
+  ],
+  "rrp": "29.99",
+  "trade": "13.54",
+  "rrp_f": 29.99,
+  "usd": 38.09,
+  "retail": 32.5,
+  "verdict": "BELOW $70"
+ },
+ {
+  "key": "gracya_butterfly",
+  "sku": "GRACYA128BUTTERFLY30-G",
+  "title": "Gracya Butterfly Bra",
+  "brand": "Gracya",
+  "shots": [
+   "Gracya_butterfly_128.jpg"
+  ],
+  "rrp": "",
+  "trade": "",
+  "rrp_f": 0.0,
+  "usd": 0.0,
+  "retail": 0,
+  "verdict": "NO PRICE"
+ },
+ {
+  "key": "gracya_cindy",
+  "sku": "GRACYA129SCINDYTHONG-G",
+  "title": "Gracya Cindy Thong",
+  "brand": "Gracya",
+  "shots": [
+   "gracya_cindy.jpg",
+   "gracya_cindy_129_22-1.jpg",
+   "gracya_cindy_129_22.jpg"
+  ],
+  "rrp": "14.99",
+  "trade": "6.78",
+  "rrp_f": 14.99,
+  "usd": 19.04,
+  "retail": 16.27,
+  "verdict": "BELOW $70"
+ },
+ {
+  "key": "gracya_cleo",
+  "sku": "GRACYAB189CLEO30-G",
+  "title": "Gracya Cleo Bra",
+  "brand": "Gracya",
+  "shots": [
+   "gracya_cleo.jpg"
+  ],
+  "rrp": "23.99",
+  "trade": "10.74",
+  "rrp_f": 23.99,
+  "usd": 30.47,
+  "retail": 25.78,
+  "verdict": "BELOW $70"
+ },
+ {
+  "key": "gracya_crystal",
+  "sku": "GRACYA138CRYSTAL32-G",
+  "title": "Crystal Basque",
+  "brand": "Gracya",
+  "shots": [
+   "gracya_crystal.jpg"
+  ],
+  "rrp": "108.49",
+  "trade": "49.27",
+  "rrp_f": 108.49,
+  "usd": 137.78,
+  "retail": 118.25,
+  "verdict": "ok"
+ },
+ {
+  "key": "gracya_glow",
+  "sku": "GRACYA140GLOW30-G",
+  "title": "Gracya Glow Balcony Bra",
+  "brand": "Gracya",
+  "shots": [
+   "gracya_glow.jpg"
+  ],
+  "rrp": "43.49",
+  "trade": "19.63",
+  "rrp_f": 43.49,
+  "usd": 55.23,
+  "retail": 47.11,
+  "verdict": "BELOW $70"
+ },
+ {
+  "key": "gracya_jonqui",
+  "sku": "GRACYA139JONQUILWHITE-G",
+  "title": "Gracya Jonquil Bra White",
+  "brand": "Gracya",
+  "shots": [
+   "gracya_jonqui.jpg"
+  ],
+  "rrp": "69.99",
+  "trade": "31.81",
+  "rrp_f": 69.99,
+  "usd": 88.89,
+  "retail": 76.34,
+  "verdict": "ok"
+ },
+ {
+  "key": "gracya_jonquil",
+  "sku": "GRACYA139JONQUIL30-G",
+  "title": "Gracya Jonquil Bra",
+  "brand": "Gracya",
+  "shots": [
+   "gracya_jonquil.jpg"
+  ],
+  "rrp": "69.99",
+  "trade": "31.81",
+  "rrp_f": 69.99,
+  "usd": 88.89,
+  "retail": 76.34,
+  "verdict": "ok"
+ },
+ {
+  "key": "gracya_madonna",
+  "sku": "GRACYA0017MADONNAWHITE32-G",
+  "title": "Gracya Madonna Corset",
+  "brand": "Gracya",
+  "shots": [
+   "gracya_madonna-0017.jpg",
+   "gracya_madonna-133.jpg"
+  ],
+  "rrp": "108.49",
+  "trade": "49.27",
+  "rrp_f": 108.49,
+  "usd": 137.78,
+  "retail": 118.25,
+  "verdict": "ok"
+ },
+ {
+  "key": "gracya_miette_w",
+  "sku": "GRACYAW147MIETTE30-G",
+  "title": "Gracya Miette Corset",
+  "brand": "Gracya",
+  "shots": [
+   "gracya_Miette_w147.jpg"
+  ],
+  "rrp": "135.49",
+  "trade": "61.46",
+  "rrp_f": 135.49,
+  "usd": 172.07,
+  "retail": 147.5,
+  "verdict": "ok"
+ },
+ {
+  "key": "gracya_monamour-corset",
+  "sku": "GRACYAB135CORSET32-G",
+  "title": "Gracya Mon Amour Corset",
+  "brand": "Gracya",
+  "shots": [
+   "gracya_monamour-corset.jpg"
+  ],
+  "rrp": "118.49",
+  "trade": "53.74",
+  "rrp_f": 118.49,
+  "usd": 150.48,
+  "retail": 128.98,
+  "verdict": "ok"
+ },
+ {
+  "key": "gracya_ola",
+  "sku": "GRACYA130OLA32-G",
+  "title": "Gracya Ola Push Up Bra",
+  "brand": "Gracya",
+  "shots": [
+   "Gracya_ola_129.jpg"
+  ],
+  "rrp": "34.49",
+  "trade": "15.57",
+  "rrp_f": 34.49,
+  "usd": 43.8,
+  "retail": 37.37,
+  "verdict": "BELOW $70"
+ },
+ {
+  "key": "gracya_rokokko_ii",
+  "sku": "GRACYA137ROKOKOII30-G",
+  "title": "Gracya Rokoko II Bra",
+  "brand": "Gracya",
+  "shots": [
+   "Gracya_rokokko_II.jpg"
+  ],
+  "rrp": "49.99",
+  "trade": "22.72",
+  "rrp_f": 49.99,
+  "usd": 63.49,
+  "retail": 54.53,
+  "verdict": "BELOW $70"
+ },
+ {
+  "key": "gracya_safari",
+  "sku": "",
+  "title": "",
+  "brand": "Gracya",
+  "shots": [
+   "Gracya_safari.jpg"
+  ],
+  "rrp": "",
+  "trade": "",
+  "rrp_f": 0.0,
+  "usd": 0.0,
+  "retail": 0,
+  "verdict": "NO PRICE"
+ },
+ {
+  "key": "gracya_w",
+  "sku": "GRACYAW166JULIETTE30-G",
+  "title": "Gracya Juliette Corset",
+  "brand": "Gracya",
+  "shots": [
+   "gracya_w166.jpg"
+  ],
+  "rrp": "135.49",
+  "trade": "61.46",
+  "rrp_f": 135.49,
+  "usd": 172.07,
+  "retail": 147.5,
+  "verdict": "ok"
+ },
+ {
+  "key": "roza_rozetta_black_set",
+  "sku": "GRACYAB162BLISS32-G",
+  "title": "Gracya B162 Bliss Bra",
+  "brand": "Gracya",
+  "shots": [
+   "roza_rozetta_black_set-2.jpg"
+  ],
+  "rrp": "79.99",
+  "trade": "36.35",
+  "rrp_f": 79.99,
+  "usd": 101.59,
+  "retail": 87.24,
+  "verdict": "ok"
+ },
+ {
+  "key": "s",
+  "sku": "GRACYAS149GALATHONG-G",
+  "title": "Gala Thong",
+  "brand": "Gracya",
+  "shots": [
+   "s149.jpg"
+  ],
+  "rrp": "32.49",
+  "trade": "14.66",
+  "rrp_f": 32.49,
+  "usd": 41.26,
+  "retail": 35.18,
+  "verdict": "BELOW $70"
+ },
+ {
+  "key": "s186_p186",
+  "sku": "",
+  "title": "",
+  "brand": "Gracya",
+  "shots": [
+   "s186_p186_17.jpg"
+  ],
+  "rrp": "",
+  "trade": "",
+  "rrp_f": 0.0,
+  "usd": 0.0,
+  "retail": 0,
+  "verdict": "NO PRICE"
+ },
+ {
+  "key": "sbho1_pbh",
+  "sku": "",
+  "title": "",
+  "brand": "Gracya",
+  "shots": [
+   "sbho1_pbh01.jpg"
+  ],
+  "rrp": "",
+  "trade": "",
+  "rrp_f": 0.0,
+  "usd": 0.0,
+  "retail": 0,
+  "verdict": "NO PRICE"
+ },
+ {
+  "key": "w147_f",
+  "sku": "GRACYAW147MIETTE30-G",
+  "title": "Gracya Miette Corset",
+  "brand": "Gracya",
+  "shots": [
+   "w147_f147.jpg"
+  ],
+  "rrp": "135.49",
+  "trade": "61.46",
+  "rrp_f": 135.49,
+  "usd": 172.07,
+  "retail": 147.5,
+  "verdict": "ok"
+ },
+ {
+  "key": "w149_f149",
+  "sku": "GRACYAS149GALATHONG-G",
+  "title": "Gala Thong",
+  "brand": "Gracya",
+  "shots": [
+   "w149_f149_76.jpg"
+  ],
+  "rrp": "32.49",
+  "trade": "14.66",
+  "rrp_f": 32.49,
+  "usd": 41.26,
+  "retail": 35.18,
+  "verdict": "BELOW $70"
+ },
+ {
+  "key": "w166_f",
+  "sku": "GRACYAW166JULIETTE30-G",
+  "title": "Gracya Juliette Corset",
+  "brand": "Gracya",
+  "shots": [
+   "w166_f166.jpg"
+  ],
+  "rrp": "135.49",
+  "trade": "61.46",
+  "rrp_f": 135.49,
+  "usd": 172.07,
+  "retail": 147.5,
+  "verdict": "ok"
+ }
+]

@@ -1,0 +1,3860 @@
+[
+ {
+  "key": "andromeda_dressing_gown",
+  "sku": "IRALLANDROMEDALAVENDERDGOWN-GG",
+  "title": "Irall Andromeda Dressing Gown Lavender",
+  "brand": "Irall",
+  "shots": [
+   "andromeda_dressing_gown_002_.jpg",
+   "andromeda_dressing_gown_web1.jpg",
+   "andromeda_dressing_gown_web3.jpg"
+  ],
+  "rrp": "57.99",
+  "trade": "26.33",
+  "rrp_f": 57.99,
+  "usd": 73.65,
+  "retail": 63.19,
+  "verdict": "ok"
+ },
+ {
+  "key": "andromeda_nightdress",
+  "sku": "IRALLANDROMEDALAVENDERNDRESS-GG",
+  "title": "Irall Andromeda Nightdress Lavender",
+  "brand": "Irall",
+  "shots": [
+   "andromeda_nightdress_002_.jpg"
+  ],
+  "rrp": "39.99",
+  "trade": "18.18",
+  "rrp_f": 39.99,
+  "usd": 50.79,
+  "retail": 43.63,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "andromeda_nightdress_-_back",
+  "sku": "IRALLANDROMEDALAVENDERNDRESS-GG",
+  "title": "Irall Andromeda Nightdress Lavender",
+  "brand": "Irall",
+  "shots": [
+   "andromeda_nightdress_-_back_002_.jpg"
+  ],
+  "rrp": "39.99",
+  "trade": "18.18",
+  "rrp_f": 39.99,
+  "usd": 50.79,
+  "retail": 43.63,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "andromeda_set",
+  "sku": "",
+  "title": "",
+  "brand": "Irall",
+  "shots": [
+   "andromeda_set_web1.jpg",
+   "andromeda_set_web2.jpg",
+   "andromeda_set_web3.jpg"
+  ],
+  "rrp": "",
+  "trade": "",
+  "rrp_f": 0.0,
+  "usd": 0.0,
+  "retail": 0,
+  "verdict": "NO PRICE"
+ },
+ {
+  "key": "aria_dg_black",
+  "sku": "IRALLARIADGOWNBLACK-G",
+  "title": "Irall Aria Dressing Gown Black",
+  "brand": "Irall",
+  "shots": [
+   "aria_dg_black.jpg"
+  ],
+  "rrp": "54.49",
+  "trade": "24.74",
+  "rrp_f": 54.49,
+  "usd": 69.2,
+  "retail": 59.38,
+  "verdict": "ok"
+ },
+ {
+  "key": "aria_dg_burg",
+  "sku": "IRALLARIADGOWNBURGUNDY-G",
+  "title": "Irall Aria Dressing Gown Burgundy",
+  "brand": "Irall",
+  "shots": [
+   "aria_dg_burg.jpg"
+  ],
+  "rrp": "54.49",
+  "trade": "24.74",
+  "rrp_f": 54.49,
+  "usd": 69.2,
+  "retail": 59.38,
+  "verdict": "ok"
+ },
+ {
+  "key": "aria_dg_choc",
+  "sku": "IRALLARIADGOWNCHOCOLATE-G",
+  "title": "Irall Aria Dressing Gown Chocolate",
+  "brand": "Irall",
+  "shots": [
+   "aria_dg_choc_1.jpg"
+  ],
+  "rrp": "54.49",
+  "trade": "24.74",
+  "rrp_f": 54.49,
+  "usd": 69.2,
+  "retail": 59.38,
+  "verdict": "ok"
+ },
+ {
+  "key": "aria_dg_cream",
+  "sku": "IRALLARIADGOWNCREAM-G",
+  "title": "Irall Aria Dressing Gown Cream",
+  "brand": "Irall",
+  "shots": [
+   "aria_dg_cream.jpg"
+  ],
+  "rrp": "54.49",
+  "trade": "24.74",
+  "rrp_f": 54.49,
+  "usd": 69.2,
+  "retail": 59.38,
+  "verdict": "ok"
+ },
+ {
+  "key": "aria_nd_black",
+  "sku": "IRALLARIANDRESSBLACK-G",
+  "title": "Irall Aria Nightdress Black",
+  "brand": "Irall",
+  "shots": [
+   "aria_nd_black_1.jpg"
+  ],
+  "rrp": "36.49",
+  "trade": "16.47",
+  "rrp_f": 36.49,
+  "usd": 46.34,
+  "retail": 39.53,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "aria_nd_burgundy",
+  "sku": "",
+  "title": "",
+  "brand": "Irall",
+  "shots": [
+   "aria_nd_burgundy_1.jpg"
+  ],
+  "rrp": "",
+  "trade": "",
+  "rrp_f": 0.0,
+  "usd": 0.0,
+  "retail": 0,
+  "verdict": "NO PRICE"
+ },
+ {
+  "key": "aria_nd_choc",
+  "sku": "IRALLARIANDRESSCHOCOLATE-G",
+  "title": "Irall Aria Nightdress Chocolate",
+  "brand": "Irall",
+  "shots": [
+   "aria_nd_choc_1.jpg"
+  ],
+  "rrp": "36.49",
+  "trade": "16.47",
+  "rrp_f": 36.49,
+  "usd": 46.34,
+  "retail": 39.53,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "aria_nd_cream",
+  "sku": "IRALLARIANDRESSCREAM-G",
+  "title": "Irall Aria Nightdress Cream",
+  "brand": "Irall",
+  "shots": [
+   "aria_nd_cream_1.jpg"
+  ],
+  "rrp": "36.49",
+  "trade": "16.47",
+  "rrp_f": 36.49,
+  "usd": 46.34,
+  "retail": 39.53,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "aria_nd_violet",
+  "sku": "IRALLARIANDRESSVIOLET-G",
+  "title": "Irall Aria Nightdress Violet",
+  "brand": "Irall",
+  "shots": [
+   "aria_nd_violet_1.jpg"
+  ],
+  "rrp": "36.49",
+  "trade": "16.47",
+  "rrp_f": 36.49,
+  "usd": 46.34,
+  "retail": 39.53,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "aria_nd_wht",
+  "sku": "IRALLARIANDRESSWHITE-G",
+  "title": "Irall Aria Nightdress White",
+  "brand": "Irall",
+  "shots": [
+   "aria_nd_wht.jpg"
+  ],
+  "rrp": "36.49",
+  "trade": "16.47",
+  "rrp_f": 36.49,
+  "usd": 46.34,
+  "retail": 39.53,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "aria_nd_wht_box",
+  "sku": "IRALLARIANDRESSWHITE-G",
+  "title": "Irall Aria Nightdress White",
+  "brand": "Irall",
+  "shots": [
+   "aria_nd_wht_box.jpg"
+  ],
+  "rrp": "36.49",
+  "trade": "16.47",
+  "rrp_f": 36.49,
+  "usd": 46.34,
+  "retail": 39.53,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "barbara",
+  "sku": "IRALLBARBARANIGHTDRESSBLACK-G",
+  "title": "Irall Barbara Nightdress Black",
+  "brand": "Irall",
+  "shots": [
+   "barbara_01.jpg"
+  ],
+  "rrp": "43.99",
+  "trade": "19.96",
+  "rrp_f": 43.99,
+  "usd": 55.87,
+  "retail": 47.9,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "cameron-nightdress-black",
+  "sku": "IRALLCAMERONNDRESSBLACK-G",
+  "title": "Irall Cameron Nightdress Black S-XL",
+  "brand": "Irall",
+  "shots": [
+   "Cameron-nightdress-black-zw.jpg"
+  ],
+  "rrp": "55.49",
+  "trade": "25.09",
+  "rrp_f": 55.49,
+  "usd": 70.47,
+  "retail": 60.22,
+  "verdict": "ok"
+ },
+ {
+  "key": "cameron-nightdress-black-back",
+  "sku": "IRALLCAMERONNDRESSBLACK-G",
+  "title": "Irall Cameron Nightdress Black S-XL",
+  "brand": "Irall",
+  "shots": [
+   "Cameron-nightdress-black-back-zw.jpg"
+  ],
+  "rrp": "55.49",
+  "trade": "25.09",
+  "rrp_f": 55.49,
+  "usd": 70.47,
+  "retail": 60.22,
+  "verdict": "ok"
+ },
+ {
+  "key": "cameron_nightdress_cream",
+  "sku": "IRALLCAMERONNDRESSCREAM-GG",
+  "title": "Irall Cameron Nightdress Cream S-XL",
+  "brand": "Irall",
+  "shots": [
+   "cameron_nightdress_cream_web2.jpg",
+   "cameron_nightdress_cream_web3.jpg"
+  ],
+  "rrp": "55.49",
+  "trade": "25.09",
+  "rrp_f": 55.49,
+  "usd": 70.47,
+  "retail": 60.22,
+  "verdict": "ok"
+ },
+ {
+  "key": "cameron_nightdress_cream_-_back",
+  "sku": "IRALLCAMERONNDRESSCREAM-GG",
+  "title": "Irall Cameron Nightdress Cream S-XL",
+  "brand": "Irall",
+  "shots": [
+   "cameron_nightdress_cream_-_back__web1.jpg"
+  ],
+  "rrp": "55.49",
+  "trade": "25.09",
+  "rrp_f": 55.49,
+  "usd": 70.47,
+  "retail": 60.22,
+  "verdict": "ok"
+ },
+ {
+  "key": "cameron_nightdress_cream_-_back__web1",
+  "sku": "IRALLCAMERONNDRESSCREAMPLUS-GG",
+  "title": "Irall Cameron Nightdress Cream 2XL-5XL",
+  "brand": "Irall",
+  "shots": [
+   "cameron_nightdress_cream_-_back__web1_1.jpg"
+  ],
+  "rrp": "",
+  "trade": "",
+  "rrp_f": 0.0,
+  "usd": 0.0,
+  "retail": 0,
+  "verdict": "NO PRICE"
+ },
+ {
+  "key": "cameron_nightdress_cream_web2",
+  "sku": "IRALLCAMERONNDRESSCREAM-GG",
+  "title": "Irall Cameron Nightdress Cream S-XL",
+  "brand": "Irall",
+  "shots": [
+   "cameron_nightdress_cream_web2_5.jpg"
+  ],
+  "rrp": "55.49",
+  "trade": "25.09",
+  "rrp_f": 55.49,
+  "usd": 70.47,
+  "retail": 60.22,
+  "verdict": "ok"
+ },
+ {
+  "key": "cameron_nightdress_cream_web3",
+  "sku": "IRALLCAMERONNDRESSCREAMPLUS-GG",
+  "title": "Irall Cameron Nightdress Cream 2XL-5XL",
+  "brand": "Irall",
+  "shots": [
+   "cameron_nightdress_cream_web3_1.jpg"
+  ],
+  "rrp": "",
+  "trade": "",
+  "rrp_f": 0.0,
+  "usd": 0.0,
+  "retail": 0,
+  "verdict": "NO PRICE"
+ },
+ {
+  "key": "cameron_nightdress_navy_blue",
+  "sku": "IRALLCAMERONNDRESSNBLUE-GG",
+  "title": "Irall Cameron Nightdress Navy Blue S-XL",
+  "brand": "Irall",
+  "shots": [
+   "cameron_nightdress_navy_blue_back_web1.jpg",
+   "cameron_nightdress_navy_blue_web2.jpg",
+   "cameron_nightdress_navy_blue_web3.jpg"
+  ],
+  "rrp": "55.49",
+  "trade": "25.09",
+  "rrp_f": 55.49,
+  "usd": 70.47,
+  "retail": 60.22,
+  "verdict": "ok"
+ },
+ {
+  "key": "cameron_nightdress_navy_blue_back_web1",
+  "sku": "IRALLCAMERONNDRESSNBLPLUS-GG",
+  "title": "Irall Cameron Nightdress Navy Blue 2XL-5XL",
+  "brand": "Irall",
+  "shots": [
+   "cameron_nightdress_navy_blue_back_web1_1.jpg"
+  ],
+  "rrp": "",
+  "trade": "",
+  "rrp_f": 0.0,
+  "usd": 0.0,
+  "retail": 0,
+  "verdict": "NO PRICE"
+ },
+ {
+  "key": "cameron_nightdress_navy_blue_web2",
+  "sku": "IRALLCAMERONNDRESSNBLUE-GG",
+  "title": "Irall Cameron Nightdress Navy Blue S-XL",
+  "brand": "Irall",
+  "shots": [
+   "cameron_nightdress_navy_blue_web2_5.jpg"
+  ],
+  "rrp": "55.49",
+  "trade": "25.09",
+  "rrp_f": 55.49,
+  "usd": 70.47,
+  "retail": 60.22,
+  "verdict": "ok"
+ },
+ {
+  "key": "cameron_nightdress_navy_blue_web3",
+  "sku": "IRALLCAMERONNDRESSNBLPLUS-GG",
+  "title": "Irall Cameron Nightdress Navy Blue 2XL-5XL",
+  "brand": "Irall",
+  "shots": [
+   "cameron_nightdress_navy_blue_web3_1.jpg"
+  ],
+  "rrp": "",
+  "trade": "",
+  "rrp_f": 0.0,
+  "usd": 0.0,
+  "retail": 0,
+  "verdict": "NO PRICE"
+ },
+ {
+  "key": "cameron_nightdress_red_web1",
+  "sku": "IRALLCAMERONNDRESSREDPLUS-GG",
+  "title": "Irall Cameron Nightdress Red 2XL-5XL",
+  "brand": "Irall",
+  "shots": [
+   "cameron_nightdress_red_web1_5.jpg",
+   "cameron_nightdress_red_web1_6.jpg"
+  ],
+  "rrp": "",
+  "trade": "",
+  "rrp_f": 0.0,
+  "usd": 0.0,
+  "retail": 0,
+  "verdict": "NO PRICE"
+ },
+ {
+  "key": "cameron_nightdress_red_web2",
+  "sku": "IRALLCAMERONNDRESSREDPLUS-GG",
+  "title": "Irall Cameron Nightdress Red 2XL-5XL",
+  "brand": "Irall",
+  "shots": [
+   "cameron_nightdress_red_web2_1.jpg",
+   "cameron_nightdress_red_web2_2.jpg"
+  ],
+  "rrp": "",
+  "trade": "",
+  "rrp_f": 0.0,
+  "usd": 0.0,
+  "retail": 0,
+  "verdict": "NO PRICE"
+ },
+ {
+  "key": "cameron_nightdress_red_web4",
+  "sku": "IRALLCAMERONNDRESSREDPLUS-GG",
+  "title": "Irall Cameron Nightdress Red 2XL-5XL",
+  "brand": "Irall",
+  "shots": [
+   "cameron_nightdress_red_web4_1.jpg",
+   "cameron_nightdress_red_web4_2.jpg"
+  ],
+  "rrp": "",
+  "trade": "",
+  "rrp_f": 0.0,
+  "usd": 0.0,
+  "retail": 0,
+  "verdict": "NO PRICE"
+ },
+ {
+  "key": "cleopatra-dressing-gown",
+  "sku": "IRALLCLEOPATRADGOWNBLACK-G",
+  "title": "Irall Cleopatra Dressing Gown",
+  "brand": "Irall",
+  "shots": [
+   "Cleopatra-dressing-gown-back.jpg",
+   "Cleopatra-dressing-gown.jpg"
+  ],
+  "rrp": "55.99",
+  "trade": "25.24",
+  "rrp_f": 55.99,
+  "usd": 71.11,
+  "retail": 60.58,
+  "verdict": "ok"
+ },
+ {
+  "key": "cleopatra-nightdress",
+  "sku": "IRALLCLEOPATRANDRESSBLACK-G",
+  "title": "Irall Cleopatra Nightdress",
+  "brand": "Irall",
+  "shots": [
+   "Cleopatra-nightdress-back.jpg",
+   "Cleopatra-nightdress-zw.jpg"
+  ],
+  "rrp": "43.99",
+  "trade": "19.86",
+  "rrp_f": 43.99,
+  "usd": 55.87,
+  "retail": 47.66,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "cleopatra_wt",
+  "sku": "IRALLCLEOPATRADGOWNBLACK-G",
+  "title": "Irall Cleopatra Dressing Gown",
+  "brand": "Irall",
+  "shots": [
+   "cleopatra_wt-1.jpg",
+   "cleopatra_wt.jpg"
+  ],
+  "rrp": "55.99",
+  "trade": "25.24",
+  "rrp_f": 55.99,
+  "usd": 71.11,
+  "retail": 60.58,
+  "verdict": "ok"
+ },
+ {
+  "key": "elsa_nddg_white",
+  "sku": "IRALLELSADGOWNWHITE-G",
+  "title": "Irall Elsa Dressing Gown White",
+  "brand": "Irall",
+  "shots": [
+   "elsa_nddg_white_1.jpg"
+  ],
+  "rrp": "43.49",
+  "trade": "19.76",
+  "rrp_f": 43.49,
+  "usd": 55.23,
+  "retail": 47.42,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "emerald_dg_wt",
+  "sku": "IRALLEMERALDDGOWNGREEN-GG",
+  "title": "Irall Emerald Dressing Gown Green",
+  "brand": "Irall",
+  "shots": [
+   "emerald_dg_wt.jpg"
+  ],
+  "rrp": "57.99",
+  "trade": "26.33",
+  "rrp_f": 57.99,
+  "usd": 73.65,
+  "retail": 63.19,
+  "verdict": "ok"
+ },
+ {
+  "key": "emerald_dresing_gown",
+  "sku": "IRALLEMERALDDGOWNGREEN-GG",
+  "title": "Irall Emerald Dressing Gown Green",
+  "brand": "Irall",
+  "shots": [
+   "emerald_dresing_gown_web1.jpg"
+  ],
+  "rrp": "57.99",
+  "trade": "26.33",
+  "rrp_f": 57.99,
+  "usd": 73.65,
+  "retail": 63.19,
+  "verdict": "ok"
+ },
+ {
+  "key": "emerald_dressing_gown",
+  "sku": "IRALLEMERALDDGOWNGREEN-GG",
+  "title": "Irall Emerald Dressing Gown Green",
+  "brand": "Irall",
+  "shots": [
+   "emerald_dressing_gown_web2.jpg",
+   "emerald_dressing_gown_web3.jpg"
+  ],
+  "rrp": "57.99",
+  "trade": "26.33",
+  "rrp_f": 57.99,
+  "usd": 73.65,
+  "retail": 63.19,
+  "verdict": "ok"
+ },
+ {
+  "key": "emerald_i_nd_wt",
+  "sku": "IRALLEMERALDINDRESS-GG",
+  "title": "Irall Emerald I Nightdress Dark Green",
+  "brand": "Irall",
+  "shots": [
+   "emerald_I_nd_wt.jpg"
+  ],
+  "rrp": "39.99",
+  "trade": "18.18",
+  "rrp_f": 39.99,
+  "usd": 50.79,
+  "retail": 43.63,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "emerald_i_nightdress",
+  "sku": "IRALLEMERALDINDRESS-GG",
+  "title": "Irall Emerald I Nightdress Dark Green",
+  "brand": "Irall",
+  "shots": [
+   "emerald_i_nightdress_web2.jpg"
+  ],
+  "rrp": "39.99",
+  "trade": "18.18",
+  "rrp_f": 39.99,
+  "usd": 50.79,
+  "retail": 43.63,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "emerald_i_nightdress_-_back_web1",
+  "sku": "IRALLEMERALDINDRESS-GG",
+  "title": "Irall Emerald I Nightdress Dark Green",
+  "brand": "Irall",
+  "shots": [
+   "emerald_i_nightdress_-_back_web1_3.jpg"
+  ],
+  "rrp": "39.99",
+  "trade": "18.18",
+  "rrp_f": 39.99,
+  "usd": 50.79,
+  "retail": 43.63,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "emerald_i_nightdress_web3",
+  "sku": "IRALLEMERALDINDRESS-GG",
+  "title": "Irall Emerald I Nightdress Dark Green",
+  "brand": "Irall",
+  "shots": [
+   "emerald_i_nightdress_web3_3.jpg"
+  ],
+  "rrp": "39.99",
+  "trade": "18.18",
+  "rrp_f": 39.99,
+  "usd": 50.79,
+  "retail": 43.63,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "emerald_ii_nd_wt",
+  "sku": "IRALLEMERALDIINDRESS-GG",
+  "title": "Irall Emerald II Nightdress Dark Green",
+  "brand": "Irall",
+  "shots": [
+   "emerald_II_nd_wt.jpg"
+  ],
+  "rrp": "46.49",
+  "trade": "21.06",
+  "rrp_f": 46.49,
+  "usd": 59.04,
+  "retail": 50.54,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "emerald_ii_nightdress",
+  "sku": "IRALLEMERALDIINDRESS-GG",
+  "title": "Irall Emerald II Nightdress Dark Green",
+  "brand": "Irall",
+  "shots": [
+   "emerald_ii_nightdress_-_back_web1.jpg",
+   "emerald_ii_nightdress_web2.jpg",
+   "emerald_ii_nightdress_web3.jpg"
+  ],
+  "rrp": "46.49",
+  "trade": "21.06",
+  "rrp_f": 46.49,
+  "usd": 59.04,
+  "retail": 50.54,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "emerald_iii_nd_wt",
+  "sku": "IRALLEMERALDIIINDRESSGREEN-GG",
+  "title": "Irall Emerald III Nightdress Dark Green",
+  "brand": "Irall",
+  "shots": [
+   "emerald_III_nd_wt.jpg"
+  ],
+  "rrp": "49.99",
+  "trade": "22.72",
+  "rrp_f": 49.99,
+  "usd": 63.49,
+  "retail": 54.53,
+  "verdict": "ok"
+ },
+ {
+  "key": "emerald_iii_nightdress",
+  "sku": "IRALLEMERALDIIINDRESSGREEN-GG",
+  "title": "Irall Emerald III Nightdress Dark Green",
+  "brand": "Irall",
+  "shots": [
+   "emerald_iii_nightdress_-_back_web1.jpg",
+   "emerald_iii_nightdress_-_back_web2.jpg",
+   "emerald_iii_nightdress_web1.jpg",
+   "emerald_iii_nightdress_web2.jpg"
+  ],
+  "rrp": "49.99",
+  "trade": "22.72",
+  "rrp_f": 49.99,
+  "usd": 63.49,
+  "retail": 54.53,
+  "verdict": "ok"
+ },
+ {
+  "key": "flora_nd",
+  "sku": "",
+  "title": "",
+  "brand": "Irall",
+  "shots": [
+   "flora_nd_1.jpg"
+  ],
+  "rrp": "",
+  "trade": "",
+  "rrp_f": 0.0,
+  "usd": 0.0,
+  "retail": 0,
+  "verdict": "NO PRICE"
+ },
+ {
+  "key": "gia_ndress_cream",
+  "sku": "IRALLGIACREAMNDRESS-GG",
+  "title": "Irall Gia Cream Nightdress",
+  "brand": "Irall",
+  "shots": [
+   "gia_ndress_cream_web1.jpg",
+   "gia_ndress_cream_web2.jpg",
+   "gia_ndress_cream_web3.jpg"
+  ],
+  "rrp": "49.99",
+  "trade": "22.72",
+  "rrp_f": 49.99,
+  "usd": 63.49,
+  "retail": 54.53,
+  "verdict": "ok"
+ },
+ {
+  "key": "gia_ndress_navy",
+  "sku": "IRALLGIANDRESSNAVY-GG",
+  "title": "Irall Gia Nightdress Navy",
+  "brand": "Irall",
+  "shots": [
+   "gia_ndress_navy_web1.jpg",
+   "gia_ndress_navy_web2.jpg",
+   "gia_ndress_navy_web3.jpg"
+  ],
+  "rrp": "49.99",
+  "trade": "22.72",
+  "rrp_f": 49.99,
+  "usd": 63.49,
+  "retail": 54.53,
+  "verdict": "ok"
+ },
+ {
+  "key": "gia_ndress_red",
+  "sku": "IRALLGIAREDNDRESS-GG",
+  "title": "Irall Gia Red Nightdress",
+  "brand": "Irall",
+  "shots": [
+   "gia_ndress_red_web1.jpg",
+   "gia_ndress_red_web2.jpg",
+   "gia_ndress_red_web3.jpg"
+  ],
+  "rrp": "50.49",
+  "trade": "22.84",
+  "rrp_f": 50.49,
+  "usd": 64.12,
+  "retail": 54.82,
+  "verdict": "ok"
+ },
+ {
+  "key": "ida_dg_black",
+  "sku": "IRALLIDADGOWNBLACK-G",
+  "title": "Irall Ida Dressing Gown Black",
+  "brand": "Irall",
+  "shots": [
+   "ida_dg_black.jpg",
+   "ida_dg_black_02.jpg"
+  ],
+  "rrp": "63.99",
+  "trade": "28.88",
+  "rrp_f": 63.99,
+  "usd": 81.27,
+  "retail": 69.31,
+  "verdict": "ok"
+ },
+ {
+  "key": "ida_nd_black",
+  "sku": "IRALLIDANDRESSBLACK-G",
+  "title": "Irall Ida Nightdress Black",
+  "brand": "Irall",
+  "shots": [
+   "ida_nd_black.jpg",
+   "ida_nd_black_02.jpg"
+  ],
+  "rrp": "43.49",
+  "trade": "19.65",
+  "rrp_f": 43.49,
+  "usd": 55.23,
+  "retail": 47.16,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "ida_set_black",
+  "sku": "IRALLIDASETBLACK-G",
+  "title": "Irall Ida Set Black",
+  "brand": "Irall",
+  "shots": [
+   "ida_set_black.jpg",
+   "ida_set_black_02.jpg"
+  ],
+  "rrp": "39.99",
+  "trade": "18.17",
+  "rrp_f": 39.99,
+  "usd": 50.79,
+  "retail": 43.61,
+  "verdict": "set-exempt"
+ },
+ {
+  "key": "irall_andromeda_dg_lav_new",
+  "sku": "IRALLANDROMEDALAVENDERDGOWN-GG",
+  "title": "Irall Andromeda Dressing Gown Lavender",
+  "brand": "Irall",
+  "shots": [
+   "irall_andromeda_dg_lav_new.jpg"
+  ],
+  "rrp": "57.99",
+  "trade": "26.33",
+  "rrp_f": 57.99,
+  "usd": 73.65,
+  "retail": 63.19,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_andromeda_dg_wt",
+  "sku": "IRALLANDROMEDALAVENDERNDRESS-GG",
+  "title": "Irall Andromeda Nightdress Lavender",
+  "brand": "Irall",
+  "shots": [
+   "irall_andromeda_dg_wt.jpg"
+  ],
+  "rrp": "39.99",
+  "trade": "18.18",
+  "rrp_f": 39.99,
+  "usd": 50.79,
+  "retail": 43.63,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "irall_andromeda_nd_new",
+  "sku": "IRALLANDROMEDALAVENDERNDRESS-GG",
+  "title": "Irall Andromeda Nightdress Lavender",
+  "brand": "Irall",
+  "shots": [
+   "irall_andromeda_nd_new.jpg"
+  ],
+  "rrp": "39.99",
+  "trade": "18.18",
+  "rrp_f": 39.99,
+  "usd": 50.79,
+  "retail": 43.63,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "irall_andromeda_nd_wt",
+  "sku": "IRALLANDROMEDALAVENDERNDRESS-GG",
+  "title": "Irall Andromeda Nightdress Lavender",
+  "brand": "Irall",
+  "shots": [
+   "irall_andromeda_nd_wt.jpg"
+  ],
+  "rrp": "39.99",
+  "trade": "18.18",
+  "rrp_f": 39.99,
+  "usd": 50.79,
+  "retail": 43.63,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "irall_andromeda_set_new",
+  "sku": "IRALLCLEOPATRADGOWNBLACK-G",
+  "title": "Irall Cleopatra Dressing Gown",
+  "brand": "Irall",
+  "shots": [
+   "irall_andromeda_set_new.jpg"
+  ],
+  "rrp": "55.99",
+  "trade": "25.24",
+  "rrp_f": 55.99,
+  "usd": 71.11,
+  "retail": 60.58,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_andromeda_set_wt",
+  "sku": "IRALLANDROMEDALAVENDERNDRESS-GG",
+  "title": "Irall Andromeda Nightdress Lavender",
+  "brand": "Irall",
+  "shots": [
+   "irall_andromeda_set_wt.jpg"
+  ],
+  "rrp": "39.99",
+  "trade": "18.18",
+  "rrp_f": 39.99,
+  "usd": 50.79,
+  "retail": 43.63,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "irall_arabella",
+  "sku": "IRALLARABELLANDCREAM-G",
+  "title": "Irall Arabella Nightdress Cream",
+  "brand": "Irall",
+  "shots": [
+   "irall_arabella02.jpg",
+   "irall_arabella03.jpg",
+   "irall_arabella04.jpg"
+  ],
+  "rrp": "54.99",
+  "trade": "24.91",
+  "rrp_f": 54.99,
+  "usd": 69.84,
+  "retail": 59.78,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_arabella_cream_new",
+  "sku": "IRALLARABELLANDCREAM-G",
+  "title": "Irall Arabella Nightdress Cream",
+  "brand": "Irall",
+  "shots": [
+   "irall_arabella_cream_new.jpg"
+  ],
+  "rrp": "54.99",
+  "trade": "24.91",
+  "rrp_f": 54.99,
+  "usd": 69.84,
+  "retail": 59.78,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_arabella_cream_wt",
+  "sku": "IRALLARABELLANDCREAM-G",
+  "title": "Irall Arabella Nightdress Cream",
+  "brand": "Irall",
+  "shots": [
+   "irall_arabella_cream_wt.jpg"
+  ],
+  "rrp": "54.99",
+  "trade": "24.91",
+  "rrp_f": 54.99,
+  "usd": 69.84,
+  "retail": 59.78,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_aria_dg_black_new",
+  "sku": "IRALLARIADGOWNBLACK-G",
+  "title": "Irall Aria Dressing Gown Black",
+  "brand": "Irall",
+  "shots": [
+   "irall_aria_dg_black_new.jpg"
+  ],
+  "rrp": "54.49",
+  "trade": "24.74",
+  "rrp_f": 54.49,
+  "usd": 69.2,
+  "retail": 59.38,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_aria_dg_black_wt",
+  "sku": "IRALLARIADGOWNBLACK-G",
+  "title": "Irall Aria Dressing Gown Black",
+  "brand": "Irall",
+  "shots": [
+   "irall_aria_dg_black_wt.jpg"
+  ],
+  "rrp": "54.49",
+  "trade": "24.74",
+  "rrp_f": 54.49,
+  "usd": 69.2,
+  "retail": 59.38,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_aria_dg_burg__wt",
+  "sku": "IRALLARIADGOWNBURGUNDY-G",
+  "title": "Irall Aria Dressing Gown Burgundy",
+  "brand": "Irall",
+  "shots": [
+   "irall_aria_dg_burg__wt.jpg"
+  ],
+  "rrp": "54.49",
+  "trade": "24.74",
+  "rrp_f": 54.49,
+  "usd": 69.2,
+  "retail": 59.38,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_aria_dg_burg_new",
+  "sku": "IRALLARIADGOWNBURGUNDY-G",
+  "title": "Irall Aria Dressing Gown Burgundy",
+  "brand": "Irall",
+  "shots": [
+   "irall_aria_dg_burg_new.jpg"
+  ],
+  "rrp": "54.49",
+  "trade": "24.74",
+  "rrp_f": 54.49,
+  "usd": 69.2,
+  "retail": 59.38,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_aria_dg_choc_new",
+  "sku": "IRALLARIADGOWNCHOCOLATE-G",
+  "title": "Irall Aria Dressing Gown Chocolate",
+  "brand": "Irall",
+  "shots": [
+   "irall_aria_dg_choc_new.jpg"
+  ],
+  "rrp": "54.49",
+  "trade": "24.74",
+  "rrp_f": 54.49,
+  "usd": 69.2,
+  "retail": 59.38,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_aria_dg_choc_wt",
+  "sku": "IRALLARIADGOWNCHOCOLATE-G",
+  "title": "Irall Aria Dressing Gown Chocolate",
+  "brand": "Irall",
+  "shots": [
+   "irall_aria_dg_choc_wt.jpg"
+  ],
+  "rrp": "54.49",
+  "trade": "24.74",
+  "rrp_f": 54.49,
+  "usd": 69.2,
+  "retail": 59.38,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_aria_dg_cream__wt",
+  "sku": "IRALLARIADGOWNCREAM-G",
+  "title": "Irall Aria Dressing Gown Cream",
+  "brand": "Irall",
+  "shots": [
+   "irall_aria_dg_cream__wt.jpg"
+  ],
+  "rrp": "54.49",
+  "trade": "24.74",
+  "rrp_f": 54.49,
+  "usd": 69.2,
+  "retail": 59.38,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_aria_dg_cream_new",
+  "sku": "IRALLARIADGOWNCREAM-G",
+  "title": "Irall Aria Dressing Gown Cream",
+  "brand": "Irall",
+  "shots": [
+   "irall_aria_dg_cream_new.jpg"
+  ],
+  "rrp": "54.49",
+  "trade": "24.74",
+  "rrp_f": 54.49,
+  "usd": 69.2,
+  "retail": 59.38,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_aria_dg_navy_new",
+  "sku": "IRALLCLEOPATRADGOWNBLACK-G",
+  "title": "Irall Cleopatra Dressing Gown",
+  "brand": "Irall",
+  "shots": [
+   "irall_aria_dg_navy_new.jpg"
+  ],
+  "rrp": "55.99",
+  "trade": "25.24",
+  "rrp_f": 55.99,
+  "usd": 71.11,
+  "retail": 60.58,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_aria_dg_navy_wt",
+  "sku": "IRALLARIADGOWNNAVYBLUE-G",
+  "title": "Irall Aria Dressing Gown Navy",
+  "brand": "Irall",
+  "shots": [
+   "irall_aria_dg_navy_wt.jpg"
+  ],
+  "rrp": "54.49",
+  "trade": "24.74",
+  "rrp_f": 54.49,
+  "usd": 69.2,
+  "retail": 59.38,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_aria_dressing_gown_navy_blue",
+  "sku": "IRALLARIADGOWNNAVYBLUE-G",
+  "title": "Irall Aria Dressing Gown Navy",
+  "brand": "Irall",
+  "shots": [
+   "Irall_aria_dressing_gown_navy_blue.jpg"
+  ],
+  "rrp": "54.49",
+  "trade": "24.74",
+  "rrp_f": 54.49,
+  "usd": 69.2,
+  "retail": 59.38,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_aria_nd_black_wt",
+  "sku": "IRALLARIANDRESSBLACK-G",
+  "title": "Irall Aria Nightdress Black",
+  "brand": "Irall",
+  "shots": [
+   "irall_aria_nd_black_wt.jpg"
+  ],
+  "rrp": "36.49",
+  "trade": "16.47",
+  "rrp_f": 36.49,
+  "usd": 46.34,
+  "retail": 39.53,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "irall_aria_nd_burg_wt",
+  "sku": "IRALLARIADGOWNNAVYBLUE-G",
+  "title": "Irall Aria Dressing Gown Navy",
+  "brand": "Irall",
+  "shots": [
+   "irall_aria_nd_burg_wt.jpg"
+  ],
+  "rrp": "54.49",
+  "trade": "24.74",
+  "rrp_f": 54.49,
+  "usd": 69.2,
+  "retail": 59.38,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_aria_nd_burgundy_new",
+  "sku": "IRALLCLEOPATRADGOWNBLACK-G",
+  "title": "Irall Cleopatra Dressing Gown",
+  "brand": "Irall",
+  "shots": [
+   "irall_aria_nd_burgundy_new.jpg"
+  ],
+  "rrp": "55.99",
+  "trade": "25.24",
+  "rrp_f": 55.99,
+  "usd": 71.11,
+  "retail": 60.58,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_aria_nd_choc_new",
+  "sku": "IRALLARIANDRESSCHOCOLATE-G",
+  "title": "Irall Aria Nightdress Chocolate",
+  "brand": "Irall",
+  "shots": [
+   "irall_aria_nd_choc_new.jpg"
+  ],
+  "rrp": "36.49",
+  "trade": "16.47",
+  "rrp_f": 36.49,
+  "usd": 46.34,
+  "retail": 39.53,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "irall_aria_nd_choc_wt",
+  "sku": "IRALLARIANDRESSCHOCOLATE-G",
+  "title": "Irall Aria Nightdress Chocolate",
+  "brand": "Irall",
+  "shots": [
+   "irall_aria_nd_choc_wt.jpg"
+  ],
+  "rrp": "36.49",
+  "trade": "16.47",
+  "rrp_f": 36.49,
+  "usd": 46.34,
+  "retail": 39.53,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "irall_aria_nd_cream_new",
+  "sku": "IRALLARIANDRESSCREAM-G",
+  "title": "Irall Aria Nightdress Cream",
+  "brand": "Irall",
+  "shots": [
+   "irall_aria_nd_cream_new.jpg"
+  ],
+  "rrp": "36.49",
+  "trade": "16.47",
+  "rrp_f": 36.49,
+  "usd": 46.34,
+  "retail": 39.53,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "irall_aria_nd_cream_wt",
+  "sku": "IRALLARIANDRESSCREAM-G",
+  "title": "Irall Aria Nightdress Cream",
+  "brand": "Irall",
+  "shots": [
+   "irall_aria_nd_cream_wt.jpg"
+  ],
+  "rrp": "36.49",
+  "trade": "16.47",
+  "rrp_f": 36.49,
+  "usd": 46.34,
+  "retail": 39.53,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "irall_aria_nd_navy_new",
+  "sku": "IRALLCLEOPATRADGOWNBLACK-G",
+  "title": "Irall Cleopatra Dressing Gown",
+  "brand": "Irall",
+  "shots": [
+   "irall_aria_nd_navy_new.jpg"
+  ],
+  "rrp": "55.99",
+  "trade": "25.24",
+  "rrp_f": 55.99,
+  "usd": 71.11,
+  "retail": 60.58,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_aria_nd_navy_wt",
+  "sku": "IRALLARIANDRESSNAVYBLUE-G",
+  "title": "Irall Aria Nightdress Navy",
+  "brand": "Irall",
+  "shots": [
+   "irall_aria_nd_navy_wt.jpg"
+  ],
+  "rrp": "36.49",
+  "trade": "16.47",
+  "rrp_f": 36.49,
+  "usd": 46.34,
+  "retail": 39.53,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "irall_aria_nd_white_new",
+  "sku": "IRALLARIANDRESSWHITE-G",
+  "title": "Irall Aria Nightdress White",
+  "brand": "Irall",
+  "shots": [
+   "irall_aria_nd_white_new.jpg"
+  ],
+  "rrp": "36.49",
+  "trade": "16.47",
+  "rrp_f": 36.49,
+  "usd": 46.34,
+  "retail": 39.53,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "irall_aria_nd_white_wt",
+  "sku": "IRALLARIANDRESSWHITE-G",
+  "title": "Irall Aria Nightdress White",
+  "brand": "Irall",
+  "shots": [
+   "irall_aria_nd_white_wt.jpg"
+  ],
+  "rrp": "36.49",
+  "trade": "16.47",
+  "rrp_f": 36.49,
+  "usd": 46.34,
+  "retail": 39.53,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "irall_aria_nightdress_navy_blue",
+  "sku": "IRALLARIANDRESSNAVYBLUE-G",
+  "title": "Irall Aria Nightdress Navy",
+  "brand": "Irall",
+  "shots": [
+   "Irall_aria_nightdress_navy_blue.jpg"
+  ],
+  "rrp": "36.49",
+  "trade": "16.47",
+  "rrp_f": 36.49,
+  "usd": 46.34,
+  "retail": 39.53,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "irall_aria_set_black_new",
+  "sku": "IRALLARIANDRESSBLACK-G",
+  "title": "Irall Aria Nightdress Black",
+  "brand": "Irall",
+  "shots": [
+   "irall_aria_set_black_new.jpg"
+  ],
+  "rrp": "36.49",
+  "trade": "16.47",
+  "rrp_f": 36.49,
+  "usd": 46.34,
+  "retail": 39.53,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "irall_aria_set_black_wt",
+  "sku": "IRALLARIASETBLACK-G",
+  "title": "Irall Aria Set Black",
+  "brand": "Irall",
+  "shots": [
+   "irall_aria_set_black_wt.jpg"
+  ],
+  "rrp": "46.49",
+  "trade": "20.92",
+  "rrp_f": 46.49,
+  "usd": 59.04,
+  "retail": 50.21,
+  "verdict": "set-exempt"
+ },
+ {
+  "key": "irall_aria_set_burg_wt",
+  "sku": "IRALLARIASETBURGUNDY-G",
+  "title": "Irall Aria Set Burgundy",
+  "brand": "Irall",
+  "shots": [
+   "irall_aria_set_burg_wt.jpg"
+  ],
+  "rrp": "46.49",
+  "trade": "20.92",
+  "rrp_f": 46.49,
+  "usd": 59.04,
+  "retail": 50.21,
+  "verdict": "set-exempt"
+ },
+ {
+  "key": "irall_aria_set_burgundy_new",
+  "sku": "IRALLARIASETBURGUNDY-G",
+  "title": "Irall Aria Set Burgundy",
+  "brand": "Irall",
+  "shots": [
+   "irall_aria_set_burgundy_new.jpg"
+  ],
+  "rrp": "46.49",
+  "trade": "20.92",
+  "rrp_f": 46.49,
+  "usd": 59.04,
+  "retail": 50.21,
+  "verdict": "set-exempt"
+ },
+ {
+  "key": "irall_aria_set_cream_new",
+  "sku": "IRALLARIASETCREAM-G",
+  "title": "Irall Aria Set Cream",
+  "brand": "Irall",
+  "shots": [
+   "irall_aria_set_cream_new.jpg"
+  ],
+  "rrp": "46.49",
+  "trade": "20.92",
+  "rrp_f": 46.49,
+  "usd": 59.04,
+  "retail": 50.21,
+  "verdict": "set-exempt"
+ },
+ {
+  "key": "irall_aria_set_cream_wt",
+  "sku": "IRALLARIASETCREAM-G",
+  "title": "Irall Aria Set Cream",
+  "brand": "Irall",
+  "shots": [
+   "irall_aria_set_cream_wt.jpg"
+  ],
+  "rrp": "46.49",
+  "trade": "20.92",
+  "rrp_f": 46.49,
+  "usd": 59.04,
+  "retail": 50.21,
+  "verdict": "set-exempt"
+ },
+ {
+  "key": "irall_aria_set_navy_blue",
+  "sku": "IRALLARIASETNAVY-G",
+  "title": "Irall Aria Set Navy",
+  "brand": "Irall",
+  "shots": [
+   "Irall_aria_set_navy_blue.jpg"
+  ],
+  "rrp": "46.49",
+  "trade": "20.92",
+  "rrp_f": 46.49,
+  "usd": 59.04,
+  "retail": 50.21,
+  "verdict": "set-exempt"
+ },
+ {
+  "key": "irall_aria_set_navy_new",
+  "sku": "IRALLCLEOPATRADGOWNBLACK-G",
+  "title": "Irall Cleopatra Dressing Gown",
+  "brand": "Irall",
+  "shots": [
+   "irall_aria_Set_navy_new.jpg"
+  ],
+  "rrp": "55.99",
+  "trade": "25.24",
+  "rrp_f": 55.99,
+  "usd": 71.11,
+  "retail": 60.58,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_aria_set_navy_wt",
+  "sku": "IRALLARIASETNAVY-G",
+  "title": "Irall Aria Set Navy",
+  "brand": "Irall",
+  "shots": [
+   "irall_aria_set_navy_wt.jpg"
+  ],
+  "rrp": "46.49",
+  "trade": "20.92",
+  "rrp_f": 46.49,
+  "usd": 59.04,
+  "retail": 50.21,
+  "verdict": "set-exempt"
+ },
+ {
+  "key": "irall_bia_cream_wt",
+  "sku": "IRALLGIACREAMNDRESS-GG",
+  "title": "Irall Gia Cream Nightdress",
+  "brand": "Irall",
+  "shots": [
+   "irall_bia_cream_wt.jpg"
+  ],
+  "rrp": "49.99",
+  "trade": "22.72",
+  "rrp_f": 49.99,
+  "usd": 63.49,
+  "retail": 54.53,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_cleopatra_nd_new",
+  "sku": "IRALLCLEOPATRADGOWNBLACK-G",
+  "title": "Irall Cleopatra Dressing Gown",
+  "brand": "Irall",
+  "shots": [
+   "irall_cleopatra_nd_new-1.jpg",
+   "irall_cleopatra_nd_new.jpg"
+  ],
+  "rrp": "55.99",
+  "trade": "25.24",
+  "rrp_f": 55.99,
+  "usd": 71.11,
+  "retail": 60.58,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_dakota_bk_wt",
+  "sku": "IRALLDAKOTANDRESSBLACK-G",
+  "title": "Irall Dakota Nightdress Black",
+  "brand": "Irall",
+  "shots": [
+   "irall_dakota_bk_wt-1.jpg"
+  ],
+  "rrp": "41.49",
+  "trade": "18.82",
+  "rrp_f": 41.49,
+  "usd": 52.69,
+  "retail": 45.17,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "irall_dakota_nd_new",
+  "sku": "IRALLDAKOTANDRESSBLACK-G",
+  "title": "Irall Dakota Nightdress Black",
+  "brand": "Irall",
+  "shots": [
+   "irall_dakota_nd_new.jpg"
+  ],
+  "rrp": "41.49",
+  "trade": "18.82",
+  "rrp_f": 41.49,
+  "usd": 52.69,
+  "retail": 45.17,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "irall_dakota_nightdress",
+  "sku": "IRALLDAKOTANDRESSBLACK-G",
+  "title": "Irall Dakota Nightdress Black",
+  "brand": "Irall",
+  "shots": [
+   "irall_dakota_nightdress.jpg",
+   "irall_dakota_nightdress02.jpg",
+   "irall_dakota_nightdress03.jpg",
+   "irall_dakota_nightdress04.jpg"
+  ],
+  "rrp": "41.49",
+  "trade": "18.82",
+  "rrp_f": 41.49,
+  "usd": 52.69,
+  "retail": 45.17,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "irall_daphne_dg_cream",
+  "sku": "IRALLDAPHNEDGCREAM-G",
+  "title": "Irall Daphne Dressing Gown Cream",
+  "brand": "Irall",
+  "shots": [
+   "irall_daphne_dg_cream02.jpg"
+  ],
+  "rrp": "64.49",
+  "trade": "29.19",
+  "rrp_f": 64.49,
+  "usd": 81.9,
+  "retail": 70.06,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_daphne_dg_cream_new",
+  "sku": "IRALLDAPHNEDGCREAM-G",
+  "title": "Irall Daphne Dressing Gown Cream",
+  "brand": "Irall",
+  "shots": [
+   "irall_daphne_dg_cream_new.jpg"
+  ],
+  "rrp": "64.49",
+  "trade": "29.19",
+  "rrp_f": 64.49,
+  "usd": 81.9,
+  "retail": 70.06,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_daphne_dg_cream_wt",
+  "sku": "IRALLDAPHNENDCREAM-G",
+  "title": "Irall Daphne Nightdress Cream",
+  "brand": "Irall",
+  "shots": [
+   "irall_daphne_dg_cream_wt.jpg"
+  ],
+  "rrp": "49.99",
+  "trade": "22.72",
+  "rrp_f": 49.99,
+  "usd": 63.49,
+  "retail": 54.53,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_daphne_nd_cream",
+  "sku": "IRALLDAPHNENDCREAM-G",
+  "title": "Irall Daphne Nightdress Cream",
+  "brand": "Irall",
+  "shots": [
+   "irall_daphne_nd_cream02.jpg"
+  ],
+  "rrp": "49.99",
+  "trade": "22.72",
+  "rrp_f": 49.99,
+  "usd": 63.49,
+  "retail": 54.53,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_daphne_nd_cream_new",
+  "sku": "IRALLDAPHNENDCREAM-G",
+  "title": "Irall Daphne Nightdress Cream",
+  "brand": "Irall",
+  "shots": [
+   "irall_daphne_nd_cream_new.jpg"
+  ],
+  "rrp": "49.99",
+  "trade": "22.72",
+  "rrp_f": 49.99,
+  "usd": 63.49,
+  "retail": 54.53,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_daphne_nd_cream_wt",
+  "sku": "IRALLDAPHNENDCREAM-G",
+  "title": "Irall Daphne Nightdress Cream",
+  "brand": "Irall",
+  "shots": [
+   "irall_daphne_nd_cream_wt.jpg"
+  ],
+  "rrp": "49.99",
+  "trade": "22.72",
+  "rrp_f": 49.99,
+  "usd": 63.49,
+  "retail": 54.53,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_daphne_nd_sky_new",
+  "sku": "IRALLDAPHNENDBLUE-G",
+  "title": "Irall Daphne Nightdress Sky Blue",
+  "brand": "Irall",
+  "shots": [
+   "irall_daphne_nd_sky_new.jpg"
+  ],
+  "rrp": "49.99",
+  "trade": "22.72",
+  "rrp_f": 49.99,
+  "usd": 63.49,
+  "retail": 54.53,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_daphne_nd_skyblue",
+  "sku": "IRALLDAPHNENDBLUE-G",
+  "title": "Irall Daphne Nightdress Sky Blue",
+  "brand": "Irall",
+  "shots": [
+   "irall_daphne_nd_skyblue.jpg",
+   "irall_daphne_nd_skyblue02.jpg"
+  ],
+  "rrp": "49.99",
+  "trade": "22.72",
+  "rrp_f": 49.99,
+  "usd": 63.49,
+  "retail": 54.53,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_daphne_sky_wt",
+  "sku": "IRALLDAPHNENDCREAM-G",
+  "title": "Irall Daphne Nightdress Cream",
+  "brand": "Irall",
+  "shots": [
+   "irall_daphne_sky_wt.jpg"
+  ],
+  "rrp": "49.99",
+  "trade": "22.72",
+  "rrp_f": 49.99,
+  "usd": 63.49,
+  "retail": 54.53,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_elodie_dressingown_azure",
+  "sku": "IRALLELODIEDGOWNAZURE-G",
+  "title": "Irall Elodie Dressing Gown Azure",
+  "brand": "Irall",
+  "shots": [
+   "Irall_elodie_dressingown_azure_1.jpg",
+   "Irall_elodie_dressingown_azure_2.jpg"
+  ],
+  "rrp": "57.49",
+  "trade": "26.02",
+  "rrp_f": 57.49,
+  "usd": 73.01,
+  "retail": 62.45,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_elodie_dressingown_burgandy",
+  "sku": "IRALLELODIEDGOWNCLARET-G",
+  "title": "Irall Elodie Dressing Gown Burgundy",
+  "brand": "Irall",
+  "shots": [
+   "Irall_elodie_dressingown_burgandy_1.jpg",
+   "Irall_elodie_dressingown_burgandy_2.jpg"
+  ],
+  "rrp": "57.49",
+  "trade": "26.02",
+  "rrp_f": 57.49,
+  "usd": 73.01,
+  "retail": 62.45,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_elodie_dressingown_navy",
+  "sku": "IRALLELODIEDGOWNNAVY-G",
+  "title": "Irall Elodie Dressing Gown Navy",
+  "brand": "Irall",
+  "shots": [
+   "Irall_elodie_dressingown_navy_1.jpg",
+   "Irall_elodie_dressingown_navy_2.jpg"
+  ],
+  "rrp": "57.49",
+  "trade": "26.02",
+  "rrp_f": 57.49,
+  "usd": 73.01,
+  "retail": 62.45,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_elodie_dressingown_plum",
+  "sku": "IRALLELODIEDGOWNPLUM-G",
+  "title": "Irall Elodie Dressing Gown Plum",
+  "brand": "Irall",
+  "shots": [
+   "Irall_elodie_dressingown_plum_1.jpg",
+   "Irall_elodie_dressingown_plum_2.jpg"
+  ],
+  "rrp": "57.49",
+  "trade": "26.02",
+  "rrp_f": 57.49,
+  "usd": 73.01,
+  "retail": 62.45,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_elodie_nighdress_azure",
+  "sku": "IRALLELODIENDRESSAZURE-G",
+  "title": "Irall Elodie Nightdress Azure",
+  "brand": "Irall",
+  "shots": [
+   "Irall_elodie_nighdress_azure_1.jpg",
+   "Irall_elodie_nighdress_azure_2.jpg",
+   "Irall_elodie_nighdress_azure_3.jpg"
+  ],
+  "rrp": "46.49",
+  "trade": "20.92",
+  "rrp_f": 46.49,
+  "usd": 59.04,
+  "retail": 50.21,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "irall_elodie_nighdress_burgandy",
+  "sku": "IRALLELODIENDRESSCLARET-G",
+  "title": "Irall Elodie Nightdress Burgundy",
+  "brand": "Irall",
+  "shots": [
+   "Irall_elodie_nighdress_burgandy_1.jpg",
+   "Irall_elodie_nighdress_burgandy_2.jpg",
+   "Irall_elodie_nighdress_burgandy_3.jpg"
+  ],
+  "rrp": "46.49",
+  "trade": "20.92",
+  "rrp_f": 46.49,
+  "usd": 59.04,
+  "retail": 50.21,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "irall_elodie_nighdress_navy",
+  "sku": "IRALLELODIENDRESSNAVY-G",
+  "title": "Irall Elodie Nightdress Navy",
+  "brand": "Irall",
+  "shots": [
+   "Irall_elodie_nighdress_navy_1.jpg",
+   "Irall_elodie_nighdress_navy_2.jpg",
+   "Irall_elodie_nighdress_navy_3.jpg"
+  ],
+  "rrp": "46.49",
+  "trade": "20.92",
+  "rrp_f": 46.49,
+  "usd": 59.04,
+  "retail": 50.21,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "irall_elodie_nighdress_plum",
+  "sku": "IRALLELODIENDRESSPLUM-G",
+  "title": "Irall Elodie Nightdress Plum",
+  "brand": "Irall",
+  "shots": [
+   "Irall_elodie_nighdress_plum_1.jpg",
+   "Irall_elodie_nighdress_plum_2.jpg",
+   "Irall_elodie_nighdress_plum_3.jpg"
+  ],
+  "rrp": "46.49",
+  "trade": "20.92",
+  "rrp_f": 46.49,
+  "usd": 59.04,
+  "retail": 50.21,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "irall_emerald_dg_new",
+  "sku": "IRALLEMERALDDGOWNGREEN-GG",
+  "title": "Irall Emerald Dressing Gown Green",
+  "brand": "Irall",
+  "shots": [
+   "irall_emerald_dg_new.jpg"
+  ],
+  "rrp": "57.99",
+  "trade": "26.33",
+  "rrp_f": 57.99,
+  "usd": 73.65,
+  "retail": 63.19,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_emerald_i_nd_new",
+  "sku": "IRALLEMERALDINDRESS-GG",
+  "title": "Irall Emerald I Nightdress Dark Green",
+  "brand": "Irall",
+  "shots": [
+   "irall_emerald_I_nd_new.jpg"
+  ],
+  "rrp": "39.99",
+  "trade": "18.18",
+  "rrp_f": 39.99,
+  "usd": 50.79,
+  "retail": 43.63,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "irall_emerald_ii_nd_new",
+  "sku": "IRALLEMERALDIINDRESS-GG",
+  "title": "Irall Emerald II Nightdress Dark Green",
+  "brand": "Irall",
+  "shots": [
+   "irall_emerald_II_nd_new.jpg"
+  ],
+  "rrp": "46.49",
+  "trade": "21.06",
+  "rrp_f": 46.49,
+  "usd": 59.04,
+  "retail": 50.54,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "irall_emeraldiii_nd_new",
+  "sku": "IRALLEMERALDIIINDRESSGREEN-GG",
+  "title": "Irall Emerald III Nightdress Dark Green",
+  "brand": "Irall",
+  "shots": [
+   "irall_emeraldIII_nd_new.jpg"
+  ],
+  "rrp": "49.99",
+  "trade": "22.72",
+  "rrp_f": 49.99,
+  "usd": 63.49,
+  "retail": 54.53,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_gia_navy_wt",
+  "sku": "IRALLGIACREAMNDRESS-GG",
+  "title": "Irall Gia Cream Nightdress",
+  "brand": "Irall",
+  "shots": [
+   "irall_gia_navy_wt.jpg"
+  ],
+  "rrp": "49.99",
+  "trade": "22.72",
+  "rrp_f": 49.99,
+  "usd": 63.49,
+  "retail": 54.53,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_gia_nd_cream_new",
+  "sku": "IRALLGIACREAMNDRESS-GG",
+  "title": "Irall Gia Cream Nightdress",
+  "brand": "Irall",
+  "shots": [
+   "irall_gia_nd_cream_new.jpg"
+  ],
+  "rrp": "49.99",
+  "trade": "22.72",
+  "rrp_f": 49.99,
+  "usd": 63.49,
+  "retail": 54.53,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_gia_nd_navy_new",
+  "sku": "IRALLGIANDRESSNAVY-GG",
+  "title": "Irall Gia Nightdress Navy",
+  "brand": "Irall",
+  "shots": [
+   "irall_gia_nd_navy_new.jpg"
+  ],
+  "rrp": "49.99",
+  "trade": "22.72",
+  "rrp_f": 49.99,
+  "usd": 63.49,
+  "retail": 54.53,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_gloria_dg_azure",
+  "sku": "IRALLGIAREDNDRESS-GG",
+  "title": "Irall Gia Red Nightdress",
+  "brand": "Irall",
+  "shots": [
+   "irall_gloria_dg_azure.jpg"
+  ],
+  "rrp": "50.49",
+  "trade": "22.84",
+  "rrp_f": 50.49,
+  "usd": 64.12,
+  "retail": 54.82,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_gloria_dg_cream",
+  "sku": "IRALLGLORIADGOWNCREAM-G",
+  "title": "Irall Gloria Dressing Gown Cream",
+  "brand": "Irall",
+  "shots": [
+   "irall_gloria_dg_cream.png"
+  ],
+  "rrp": "48.16",
+  "trade": "21.89",
+  "rrp_f": 48.16,
+  "usd": 61.16,
+  "retail": 52.54,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_juniper_burg_dg_wt",
+  "sku": "IRALLJUNIPERCREAMDGOWN-GG",
+  "title": "Irall Juniper Cream Dressing Gown",
+  "brand": "Irall",
+  "shots": [
+   "irall_juniper_burg_dg_wt.jpg"
+  ],
+  "rrp": "57.99",
+  "trade": "26.14",
+  "rrp_f": 57.99,
+  "usd": 73.65,
+  "retail": 62.74,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_juniper_dg-cream_new",
+  "sku": "IRALLJUNIPERCREAMDGOWN-GG",
+  "title": "Irall Juniper Cream Dressing Gown",
+  "brand": "Irall",
+  "shots": [
+   "irall_juniper_dg-cream_new.jpg"
+  ],
+  "rrp": "57.99",
+  "trade": "26.14",
+  "rrp_f": 57.99,
+  "usd": 73.65,
+  "retail": 62.74,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_juniper_dg_burgundy_new",
+  "sku": "IRALLJUNIPERBURGUNDYDGOW-GG",
+  "title": "Irall Juniper Burgundy Dressing Gown",
+  "brand": "Irall",
+  "shots": [
+   "irall_juniper_dg_burgundy_new.jpg"
+  ],
+  "rrp": "57.99",
+  "trade": "26.14",
+  "rrp_f": 57.99,
+  "usd": 73.65,
+  "retail": 62.74,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_juniper_dg_cream_wt",
+  "sku": "IRALLJUNIPERCREAMDGOWN-GG",
+  "title": "Irall Juniper Cream Dressing Gown",
+  "brand": "Irall",
+  "shots": [
+   "irall_juniper_dg_cream_wt.jpg"
+  ],
+  "rrp": "57.99",
+  "trade": "26.14",
+  "rrp_f": 57.99,
+  "usd": 73.65,
+  "retail": 62.74,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_juniper_nd-cream_new",
+  "sku": "IRALLJUNIPERNDRESSCREAM-GG",
+  "title": "Irall Juniper Nightdress Cream",
+  "brand": "Irall",
+  "shots": [
+   "irall_juniper_nd-cream_new.jpg"
+  ],
+  "rrp": "42.49",
+  "trade": "19.12",
+  "rrp_f": 42.49,
+  "usd": 53.96,
+  "retail": 45.89,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "irall_juniper_nd_burg_wt",
+  "sku": "IRALLJUNIPERCREAMDGOWN-GG",
+  "title": "Irall Juniper Cream Dressing Gown",
+  "brand": "Irall",
+  "shots": [
+   "irall_juniper_nd_burg_wt.jpg"
+  ],
+  "rrp": "57.99",
+  "trade": "26.14",
+  "rrp_f": 57.99,
+  "usd": 73.65,
+  "retail": 62.74,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_juniper_nd_burgundy_new",
+  "sku": "IRALLJUNIPERBURGUNDYNDRESS-GG",
+  "title": "Irall Juniper Burgundy Nightdress",
+  "brand": "Irall",
+  "shots": [
+   "irall_juniper_nd_burgundy_new.jpg"
+  ],
+  "rrp": "42.49",
+  "trade": "19.12",
+  "rrp_f": 42.49,
+  "usd": 53.96,
+  "retail": 45.89,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "irall_juniper_nd_cream_wt",
+  "sku": "IRALLJUNIPERNDRESSCREAM-GG",
+  "title": "Irall Juniper Nightdress Cream",
+  "brand": "Irall",
+  "shots": [
+   "irall_juniper_nd_cream_wt.jpg"
+  ],
+  "rrp": "42.49",
+  "trade": "19.12",
+  "rrp_f": 42.49,
+  "usd": 53.96,
+  "retail": 45.89,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "irall_juniper_nd_sky_wt",
+  "sku": "IRALLJUNIPERNDRESSBLUE-GG",
+  "title": "Irall Juniper Nightdress Blue",
+  "brand": "Irall",
+  "shots": [
+   "irall_juniper_nd_sky_wt.jpg"
+  ],
+  "rrp": "42.49",
+  "trade": "19.12",
+  "rrp_f": 42.49,
+  "usd": 53.96,
+  "retail": 45.89,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "irall_latifa_nd_new",
+  "sku": "IRALLLATIFANDRESSPLUM-G",
+  "title": "Irall Latifa Nightdress Plum",
+  "brand": "Irall",
+  "shots": [
+   "irall_latifa_nd_new.jpg"
+  ],
+  "rrp": "39.99",
+  "trade": "18.08",
+  "rrp_f": 39.99,
+  "usd": 50.79,
+  "retail": 43.39,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "irall_luba_nd",
+  "sku": "IRALLLUBANIGHTDRESSBLACK-G",
+  "title": "Irall Luba Nightdress Black",
+  "brand": "Irall",
+  "shots": [
+   "irall_luba_nd.jpg"
+  ],
+  "rrp": "38.99",
+  "trade": "17.63",
+  "rrp_f": 38.99,
+  "usd": 49.52,
+  "retail": 42.31,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "irall_mallory_set_new",
+  "sku": "IRALLMALLORYSETCHAMP-G",
+  "title": "Irall Mallory Short Set Champagne",
+  "brand": "Irall",
+  "shots": [
+   "irall_mallory_set_new-1.jpg"
+  ],
+  "rrp": "47.49",
+  "trade": "21.55",
+  "rrp_f": 47.49,
+  "usd": 60.31,
+  "retail": 51.72,
+  "verdict": "set-exempt"
+ },
+ {
+  "key": "irall_malloryii_nd_black_new",
+  "sku": "IRALLCLEOPATRADGOWNBLACK-G",
+  "title": "Irall Cleopatra Dressing Gown",
+  "brand": "Irall",
+  "shots": [
+   "irall_malloryII_nd_black_new.jpg"
+  ],
+  "rrp": "55.99",
+  "trade": "25.24",
+  "rrp_f": 55.99,
+  "usd": 71.11,
+  "retail": 60.58,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_malloryiii_black",
+  "sku": "IRALLMALLORYIIINDRESSBLACK-G",
+  "title": "Irall Mallory III Nightdress Black",
+  "brand": "Irall",
+  "shots": [
+   "Irall_malloryIII_black_back.jpg",
+   "Irall_malloryIII_black_detail.jpg",
+   "Irall_malloryIII_black_front.jpg"
+  ],
+  "rrp": "66.49",
+  "trade": "30.16",
+  "rrp_f": 66.49,
+  "usd": 84.44,
+  "retail": 72.38,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_nikita-dressinggown_jade",
+  "sku": "IRALLNIKITADGOWNJADE-G",
+  "title": "Irall Nikita Dressing Gown Jade",
+  "brand": "Irall",
+  "shots": [
+   "Irall_nikita-dressinggown_jade_back.jpg",
+   "Irall_nikita-dressinggown_jade_front.jpg"
+  ],
+  "rrp": "55.49",
+  "trade": "25.06",
+  "rrp_f": 55.49,
+  "usd": 70.47,
+  "retail": 60.14,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_nikita-nightdress_jade",
+  "sku": "",
+  "title": "",
+  "brand": "Irall",
+  "shots": [
+   "Irall_nikita-nightdress_jade_back.jpg",
+   "Irall_nikita-nightdress_jade_front.jpg"
+  ],
+  "rrp": "",
+  "trade": "",
+  "rrp_f": 0.0,
+  "usd": 0.0,
+  "retail": 0,
+  "verdict": "NO PRICE"
+ },
+ {
+  "key": "irall_nikita_set_jade",
+  "sku": "IRALLNIKITASETJADE-G",
+  "title": "Irall Nikita Short Set Jade",
+  "brand": "Irall",
+  "shots": [
+   "Irall_nikita_set_jade_back.jpg",
+   "Irall_nikita_set_jade_front.jpg"
+  ],
+  "rrp": "52.49",
+  "trade": "23.79",
+  "rrp_f": 52.49,
+  "usd": 66.66,
+  "retail": 57.1,
+  "verdict": "set-exempt"
+ },
+ {
+  "key": "irall_petra_dressing_gown",
+  "sku": "IRALLPETRADGOWN-G",
+  "title": "Irall Petra Dressing Gown Champagne",
+  "brand": "Irall",
+  "shots": [
+   "irall_petra_dressing_gown_1.jpg"
+  ],
+  "rrp": "67.49",
+  "trade": "30.47",
+  "rrp_f": 67.49,
+  "usd": 85.71,
+  "retail": 73.13,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_petra_nightdress",
+  "sku": "IRALLPETRANIGHTDRESS-G",
+  "title": "Irall Petra Nightdress Champagne",
+  "brand": "Irall",
+  "shots": [
+   "irall_petra_nightdress_1.jpg"
+  ],
+  "rrp": "52.49",
+  "trade": "23.79",
+  "rrp_f": 52.49,
+  "usd": 66.66,
+  "retail": 57.1,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_raven_set",
+  "sku": "IRALLRAVENSETORANGE/BLACK-G",
+  "title": "Irall Raven Set",
+  "brand": "Irall",
+  "shots": [
+   "irall_raven_set02.jpg"
+  ],
+  "rrp": "47.49",
+  "trade": "21.55",
+  "rrp_f": 47.49,
+  "usd": 60.31,
+  "retail": 51.72,
+  "verdict": "set-exempt"
+ },
+ {
+  "key": "irall_raven_set_new",
+  "sku": "IRALLRAVENSETORANGE/BLACK-G",
+  "title": "Irall Raven Set",
+  "brand": "Irall",
+  "shots": [
+   "irall_raven_Set_new.jpg"
+  ],
+  "rrp": "47.49",
+  "trade": "21.55",
+  "rrp_f": 47.49,
+  "usd": 60.31,
+  "retail": 51.72,
+  "verdict": "set-exempt"
+ },
+ {
+  "key": "irall_raven_wt",
+  "sku": "IRALLRAVENSETORANGE/BLACK-G",
+  "title": "Irall Raven Set",
+  "brand": "Irall",
+  "shots": [
+   "irall_raven_wt.jpg"
+  ],
+  "rrp": "47.49",
+  "trade": "21.55",
+  "rrp_f": 47.49,
+  "usd": 60.31,
+  "retail": 51.72,
+  "verdict": "set-exempt"
+ },
+ {
+  "key": "irall_remi_nd_cream_new",
+  "sku": "IRALLREMINDRESSCREAM-GG",
+  "title": "Irall Remi Nightdress Cream",
+  "brand": "Irall",
+  "shots": [
+   "irall_remi_nd_cream_new.jpg"
+  ],
+  "rrp": "39.99",
+  "trade": "18.18",
+  "rrp_f": 39.99,
+  "usd": 50.79,
+  "retail": 43.63,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "irall_remi_nd_hotred_new",
+  "sku": "IRALLREMINDRESSRED-GGG",
+  "title": "Irall Remi Nightdress Hot Red",
+  "brand": "Irall",
+  "shots": [
+   "irall_remi_nd_hotred_new.jpg"
+  ],
+  "rrp": "39.99",
+  "trade": "18.18",
+  "rrp_f": 39.99,
+  "usd": 50.79,
+  "retail": 43.63,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "irall_remi_nd_new",
+  "sku": "IRALLREMINDRESSNAVYBLUE-GG",
+  "title": "Irall Remi Nightdress Navy Blue",
+  "brand": "Irall",
+  "shots": [
+   "irall_remi_nd_new.jpg"
+  ],
+  "rrp": "39.99",
+  "trade": "18.18",
+  "rrp_f": 39.99,
+  "usd": 50.79,
+  "retail": 43.63,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "irall_rjuniper_nd_sky_new",
+  "sku": "IRALLJUNIPERNDRESSBLUE-GG",
+  "title": "Irall Juniper Nightdress Blue",
+  "brand": "Irall",
+  "shots": [
+   "irall_rjuniper_nd_sky_new.jpg"
+  ],
+  "rrp": "42.49",
+  "trade": "19.12",
+  "rrp_f": 42.49,
+  "usd": 53.96,
+  "retail": 45.89,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "irall_rmalloryii_nd_new",
+  "sku": "IRALLCLEOPATRADGOWNBLACK-G",
+  "title": "Irall Cleopatra Dressing Gown",
+  "brand": "Irall",
+  "shots": [
+   "irall_rmalloryII_nd_new.jpg"
+  ],
+  "rrp": "55.99",
+  "trade": "25.24",
+  "rrp_f": 55.99,
+  "usd": 71.11,
+  "retail": 60.58,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_saphire_dg_new",
+  "sku": "Irallsapphire-GGG",
+  "title": "Irall Sapphire Dressing Gown Azure",
+  "brand": "Irall",
+  "shots": [
+   "irall_saphire_dg_new.jpg"
+  ],
+  "rrp": "",
+  "trade": "",
+  "rrp_f": 0.0,
+  "usd": 0.0,
+  "retail": 0,
+  "verdict": "NO PRICE"
+ },
+ {
+  "key": "irall_saphireii_nd_new",
+  "sku": "IRALLSAPPHIREIINDRESSAZUR-GG",
+  "title": "Irall Sapphire II Nightdress Azure",
+  "brand": "Irall",
+  "shots": [
+   "irall_saphireII_nd_new.jpg"
+  ],
+  "rrp": "46.99",
+  "trade": "21.24",
+  "rrp_f": 46.99,
+  "usd": 59.68,
+  "retail": 50.98,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "irall_sapphire_i_nd_new",
+  "sku": "IRALLSAPPHIREINDRESSAZURE-GG",
+  "title": "Irall Sapphire I Nightdress Azure",
+  "brand": "Irall",
+  "shots": [
+   "irall_sapphire_I_nd_new.jpg"
+  ],
+  "rrp": "39.99",
+  "trade": "18.06",
+  "rrp_f": 39.99,
+  "usd": 50.79,
+  "retail": 43.34,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "irall_sharon_bk_dg_wt",
+  "sku": "IRALLSHARONWHITEDGOWN-GG",
+  "title": "Irall Sharon Dressing Gown White",
+  "brand": "Irall",
+  "shots": [
+   "irall_sharon_bk_dg_wt.jpg"
+  ],
+  "rrp": "47.49",
+  "trade": "21.55",
+  "rrp_f": 47.49,
+  "usd": 60.31,
+  "retail": 51.72,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_sharon_dg_white",
+  "sku": "IRALLSHARONWHITEDGOWN-GG",
+  "title": "Irall Sharon Dressing Gown White",
+  "brand": "Irall",
+  "shots": [
+   "irall_sharon_dg_White.jpg"
+  ],
+  "rrp": "47.49",
+  "trade": "21.55",
+  "rrp_f": 47.49,
+  "usd": 60.31,
+  "retail": 51.72,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_sharon_dg_wt",
+  "sku": "IRALLSHARONWHITEDGOWN-GG",
+  "title": "Irall Sharon Dressing Gown White",
+  "brand": "Irall",
+  "shots": [
+   "irall_sharon_dg_wt.jpg"
+  ],
+  "rrp": "47.49",
+  "trade": "21.55",
+  "rrp_f": 47.49,
+  "usd": 60.31,
+  "retail": 51.72,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_sharon_nd_bk",
+  "sku": "IRALLSHARONNDRESSBLACK-G",
+  "title": "Irall Sharon Nightdress Black",
+  "brand": "Irall",
+  "shots": [
+   "irall_sharon_nd_bk.jpg"
+  ],
+  "rrp": "39.99",
+  "trade": "18.18",
+  "rrp_f": 39.99,
+  "usd": 50.79,
+  "retail": 43.63,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "irall_sharon_nd_black_new",
+  "sku": "IRALLSHARONDGOWNBLACK-GG",
+  "title": "Irall Sharon Dressing Gown Black",
+  "brand": "Irall",
+  "shots": [
+   "irall_sharon_nd_black_new.jpg"
+  ],
+  "rrp": "47.49",
+  "trade": "21.55",
+  "rrp_f": 47.49,
+  "usd": 60.31,
+  "retail": 51.72,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_sharon_nd_wt",
+  "sku": "IRALLSHARONWHITENDRESS-GG",
+  "title": "Irall Sharon Nightdress White",
+  "brand": "Irall",
+  "shots": [
+   "irall_sharon_nd_wt.jpg"
+  ],
+  "rrp": "39.99",
+  "trade": "18.18",
+  "rrp_f": 39.99,
+  "usd": 50.79,
+  "retail": 43.63,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "irall_sharon_nd_wt_new",
+  "sku": "IRALLSHARONWHITENDRESS-GG",
+  "title": "Irall Sharon Nightdress White",
+  "brand": "Irall",
+  "shots": [
+   "irall_sharon_nd_wt_new.jpg"
+  ],
+  "rrp": "39.99",
+  "trade": "18.18",
+  "rrp_f": 39.99,
+  "usd": 50.79,
+  "retail": 43.63,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "irall_shelby_dressinggown_-purple",
+  "sku": "IRALLSHELBYDGOWNPURPLE-G",
+  "title": "Irall Shelby Dressing Gown Purple",
+  "brand": "Irall",
+  "shots": [
+   "Irall_Shelby_Dressinggown_-Purple_Front.jpg"
+  ],
+  "rrp": "57.49",
+  "trade": "26.02",
+  "rrp_f": 57.49,
+  "usd": 73.01,
+  "retail": 62.45,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_shelby_dressinggown_-purple_-cack",
+  "sku": "IRALLSHELBYDGOWNPURPLE-G",
+  "title": "Irall Shelby Dressing Gown Purple",
+  "brand": "Irall",
+  "shots": [
+   "Irall_shelby_dressinggown_-purple_-cack.jpg"
+  ],
+  "rrp": "57.49",
+  "trade": "26.02",
+  "rrp_f": 57.49,
+  "usd": 73.01,
+  "retail": 62.45,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_shelby_dressinggown_-rose",
+  "sku": "IRALLSHELBYDGOWNDUSTYROSE-G",
+  "title": "Irall Shelby Dressing Gown Dusty Rose",
+  "brand": "Irall",
+  "shots": [
+   "Irall_shelby_dressinggown_-rose_back.jpg",
+   "Irall_shelby_dressinggown_-rose_front.jpg"
+  ],
+  "rrp": "57.49",
+  "trade": "26.02",
+  "rrp_f": 57.49,
+  "usd": 73.01,
+  "retail": 62.45,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_shelby_nightdress_purple",
+  "sku": "",
+  "title": "",
+  "brand": "Irall",
+  "shots": [
+   "Irall_shelby_nightdress_purple_back.jpg",
+   "Irall_shelby_nightdress_purple_front.jpg"
+  ],
+  "rrp": "",
+  "trade": "",
+  "rrp_f": 0.0,
+  "usd": 0.0,
+  "retail": 0,
+  "verdict": "NO PRICE"
+ },
+ {
+  "key": "irall_shelby_nightdress_rose",
+  "sku": "IRALLSHELBYNDRESSDUSTYROSE-G",
+  "title": "Irall Shelby Nightdress Dusty Rose",
+  "brand": "Irall",
+  "shots": [
+   "Irall_shelby_nightdress_rose_back.jpg",
+   "Irall_shelby_nightdress_rose_front.jpg"
+  ],
+  "rrp": "57.49",
+  "trade": "26.02",
+  "rrp_f": 57.49,
+  "usd": 73.01,
+  "retail": 62.45,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_shelby_set_purple",
+  "sku": "IRALLSHELBYSETPURPLE-G",
+  "title": "Irall Shelby Set Purple",
+  "brand": "Irall",
+  "shots": [
+   "Irall_shelby_set_purple_back.jpg"
+  ],
+  "rrp": "49.99",
+  "trade": "22.72",
+  "rrp_f": 49.99,
+  "usd": 63.49,
+  "retail": 54.53,
+  "verdict": "set-exempt"
+ },
+ {
+  "key": "irall_shelby_set_purple_front",
+  "sku": "IRALLSHELBYSETPURPLE-G",
+  "title": "Irall Shelby Set Purple",
+  "brand": "Irall",
+  "shots": [
+   "Irall_shelby_set_purple_front-1.jpg"
+  ],
+  "rrp": "49.99",
+  "trade": "22.72",
+  "rrp_f": 49.99,
+  "usd": 63.49,
+  "retail": 54.53,
+  "verdict": "set-exempt"
+ },
+ {
+  "key": "irall_shelby_set_rose",
+  "sku": "IRALLSHELBYSETDUSTYROSE-G",
+  "title": "Irall Shelby Set Dusty Rose",
+  "brand": "Irall",
+  "shots": [
+   "Irall_shelby_set_rose_back.jpg",
+   "Irall_shelby_set_rose_front.jpg"
+  ],
+  "rrp": "49.99",
+  "trade": "22.72",
+  "rrp_f": 49.99,
+  "usd": 63.49,
+  "retail": 54.53,
+  "verdict": "set-exempt"
+ },
+ {
+  "key": "irall_tadala_nd_blue",
+  "sku": "IRALLTADALANDRESSBLUE-G",
+  "title": "Irall Tadala Nightdress",
+  "brand": "Irall",
+  "shots": [
+   "irall_tadala_nd_blue.jpg",
+   "irall_tadala_nd_blue02.jpg"
+  ],
+  "rrp": "48.49",
+  "trade": "21.87",
+  "rrp_f": 48.49,
+  "usd": 61.58,
+  "retail": 52.49,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_tori_set_cream",
+  "sku": "IRALLTORISETIVORY-GG",
+  "title": "Irall Tori Set Ivory",
+  "brand": "Irall",
+  "shots": [
+   "irall_tori_set_cream.jpg"
+  ],
+  "rrp": "43.49",
+  "trade": "19.65",
+  "rrp_f": 43.49,
+  "usd": 55.23,
+  "retail": 47.16,
+  "verdict": "set-exempt"
+ },
+ {
+  "key": "irall_tori_set_cream_wt",
+  "sku": "IRALLTORISETIVORY-GG",
+  "title": "Irall Tori Set Ivory",
+  "brand": "Irall",
+  "shots": [
+   "irall_tori_set_cream_wt.jpg"
+  ],
+  "rrp": "43.49",
+  "trade": "19.65",
+  "rrp_f": 43.49,
+  "usd": 55.23,
+  "retail": 47.16,
+  "verdict": "set-exempt"
+ },
+ {
+  "key": "irall_tori_set_navy_new",
+  "sku": "IRALLTORISETNAVY-GG",
+  "title": "Irall Tori Set Navy Blue",
+  "brand": "Irall",
+  "shots": [
+   "irall_tori_set_navy_new.jpg"
+  ],
+  "rrp": "43.49",
+  "trade": "19.65",
+  "rrp_f": 43.49,
+  "usd": 55.23,
+  "retail": 47.16,
+  "verdict": "set-exempt"
+ },
+ {
+  "key": "irall_tori_set_navy_wt",
+  "sku": "IRALLTORISETNAVY-GG",
+  "title": "Irall Tori Set Navy Blue",
+  "brand": "Irall",
+  "shots": [
+   "irall_tori_set_navy_wt.jpg"
+  ],
+  "rrp": "43.49",
+  "trade": "19.65",
+  "rrp_f": 43.49,
+  "usd": 55.23,
+  "retail": 47.16,
+  "verdict": "set-exempt"
+ },
+ {
+  "key": "irall_winter_nd_white",
+  "sku": "IRALLWINTERNDRESSWHITE-G",
+  "title": "Irall Winter Nightdress White",
+  "brand": "Irall",
+  "shots": [
+   "irall_winter_nd_white.jpg"
+  ],
+  "rrp": "43.49",
+  "trade": "19.57",
+  "rrp_f": 43.49,
+  "usd": 55.23,
+  "retail": 46.97,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "irall_winter_nightdress",
+  "sku": "IRALLWINTERNDRESSWHITE-G",
+  "title": "Irall Winter Nightdress White",
+  "brand": "Irall",
+  "shots": [
+   "irall_winter_nightdress.jpg",
+   "irall_winter_nightdress02.jpg"
+  ],
+  "rrp": "43.49",
+  "trade": "19.57",
+  "rrp_f": 43.49,
+  "usd": 55.23,
+  "retail": 46.97,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "irall_winter_wt",
+  "sku": "IRALLWINTERNDRESSWHITE-G",
+  "title": "Irall Winter Nightdress White",
+  "brand": "Irall",
+  "shots": [
+   "irall_winter_wt.jpg"
+  ],
+  "rrp": "43.49",
+  "trade": "19.57",
+  "rrp_f": 43.49,
+  "usd": 55.23,
+  "retail": 46.97,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "irall_yoko_dg_blue_new",
+  "sku": "IRALLYOKODGOWNNBLUE-GG",
+  "title": "Irall Yoko Dressing Gown Navy Blue",
+  "brand": "Irall",
+  "shots": [
+   "irall_yoko_dg_blue_new.jpg"
+  ],
+  "rrp": "67.49",
+  "trade": "30.47",
+  "rrp_f": 67.49,
+  "usd": 85.71,
+  "retail": 73.13,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_yoko_dg_navy_wt",
+  "sku": "IRALLYOKODGOWNNBLUE-GG",
+  "title": "Irall Yoko Dressing Gown Navy Blue",
+  "brand": "Irall",
+  "shots": [
+   "irall_yoko_dg_navy_wt.jpg"
+  ],
+  "rrp": "67.49",
+  "trade": "30.47",
+  "rrp_f": 67.49,
+  "usd": 85.71,
+  "retail": 73.13,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_yoko_nd_blue_new",
+  "sku": "IRALLCLEOPATRADGOWNBLACK-G",
+  "title": "Irall Cleopatra Dressing Gown",
+  "brand": "Irall",
+  "shots": [
+   "irall_yoko_nd_blue_new.jpg"
+  ],
+  "rrp": "55.99",
+  "trade": "25.24",
+  "rrp_f": 55.99,
+  "usd": 71.11,
+  "retail": 60.58,
+  "verdict": "ok"
+ },
+ {
+  "key": "irall_yoko_nd_navy_wt",
+  "sku": "",
+  "title": "",
+  "brand": "Irall",
+  "shots": [
+   "irall_yoko_nd_navy_wt.jpg"
+  ],
+  "rrp": "",
+  "trade": "",
+  "rrp_f": 0.0,
+  "usd": 0.0,
+  "retail": 0,
+  "verdict": "NO PRICE"
+ },
+ {
+  "key": "irall_yoko_nightdress",
+  "sku": "IRALLYOKONIGHTDRESS-G",
+  "title": "Irall Yoko Nightdress Black",
+  "brand": "Irall",
+  "shots": [
+   "irall_yoko_nightdress.jpg",
+   "irall_yoko_nightdress02.jpg"
+  ],
+  "rrp": "65.99",
+  "trade": "29.83",
+  "rrp_f": 65.99,
+  "usd": 83.81,
+  "retail": 71.59,
+  "verdict": "ok"
+ },
+ {
+  "key": "iraria_set_black",
+  "sku": "IRALLARIASETBLACK-G",
+  "title": "Irall Aria Set Black",
+  "brand": "Irall",
+  "shots": [
+   "iraria_set_black.jpg"
+  ],
+  "rrp": "46.49",
+  "trade": "20.92",
+  "rrp_f": 46.49,
+  "usd": 59.04,
+  "retail": 50.21,
+  "verdict": "set-exempt"
+ },
+ {
+  "key": "iraria_set_burgundy",
+  "sku": "IRALLARIASETBURGUNDY-G",
+  "title": "Irall Aria Set Burgundy",
+  "brand": "Irall",
+  "shots": [
+   "iraria_set_burgundy.jpg"
+  ],
+  "rrp": "46.49",
+  "trade": "20.92",
+  "rrp_f": 46.49,
+  "usd": 59.04,
+  "retail": 50.21,
+  "verdict": "set-exempt"
+ },
+ {
+  "key": "iraria_set_cream",
+  "sku": "IRALLARIASETCREAM-G",
+  "title": "Irall Aria Set Cream",
+  "brand": "Irall",
+  "shots": [
+   "iraria_set_cream.jpg"
+  ],
+  "rrp": "46.49",
+  "trade": "20.92",
+  "rrp_f": 46.49,
+  "usd": 59.04,
+  "retail": 50.21,
+  "verdict": "set-exempt"
+ },
+ {
+  "key": "irlena",
+  "sku": "IRALLLENANIGHTDRESS-G",
+  "title": "Irall Lena Nightdress Blue",
+  "brand": "Irall",
+  "shots": [
+   "irlena_1.jpg"
+  ],
+  "rrp": "39.49",
+  "trade": "17.74",
+  "rrp_f": 39.49,
+  "usd": 50.15,
+  "retail": 42.58,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "irmirabelle_ii_nd_dg_pink",
+  "sku": "IRALLMIRABELLEIIDGOWNDUSTRO-G",
+  "title": "Irall Mirabelle II Dressing Gown Rose",
+  "brand": "Irall",
+  "shots": [
+   "irmirabelle_ii_nd_dg_pink_5.jpg"
+  ],
+  "rrp": "48.93",
+  "trade": "22.24",
+  "rrp_f": 48.93,
+  "usd": 62.14,
+  "retail": 53.38,
+  "verdict": "ok"
+ },
+ {
+  "key": "irsamantha_set",
+  "sku": "IRALLSAMANTHASET-G",
+  "title": "Irall Samantha Short Set Pink",
+  "brand": "Irall",
+  "shots": [
+   "irsamantha_set.jpg"
+  ],
+  "rrp": "44.99",
+  "trade": "20.28",
+  "rrp_f": 44.99,
+  "usd": 57.14,
+  "retail": 48.67,
+  "verdict": "set-exempt"
+ },
+ {
+  "key": "irtiffany_nd_dg",
+  "sku": "IRALLTIFFANYNDRESSPURPLUM-G",
+  "title": "Irall Tiffany Purple Nightdress",
+  "brand": "Irall",
+  "shots": [
+   "irtiffany_nd_dg.jpg"
+  ],
+  "rrp": "",
+  "trade": "",
+  "rrp_f": 0.0,
+  "usd": 0.0,
+  "retail": 0,
+  "verdict": "NO PRICE"
+ },
+ {
+  "key": "iryasmine_nd",
+  "sku": "IRALLYASMINENIGHTDRESS-G",
+  "title": "Irall Yasmine Nightdress Pink",
+  "brand": "Irall",
+  "shots": [
+   "iryasmine_nd.jpg"
+  ],
+  "rrp": "47.99",
+  "trade": "21.78",
+  "rrp_f": 47.99,
+  "usd": 60.95,
+  "retail": 52.27,
+  "verdict": "ok"
+ },
+ {
+  "key": "juniper_dressing_gown_burgundy",
+  "sku": "IRALLJUNIPERBURGUNDYDGOW-GG",
+  "title": "Irall Juniper Burgundy Dressing Gown",
+  "brand": "Irall",
+  "shots": [
+   "juniper_dressing_gown_burgundy_-_back_web1.jpg",
+   "juniper_dressing_gown_burgundy_web2.jpg",
+   "juniper_dressing_gown_burgundy_web3.jpg"
+  ],
+  "rrp": "57.99",
+  "trade": "26.14",
+  "rrp_f": 57.99,
+  "usd": 73.65,
+  "retail": 62.74,
+  "verdict": "ok"
+ },
+ {
+  "key": "juniper_dressing_gown_cream",
+  "sku": "IRALLJUNIPERCREAMDGOWN-GG",
+  "title": "Irall Juniper Cream Dressing Gown",
+  "brand": "Irall",
+  "shots": [
+   "juniper_dressing_gown_cream_web2.jpg"
+  ],
+  "rrp": "57.99",
+  "trade": "26.14",
+  "rrp_f": 57.99,
+  "usd": 73.65,
+  "retail": 62.74,
+  "verdict": "ok"
+ },
+ {
+  "key": "juniper_dressing_gown_cream__back_cream",
+  "sku": "IRALLJUNIPERCREAMDGOWN-GG",
+  "title": "Irall Juniper Cream Dressing Gown",
+  "brand": "Irall",
+  "shots": [
+   "juniper_dressing_gown_cream__back_cream.jpg"
+  ],
+  "rrp": "57.99",
+  "trade": "26.14",
+  "rrp_f": 57.99,
+  "usd": 73.65,
+  "retail": 62.74,
+  "verdict": "ok"
+ },
+ {
+  "key": "juniper_nightdress_burgundy__ck",
+  "sku": "IRALLJUNIPERBURGUNDYNDRESS-GG",
+  "title": "Irall Juniper Burgundy Nightdress",
+  "brand": "Irall",
+  "shots": [
+   "juniper_nightdress_burgundy__ck-web1.jpg"
+  ],
+  "rrp": "42.49",
+  "trade": "19.12",
+  "rrp_f": 42.49,
+  "usd": 53.96,
+  "retail": 45.89,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "juniper_nightdress_cream",
+  "sku": "IRALLJUNIPERNDRESSCREAM-GG",
+  "title": "Irall Juniper Nightdress Cream",
+  "brand": "Irall",
+  "shots": [
+   "juniper_nightdress_cream_web1.jpg",
+   "juniper_nightdress_cream_web2.jpg"
+  ],
+  "rrp": "42.49",
+  "trade": "19.12",
+  "rrp_f": 42.49,
+  "usd": 53.96,
+  "retail": 45.89,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "juniper_nightdress_sky_blue",
+  "sku": "IRALLJUNIPERNDRESSBLUE-GG",
+  "title": "Irall Juniper Nightdress Blue",
+  "brand": "Irall",
+  "shots": [
+   "juniper_nightdress_sky_blue_web1.jpg",
+   "juniper_nightdress_sky_blue_web2.jpg"
+  ],
+  "rrp": "42.49",
+  "trade": "19.12",
+  "rrp_f": 42.49,
+  "usd": 53.96,
+  "retail": 45.89,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "juniper_nihgtdress_burgundy",
+  "sku": "IRALLJUNIPERBURGUNDYNDRESS-GG",
+  "title": "Irall Juniper Burgundy Nightdress",
+  "brand": "Irall",
+  "shots": [
+   "juniper_nihgtdress_burgundy_web2.jpg",
+   "juniper_nihgtdress_burgundy_web3.jpg"
+  ],
+  "rrp": "42.49",
+  "trade": "19.12",
+  "rrp_f": 42.49,
+  "usd": 53.96,
+  "retail": 45.89,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "latifa-nightdress",
+  "sku": "IRALLLATIFANDRESSPLUM-G",
+  "title": "Irall Latifa Nightdress Plum",
+  "brand": "Irall",
+  "shots": [
+   "Latifa-nightdress-back.jpg",
+   "Latifa-nightdress.jpg"
+  ],
+  "rrp": "39.99",
+  "trade": "18.08",
+  "rrp_f": 39.99,
+  "usd": 50.79,
+  "retail": 43.39,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "latifa_new",
+  "sku": "IRALLLATIFANDRESSPLUM-G",
+  "title": "Irall Latifa Nightdress Plum",
+  "brand": "Irall",
+  "shots": [
+   "latifa_new.jpg"
+  ],
+  "rrp": "39.99",
+  "trade": "18.08",
+  "rrp_f": 39.99,
+  "usd": 50.79,
+  "retail": 43.39,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "mallory-dressing-gown-black",
+  "sku": "IRALLMALLORYDGOWNBLACK-G",
+  "title": "Irall Mallory Dressing Gown Black",
+  "brand": "Irall",
+  "shots": [
+   "Mallory-dressing-gown-black-back.jpg",
+   "Mallory-dressing-gown-black.jpg"
+  ],
+  "rrp": "58.99",
+  "trade": "26.65",
+  "rrp_f": 58.99,
+  "usd": 74.92,
+  "retail": 63.96,
+  "verdict": "ok"
+ },
+ {
+  "key": "mallory-dressing-gown-champagne",
+  "sku": "IRALLMALLORYDGOWNCHAMP-G",
+  "title": "Irall Mallory Dressing Gown Champagne",
+  "brand": "Irall",
+  "shots": [
+   "Mallory-dressing-gown-champagne-back.jpg",
+   "Mallory-dressing-gown-champagne.jpg"
+  ],
+  "rrp": "58.99",
+  "trade": "26.65",
+  "rrp_f": 58.99,
+  "usd": 74.92,
+  "retail": 63.96,
+  "verdict": "ok"
+ },
+ {
+  "key": "mallory-i-nightdress-black",
+  "sku": "IRALLMALLORYINDRESSBLACK-G",
+  "title": "Irall Mallory I Nightdress Black",
+  "brand": "Irall",
+  "shots": [
+   "Mallory-I-nightdress-black-back.jpg",
+   "Mallory-I-nightdress-black.jpg"
+  ],
+  "rrp": "39.49",
+  "trade": "17.74",
+  "rrp_f": 39.49,
+  "usd": 50.15,
+  "retail": 42.58,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "mallory-i-nightdress-champagne",
+  "sku": "IRALLMALLORYINDRESSCHAMP-G",
+  "title": "Irall Mallory I Nightdress Champagne",
+  "brand": "Irall",
+  "shots": [
+   "Mallory-I-nightdress-champagne-back.jpg",
+   "Mallory-I-nightdress-champagne.jpg"
+  ],
+  "rrp": "39.49",
+  "trade": "17.74",
+  "rrp_f": 39.49,
+  "usd": 50.15,
+  "retail": 42.58,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "mallory-ii-champagne-details",
+  "sku": "IRALLMALLORYIINDRESSCHAMP-G",
+  "title": "Irall Mallory II Nightdress Champagne",
+  "brand": "Irall",
+  "shots": [
+   "Mallory-II-champagne-details.jpg"
+  ],
+  "rrp": "53.99",
+  "trade": "24.49",
+  "rrp_f": 53.99,
+  "usd": 68.57,
+  "retail": 58.78,
+  "verdict": "ok"
+ },
+ {
+  "key": "mallory-ii-nightdress-black",
+  "sku": "IRALLMALLORYIINDRESSBLACK-G",
+  "title": "Irall Mallory II Nightdress Black",
+  "brand": "Irall",
+  "shots": [
+   "Mallory-II-nightdress-black-back.jpg"
+  ],
+  "rrp": "53.99",
+  "trade": "24.49",
+  "rrp_f": 53.99,
+  "usd": 68.57,
+  "retail": 58.78,
+  "verdict": "ok"
+ },
+ {
+  "key": "mallory-ii-nightdress-champagne-back",
+  "sku": "IRALLMALLORYIINDRESSCHAMP-G",
+  "title": "Irall Mallory II Nightdress Champagne",
+  "brand": "Irall",
+  "shots": [
+   "Mallory-II-nightdress-champagne-back-zw.jpg"
+  ],
+  "rrp": "53.99",
+  "trade": "24.49",
+  "rrp_f": 53.99,
+  "usd": 68.57,
+  "retail": 58.78,
+  "verdict": "ok"
+ },
+ {
+  "key": "mallory-set-black",
+  "sku": "IRALLMALLORYSETBLACK-G",
+  "title": "Irall Mallory Short Set Black",
+  "brand": "Irall",
+  "shots": [
+   "Mallory-set-black-back.jpg",
+   "Mallory-set-black-zw.jpg"
+  ],
+  "rrp": "47.49",
+  "trade": "21.55",
+  "rrp_f": 47.49,
+  "usd": 60.31,
+  "retail": 51.72,
+  "verdict": "set-exempt"
+ },
+ {
+  "key": "mallory-set-champagne",
+  "sku": "IRALLMALLORYSETCHAMP-G",
+  "title": "Irall Mallory Short Set Champagne",
+  "brand": "Irall",
+  "shots": [
+   "Mallory-set-champagne-back.jpg",
+   "Mallory-set-champagne-zw.jpg"
+  ],
+  "rrp": "47.49",
+  "trade": "21.55",
+  "rrp_f": 47.49,
+  "usd": 60.31,
+  "retail": 51.72,
+  "verdict": "set-exempt"
+ },
+ {
+  "key": "mallory_ii_black",
+  "sku": "IRALLMALLORYIINDRESSBLACK-G",
+  "title": "Irall Mallory II Nightdress Black",
+  "brand": "Irall",
+  "shots": [
+   "mallory_II_black.jpg"
+  ],
+  "rrp": "53.99",
+  "trade": "24.49",
+  "rrp_f": 53.99,
+  "usd": 68.57,
+  "retail": 58.78,
+  "verdict": "ok"
+ },
+ {
+  "key": "mallory_ii_cream",
+  "sku": "IRALLMALLORYIINDRESSCHAMP-G",
+  "title": "Irall Mallory II Nightdress Champagne",
+  "brand": "Irall",
+  "shots": [
+   "mallory_II_cream.jpg"
+  ],
+  "rrp": "53.99",
+  "trade": "24.49",
+  "rrp_f": 53.99,
+  "usd": 68.57,
+  "retail": 58.78,
+  "verdict": "ok"
+ },
+ {
+  "key": "mallory_short_set_black_new",
+  "sku": "IRALLMALLORYSETBLACK-G",
+  "title": "Irall Mallory Short Set Black",
+  "brand": "Irall",
+  "shots": [
+   "mallory_short_set_black_new.jpg"
+  ],
+  "rrp": "47.49",
+  "trade": "21.55",
+  "rrp_f": 47.49,
+  "usd": 60.31,
+  "retail": 51.72,
+  "verdict": "set-exempt"
+ },
+ {
+  "key": "mallory_short_set_champ_new",
+  "sku": "IRALLMALLORYSETCHAMP-G",
+  "title": "Irall Mallory Short Set Champagne",
+  "brand": "Irall",
+  "shots": [
+   "mallory_short_set_champ_new.jpg"
+  ],
+  "rrp": "47.49",
+  "trade": "21.55",
+  "rrp_f": 47.49,
+  "usd": 60.31,
+  "retail": 51.72,
+  "verdict": "set-exempt"
+ },
+ {
+  "key": "molly_nd_dustyrose",
+  "sku": "IRALLMOLLYNDDUSTYROSE-G",
+  "title": "Irall Molly Nightdress Dusty Rose",
+  "brand": "Irall",
+  "shots": [
+   "molly_nd_dustyrose_1.jpg"
+  ],
+  "rrp": "46.49",
+  "trade": "20.92",
+  "rrp_f": 46.49,
+  "usd": 59.04,
+  "retail": 50.21,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "molly_nd_dustyrose_wbg",
+  "sku": "IRALLMOLLYNDDUSTYROSE-G",
+  "title": "Irall Molly Nightdress Dusty Rose",
+  "brand": "Irall",
+  "shots": [
+   "molly_nd_dustyrose_wbg_1.jpg"
+  ],
+  "rrp": "46.49",
+  "trade": "20.92",
+  "rrp_f": 46.49,
+  "usd": 59.04,
+  "retail": 50.21,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "molly_nd_hotred",
+  "sku": "IRALLMOLLYNDRED-G",
+  "title": "Irall Molly Nightdress Hot Red",
+  "brand": "Irall",
+  "shots": [
+   "molly_nd_hotred_1.jpg"
+  ],
+  "rrp": "46.49",
+  "trade": "20.92",
+  "rrp_f": 46.49,
+  "usd": 59.04,
+  "retail": 50.21,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "molly_nd_hotred_wbg",
+  "sku": "IRALLMOLLYNDRED-G",
+  "title": "Irall Molly Nightdress Hot Red",
+  "brand": "Irall",
+  "shots": [
+   "molly_nd_hotred_wbg_1.jpg"
+  ],
+  "rrp": "46.49",
+  "trade": "20.92",
+  "rrp_f": 46.49,
+  "usd": 59.04,
+  "retail": 50.21,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "pandora-pyjamas-black",
+  "sku": "IRALLPANDORABLACK-GG",
+  "title": "Irall Pandora Black Pyjama",
+  "brand": "Irall",
+  "shots": [
+   "Pandora-pyjamas-black-back.jpg",
+   "Pandora-pyjamas-black.jpg"
+  ],
+  "rrp": "99.00",
+  "trade": "45.00",
+  "rrp_f": 99.0,
+  "usd": 125.73,
+  "retail": 108.0,
+  "verdict": "ok"
+ },
+ {
+  "key": "pandora-pyjamas-ecru",
+  "sku": "IRALLPANDORAPJECRU-GG",
+  "title": "Irall Pandora Pyjama Ecru",
+  "brand": "Irall",
+  "shots": [
+   "Pandora-pyjamas-ecru-back.jpg",
+   "Pandora-pyjamas-ecru.jpg"
+  ],
+  "rrp": "99.00",
+  "trade": "45.00",
+  "rrp_f": 99.0,
+  "usd": 125.73,
+  "retail": 108.0,
+  "verdict": "ok"
+ },
+ {
+  "key": "pandora_pyjamas_black",
+  "sku": "IRALLPANDORABLACK-GG",
+  "title": "Irall Pandora Black Pyjama",
+  "brand": "Irall",
+  "shots": [
+   "pandora_pyjamas_black_web3.jpg"
+  ],
+  "rrp": "99.00",
+  "trade": "45.00",
+  "rrp_f": 99.0,
+  "usd": 125.73,
+  "retail": 108.0,
+  "verdict": "ok"
+ },
+ {
+  "key": "pandora_pyjamas_ecru",
+  "sku": "IRALLPANDORAPJECRU-GG",
+  "title": "Irall Pandora Pyjama Ecru",
+  "brand": "Irall",
+  "shots": [
+   "pandora_pyjamas_ecru_-_back_web2.jpg"
+  ],
+  "rrp": "99.00",
+  "trade": "45.00",
+  "rrp_f": 99.0,
+  "usd": 125.73,
+  "retail": 108.0,
+  "verdict": "ok"
+ },
+ {
+  "key": "remi_cream_new",
+  "sku": "IRALLREMINDRESSCREAM-GG",
+  "title": "Irall Remi Nightdress Cream",
+  "brand": "Irall",
+  "shots": [
+   "remi_cream_new.jpg"
+  ],
+  "rrp": "39.99",
+  "trade": "18.18",
+  "rrp_f": 39.99,
+  "usd": 50.79,
+  "retail": 43.63,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "remi_navy_new",
+  "sku": "IRALLREMINDRESSCREAM-GG",
+  "title": "Irall Remi Nightdress Cream",
+  "brand": "Irall",
+  "shots": [
+   "remi_navy_new.jpg"
+  ],
+  "rrp": "39.99",
+  "trade": "18.18",
+  "rrp_f": 39.99,
+  "usd": 50.79,
+  "retail": 43.63,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "remi_nightdress_ecru",
+  "sku": "IRALLREMINDRESSCREAM-GG",
+  "title": "Irall Remi Nightdress Cream",
+  "brand": "Irall",
+  "shots": [
+   "remi_nightdress_ecru_-_back_web1.jpg",
+   "remi_nightdress_ecru_-_back_web2.jpg",
+   "remi_nightdress_ecru_web3.jpg"
+  ],
+  "rrp": "39.99",
+  "trade": "18.18",
+  "rrp_f": 39.99,
+  "usd": 50.79,
+  "retail": 43.63,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "remi_nightdress_ecru_-_back",
+  "sku": "IRALLREMINDRESSNAVYBLUE-GG",
+  "title": "Irall Remi Nightdress Navy Blue",
+  "brand": "Irall",
+  "shots": [
+   "remi_nightdress_ecru_-_back_zw.jpg"
+  ],
+  "rrp": "39.99",
+  "trade": "18.18",
+  "rrp_f": 39.99,
+  "usd": 50.79,
+  "retail": 43.63,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "remi_nightdress_hot_red",
+  "sku": "IRALLREMINDRESSNAVYBLUE-GG",
+  "title": "Irall Remi Nightdress Navy Blue",
+  "brand": "Irall",
+  "shots": [
+   "remi_nightdress_hot_red_web5.jpg"
+  ],
+  "rrp": "39.99",
+  "trade": "18.18",
+  "rrp_f": 39.99,
+  "usd": 50.79,
+  "retail": 43.63,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "remi_nightdress_hot_red_-_back_web1",
+  "sku": "IRALLREMINDRESSRED-GGG",
+  "title": "Irall Remi Nightdress Hot Red",
+  "brand": "Irall",
+  "shots": [
+   "remi_nightdress_hot_red_-_back_web1_1.jpg"
+  ],
+  "rrp": "39.99",
+  "trade": "18.18",
+  "rrp_f": 39.99,
+  "usd": 50.79,
+  "retail": 43.63,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "remi_nightdress_hot_red_-_back_web2",
+  "sku": "IRALLREMINDRESSRED-GGG",
+  "title": "Irall Remi Nightdress Hot Red",
+  "brand": "Irall",
+  "shots": [
+   "remi_nightdress_hot_red_-_back_web2_1.jpg"
+  ],
+  "rrp": "39.99",
+  "trade": "18.18",
+  "rrp_f": 39.99,
+  "usd": 50.79,
+  "retail": 43.63,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "remi_nightdress_hot_red_web4",
+  "sku": "IRALLREMINDRESSRED-GGG",
+  "title": "Irall Remi Nightdress Hot Red",
+  "brand": "Irall",
+  "shots": [
+   "remi_nightdress_hot_red_web4_1.jpg"
+  ],
+  "rrp": "39.99",
+  "trade": "18.18",
+  "rrp_f": 39.99,
+  "usd": 50.79,
+  "retail": 43.63,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "remi_nightdress_navy_blue",
+  "sku": "IRALLREMINDRESSNAVYBLUE-GG",
+  "title": "Irall Remi Nightdress Navy Blue",
+  "brand": "Irall",
+  "shots": [
+   "remi_nightdress_navy_blue_-_back_web1.jpg"
+  ],
+  "rrp": "39.99",
+  "trade": "18.18",
+  "rrp_f": 39.99,
+  "usd": 50.79,
+  "retail": 43.63,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "remi_red_new",
+  "sku": "IRALLREMINDRESSCREAM-GG",
+  "title": "Irall Remi Nightdress Cream",
+  "brand": "Irall",
+  "shots": [
+   "remi_red_new.jpg"
+  ],
+  "rrp": "39.99",
+  "trade": "18.18",
+  "rrp_f": 39.99,
+  "usd": 50.79,
+  "retail": 43.63,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "saphire_dg_new",
+  "sku": "Irallsapphire-GGG",
+  "title": "Irall Sapphire Dressing Gown Azure",
+  "brand": "Irall",
+  "shots": [
+   "saphire_dg_new.jpg"
+  ],
+  "rrp": "",
+  "trade": "",
+  "rrp_f": 0.0,
+  "usd": 0.0,
+  "retail": 0,
+  "verdict": "NO PRICE"
+ },
+ {
+  "key": "saphire_i_nd_new",
+  "sku": "IRALLSAPPHIREINDRESSAZURE-GG",
+  "title": "Irall Sapphire I Nightdress Azure",
+  "brand": "Irall",
+  "shots": [
+   "saphire_I_nd_new.jpg"
+  ],
+  "rrp": "39.99",
+  "trade": "18.06",
+  "rrp_f": 39.99,
+  "usd": 50.79,
+  "retail": 43.34,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "saphire_nd_new",
+  "sku": "Irallsapphire-GGG",
+  "title": "Irall Sapphire Dressing Gown Azure",
+  "brand": "Irall",
+  "shots": [
+   "saphire_nd_new.jpg"
+  ],
+  "rrp": "",
+  "trade": "",
+  "rrp_f": 0.0,
+  "usd": 0.0,
+  "retail": 0,
+  "verdict": "NO PRICE"
+ },
+ {
+  "key": "sapphire_dressing_gown_-_back_web1",
+  "sku": "Irallsapphire-GGG",
+  "title": "Irall Sapphire Dressing Gown Azure",
+  "brand": "Irall",
+  "shots": [
+   "sapphire_dressing_gown_-_back_web1_1.jpg"
+  ],
+  "rrp": "",
+  "trade": "",
+  "rrp_f": 0.0,
+  "usd": 0.0,
+  "retail": 0,
+  "verdict": "NO PRICE"
+ },
+ {
+  "key": "sapphire_dressing_gown_web2",
+  "sku": "Irallsapphire-GGG",
+  "title": "Irall Sapphire Dressing Gown Azure",
+  "brand": "Irall",
+  "shots": [
+   "sapphire_dressing_gown_web2_1.jpg"
+  ],
+  "rrp": "",
+  "trade": "",
+  "rrp_f": 0.0,
+  "usd": 0.0,
+  "retail": 0,
+  "verdict": "NO PRICE"
+ },
+ {
+  "key": "sapphire_dressing_gown_web3",
+  "sku": "Irallsapphire-GGG",
+  "title": "Irall Sapphire Dressing Gown Azure",
+  "brand": "Irall",
+  "shots": [
+   "sapphire_dressing_gown_web3_1.jpg"
+  ],
+  "rrp": "",
+  "trade": "",
+  "rrp_f": 0.0,
+  "usd": 0.0,
+  "retail": 0,
+  "verdict": "NO PRICE"
+ },
+ {
+  "key": "sapphire_i_nightdress",
+  "sku": "IRALLSAPPHIREINDRESSAZURE-GG",
+  "title": "Irall Sapphire I Nightdress Azure",
+  "brand": "Irall",
+  "shots": [
+   "sapphire_i_nightdress_-_back_web1.jpg",
+   "sapphire_i_nightdress_web2.jpg",
+   "sapphire_i_nightdress_web3.jpg"
+  ],
+  "rrp": "39.99",
+  "trade": "18.06",
+  "rrp_f": 39.99,
+  "usd": 50.79,
+  "retail": 43.34,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "sapphire_ii_nightdress",
+  "sku": "IRALLSAPPHIREIINDRESSAZUR-GG",
+  "title": "Irall Sapphire II Nightdress Azure",
+  "brand": "Irall",
+  "shots": [
+   "sapphire_ii_nightdress_-_back_web1.jpg",
+   "sapphire_ii_nightdress_-_back_web4.jpg",
+   "sapphire_ii_nightdress_web3.jpg",
+   "sapphire_ii_nightdress_web5.jpg"
+  ],
+  "rrp": "46.99",
+  "trade": "21.24",
+  "rrp_f": 46.99,
+  "usd": 59.68,
+  "retail": 50.98,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "sharon_dressing_gown",
+  "sku": "IRALLSHARONDGOWNBLACK-GG",
+  "title": "Irall Sharon Dressing Gown Black",
+  "brand": "Irall",
+  "shots": [
+   "sharon_dressing_gown_web1.jpg"
+  ],
+  "rrp": "47.49",
+  "trade": "21.55",
+  "rrp_f": 47.49,
+  "usd": 60.31,
+  "retail": 51.72,
+  "verdict": "ok"
+ },
+ {
+  "key": "sharon_dressing_gown_black",
+  "sku": "IRALLSHARONDGOWNBLACK-GG",
+  "title": "Irall Sharon Dressing Gown Black",
+  "brand": "Irall",
+  "shots": [
+   "sharon_dressing_gown_black_web2.jpg"
+  ],
+  "rrp": "47.49",
+  "trade": "21.55",
+  "rrp_f": 47.49,
+  "usd": 60.31,
+  "retail": 51.72,
+  "verdict": "ok"
+ },
+ {
+  "key": "sharon_dressing_gown_white",
+  "sku": "IRALLSHARONWHITEDGOWN-GG",
+  "title": "Irall Sharon Dressing Gown White",
+  "brand": "Irall",
+  "shots": [
+   "sharon_dressing_gown_white_web1.jpg",
+   "sharon_dressing_gown_white_web2.jpg"
+  ],
+  "rrp": "47.49",
+  "trade": "21.55",
+  "rrp_f": 47.49,
+  "usd": 60.31,
+  "retail": 51.72,
+  "verdict": "ok"
+ },
+ {
+  "key": "sharon_nd_black",
+  "sku": "IRALLSHARONNDRESSBLACK-G",
+  "title": "Irall Sharon Nightdress Black",
+  "brand": "Irall",
+  "shots": [
+   "sharon_nd_black.jpg",
+   "sharon_nd_black_back.jpg"
+  ],
+  "rrp": "39.99",
+  "trade": "18.18",
+  "rrp_f": 39.99,
+  "usd": 50.79,
+  "retail": 43.63,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "sharon_nightdress_white",
+  "sku": "IRALLSHARONWHITENDRESS-GG",
+  "title": "Irall Sharon Nightdress White",
+  "brand": "Irall",
+  "shots": [
+   "sharon_nightdress_white_web1.jpg",
+   "sharon_nightdress_white_web2.jpg"
+  ],
+  "rrp": "39.99",
+  "trade": "18.18",
+  "rrp_f": 39.99,
+  "usd": 50.79,
+  "retail": 43.63,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "tara_nd_black",
+  "sku": "IRALLTARANDRESSBLACK-G",
+  "title": "Irall Irall Tara Nightdress Black",
+  "brand": "Irall",
+  "shots": [
+   "tara_nd_black_1.jpg"
+  ],
+  "rrp": "38.49",
+  "trade": "17.42",
+  "rrp_f": 38.49,
+  "usd": 48.88,
+  "retail": 41.81,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "titania-nightdress",
+  "sku": "IRALLTITANIABDRESSBLACK_G",
+  "title": "Irall Titania Nightdress  2XL-5XL",
+  "brand": "Irall",
+  "shots": [
+   "Titania-nightdress-back.jpg",
+   "Titania-nightdress.jpg"
+  ],
+  "rrp": "",
+  "trade": "",
+  "rrp_f": 0.0,
+  "usd": 0.0,
+  "retail": 0,
+  "verdict": "NO PRICE"
+ },
+ {
+  "key": "titania_nightdress",
+  "sku": "IRALLTITANIANDRESSBLACK-GG",
+  "title": "Irall Titania Nightdress Black",
+  "brand": "Irall",
+  "shots": [
+   "titania_nightdress_-_back_web1.jpg",
+   "titania_nightdress_web3.jpg"
+  ],
+  "rrp": "46.99",
+  "trade": "21.24",
+  "rrp_f": 46.99,
+  "usd": 59.68,
+  "retail": 50.98,
+  "verdict": "BELOW $60"
+ },
+ {
+  "key": "tori_set_ecru",
+  "sku": "IRALLTORISETIVORY-GG",
+  "title": "Irall Tori Set Ivory",
+  "brand": "Irall",
+  "shots": [
+   "tori_set_ecru_web1.jpg",
+   "tori_set_ecru_web2.jpg",
+   "tori_set_ecru_web3.jpg"
+  ],
+  "rrp": "43.49",
+  "trade": "19.65",
+  "rrp_f": 43.49,
+  "usd": 55.23,
+  "retail": 47.16,
+  "verdict": "set-exempt"
+ },
+ {
+  "key": "tori_set_navy_blue",
+  "sku": "IRALLTORISETNAVY-GG",
+  "title": "Irall Tori Set Navy Blue",
+  "brand": "Irall",
+  "shots": [
+   "tori_set_navy_blue_002_.jpg",
+   "tori_set_navy_blue_web1.jpg"
+  ],
+  "rrp": "43.49",
+  "trade": "19.65",
+  "rrp_f": 43.49,
+  "usd": 55.23,
+  "retail": 47.16,
+  "verdict": "set-exempt"
+ },
+ {
+  "key": "vega_set_lemon",
+  "sku": "IRALLVEGASETLEMON/BLK-G",
+  "title": "Irall Vega Set Lemon/Black",
+  "brand": "Irall",
+  "shots": [
+   "vega_set_lemon_02_1.jpg",
+   "vega_set_lemon_1.jpg"
+  ],
+  "rrp": "44.99",
+  "trade": "20.28",
+  "rrp_f": 44.99,
+  "usd": 57.14,
+  "retail": 48.67,
+  "verdict": "set-exempt"
+ },
+ {
+  "key": "yoko_dressing_gown",
+  "sku": "IRALLYOKODGOWNNBLUE-GG",
+  "title": "Irall Yoko Dressing Gown Navy Blue",
+  "brand": "Irall",
+  "shots": [
+   "yoko_dressing_gown_web1.jpg",
+   "yoko_dressing_gown_web3.jpg",
+   "yoko_dressing_gown_web5.jpg"
+  ],
+  "rrp": "67.49",
+  "trade": "30.47",
+  "rrp_f": 67.49,
+  "usd": 85.71,
+  "retail": 73.13,
+  "verdict": "ok"
+ },
+ {
+  "key": "yoko_nightdress_navy_blue",
+  "sku": "",
+  "title": "",
+  "brand": "Irall",
+  "shots": [
+   "yoko_nightdress_navy_blue_web1.jpg",
+   "yoko_nightdress_navy_blue_web2.jpg",
+   "yoko_nightdress_navy_blue_web5.jpg"
+  ],
+  "rrp": "",
+  "trade": "",
+  "rrp_f": 0.0,
+  "usd": 0.0,
+  "retail": 0,
+  "verdict": "NO PRICE"
+ }
+]
