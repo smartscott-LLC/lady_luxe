@@ -11,6 +11,10 @@ Format follows [Keep a Changelog](https://keepachangelog.com); dates in UTC-6.
   snapping, hover play / pause-not-resume via the brand engine)
 
 ### Added (2026-11-19)
+- **Four products live with 360° turntable films**: Sasha Set BN6715, YX880
+  Leopard Robe, YX882 Mesh Bra Set, BN6673 Peignoir Burgundy — media mirrored
+  to Supabase storage, product rows inserted, product pages verified 200 with
+  turntables streaming
 - Turntables #2 and #3 verified: YX880 Leopard Robe (seam 2.21) and YX882
   Mesh Bra Set (2.35) — each 10.125s / 243 frames, ~58 SPARK quoted
 - BN6673 Burgundy Peignoir: two failed renders (subject duplicated in the

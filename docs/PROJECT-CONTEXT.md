@@ -139,13 +139,17 @@ Turntable Studio (localhost:3002) ──spawns──▶ generate_turntable.py �
 
 ## Product/backlog state
 
-- **Turntable production (Nov 19):** three films delivered and verified —
-  Sasha Set BN6715 (seam 2.31), YX880 Leopard Robe (2.21), YX882 Mesh Bra Set
-  (2.35) — each 10.125s / 243 frames / ~58 SPARK quoted. BN6673 Burgundy
-  Peignoir rendering. Balance portal reads 925.0 (settlement lag — true spend
-  ~175 SPARK). Sasha film is live on the storefront product page
-  (`/product/LL-BEAUTYNIGHTBN6715-G`). Dev server on :3000 was cancelled by
-  the owner at some point — restart with `cd web && npm run dev` when needed.
+- **Turntable production (Nov 19):** FOUR films delivered, verified, and live
+  on the storefront with product pages — Sasha Set BN6715 (`/product/LL-BEAUTYNIGHTBN6715-G`),
+  YX880 Leopard Robe (`LL-YESYX880LEOPARD-G`), YX882 Mesh Bra Set
+  (`LL-YESYX882BLACK-G`), BN6673 Peignoir Burgundy (`LL-BEAUTYNIGHTBN6673-G`).
+  All mirrored to Supabase (`products/` + `turntables/` in the images bucket)
+  and inserted as live product rows. BN6673 took 3 renders (duplication root
+  cause fixed permanently in prompts — see gotcha 10).
+- **SPARK accounting (owner-corrected Nov 19):** the plan is generous — today
+  ~290 SPARK for 20 renders used only 7% of the daily allowance (resets every
+  24h) and 24% of the monthly. The 925 portal number is the instantaneous
+  pool, NOT a budget ceiling. Mint freely.
 - **Frontline batch** (from `/home/server/Downloads/catalog/frontline`, 167
   shots): 59 items fully identified + priced — see
   `supabase/frontline-curation.md` (keep/kill sheet) and
