@@ -1,0 +1,1113 @@
+[
+ {
+  "key": "6558",
+  "sku": "BEAUTYNIGHTBN6558CORSET-GG",
+  "name": "Beauty Night BN6558 Savannah Corset",
+  "brand": "Beauty Night",
+  "shots": [
+   "6558_savannah_corset_web5.jpg.webp",
+   "bn6558_savannah_corset_web1.jpg.webp",
+   "bn6558_savannah_corset_web3.jpg.webp"
+  ],
+  "rrp": "69.99",
+  "trade": "31.72",
+  "shot_count": 3,
+  "is_set": false,
+  "rrp_usd": 88.89,
+  "floor": 70,
+  "floor_ok": true,
+  "floor_flag": "ok"
+ },
+ {
+  "key": "Alanis",
+  "sku": "BEAUTYNIGHTBN6597-G",
+  "name": "Beauty Night BN6597 Alanis Set",
+  "brand": "Beauty Night",
+  "shots": [
+   "Alanis-1.jpg.webp",
+   "Alanis-3.jpg.webp",
+   "Alanis-4-640x979.jpg.webp"
+  ],
+  "rrp": "69.99",
+  "trade": "31.72",
+  "shot_count": 3,
+  "is_set": true,
+  "rrp_usd": 88.89,
+  "floor": 70,
+  "floor_ok": true,
+  "floor_flag": "exempt"
+ },
+ {
+  "key": "Anthea-teddy",
+  "sku": "BEAUTYNIGHTBN6600-G",
+  "name": "Beauty Night BN6600 Athena Teddy",
+  "brand": "Beauty Night",
+  "shots": [
+   "Anthea-teddy-1.jpg.webp",
+   "Anthea-teddy-2.jpg.webp",
+   "Anthea-teddy-3.jpg.webp"
+  ],
+  "rrp": "62.99",
+  "trade": "28.61",
+  "shot_count": 3,
+  "is_set": false,
+  "rrp_usd": 80.0,
+  "floor": 70,
+  "floor_ok": true,
+  "floor_flag": "ok"
+ },
+ {
+  "key": "BN6596",
+  "sku": "BEAUTYNIGHTBN6596-G",
+  "name": "Beauty Night BN6596 Ryanne Set",
+  "brand": "Beauty Night",
+  "shots": [
+   "BN6596_Ryanne-set-1.jpg.webp",
+   "BN6596_Ryanne-set-2-640x979.jpg.webp",
+   "BN6596_Ryanne-set-3-640x979.jpg.webp"
+  ],
+  "rrp": "69.99",
+  "trade": "31.72",
+  "shot_count": 3,
+  "is_set": true,
+  "rrp_usd": 88.89,
+  "floor": 70,
+  "floor_ok": true,
+  "floor_flag": "exempt"
+ },
+ {
+  "key": "BN6598",
+  "sku": "BEAUTYNIGHTBN6598-G",
+  "name": "Beauty Night BN6598 Gemma",
+  "brand": "Beauty Night",
+  "shots": [
+   "BN6598_Gemma-chemise-1.jpg.webp",
+   "BN6598_Gemma-chemise-2-640x979.jpg.webp"
+  ],
+  "rrp": "62.99",
+  "trade": "28.61",
+  "shot_count": 2,
+  "is_set": false,
+  "rrp_usd": 80.0,
+  "floor": 70,
+  "floor_ok": true,
+  "floor_flag": "ok"
+ },
+ {
+  "key": "BN6653",
+  "sku": "BEAUTYNIGHTBN6653-G",
+  "name": "Beauty Night BN6653 Bethany Set",
+  "brand": "Beauty Night",
+  "shots": [
+   "BN6653_Bethany-set-1.jpg.webp",
+   "BN6653_Bethany-set-3-640x979.jpg.webp",
+   "BN6653_Bethany-set-4-640x979.jpg.webp"
+  ],
+  "rrp": "76.49",
+  "trade": "34.74",
+  "shot_count": 3,
+  "is_set": true,
+  "rrp_usd": 97.14,
+  "floor": 70,
+  "floor_ok": true,
+  "floor_flag": "exempt"
+ },
+ {
+  "key": "BN6684",
+  "sku": "BEAUTYNIGHTBN6684-G",
+  "name": "Beauty Night BN6684 Joanna Corset",
+  "brand": "Beauty Night",
+  "shots": [
+   "BN6684_Joanna-corset-1.jpg.webp",
+   "BN6684_Joanna-corset-3.jpg.webp",
+   "BN6684_Joanna-corset-5.jpg.webp"
+  ],
+  "rrp": "76.99",
+  "trade": "34.82",
+  "shot_count": 3,
+  "is_set": false,
+  "rrp_usd": 97.78,
+  "floor": 70,
+  "floor_ok": true,
+  "floor_flag": "ok"
+ },
+ {
+  "key": "BN6685",
+  "sku": "BEAUTYNIGHTBN6685-G",
+  "name": "Beauty Night BN6685 Joanna Set",
+  "brand": "Beauty Night",
+  "shots": [
+   "BN6685_joanna_set_5.jpg.webp",
+   "Joanna-set-1.jpg.webp",
+   "Joanna-set-4.jpg.webp"
+  ],
+  "rrp": "79.99",
+  "trade": "36.36",
+  "shot_count": 3,
+  "is_set": true,
+  "rrp_usd": 101.59,
+  "floor": 70,
+  "floor_ok": true,
+  "floor_flag": "exempt"
+ },
+ {
+  "key": "BN6695",
+  "sku": "BEAUTYNIGHTBN6695-G",
+  "name": "Beauty Night BN6695 Olena Corset",
+  "brand": "Beauty Night",
+  "shots": [
+   "bn6695_olena_corset_1-640x979.jpg.webp",
+   "bn6695_olena_corset_2.jpg.webp",
+   "bn6695_olena_corset_3.jpg.webp",
+   "bn6695_olena_corset_4.jpg.webp"
+  ],
+  "rrp": "59.99",
+  "trade": "27.27",
+  "shot_count": 4,
+  "is_set": false,
+  "rrp_usd": 76.19,
+  "floor": 70,
+  "floor_ok": true,
+  "floor_flag": "ok"
+ },
+ {
+  "key": "BN6696",
+  "sku": "BEAUTYNIGHTBN6696-G",
+  "name": "Beauty Night BN6696 Rose Set Red",
+  "brand": "Beauty Night",
+  "shots": [
+   "bn6696_rose_set_red_2.jpg.webp",
+   "bn6696_rose_set_red_3.jpg.webp",
+   "bn6696_rose_set_red_5.jpg.webp",
+   "bn6696_rose_set_red_6.jpg.webp"
+  ],
+  "rrp": "65.99",
+  "trade": "29.89",
+  "shot_count": 4,
+  "is_set": true,
+  "rrp_usd": 83.81,
+  "floor": 70,
+  "floor_ok": true,
+  "floor_flag": "exempt"
+ },
+ {
+  "key": "BN6697",
+  "sku": "BEAUTYNIGHTBN6697-G",
+  "name": "Beauty Night BN6697 Xiomara",
+  "brand": "Beauty Night",
+  "shots": [
+   "BN6697_xiomara_2.jpg.webp",
+   "BN6697_xiomara_3.jpg.webp",
+   "BN6697_xiomara_4.jpg.webp"
+  ],
+  "rrp": "66.49",
+  "trade": "30.14",
+  "shot_count": 3,
+  "is_set": false,
+  "rrp_usd": 84.44,
+  "floor": 70,
+  "floor_ok": true,
+  "floor_flag": "ok"
+ },
+ {
+  "key": "BN6698",
+  "sku": "BEAUTYNIGHTBN6698-G",
+  "name": "Beauty Night BN6698 Cameron",
+  "brand": "Beauty Night",
+  "shots": [
+   "BN6698_cameron_1.jpg.webp",
+   "BN6698_cameron_6.jpg.webp",
+   "BN6698_cameron_7.jpg.webp"
+  ],
+  "rrp": "54.99",
+  "trade": "24.91",
+  "shot_count": 3,
+  "is_set": false,
+  "rrp_usd": 69.84,
+  "floor": 70,
+  "floor_ok": false,
+  "floor_flag": "below"
+ },
+ {
+  "key": "BN6699",
+  "sku": "BEAUTYNIGHTBN6699-G",
+  "name": "Beauty Night BN6699 Loreen",
+  "brand": "Beauty Night",
+  "shots": [
+   "BN6699_loreen_10.jpg.webp",
+   "BN6699_loreen_12.jpg.webp",
+   "BN6699_loreen_5.jpg.webp",
+   "BN6699_loreen_9.jpg.webp"
+  ],
+  "rrp": "54.99",
+  "trade": "24.91",
+  "shot_count": 4,
+  "is_set": false,
+  "rrp_usd": 69.84,
+  "floor": 70,
+  "floor_ok": false,
+  "floor_flag": "below"
+ },
+ {
+  "key": "BN6710",
+  "sku": "BEAUTYNIGHTBN6710-G",
+  "name": "Beauty Night BN6710 Nirvina Set",
+  "brand": "Beauty Night",
+  "shots": [
+   "bn6710_nirvina_set_2.jpg.webp",
+   "bn6710_nirvina_set_3.jpg.webp",
+   "bn6710_nirvina_set_5.jpg.webp",
+   "bn6710_nirvina_set_8.jpg.webp"
+  ],
+  "rrp": "59.99",
+  "trade": "27.27",
+  "shot_count": 4,
+  "is_set": true,
+  "rrp_usd": 76.19,
+  "floor": 70,
+  "floor_ok": true,
+  "floor_flag": "exempt"
+ },
+ {
+  "key": "BN6712",
+  "sku": "BEAUTYNIGHTBN6712ISAURARED-G",
+  "name": "Beauty Night BN6712 Isaura",
+  "brand": "Beauty Night",
+  "shots": [
+   "BN6712_5.jpg.webp",
+   "BN6712_7.jpg.webp",
+   "BN6712_8.jpg.webp"
+  ],
+  "rrp": "87.99",
+  "trade": "39.86",
+  "shot_count": 3,
+  "is_set": false,
+  "rrp_usd": 111.75,
+  "floor": 70,
+  "floor_ok": true,
+  "floor_flag": "ok"
+ },
+ {
+  "key": "BN6745",
+  "sku": "BEAUTYNIGHTBN6745-G",
+  "name": "Beauty Night BN6745 Eclipse Dress",
+  "brand": "Beauty Night",
+  "shots": [
+   "BN6745_eclispe_dress_2.png.webp"
+  ],
+  "rrp": "49.99",
+  "trade": "22.72",
+  "shot_count": 1,
+  "is_set": false,
+  "rrp_usd": 63.49,
+  "floor": 70,
+  "floor_ok": false,
+  "floor_flag": "below"
+ },
+ {
+  "key": "Beauty_night_BN6627_delight_chemise",
+  "sku": "BEAUTYNIGHTBN6627-G",
+  "name": "Beauty Night BN6627 Delight Chemise",
+  "brand": "Beauty Night",
+  "shots": [
+   "Beauty_night_BN6627_delight_chemise_3.jpg.webp",
+   "Beauty_night_BN6627_delight_chemise_4.jpg.webp",
+   "Beauty_night_BN6627_delight_chemise_5.jpg.webp"
+  ],
+  "rrp": "62.99",
+  "trade": "28.61",
+  "shot_count": 3,
+  "is_set": false,
+  "rrp_usd": 80.0,
+  "floor": 70,
+  "floor_ok": true,
+  "floor_flag": "ok"
+ },
+ {
+  "key": "Beauty_night_BN6628_delight_dressing_gown",
+  "sku": "BEAUTYNIGHTBN6628-G",
+  "name": "Beauty Night BN6628 Delight Dressing Gown",
+  "brand": "Beauty Night",
+  "shots": [
+   "Beauty_night_BN6628_delight_dressing_gown_3-640x979.jpg.webp",
+   "Beauty_night_BN6628_delight_dressing_gown_4.jpg.webp",
+   "Beauty_night_BN6628_delight_dressing_gown_5.jpg.webp"
+  ],
+  "rrp": "69.99",
+  "trade": "31.72",
+  "shot_count": 3,
+  "is_set": false,
+  "rrp_usd": 88.89,
+  "floor": 70,
+  "floor_ok": true,
+  "floor_flag": "ok"
+ },
+ {
+  "key": "Beauty_night_BN6637_natasha_set",
+  "sku": "BEAUTYNIGHTBN6637-G",
+  "name": "Beauty Night BN6637 Natasha Set",
+  "brand": "Beauty Night",
+  "shots": [
+   "Beauty_night_BN6637_natasha_set_4.jpg.webp",
+   "Beauty_night_BN6637_natasha_set_5.jpg.webp",
+   "Beauty_night_BN6637_natasha_set_6.jpg.webp"
+  ],
+  "rrp": "69.99",
+  "trade": "31.72",
+  "shot_count": 3,
+  "is_set": true,
+  "rrp_usd": 88.89,
+  "floor": 70,
+  "floor_ok": true,
+  "floor_flag": "exempt"
+ },
+ {
+  "key": "Crystal-black",
+  "sku": "BEAUTYNIGHTBN6713-G",
+  "name": "Beauty Night BN6713 Crystal Black",
+  "brand": "Beauty Night",
+  "shots": [
+   "Crystal-black-1.jpg.webp",
+   "Crystal-black-3.jpg.webp",
+   "Crystal-black-4.jpg.webp",
+   "Crystal-black-7.jpg.webp"
+  ],
+  "rrp": "82.49",
+  "trade": "37.36",
+  "shot_count": 4,
+  "is_set": false,
+  "rrp_usd": 104.76,
+  "floor": 70,
+  "floor_ok": true,
+  "floor_flag": "ok"
+ },
+ {
+  "key": "Hollie-dress",
+  "sku": "BEAUTYNIGHTBN6678-G",
+  "name": "Beauty Night BN6678 Hollie Dress",
+  "brand": "Beauty Night",
+  "shots": [
+   "Hollie-dress-1.jpg.webp",
+   "Hollie-dress-3.jpg.webp",
+   "Hollie-dress-4.jpg.webp"
+  ],
+  "rrp": "69.99",
+  "trade": "31.81",
+  "shot_count": 3,
+  "is_set": false,
+  "rrp_usd": 88.89,
+  "floor": 70,
+  "floor_ok": true,
+  "floor_flag": "ok"
+ },
+ {
+  "key": "Kayla-dress",
+  "sku": "BEAUTYNIGHTBN6655-G",
+  "name": "Beauty Night BN6655 Kayla Dress",
+  "brand": "Beauty Night",
+  "shots": [
+   "Kayla-dress-1.jpg.webp",
+   "Kayla-dress-3.jpg.webp",
+   "Kayla-dress-4.jpg.webp"
+  ],
+  "rrp": "69.99",
+  "trade": "31.81",
+  "shot_count": 3,
+  "is_set": false,
+  "rrp_usd": 88.89,
+  "floor": 70,
+  "floor_ok": true,
+  "floor_flag": "ok"
+ },
+ {
+  "key": "Leonela-set",
+  "sku": "BEAUTYNIGHTBN6739-G",
+  "name": "Beauty Night BN6739 Leonela Set",
+  "brand": "Beauty Night",
+  "shots": [
+   "Leonela-set-1.jpg.webp",
+   "Leonela-set-3.jpg.webp",
+   "Leonela-set-5.jpg.webp"
+  ],
+  "rrp": "59.99",
+  "trade": "27.27",
+  "shot_count": 3,
+  "is_set": true,
+  "rrp_usd": 76.19,
+  "floor": 70,
+  "floor_ok": true,
+  "floor_flag": "exempt"
+ },
+ {
+  "key": "Noele-set",
+  "sku": "BEAUTYNIGHTBN6595-G",
+  "name": "Beauty Night BN6595 Noele Set",
+  "brand": "Beauty Night",
+  "shots": [
+   "Noele-set-1.jpg.webp",
+   "Noele-set-2.jpg.webp",
+   "Noele-set-3.jpg.webp"
+  ],
+  "rrp": "62.99",
+  "trade": "28.61",
+  "shot_count": 3,
+  "is_set": true,
+  "rrp_usd": 80.0,
+  "floor": 70,
+  "floor_ok": true,
+  "floor_flag": "exempt"
+ },
+ {
+  "key": "Saphira-set",
+  "sku": "BEAUTYNIGHTBN6740-G",
+  "name": "Beauty Night BN6740 Saphira Set",
+  "brand": "Beauty Night",
+  "shots": [
+   "Saphira-set-1.jpg.webp",
+   "Saphira-set-3.jpg.webp",
+   "Saphira-set-5.jpg.webp"
+  ],
+  "rrp": "65.99",
+  "trade": "29.89",
+  "shot_count": 3,
+  "is_set": true,
+  "rrp_usd": 83.81,
+  "floor": 70,
+  "floor_ok": true,
+  "floor_flag": "exempt"
+ },
+ {
+  "key": "Sarina-teddy",
+  "sku": "BEAUTYNIGHTBN6602-G",
+  "name": "Beauty Night BN6602 Sarina Teddy",
+  "brand": "Beauty Night",
+  "shots": [
+   "Sarina-teddy-1.jpg.webp",
+   "Sarina-teddy-2.jpg.webp"
+  ],
+  "rrp": "62.99",
+  "trade": "28.61",
+  "shot_count": 2,
+  "is_set": false,
+  "rrp_usd": 80.0,
+  "floor": 70,
+  "floor_ok": true,
+  "floor_flag": "ok"
+ },
+ {
+  "key": "Sasha-set",
+  "sku": "BEAUTYNIGHTBN6715-G",
+  "name": "Beauty Night BN6715 Sasha Set Black",
+  "brand": "Beauty Night",
+  "shots": [
+   "Sasha-set-1.jpg.webp",
+   "Sasha-set-2.jpg.webp",
+   "Sasha-set-3.jpg.webp",
+   "Sasha-set-4.jpg.webp"
+  ],
+  "rrp": "69.99",
+  "trade": "31.81",
+  "shot_count": 4,
+  "is_set": true,
+  "rrp_usd": 88.89,
+  "floor": 70,
+  "floor_ok": true,
+  "floor_flag": "exempt"
+ },
+ {
+  "key": "Savannah-teddy",
+  "sku": "BEAUTYNIGHTBN6611-G",
+  "name": "Beauty Night BN6611 Savannah Teddy",
+  "brand": "Beauty Night",
+  "shots": [
+   "Savannah-teddy-2.jpg.webp",
+   "Savannah-teddy-3.jpg.webp",
+   "Savannah-teddy-4.jpg.webp"
+  ],
+  "rrp": "54.99",
+  "trade": "24.91",
+  "shot_count": 3,
+  "is_set": false,
+  "rrp_usd": 69.84,
+  "floor": 70,
+  "floor_ok": false,
+  "floor_flag": "below"
+ },
+ {
+  "key": "Shaina-corset",
+  "sku": "BEAUTYNIGHTBN6572-G",
+  "name": "Beauty Night BN6572 Shaina Corset Set",
+  "brand": "Beauty Night",
+  "shots": [
+   "Shaina-corset-1.jpg.webp",
+   "Shaina-corset-2.jpg.webp",
+   "Shaina-corset-3.jpg.webp"
+  ],
+  "rrp": "59.99",
+  "trade": "27.27",
+  "shot_count": 3,
+  "is_set": true,
+  "rrp_usd": 76.19,
+  "floor": 70,
+  "floor_ok": true,
+  "floor_flag": "exempt"
+ },
+ {
+  "key": "Sherie-peignoir-turquoise",
+  "sku": "BEAUTYNIGHTBN6671-G",
+  "name": "Beauty Night BN6671 Sherie Peignoir",
+  "brand": "Beauty Night",
+  "shots": [
+   "Sherie-peignoir-turquoise-1.jpg.webp",
+   "Sherie-peignoir-turquoise-5.jpg.webp",
+   "Sherie-peignoir-turquoise-6.jpg.webp"
+  ],
+  "rrp": "54.99",
+  "trade": "24.91",
+  "shot_count": 3,
+  "is_set": false,
+  "rrp_usd": 69.84,
+  "floor": 70,
+  "floor_ok": false,
+  "floor_flag": "below"
+ },
+ {
+  "key": "Summer-peignoir-burgundy",
+  "sku": "BEAUTYNIGHTBN6673-G",
+  "name": "Beauty Night BN6673 Peignoir Burgundy",
+  "brand": "Beauty Night",
+  "shots": [
+   "Summer-peignoir-burgundy-2.jpg.webp",
+   "Summer-peignoir-burgundy-3.jpg.webp",
+   "Summer-peignoir-burgundy-4.jpg.webp",
+   "Summer-peignoir-silver-1.jpg.webp",
+   "Summer-peignoir-silver-3.jpg.webp",
+   "Summer-peignoir-silver-4.jpg.webp"
+  ],
+  "rrp": "54.99",
+  "trade": "24.91",
+  "shot_count": 6,
+  "is_set": false,
+  "rrp_usd": 69.84,
+  "floor": 70,
+  "floor_ok": false,
+  "floor_flag": "below"
+ },
+ {
+  "key": "Valentina-peignoir",
+  "sku": "BEAUTYNIGHTBN6652-G",
+  "name": "Beauty Night BN6652 Valentina Peignoir",
+  "brand": "Beauty Night",
+  "shots": [
+   "Valentina-peignoir-1.jpg.webp",
+   "Valentina-peignoir-3.jpg.webp",
+   "Valentina-peignoir-4-640x979.jpg.webp"
+  ],
+  "rrp": "66.49",
+  "trade": "30.14",
+  "shot_count": 3,
+  "is_set": false,
+  "rrp_usd": 84.44,
+  "floor": 70,
+  "floor_ok": true,
+  "floor_flag": "ok"
+ },
+ {
+  "key": "cassidy_chemise_turquoise_bn6550_web",
+  "sku": "BEAUTYNIGHTBN6550TURQUOISE-GG",
+  "name": "Beauty Night BN6550 Cassidy Chemise Turquoise",
+  "brand": "Beauty Night",
+  "shots": [
+   "cassidy_chemise_turquoise_bn6550_web1.jpg.webp",
+   "cassidy_chemise_turquoise_bn6550_web2.jpg.webp",
+   "cassidy_chemise_turquoise_bn6550_web4.jpg.webp"
+  ],
+  "rrp": "49.49",
+  "trade": "22.43",
+  "shot_count": 3,
+  "is_set": false,
+  "rrp_usd": 62.85,
+  "floor": 70,
+  "floor_ok": false,
+  "floor_flag": "below"
+ },
+ {
+  "key": "BS250",
+  "sku": "BS250BLACK-G",
+  "name": "Black Secret BS250 Hold Ups",
+  "brand": "Black Secret",
+  "shots": [
+   "BS250_a.png"
+  ],
+  "rrp": "24.99",
+  "trade": "10.71",
+  "shot_count": 1,
+  "is_set": true,
+  "rrp_usd": 31.74,
+  "floor": null,
+  "floor_ok": null,
+  "floor_flag": "exempt"
+ },
+ {
+  "key": "BS258",
+  "sku": "BS258BLACK-G",
+  "name": "Black Secret BS258 Hold Ups",
+  "brand": "Black Secret",
+  "shots": [
+   "BS258_a.png"
+  ],
+  "rrp": "24.99",
+  "trade": "10.71",
+  "shot_count": 1,
+  "is_set": true,
+  "rrp_usd": 31.74,
+  "floor": null,
+  "floor_ok": null,
+  "floor_flag": "exempt"
+ },
+ {
+  "key": "BS261",
+  "sku": "BS261BLACK-G",
+  "name": "Black Secret BS261 Hold Ups",
+  "brand": "Black Secret",
+  "shots": [
+   "BS261_a-320x490.png"
+  ],
+  "rrp": "26.99",
+  "trade": "11.47",
+  "shot_count": 1,
+  "is_set": true,
+  "rrp_usd": 34.28,
+  "floor": null,
+  "floor_ok": null,
+  "floor_flag": "exempt"
+ },
+ {
+  "key": "Naomi",
+  "sku": "GRACYA005NAOMI32-G",
+  "name": "Gracya Naomi Body White",
+  "brand": "Gracya",
+  "shots": [
+   "Naomi.png.webp"
+  ],
+  "rrp": "59.49",
+  "trade": "26.94",
+  "shot_count": 1,
+  "is_set": false,
+  "rrp_usd": 75.55,
+  "floor": 70,
+  "floor_ok": true,
+  "floor_flag": "ok"
+ },
+ {
+  "key": "gracya_Miette_w",
+  "sku": "GRACYAW147MIETTE30-G",
+  "name": "Gracya Miette Corset",
+  "brand": "Gracya",
+  "shots": [
+   "gracya_Miette_w147.jpg.webp"
+  ],
+  "rrp": "135.49",
+  "trade": "61.46",
+  "shot_count": 1,
+  "is_set": false,
+  "rrp_usd": 172.07,
+  "floor": 70,
+  "floor_ok": true,
+  "floor_flag": "ok"
+ },
+ {
+  "key": "gracya_monamour-corset",
+  "sku": "GRACYAB135CORSET32-G",
+  "name": "Gracya Mon Amour Corset",
+  "brand": "Gracya",
+  "shots": [
+   "gracya_monamour-corset.jpg.webp"
+  ],
+  "rrp": "118.49",
+  "trade": "53.74",
+  "shot_count": 1,
+  "is_set": false,
+  "rrp_usd": 150.48,
+  "floor": 70,
+  "floor_ok": true,
+  "floor_flag": "ok"
+ },
+ {
+  "key": "gracya_w",
+  "sku": "GRACYAW166JULIETTE30-G",
+  "name": "Gracya Juliette Corset",
+  "brand": "Gracya",
+  "shots": [
+   "gracya_w166.jpg.webp"
+  ],
+  "rrp": "135.49",
+  "trade": "61.46",
+  "shot_count": 1,
+  "is_set": false,
+  "rrp_usd": 172.07,
+  "floor": 70,
+  "floor_ok": true,
+  "floor_flag": "ok"
+ },
+ {
+  "key": "Irall_elodie_dressingown_plum",
+  "sku": "IRALLELODIEDGOWNPLUM-G",
+  "name": "Irall Elodie Dressing Gown Plum",
+  "brand": "Irall",
+  "shots": [
+   "Irall_elodie_dressingown_plum_1.jpg.webp",
+   "Irall_elodie_dressingown_plum_2-640x979.jpg.webp"
+  ],
+  "rrp": "57.49",
+  "trade": "26.02",
+  "shot_count": 2,
+  "is_set": false,
+  "rrp_usd": 73.01,
+  "floor": 60,
+  "floor_ok": true,
+  "floor_flag": "ok"
+ },
+ {
+  "key": "Pandora-pyjamas-ecru",
+  "sku": "IRALLPANDORAPJECRU-GG",
+  "name": "Irall Pandora Pyjama Ecru",
+  "brand": "Irall",
+  "shots": [
+   "Pandora-pyjamas-ecru-back.jpg.webp",
+   "Pandora-pyjamas-ecru.jpg.webp",
+   "pandora_pyjamas_ecru_-_back_web2.jpg.webp"
+  ],
+  "rrp": "99.00",
+  "trade": "45.00",
+  "shot_count": 3,
+  "is_set": true,
+  "rrp_usd": 125.73,
+  "floor": 60,
+  "floor_ok": true,
+  "floor_flag": "exempt"
+ },
+ {
+  "key": "Irall_Hoshiko_II_babydoll",
+  "sku": "IRALLHOSHIKOIIBABYDOLLPINK-G",
+  "name": "Irall Erotic Hoshiko II Babydoll Pink",
+  "brand": "Irall Erotic",
+  "shots": [
+   "Irall_Hoshiko_II_babydoll_1.jpg.webp",
+   "Irall_Hoshiko_II_babydoll_2-640x979.jpg.webp"
+  ],
+  "rrp": "47.49",
+  "trade": "21.58",
+  "shot_count": 2,
+  "is_set": false,
+  "rrp_usd": 60.31,
+  "floor": 70,
+  "floor_ok": false,
+  "floor_flag": "below"
+ },
+ {
+  "key": "Irall_Hoshiko_I_gown",
+  "sku": "IRALLHOSHIKOIDGOWNPINK-G",
+  "name": "Irall Erotic Hoshiko I Dressing Gown Pink",
+  "brand": "Irall Erotic",
+  "shots": [
+   "Irall_Hoshiko_I_gown_1.jpg.webp",
+   "Irall_Hoshiko_I_gown_2.jpg.webp"
+  ],
+  "rrp": "55.49",
+  "trade": "25.01",
+  "shot_count": 2,
+  "is_set": false,
+  "rrp_usd": 70.47,
+  "floor": 70,
+  "floor_ok": true,
+  "floor_flag": "ok"
+ },
+ {
+  "key": "5048",
+  "sku": "PROPR5048-G",
+  "name": "Provocative PR5048 Royal Affair 3pc Set",
+  "brand": "Provocative",
+  "shots": [
+   "5048-BACK.jpg.webp",
+   "5048.jpg.webp"
+  ],
+  "rrp": "64.49",
+  "trade": "29.10",
+  "shot_count": 2,
+  "is_set": true,
+  "rrp_usd": 81.9,
+  "floor": 80,
+  "floor_ok": true,
+  "floor_flag": "exempt"
+ },
+ {
+  "key": "roza_passomela_black",
+  "sku": "ROZAPASOMELASOFTCUPBLACK-G",
+  "name": "Roza Pasomela Soft Cup Bra Black",
+  "brand": "Roza",
+  "shots": [
+   "roza_passomela_black_11.jpg.webp",
+   "roza_passomela_black_6.jpg.webp",
+   "roza_passomela_black_8.jpg.webp",
+   "roza_passomela_black_9-1.jpg.webp"
+  ],
+  "rrp": "43.99",
+  "trade": "19.92",
+  "shot_count": 4,
+  "is_set": false,
+  "rrp_usd": 55.87,
+  "floor": null,
+  "floor_ok": null,
+  "floor_flag": "?"
+ },
+ {
+  "key": "shirley_of_hollywood_x26918-white-back-MG_6805-640x",
+  "sku": "SOHX26918WHITE-G",
+  "name": "Shirley of Hollywood X26918 Corset White",
+  "brand": "Shirley Of Hollywood",
+  "shots": [
+   "shirley_of_hollywood_x26918-white-back-MG_6805-640x979.jpg.webp",
+   "shirley_of_hollywood_x26918-white-front-MG_6799.jpg.webp"
+  ],
+  "rrp": "122.99",
+  "trade": "55.76",
+  "shot_count": 2,
+  "is_set": false,
+  "rrp_usd": 156.2,
+  "floor": null,
+  "floor_ok": null,
+  "floor_flag": "?"
+ },
+ {
+  "key": "YX733",
+  "sku": "YESYX733BLUE-G",
+  "name": "YesX YX733 Eyelash Lace Blue Nightdress",
+  "brand": "Yesx",
+  "shots": [
+   "yx733_1.png.webp",
+   "yx733_2.png.webp",
+   "yx733_3.png.webp"
+  ],
+  "rrp": "34.99",
+  "trade": "15.90",
+  "shot_count": 3,
+  "is_set": false,
+  "rrp_usd": 44.44,
+  "floor": 47,
+  "floor_ok": false,
+  "floor_flag": "below"
+ },
+ {
+  "key": "YX753",
+  "sku": "YESXYX753BLACK-G",
+  "name": "YesX YX753 Gartered Basque Black",
+  "brand": "Yesx",
+  "shots": [
+   "yx753-2side.png",
+   "yx753-320x490.png",
+   "yx753-3back.png",
+   "yx753-5B.png"
+  ],
+  "rrp": "34.99",
+  "trade": "15.90",
+  "shot_count": 4,
+  "is_set": false,
+  "rrp_usd": 44.44,
+  "floor": 47,
+  "floor_ok": false,
+  "floor_flag": "below"
+ },
+ {
+  "key": "YX874",
+  "sku": "YESYX874QRED-G",
+  "name": "YesX YX874Q Christmas Sexy Halter Neck Teddy Up To 4XL",
+  "brand": "Yesx",
+  "shots": [
+   "YX874Q_studio1.jpg.webp",
+   "YX874_14.jpg.webp"
+  ],
+  "rrp": "32.99",
+  "trade": "14.94",
+  "shot_count": 2,
+  "is_set": false,
+  "rrp_usd": 41.9,
+  "floor": 47,
+  "floor_ok": false,
+  "floor_flag": "below"
+ },
+ {
+  "key": "YX876",
+  "sku": "YESYX876RED-G",
+  "name": "YesX YX876 Christmas Fluffy Bodystocking",
+  "brand": "Yesx",
+  "shots": [
+   "YX876_1.jpeg.webp",
+   "YX876_11-1-640x640.jpg.webp",
+   "YX876_11-3.jpg.webp",
+   "YX876_3.jpeg.webp",
+   "YX876_studio1.jpg.webp"
+  ],
+  "rrp": "18.49",
+  "trade": "8.21",
+  "shot_count": 5,
+  "is_set": true,
+  "rrp_usd": 23.48,
+  "floor": 47,
+  "floor_ok": false,
+  "floor_flag": "below"
+ },
+ {
+  "key": "YX877",
+  "sku": "YESYX877RED-G",
+  "name": "YesX YX877 Christmas Sexy Bodystocking Dress",
+  "brand": "Yesx",
+  "shots": [
+   "YX877_1.jpeg.webp",
+   "YX877_11-4.jpg.webp",
+   "YX877_2.jpeg.webp"
+  ],
+  "rrp": "18.49",
+  "trade": "8.21",
+  "shot_count": 3,
+  "is_set": true,
+  "rrp_usd": 23.48,
+  "floor": 47,
+  "floor_ok": false,
+  "floor_flag": "below"
+ },
+ {
+  "key": "YX880",
+  "sku": "YESYX880LEOPARD-G",
+  "name": "YesX YX880 Leopard Print Robe",
+  "brand": "Yesx",
+  "shots": [
+   "YX880_1.jpg.webp",
+   "YX880_3.jpg.webp",
+   "YX880_4-320x320.jpg.webp",
+   "YX880_5.jpg.webp"
+  ],
+  "rrp": "49.99",
+  "trade": "22.72",
+  "shot_count": 4,
+  "is_set": true,
+  "rrp_usd": 63.49,
+  "floor": 47,
+  "floor_ok": true,
+  "floor_flag": "exempt"
+ },
+ {
+  "key": "YX882",
+  "sku": "YESYX882BLACK-G",
+  "name": "YesX YX882 Sexy Mesh Bra Set",
+  "brand": "Yesx",
+  "shots": [
+   "YX882_1.jpg.webp",
+   "YX882_d.png",
+   "YX882_e-640x979.png"
+  ],
+  "rrp": "44.99",
+  "trade": "20.45",
+  "shot_count": 3,
+  "is_set": true,
+  "rrp_usd": 57.14,
+  "floor": 47,
+  "floor_ok": true,
+  "floor_flag": "exempt"
+ },
+ {
+  "key": "YX888",
+  "sku": "YESYX888BLACK-G",
+  "name": "YesX YX888 Stunning Black Corset Up to 4XL",
+  "brand": "Yesx",
+  "shots": [
+   "YX888_3.jpg.webp",
+   "YX888_5.jpg.webp",
+   "YX888_6.jpg.webp"
+  ],
+  "rrp": "49.99",
+  "trade": "22.72",
+  "shot_count": 3,
+  "is_set": false,
+  "rrp_usd": 63.49,
+  "floor": 47,
+  "floor_ok": true,
+  "floor_flag": "ok"
+ },
+ {
+  "key": "YX889",
+  "sku": "YESYX889BLACK-G",
+  "name": "YesX YX889 Sexy Corset Black Up to 6XL",
+  "brand": "Yesx",
+  "shots": [
+   "YX889_2-320x320.jpg.webp",
+   "YX889_3.jpg.webp",
+   "YX889_5.jpg.webp",
+   "YX889_6.jpg.webp"
+  ],
+  "rrp": "49.99",
+  "trade": "22.72",
+  "shot_count": 4,
+  "is_set": false,
+  "rrp_usd": 63.49,
+  "floor": 47,
+  "floor_ok": true,
+  "floor_flag": "ok"
+ },
+ {
+  "key": "YX895",
+  "sku": "YESYX895BLACK-G",
+  "name": "YesX YX895 Sequin Corset Black",
+  "brand": "Yesx",
+  "shots": [
+   "yx895_4.jpg.webp",
+   "yx895_5.jpg.webp"
+  ],
+  "rrp": "49.99",
+  "trade": "22.72",
+  "shot_count": 2,
+  "is_set": false,
+  "rrp_usd": 63.49,
+  "floor": 47,
+  "floor_ok": true,
+  "floor_flag": "ok"
+ },
+ {
+  "key": "YX896",
+  "sku": "YESYX896BLACK-G",
+  "name": "YesX YX896 Vintage Corset Style Black",
+  "brand": "Yesx",
+  "shots": [
+   "YX896_555.png",
+   "YX896_666.png",
+   "YX896_updated.png"
+  ],
+  "rrp": "49.99",
+  "trade": "22.72",
+  "shot_count": 3,
+  "is_set": false,
+  "rrp_usd": 63.49,
+  "floor": 47,
+  "floor_ok": true,
+  "floor_flag": "ok"
+ },
+ {
+  "key": "YX897",
+  "sku": "YESYX897BLACK-G",
+  "name": "YesX YX897 Faux Leather Corset & Skirt",
+  "brand": "Yesx",
+  "shots": [
+   "YX897_222.png",
+   "yx897_2.jpg.webp",
+   "yx897_3.jpg.webp"
+  ],
+  "rrp": "49.99",
+  "trade": "22.72",
+  "shot_count": 3,
+  "is_set": false,
+  "rrp_usd": 63.49,
+  "floor": 47,
+  "floor_ok": true,
+  "floor_flag": "ok"
+ }
+]
