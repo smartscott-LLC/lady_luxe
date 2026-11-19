@@ -265,7 +265,7 @@ export default function CheckoutPage() {
               <button
                 className={styles.pay}
                 onClick={submit}
-                disabled={status !== "ready" || status === "submitting"}
+                disabled={status !== "ready"}
               >
                 {status === "submitting"
                   ? "Processing…"
