@@ -8,6 +8,25 @@ import styles from "./product.module.css";
 
 const RETAIL_MARKUP = 2.4;
 
+/** Brand label from the AlterEgo supplier SKU prefix (BEAUTYNIGHT… → Beauty Night). */
+function brandFromSupplierSku(supplierSku: string): string {
+  const prefixes: [string, string][] = [
+    ["BEAUTYNIGHT", "Beauty Night"],
+    ["IRALLEROTIC", "Irall Erotic"],
+    ["BLACKSECRET", "Black Secret"],
+    ["SHIRLEYOFHOLLYWOOD", "Shirley of Hollywood"],
+    ["PROVOCATIVE", "Provocative"],
+    ["GRACYA", "Gracya"],
+    ["IRALL", "Irall"],
+    ["ROZA", "Roza"],
+    ["YES", "YesX"],
+  ];
+  for (const [prefix, label] of prefixes) {
+    if (supplierSku.toUpperCase().startsWith(prefix)) return label;
+  }
+  return "Lady Luxe";
+}
+
 type ProductMedia = {
   alt?: string;
   url?: string;
@@ -82,7 +101,7 @@ function ProductView({ product }: { product: Product }) {
           </div>
 
           <div className={styles.infoColumn}>
-            <p className={styles.brand}>Beauty Night</p>
+            <p className={styles.brand}>{brandFromSupplierSku(product.supplier_sku)}</p>
             <h1 className={styles.name}>{product.name}</h1>
             {product.tag && <p className={styles.tag}>{product.tag}</p>}
 
