@@ -1,9 +1,13 @@
 import { Suspense } from "react";
+import Link from "next/link";
 import { createClient } from "@/utils/supabase/server";
 import HeroVideo from "@/components/HeroVideo";
 import LuxeRuntime from "@/components/LuxeRuntime";
 import LuxeMarquee from "@/components/LuxeMarquee";
 import NewsletterForm from "@/components/NewsletterForm";
+import FeaturedCarousel, { FeaturedItem } from "@/components/FeaturedCarousel";
+import BrandMarquee from "@/components/BrandMarquee";
+import { BRAND_ORDER, brandSlug } from "@/lib/brand";
 
 export const metadata = {
   title: "Lady Luxe — Maison de Couture",
@@ -32,6 +36,50 @@ const MAISON = [
     copy: "Members of the Circle see each release first — early access, private pricing, and first refusal on numbered pieces.",
   },
 ];
+
+async function getFeaturedFilms(): Promise<FeaturedItem[]> {
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from("products")
+    .select("sku, name, wholesale_cost, media")
+    .eq("status", "live")
+    .contains("media", JSON.stringify([{ type: "turntable" }]))
+    .order("wholesale_cost", { ascending: false })
+    .limit(12);
+
+  return (data ?? []).map((p: any) => {
+    const media = Array.isArray(p.media) ? p.media : [];
+    const tt = media.find((m: any) => m.type === "turntable") ?? {};
+    const image = media.find((m: any) => m.type === "image");
+    return {
+      sku: p.sku,
+      name: p.name,
+      price: Math.round(Number(p.wholesale_cost) * 2.4 * 100) / 100,
+      poster: tt.poster ?? image?.url ?? null,
+      mp4: tt.mp4,
+      webm: tt.webm,
+    };
+  }).filter((f: FeaturedItem) => f.mp4);
+}
+
+async function FeaturedFilms() {
+  const items = await getFeaturedFilms();
+  if (items.length === 0) return null;
+  return (
+    <section id="featured" aria-label="Featured films" className="section pt-5">
+      <div className="container text-center">
+        <p className="ll-eyebrow mb-2">Featured</p>
+        <h2 className="ll-script" style={{ fontSize: "clamp(2rem, 4.5vw, 3.2rem)" }}>
+          In Motion
+        </h2>
+        <p style={{ color: "var(--ll-cream-70)", fontWeight: 300 }}>
+          Hover a piece — the film plays. Click to meet it properly.
+        </p>
+        <FeaturedCarousel items={items} />
+      </div>
+    </section>
+  );
+}
 
 async function getEnsembles() {
   const supabase = await createClient();
@@ -99,13 +147,19 @@ export default function Home() {
                   <a className="nav-link active" href="/">Home</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#collection" data-scroll>Collection</a>
+                  <a className="nav-link" href="/brands">Brands</a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="#featured" data-scroll>Featured</a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#maison" data-scroll>Maison</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#contact" data-scroll>Contact</a>
+                  <a className="nav-link" href="https://smartforms.ladyluxeclub.com/forms/lady_luxe">Contact</a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="/bag">Bag</a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="/bag">Bag</a>
@@ -158,6 +212,30 @@ export default function Home() {
             <a href="#maison" className="ll-btn mb-3 mb-md-0" data-scroll>
               The Maison
             </a>
+          </div>
+        </section>
+
+        {/* ===================== FEATURED FILMS ===================== */}
+        <Suspense fallback={<div style={{ minHeight: "30rem" }} />}>
+          <FeaturedFilms />
+        </Suspense>
+
+        {/* ===================== THE HOUSES (BRAND MARQUEE) ===================== */}
+        <section aria-label="The houses we carry" className="section pb-0">
+          <div className="container text-center">
+            <p className="ll-eyebrow mb-2">The Houses We Carry</p>
+            <BrandMarquee speed={44}>
+              {BRAND_ORDER.map((b) => (
+                <Link
+                  key={b}
+                  href={`/brands?b=${brandSlug(b)}`}
+                  className="ll-brand-logo ll-script"
+                  style={{ fontSize: "1.9rem", color: "var(--ll-gold)", textDecoration: "none" }}
+                >
+                  {b}
+                </Link>
+              ))}
+            </BrandMarquee>
           </div>
         </section>
 
