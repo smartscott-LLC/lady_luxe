@@ -72,7 +72,22 @@ def main():
         return shots[0]
 
     queue = sorted(grouped.items(), key=lambda kv: kv[1]["trade"], reverse=True)
-    queue = queue[:count]
+
+    # resume-aware: drop products whose film already exists, then take N new
+    def out_dir_for(sku, g):
+        pick = featured_file(sku, g["shots"]) if featured_file else g["shots"][0]
+        return asset_dir_for(src_dir / pick)
+
+    src_dir = BRAND_DIR / brand
+    pending = []
+    for sku, g in queue:
+        try:
+            out = out_dir_for(sku, g)
+        except Exception:
+            out = None
+        if out and not (out / "manifest.json").is_file():
+            pending.append((sku, g))
+    queue = pending[:count]
 
     results = []
     for i, (sku, g) in enumerate(queue, 1):
