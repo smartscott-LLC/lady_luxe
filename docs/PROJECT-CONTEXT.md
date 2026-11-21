@@ -43,7 +43,21 @@ Turntable Studio (localhost:3002) ──spawns──▶ generate_turntable.py �
 - **Supabase project ref:** `mszrciomhatnmjsqfdij`. Schema: 11 tables + RLS.
   Products/ensembles carry real economics (trade, RRP, markup). Images bucket
   holds mirrored product media (22 images mirrored at last count).
-- **Square** is the processor (checkout not yet built — Edge Function planned).
+- **Cloudflare/ivy contact form (LIVE Nov 21):** `formserver.ladyluxeclub.com`
+  → Cloudflare tunnel (systemd cloudflared on ivy) → traefik :80 → ingress
+  `forms` host rule → `forms/formsapp` (smartforms engine, port 5000) +
+  `forms/formspg` Postgres. Form file delivered as ConfigMap
+  `lady-luxe-form` mounted at `/app/lady_luxe.html` (survives pod restarts;
+  the image `clubcheeky/smartforms:latest` only bakes cheeky/index).
+  Engine discovers `lady_luxe → [client_type, name, contact,
+  preferred_contact, service, vision]`. Smoke-test POST returned
+  `{"success":true}`. To update the form: edit
+  `smartforms_server/form-backend/lady_luxe.html`, re-create the configmap,
+  restart the deployment.
+- **Club Cheeky on hold:** `club/club-*` pods 0/1 Running (25d) — parked.
+- **Member sessions:** Supabase Auth free signup, `members.tier = 'club'`
+  (schema CHECK allows only club/posh_circle), optional marketing_consent.
+
 - **AlterEgo** is the wholesale supplier: feeds at `ALTEREGO_FULL_CATALOG_URL`
   (full catalog CSV, **frozen at 2026-09-03**) and `ALTEREGO_STOCK_URL` (stock
   + prices, live; variant rows keyed `BRAND+SKU+SIZE`, prices in £).
