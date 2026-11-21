@@ -166,7 +166,7 @@ export default function Home() {
                   <a className="nav-link" href="/bag">Bag</a>
                 </li>
                 <li className="nav-item d-lg-block ml-lg-4">
-                  <a href="https://smartforms.ladyluxeclub.com/forms/lady_luxe" className="btn btn-primary">
+                  <a href="https://formserver.ladyluxeclub.com/forms/lady_luxe" className="btn btn-primary">
                     <span className="mr-1"><i className="fas fa-feather-alt" /></span> Concierge
                   </a>
                 </li>
