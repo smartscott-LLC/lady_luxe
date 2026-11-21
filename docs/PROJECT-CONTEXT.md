@@ -176,6 +176,16 @@ Turntable Studio (localhost:3002) ──spawns──▶ generate_turntable.py �
 - 2026-11-16: Feed currency confirmed **GBP**; YesX floor confirmed **$47**.
 - 2026-11-16: `disableNSFWFilter=True` on all generations (filter was
   withholding lingerie results).
+- 2026-11-19: **No Plasmic/Framer runtime for the storefront** — owner tried
+  Plasmic (first time), decided visual builders don't fit a custom luxury
+  store; Plasmic stripped from the app (project kept in-owner as reference).
+  Design direction from the owner's mockups lives on: Holiday Collection
+  hero, featured 5-image carousel, brand-logo marquee, LL Club header,
+  Lifestyle/Support/Company footer.
+- 2026-11-19: **No fittings — ecommerce only.** "Book a Fitting" replaced by
+  "Concierge" (smartform link); contact form offers Client Care.
+- 2026-11-20: Social commercial delivered by owner (FastH3 output
+  1344×768/243 frames — our pipeline); branded platform derivatives cut.
 
 ## Session resume checklist
 
