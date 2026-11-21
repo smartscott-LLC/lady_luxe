@@ -1,0 +1,111 @@
+.page {
+  min-height: 100vh;
+  padding: 8rem 1.5rem 4rem;
+  background: var(--ll-midnight);
+  color: var(--ll-cream);
+}
+
+.inner {
+  max-width: 68rem;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--ll-cream-45);
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-family: var(--ll-font-display);
+  font-weight: 400;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--ll-gold);
+  margin-bottom: 0.75rem;
+}
+
+.sub {
+  font-weight: 300;
+  color: var(--ll-cream-70);
+  margin-bottom: 2.5rem;
+  max-width: 44rem;
+}
+
+.count {
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ll-cream-45);
+  margin-bottom: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10.5rem, 1fr));
+  gap: 1.1rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  text-decoration: none;
+  transition: transform 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.image {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--ll-gold-25);
+  background: var(--ll-gold-12);
+}
+
+.imageEmpty {
+  display: block;
+}
+
+.brand {
+  margin-top: 0.4rem;
+  font-size: 0.66rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ll-cream-45);
+}
+
+.name {
+  font-size: 0.85rem;
+  color: var(--ll-cream);
+  line-height: 1.35;
+}
+
+.price {
+  font-size: 0.82rem;
+  color: var(--ll-gold);
+}
+
+.empty {
+  color: var(--ll-cream-70);
+  font-weight: 300;
+}
+
+.back {
+  display: inline-block;
+  margin-top: 2.5rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ll-cream-45);
+  text-decoration: none;
+}
+
+.back:hover {
+  color: var(--ll-gold);
+}

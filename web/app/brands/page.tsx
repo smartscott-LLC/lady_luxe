@@ -44,12 +44,15 @@ async function BrandProducts({ brand }: { brand: string }) {
   const prefix = supplierPrefixForBrand(brand) ?? brand.toUpperCase();
   const { data } = await supabase
     .from("products")
-    .select("sku, name, supplier_sku, wholesale_cost, media")
+    .select("sku, name, supplier_sku, retail_price, media")
     .eq("status", "live")
+    .gte("retail_price", 65)
     .like("supplier_sku", `${prefix}%`)
-    .order("wholesale_cost", { ascending: false });
+    .order("retail_price", { ascending: false });
 
-  const products = data ?? [];
+  const products = (data ?? []).filter(
+    (p: any) => Number(p.retail_price) >= 65,
+  );
 
   if (products.length === 0) {
     return <p className={styles.empty}>No pieces from this house yet — it is being dressed.</p>;
@@ -60,7 +63,7 @@ async function BrandProducts({ brand }: { brand: string }) {
       {products.map((p) => {
         const media = Array.isArray(p.media) ? p.media : [];
         const image = media.find((m: any) => m.type === "image")?.url;
-        const retail = Math.round(Number(p.wholesale_cost) * 2.4 * 100) / 100;
+        const retail = Number(p.retail_price) || 0;
         return (
           <Link key={p.sku} href={`/product/${p.sku}`} className={styles.productCard}>
             {image ? (

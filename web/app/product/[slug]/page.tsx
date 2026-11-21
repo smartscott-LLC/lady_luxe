@@ -43,6 +43,7 @@ type Product = {
   tag: string | null;
   supplier_sku: string;
   wholesale_cost: number;
+  retail_price: number | null;
   duty_rate: number;
   media: ProductMedia[] | null;
   story: string | null;
@@ -53,7 +54,7 @@ async function getProduct(slug: string): Promise<Product | null> {
   const { data } = await supabase
     .from("products")
     .select(
-      "sku, name, tag, supplier_sku, wholesale_cost, duty_rate, media, story"
+      "sku, name, tag, supplier_sku, wholesale_cost, retail_price, duty_rate, media, story"
     )
     .eq("sku", decodeURIComponent(slug))
     .eq("status", "live")
@@ -67,7 +68,7 @@ function ProductView({ product }: { product: Product }) {
   const turntable = media.find(
     (m) => m.type === "turntable" && m.mp4
   ) as TurntableMedia | undefined;
-  const retail = Number(product.wholesale_cost) * RETAIL_MARKUP;
+  const retail = Number(product.retail_price) || Number(product.wholesale_cost) * RETAIL_MARKUP;
 
   return (
     <main className={styles.page}>

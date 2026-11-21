@@ -186,6 +186,16 @@ Turntable Studio (localhost:3002) ──spawns──▶ generate_turntable.py �
   "Concierge" (smartform link); contact form offers Client Care.
 - 2026-11-20: Social commercial delivered by owner (FastH3 output
   1344×768/243 frames — our pipeline); branded platform derivatives cut.
+- 2026-11-21: **Final brand floors (owner):** Beauty Night $45 · YesX $45 ·
+  Gracya $49 · Irall $45 · Irall Erotic $43 · Provocative $47 · SOH $54 ·
+  Roza $35. Frontline batch fully decidable; Irall/Irall Erotic clean.
+- 2026-11-21: **Two-tier merchandising:** retail < $65 → "Private Reserve"
+  (own area, brand-agnostic, not featured anywhere); retail ≥ $65 → featured
+  surfaces. Implemented as a generated column (`retail_price` =
+  wholesale_cost × 2.4) on products; homepage carousel and brand grids
+  filter ≥ 65; /private-reserve lists the rest. Naming: "Private Reserve"
+  chosen over "Member Priced"/"Privately Priced" — no gate implied; rename
+  to Member Pricing available when the Club ships.
 
 ## Session resume checklist
 

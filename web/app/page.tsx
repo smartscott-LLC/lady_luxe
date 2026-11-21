@@ -41,10 +41,11 @@ async function getFeaturedFilms(): Promise<FeaturedItem[]> {
   const supabase = await createClient();
   const { data } = await supabase
     .from("products")
-    .select("sku, name, wholesale_cost, media")
+    .select("sku, name, retail_price, media")
     .eq("status", "live")
+    .gte("retail_price", 65)
     .contains("media", JSON.stringify([{ type: "turntable" }]))
-    .order("wholesale_cost", { ascending: false })
+    .order("retail_price", { ascending: false })
     .limit(12);
 
   return (data ?? []).map((p: any) => {
@@ -54,7 +55,7 @@ async function getFeaturedFilms(): Promise<FeaturedItem[]> {
     return {
       sku: p.sku,
       name: p.name,
-      price: Math.round(Number(p.wholesale_cost) * 2.4 * 100) / 100,
+      price: Number(p.retail_price) || 0,
       poster: tt.poster ?? image?.url ?? null,
       mp4: tt.mp4,
       webm: tt.webm,
@@ -154,6 +155,9 @@ export default function Home() {
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#maison" data-scroll>Maison</a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="/private-reserve">Private Reserve</a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#contact" data-scroll>Contact</a>
