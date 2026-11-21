@@ -195,6 +195,20 @@ Turntable Studio (localhost:3002) ──spawns──▶ generate_turntable.py �
   wholesale_cost × 2.4) on products; homepage carousel and brand grids
   filter ≥ 65; /private-reserve lists the rest. Naming: **"Private Reserve"
   is permanent** (owner, Nov 21) — not a placeholder, no future rename.
+- 2026-11-21: **Advisor cleanup migration** (`advisor_cleanup_rls_functions`,
+  `fk_indexes_fn_hardening`, `fk_index_finish`): subscribers read-own policy
+  uses scalar `(select auth.email())`, orders/members policies consolidated +
+  optimized, public INSERT policies on orders/order_items/code_redemptions
+  dropped (checkout Edge Function writes via service role), handle_new_member
+  + rls_auto_enable locked (search_path '', EXECUTE revoked from
+  anon/authenticated), citext moved to `extensions` schema, 9 FK indexes
+  added, 2 duplicate indexes dropped. Remaining advisor items are by-design
+  INFOs only.
+  (own area, brand-agnostic, not featured anywhere); retail ≥ $65 → featured
+  surfaces. Implemented as a generated column (`retail_price` =
+  wholesale_cost × 2.4) on products; homepage carousel and brand grids
+  filter ≥ 65; /private-reserve lists the rest. Naming: **"Private Reserve"
+  is permanent** (owner, Nov 21) — not a placeholder, no future rename.
 
 ## Session resume checklist
 
