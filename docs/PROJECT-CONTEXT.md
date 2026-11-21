@@ -193,9 +193,8 @@ Turntable Studio (localhost:3002) ──spawns──▶ generate_turntable.py �
   (own area, brand-agnostic, not featured anywhere); retail ≥ $65 → featured
   surfaces. Implemented as a generated column (`retail_price` =
   wholesale_cost × 2.4) on products; homepage carousel and brand grids
-  filter ≥ 65; /private-reserve lists the rest. Naming: "Private Reserve"
-  chosen over "Member Priced"/"Privately Priced" — no gate implied; rename
-  to Member Pricing available when the Club ships.
+  filter ≥ 65; /private-reserve lists the rest. Naming: **"Private Reserve"
+  is permanent** (owner, Nov 21) — not a placeholder, no future rename.
 
 ## Session resume checklist
 
