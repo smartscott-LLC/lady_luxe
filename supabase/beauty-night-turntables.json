@@ -1,0 +1,176 @@
+[
+ {
+  "sku": "LL-BEAUTYNIGHTBN6712ISAURARED-G",
+  "status": "already-done",
+  "input": "BN6712_1.jpg",
+  "dir": "/home/server/lady_luxe/output/BN6712_1_9b50e667"
+ },
+ {
+  "sku": "LL-BEAUTYNIGHTBN6536ILEENSET-G",
+  "status": "already-done",
+  "input": "bn6536_02.jpg",
+  "dir": "/home/server/lady_luxe/output/bn6536_02_5064c11e"
+ },
+ {
+  "sku": "LL-BEAUTYNIGHTBN6656-G",
+  "status": "done",
+  "input": "BN6656_Lillie-set-2.jpg",
+  "dir": "/home/server/lady_luxe/output/BN6656_Lillie-set-2_dacc7aae",
+  "seam_rms": 3.3744,
+  "spark": 58.1002,
+  "minutes": 5.8
+ },
+ {
+  "sku": "LL-BEAUTYNIGHTBN6713-G",
+  "status": "done",
+  "input": "Crystal-black-1-art.jpg",
+  "dir": "/home/server/lady_luxe/output/Crystal-black-1-art_858b9e0f",
+  "seam_rms": 2.9014,
+  "spark": 58.1002,
+  "minutes": 7.6
+ },
+ {
+  "sku": "LL-BEAUTYNIGHTBN6481MARGOT-G",
+  "status": "done",
+  "input": "BN6481_1.jpg",
+  "dir": "/home/server/lady_luxe/output/BN6481_1_0f3ed786",
+  "seam_rms": 2.3782,
+  "spark": 58.1002,
+  "minutes": 3.8
+ },
+ {
+  "sku": "LL-BEAUTYNIGHTBN6685-G",
+  "status": "done",
+  "input": "Joanna-set-2.jpg",
+  "dir": "/home/server/lady_luxe/output/Joanna-set-2_d4a63ef2",
+  "seam_rms": 2.8371,
+  "spark": 58.1002,
+  "minutes": 3.4
+ },
+ {
+  "sku": "LL-BEAUTYNIGHTBN6684-G",
+  "status": "done",
+  "input": "BN6684_Joanna-corset-2.jpg",
+  "dir": "/home/server/lady_luxe/output/BN6684_Joanna-corset-2_1615c9c4",
+  "seam_rms": 3.1744,
+  "spark": 58.1002,
+  "minutes": 3.0
+ },
+ {
+  "sku": "LL-BEAUTYNIGHTBN6496-G",
+  "status": "done",
+  "input": "bn6496_front_2.jpg",
+  "dir": "/home/server/lady_luxe/output/bn6496_front_2_e5f4bed9",
+  "seam_rms": 2.7203,
+  "spark": 58.1002,
+  "minutes": 3.6
+ },
+ {
+  "sku": "LL-BEAUTYNIGHTBN6653-G",
+  "status": "done",
+  "input": "BN6653_Bethany-set-1.jpg",
+  "dir": "/home/server/lady_luxe/output/BN6653_Bethany-set-1_57f4d0e5",
+  "seam_rms": 2.2658,
+  "spark": 58.1002,
+  "minutes": 4.6
+ },
+ {
+  "sku": "LL-BEAUTYNIGHTBN6654-G",
+  "status": "done",
+  "input": "BN6654_Carina-set-1.jpg",
+  "dir": "/home/server/lady_luxe/output/BN6654_Carina-set-1_68186bc1",
+  "seam_rms": 1.9095,
+  "spark": 58.1002,
+  "minutes": 3.8
+ },
+ {
+  "sku": "LL-BEAUTYNIGHTBN6660-G",
+  "status": "done",
+  "input": "BN6660_missyset_tuquoise_1.jpg",
+  "dir": "/home/server/lady_luxe/output/BN6660_missyset_tuquoise_1_c84a285d",
+  "seam_rms": 2.526,
+  "spark": 58.1002,
+  "minutes": 2.7
+ },
+ {
+  "sku": "LL-BEAUTYNIGHTBN6661-G",
+  "status": "done",
+  "input": "BN6661_missyset_white_2.jpg",
+  "dir": "/home/server/lady_luxe/output/BN6661_missyset_white_2_be0e0f60",
+  "seam_rms": 2.2334,
+  "spark": 58.1002,
+  "minutes": 4.6
+ },
+ {
+  "sku": "LL-BEAUTYNIGHTBN6678-G",
+  "status": "done",
+  "input": "Hollie-dress-2.jpg",
+  "dir": "/home/server/lady_luxe/output/Hollie-dress-2_5b521607",
+  "seam_rms": 2.3369,
+  "spark": 58.1002,
+  "minutes": 8.8
+ },
+ {
+  "sku": "LL-BEAUTYNIGHTBN6655-G",
+  "status": "done",
+  "input": "Kayla-dress-2.jpg",
+  "dir": "/home/server/lady_luxe/output/Kayla-dress-2_237c50bc",
+  "seam_rms": 2.5772,
+  "spark": 58.1002,
+  "minutes": 5.2
+ },
+ {
+  "sku": "LL-BEAUTYNIGHTBN6715-G",
+  "status": "done",
+  "input": "Sasha-set-2.jpg",
+  "dir": "/home/server/lady_luxe/output/Sasha-set-2_45a4a5d8",
+  "seam_rms": 2.3657,
+  "spark": 58.1002,
+  "minutes": 3.3
+ },
+ {
+  "sku": "LL-BEAUTYNIGHTBN6558CORSET-GG",
+  "status": "done",
+  "input": "6558_savannah_corset_web4.jpg",
+  "dir": "/home/server/lady_luxe/output/6558_savannah_corset_web4_2b182d6b",
+  "seam_rms": 3.3265,
+  "spark": 58.1002,
+  "minutes": 4.4
+ },
+ {
+  "sku": "LL-BEAUTYNIGHTBN6597-G",
+  "status": "done",
+  "input": "Alanis-1.jpg",
+  "dir": "/home/server/lady_luxe/output/Alanis-1_4733429e",
+  "seam_rms": 1.997,
+  "spark": 58.1002,
+  "minutes": 3.8
+ },
+ {
+  "sku": "LL-BEAUTYNIGHTBN6596-G",
+  "status": "done",
+  "input": "BN6596_gift_box_1.jpg",
+  "dir": "/home/server/lady_luxe/output/BN6596_gift_box_1_208c39ba",
+  "seam_rms": 2.2973,
+  "spark": 58.1002,
+  "minutes": 3.9
+ },
+ {
+  "sku": "LL-BEAUTYNIGHTBN6628-G",
+  "status": "done",
+  "input": "Beauty_night_BN6628_delight_dressing_gown_1.jpg",
+  "dir": "/home/server/lady_luxe/output/Beauty_night_BN6628_delight_dressing_gown_1_f00a59e4",
+  "seam_rms": 2.9187,
+  "spark": 58.1002,
+  "minutes": 2.1
+ },
+ {
+  "sku": "LL-BEAUTYNIGHTBN6637-G",
+  "status": "done",
+  "input": "Beauty_night_BN6637_natasha_set_1.jpg",
+  "dir": "/home/server/lady_luxe/output/Beauty_night_BN6637_natasha_set_1_9686aab2",
+  "seam_rms": 2.6573,
+  "spark": 58.1002,
+  "minutes": 4.5
+ }
+]
