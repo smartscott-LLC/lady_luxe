@@ -1,0 +1,133 @@
+.page {
+  min-height: 100vh;
+  padding: 8rem 1.5rem 4rem;
+  background: var(--ll-midnight);
+  color: var(--ll-cream);
+}
+
+.inner {
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: var(--ll-cream-45);
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-family: var(--ll-font-display);
+  font-weight: 400;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--ll-gold);
+  margin-bottom: 0.75rem;
+}
+
+.sub {
+  font-weight: 300;
+  color: var(--ll-cream-70);
+  margin-bottom: 2.5rem;
+  max-width: 40rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.5rem 1.25rem;
+  border: 1px solid var(--ll-gold-25);
+  border-radius: 10px;
+  background: rgba(48, 0, 26, 0.55);
+  text-decoration: none;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--ll-gold);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.brandName {
+  font-family: var(--ll-font-display);
+  font-size: 1.05rem;
+  color: var(--ll-gold);
+}
+
+.count {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ll-cream-45);
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+  gap: 1rem;
+}
+
+.productCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  text-decoration: none;
+  transition: transform 0.25s ease;
+}
+
+.productCard:hover {
+  transform: translateY(-4px);
+}
+
+.productImage {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--ll-gold-25);
+  background: var(--ll-gold-12);
+}
+
+.productImageEmpty {
+  display: block;
+}
+
+.productName {
+  font-size: 0.85rem;
+  color: var(--ll-cream);
+  margin-top: 0.4rem;
+  line-height: 1.35;
+}
+
+.productPrice {
+  font-size: 0.8rem;
+  color: var(--ll-gold);
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 1.25rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ll-cream-45);
+  text-decoration: none;
+}
+
+.back:hover {
+  color: var(--ll-gold);
+}
+
+.empty {
+  color: var(--ll-cream-70);
+  font-weight: 300;
+}
