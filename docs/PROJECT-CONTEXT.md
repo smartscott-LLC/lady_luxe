@@ -54,6 +54,17 @@ Turntable Studio (localhost:3002) ──spawns──▶ generate_turntable.py �
   `{"success":true}`. To update the form: edit
   `smartforms_server/form-backend/lady_luxe.html`, re-create the configmap,
   restart the deployment.
+- **Form-server hardening (Nov 21) — answer to owner's daily fake emails:**
+  the engine emailed the owner on EVERY submission with raw HTML from the
+  form, and offered a "customer receipt" to an attacker-controlled address
+  (open relay). Bots had been auto-submitting for weeks = the daily fake
+  emails. Fixed in server.js (delivered via the same ConfigMap): root `/` no
+  longer lists forms, 404s no longer leak form IDs, per-IP rate limit
+  5/10min using CF-Connecting-IP (real visitor IPs through the tunnel),
+  honeypot field silently drops bots, all email interpolation HTML-escaped,
+  customer receipt removed (relay vector). All verified live. **server.js +
+  lady_luxe.html now deploy via the `lady-luxe-form` ConfigMap**, not the
+  image.
 - **Club Cheeky on hold:** `club/club-*` pods 0/1 Running (25d) — parked.
 - **Member sessions:** Supabase Auth free signup, `members.tier = 'club'`
   (schema CHECK allows only club/posh_circle), optional marketing_consent.
