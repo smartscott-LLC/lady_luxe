@@ -1,0 +1,83 @@
+.page {
+  min-height: 100vh;
+  padding: 8rem 1.5rem 4rem;
+  background: var(--ll-midnight);
+  color: var(--ll-cream);
+}
+
+.inner {
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: var(--ll-cream-45);
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-family: var(--ll-font-display);
+  font-weight: 400;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--ll-gold);
+  margin-bottom: 0.75rem;
+}
+
+.sub {
+  font-weight: 300;
+  color: var(--ll-cream-70);
+  margin-bottom: 2.5rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 1.5rem 1.6rem;
+  border: 1px solid var(--ll-gold-25);
+  border-radius: 10px;
+  background: rgba(48, 0, 26, 0.55);
+  text-decoration: none;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: var(--ll-gold);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.category {
+  font-size: 0.66rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ll-gold);
+}
+
+.title {
+  font-family: var(--ll-font-display);
+  font-size: 1.2rem;
+  color: var(--ll-cream);
+  line-height: 1.35;
+}
+
+.excerpt {
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--ll-cream-70);
+  line-height: 1.5;
+}
+
+.empty {
+  font-style: italic;
+  color: var(--ll-cream-70);
+}

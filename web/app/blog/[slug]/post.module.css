@@ -1,0 +1,100 @@
+.page {
+  min-height: 100vh;
+  padding: 8rem 1.5rem 4rem;
+  background: var(--ll-midnight);
+  color: var(--ll-cream);
+}
+
+.inner {
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.category {
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ll-gold);
+  margin-bottom: 0.6rem;
+}
+
+.title {
+  font-family: var(--ll-font-display);
+  font-weight: 400;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  line-height: 1.25;
+  color: var(--ll-cream);
+  margin-bottom: 2rem;
+}
+
+.prose {
+  font-weight: 300;
+  font-size: 1.02rem;
+  line-height: 1.85;
+  color: var(--ll-cream);
+}
+
+.prose :global(h2) {
+  font-family: var(--ll-font-display);
+  font-weight: 400;
+  font-size: 1.35rem;
+  color: var(--ll-gold);
+  margin: 2.2rem 0 0.8rem;
+}
+
+.prose :global(h3) {
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+  color: var(--ll-gold);
+  margin: 1.8rem 0 0.5rem;
+}
+
+.prose :global(strong) {
+  color: var(--ll-cream);
+  font-weight: 600;
+}
+
+.prose :global(em) {
+  color: var(--ll-cream-70);
+  font-style: italic;
+}
+
+.prose :global(a) {
+  color: var(--ll-gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.prose :global(ul) {
+  padding-left: 1.2rem;
+  margin: 0.6rem 0;
+}
+
+.prose :global(li) {
+  margin: 0.4rem 0;
+}
+
+.prose :global(p) {
+  margin: 0.9rem 0;
+}
+
+.prose :global(blockquote) {
+  border-left: 2px solid var(--ll-gold-40);
+  padding-left: 1rem;
+  color: var(--ll-cream-70);
+  font-style: italic;
+}
+
+.back {
+  display: inline-block;
+  margin-top: 2.5rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ll-cream-45);
+  text-decoration: none;
+}
+
+.back:hover {
+  color: var(--ll-gold);
+}
