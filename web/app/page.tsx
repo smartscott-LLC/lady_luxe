@@ -156,10 +156,7 @@ export default function Home() {
                   <a className="nav-link" href="#maison" data-scroll>Maison</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="https://smartforms.ladyluxeclub.com/forms/lady_luxe">Contact</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="/bag">Bag</a>
+                  <a className="nav-link" href="#contact" data-scroll>Contact</a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="/bag">Bag</a>
