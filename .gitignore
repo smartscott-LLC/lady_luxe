@@ -43,3 +43,6 @@ gui_data/
 __pycache__/
 *.pdf
 nexusquant/
+docs/*.mp3
+docs/*.mp4
+docs/*.pdf
