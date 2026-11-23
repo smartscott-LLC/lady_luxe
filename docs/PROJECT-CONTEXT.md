@@ -211,6 +211,12 @@ Turntable Studio (localhost:3002) ──spawns──▶ generate_turntable.py �
   "Concierge" (smartform link); contact form offers Client Care.
 - 2026-11-20: Social commercial delivered by owner (FastH3 output
   1344×768/243 frames — our pipeline); branded platform derivatives cut.
+- 2026-11-23: **Brand commercial v2 finalized by owner** (`/home/server/Videos/comm2_good.mp4`,
+  supersedes the Nov 20 cut): 768×768 square, 24fps, 15.1s, AAC stereo,
+  assembled in kdenlive with ElevenLabs VO. Structure: gold Lady Luxe
+  logo open on plum → white lace / chandelier bedroom → black lace
+  bustier → red corset finale. Owner verdict: "clearly the best" —
+  smoothest voice timing and graphics; this is the canonical ad asset.
 - 2026-11-21: **Final brand floors (owner):** Beauty Night $45 · YesX $45 ·
   Gracya $49 · Irall $45 · Irall Erotic $43 · Provocative $47 · SOH $54 ·
   Roza $35. Frontline batch fully decidable; Irall/Irall Erotic clean.
