@@ -24,10 +24,10 @@ export default function FeaturedCarousel({ items }: { items: FeaturedItem[] }) {
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
   const count = items.length;
 
-  // auto-advance
+  // auto-advance every 3s while not hovering
   useEffect(() => {
     if (hovering !== null || count < 2) return;
-    const t = setInterval(() => setActive((a) => (a + 1) % count), 3800);
+    const t = setInterval(() => setActive((a) => (a + 1) % count), 3000);
     return () => clearInterval(t);
   }, [hovering, count]);
 
@@ -41,6 +41,8 @@ export default function FeaturedCarousel({ items }: { items: FeaturedItem[] }) {
     setHovering(null);
     const v = videoRefs.current[i];
     if (v) v.pause(); // pause, never reset
+    // no delay after unhover: advance immediately, then the 3s cadence resumes
+    setActive((a) => (a + 1) % count);
   };
 
   const offset = (i: number) => {
@@ -73,23 +75,29 @@ export default function FeaturedCarousel({ items }: { items: FeaturedItem[] }) {
               onMouseEnter={() => play(i)}
               onMouseLeave={() => stop(i)}
             >
-              <video
-                ref={(el) => {
-                  videoRefs.current[i] = el;
-                }}
-                className={styles.film}
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                poster={item.poster ?? undefined}
+              <Link
+                href={`/product/${item.sku}`}
+                className={styles.cardLink}
+                aria-label={`${item.name} — $${item.price.toFixed(2)}`}
               >
-                <source src={item.mp4} type="video/mp4" />
-                {item.webm ? <source src={item.webm} type="video/webm" /> : null}
-              </video>
-              <Link href={`/product/${item.sku}`} className={styles.cardLink}>
-                <span className={styles.name}>{item.name}</span>
-                <span className={styles.price}>${item.price.toFixed(2)}</span>
+                <video
+                  ref={(el) => {
+                    videoRefs.current[i] = el;
+                  }}
+                  className={styles.film}
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  poster={item.poster ?? undefined}
+                >
+                  <source src={item.mp4} type="video/mp4" />
+                  {item.webm ? <source src={item.webm} type="video/webm" /> : null}
+                </video>
+                <span className={styles.label}>
+                  <span className={styles.name}>{item.name}</span>
+                  <span className={styles.price}>${item.price.toFixed(2)}</span>
+                </span>
               </Link>
             </div>
           );

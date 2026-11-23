@@ -1,10 +1,10 @@
 import { Suspense } from "react";
 import Link from "next/link";
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
 import { createClient } from "@/utils/supabase/server";
 import HeroVideo from "@/components/HeroVideo";
-import LuxeRuntime from "@/components/LuxeRuntime";
-import LuxeMarquee from "@/components/LuxeMarquee";
-import NewsletterForm from "@/components/NewsletterForm";
 import FeaturedCarousel, { FeaturedItem } from "@/components/FeaturedCarousel";
 import BrandMarquee from "@/components/BrandMarquee";
 import { BRAND_ORDER, brandSlug } from "@/lib/brand";
@@ -15,12 +15,32 @@ export const metadata = {
     "A maison de couture for the midnight hours. Evening wear in garnet, amaranth and gold — composed, numbered and archived by the house.",
 };
 
-const DESKS = [
-  { label: "Owner", email: "owner@ladyluxeclub.com" },
-  { label: "Business", email: "business@ladyluxeclub.com" },
-  { label: "Services", email: "services@ladyluxeclub.com" },
-  { label: "General", email: "info@ladyluxeclub.com" },
-];
+const CONTENT_DIR = path.join(process.cwd(), "content", "blog");
+
+function latestPost() {
+  try {
+    const files = fs.readdirSync(CONTENT_DIR).filter((f) => f.endsWith(".md"));
+    const posts = files
+      .map((f) => {
+        const raw = fs.readFileSync(path.join(CONTENT_DIR, f), "utf-8");
+        const { data } = matter(raw);
+        return {
+          slug: f.replace(/\.md$/, ""),
+          title: data.title ?? f,
+          category: data.category ?? "Journal",
+          metaDescription: data.metaDescription ?? "",
+          date: data.date ?? "",
+        };
+      })
+      .sort((a, b) => b.date.localeCompare(a.date));
+    return posts[0] ?? null;
+  } catch {
+    return null;
+  }
+}
+
+const MOTTO =
+  "Elegance not extravagance, inclusive not exclusive, and encourageable not incorrigible.";
 
 const MAISON = [
   {
@@ -29,11 +49,11 @@ const MAISON = [
   },
   {
     title: "Numbered & Archived",
-    copy: "Every ensemble is numbered on release and entered in the house record. When the number is gone, it is gone.",
+    copy: "Every ensemble is numbered on release and entered in the house record. When the number is gone, it's gone.",
   },
   {
     title: "The Circle",
-    copy: "Members of the Circle see each release first — early access, private pricing, and first refusal on numbered pieces.",
+    copy: "Members of the Circle see each release first. Sign-ups are open — membership is free, always.",
   },
 ];
 
@@ -51,23 +71,23 @@ async function getFeaturedFilms(): Promise<FeaturedItem[]> {
   return (data ?? []).map((p: any) => {
     const media = Array.isArray(p.media) ? p.media : [];
     const tt = media.find((m: any) => m.type === "turntable") ?? {};
-    const image = media.find((m: any) => m.type === "image");
+    const image = media.find((m: any) => m.type === "image") ?? {};
     return {
       sku: p.sku,
       name: p.name,
       price: Number(p.retail_price) || 0,
-      poster: tt.poster ?? image?.url ?? null,
+      poster: tt.poster ?? image.url ?? null,
       mp4: tt.mp4,
       webm: tt.webm,
     };
-  }).filter((f: FeaturedItem) => f.mp4);
+  }).filter((f) => f.mp4);
 }
 
 async function FeaturedFilms() {
   const items = await getFeaturedFilms();
   if (items.length === 0) return null;
   return (
-    <section id="featured" aria-label="Featured films" className="section pt-5">
+    <section id="featured" aria-label="Featured films" className="section pt-5 ll-reveal">
       <div className="container text-center">
         <p className="ll-eyebrow mb-2">Featured</p>
         <h2 className="ll-script" style={{ fontSize: "clamp(2rem, 4.5vw, 3.2rem)" }}>
@@ -77,6 +97,11 @@ async function FeaturedFilms() {
           Hover a piece — the film plays. Click to meet it properly.
         </p>
         <FeaturedCarousel items={items} />
+        <div className="mt-4">
+          <Link href="/featured" className="ll-btn">
+            All Featured Pieces
+          </Link>
+        </div>
       </div>
     </section>
   );
@@ -88,113 +113,58 @@ async function getEnsembles() {
     .from("bundles")
     .select("sku, name, price, media, story, bundle_items(count)")
     .eq("live", true)
+    .neq("sku", "LL-ENS-PETAL") // the petal palette clashes on the midnight band — withdrawn from the marquee
     .order("price", { ascending: false });
 
-  if (error || !data) return [];
-
+  if (error) return [];
   return data.map((b) => ({
     sku: b.sku,
     name: b.name,
     price: b.price,
     img: Array.isArray(b.media) ? b.media[0]?.url ?? "" : "",
-    story: b.story ?? "",
+    story: b.story,
     pieces: b.bundle_items?.[0]?.count ?? 0,
   }));
 }
 
+async function getMarqueeProducts() {
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from("products")
+    .select("sku, name, retail_price, media")
+    .eq("status", "live")
+    .gte("retail_price", 65)
+    .contains("media", JSON.stringify([{ type: "turntable" }]))
+    .order("retail_price", { ascending: false })
+    .limit(6);
+  return (data ?? []).map((p: any) => {
+    const media = Array.isArray(p.media) ? p.media : [];
+    const tt = media.find((m: any) => m.type === "turntable") ?? {};
+    const image = media.find((m: any) => m.type === "image") ?? {};
+    return {
+      sku: p.sku,
+      name: p.name,
+      price: Number(p.retail_price) || 0,
+      img: tt.poster ?? image.url ?? "",
+      pieces: 0,
+      isProduct: true,
+    };
+  });
+}
+
 const money = (n: number | null | undefined) =>
-  new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", minimumFractionDigits: 2 }).format(n ?? 0);
+  new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(Number(n) || 0);
 
 export default function Home() {
   return (
-    <>
-      {/* ===================== NAVIGATION ===================== */}
-      <header className="header-global">
-        <nav
-          id="navbar-main"
-          aria-label="Primary navigation"
-          className="navbar navbar-main navbar-expand-lg navbar-theme-primary headroom navbar-light navbar-transparent"
-        >
-          <div className="container position-relative">
-            <a className="navbar-brand" href="/">
-              <img className="ll-emblem" src="/brand/lady-luxe-emblem.webp" alt="Lady Luxe emblem" />
-              <span className="ll-script ll-brand-word">Lady Luxe</span>
-            </a>
-            <div className="navbar-collapse collapse" id="navbar_global">
-              <div className="navbar-collapse-header">
-                <div className="row">
-                  <div className="col-6 collapse-brand">
-                    <a href="/" className="navbar-brand">
-                      <img className="ll-emblem" src="/brand/lady-luxe-emblem.webp" alt="Lady Luxe emblem" />
-                      <span className="ll-script">Lady Luxe</span>
-                    </a>
-                  </div>
-                  <div className="col-6 collapse-close">
-                    <a
-                      href="#navbar_global"
-                      className="fas fa-times"
-                      data-toggle="collapse"
-                      data-target="#navbar_global"
-                      aria-controls="navbar_global"
-                      aria-expanded="false"
-                      title="close"
-                      aria-label="Toggle navigation"
-                    />
-                  </div>
-                </div>
-              </div>
-              <ul className="navbar-nav navbar-nav-hover align-items-lg-center ml-lg-auto">
-                <li className="nav-item">
-                  <a className="nav-link active" href="/">Home</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="/brands">Brands</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#featured" data-scroll>Featured</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#maison" data-scroll>Maison</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="/private-reserve">Private Reserve</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#contact" data-scroll>Contact</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="/bag">Bag</a>
-                </li>
-                <li className="nav-item d-lg-block ml-lg-4">
-                  <a href="https://formserver.ladyluxeclub.com/forms/lady_luxe" className="btn btn-primary">
-                    <span className="mr-1"><i className="fas fa-feather-alt" /></span> Concierge
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <button
-              className="navbar-toggler ml-2"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbar_global"
-              aria-controls="navbar_global"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="navbar-toggler-icon" />
-            </button>
-          </div>
-        </nav>
-      </header>
-
-      <main>
-        {/* ===================== HERO ===================== */}
-        <section className="ll-hero" aria-label="Lady Luxe — introduction">
-          <div className="ll-hero-backdrop">
-            <HeroVideo src="/brand/videos/hero-atelier-b.mp4" />
-          </div>
-          <div className="ll-hero-fade" />
-          <div className="container position-relative" style={{ zIndex: 2 }}>
+    <main>
+      {/* ===================== HERO ===================== */}
+      <section className="ll-hero" aria-label="Lady Luxe — introduction">
+        <div className="ll-hero-backdrop">
+          <HeroVideo src="/brand/videos/hero-atelier-b.mp4" />
+        </div>
+        <div className="container position-relative" style={{ zIndex: 2 }}>
+          <div className="ll-hero-stack">
             <p className="ll-eyebrow mb-3">Maison de Couture</p>
             <h1 className="ll-script ll-display mb-2">Lady Luxe</h1>
             <p className="ll-felipa ll-sub mb-4">
@@ -207,129 +177,133 @@ export default function Home() {
               Every piece is chosen, composed and numbered by the house — ensembles made for
               rooms with low light and long memories.
             </p>
-            <a href="#collection" className="ll-btn ll-btn--solid mr-3 mb-3 mb-md-0" data-scroll>
+            <Link href="#collection" className="ll-btn ll-btn--solid mr-3 mb-3 mb-md-0">
               Explore the Collection
-            </a>
-            <a href="#maison" className="ll-btn mb-3 mb-md-0" data-scroll>
+            </Link>
+            <Link href="/maison" className="ll-btn mb-3 mb-md-0">
               The Maison
-            </a>
-          </div>
-        </section>
-
-        {/* ===================== FEATURED FILMS ===================== */}
-        <Suspense fallback={<div style={{ minHeight: "30rem" }} />}>
-          <FeaturedFilms />
-        </Suspense>
-
-        {/* ===================== THE HOUSES (BRAND MARQUEE) ===================== */}
-        <section aria-label="The houses we carry" className="section pb-0">
-          <div className="container text-center">
-            <p className="ll-eyebrow mb-2">The Houses We Carry</p>
-            <BrandMarquee speed={44}>
-              {BRAND_ORDER.map((b) => (
-                <Link
-                  key={b}
-                  href={`/brands?b=${brandSlug(b)}`}
-                  className="ll-brand-logo ll-script"
-                  style={{ fontSize: "1.9rem", color: "var(--ll-gold)", textDecoration: "none" }}
-                >
-                  {b}
-                </Link>
-              ))}
-            </BrandMarquee>
-          </div>
-        </section>
-
-        {/* ===================== COLLECTION MARQUEE ===================== */}
-        <Suspense fallback={<MarqueeFallback />}>
-          <CollectionMarquee />
-        </Suspense>
-
-        {/* ===================== MAISON ===================== */}
-        <section id="maison" className="section section-lg" aria-label="The maison">
-          <div className="container">
-            <div className="row justify-content-center text-center mb-5">
-              <div className="col-lg-8">
-                <p className="ll-eyebrow mb-3">Est. MMXXV</p>
-                <h2 className="ll-script" style={{ fontSize: "clamp(2.2rem, 5vw, 3.4rem)" }}>
-                  The Maison
-                </h2>
-                <div className="ll-divider"><span /></div>
-                <p className="lead">A small house, on purpose. Three disciplines, one standard.</p>
-              </div>
-            </div>
-            <div className="row">
-              {MAISON.map((card) => (
-                <div className="col-md-4 mb-4 mb-md-0" key={card.title}>
-                  <article className="ll-journal-card">
-                    <h3 className="ll-felipa h5">{card.title}</h3>
-                    <p>{card.copy}</p>
-                  </article>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      </main>
-
-      {/* ===================== FOOTER ===================== */}
-      <footer id="contact" className="ll-footer">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-4 mb-5 mb-lg-0">
-              <a href="/" className="ll-footer-brand mb-4">
-                <img className="ll-emblem" src="/brand/lady-luxe-emblem.webp" alt="Lady Luxe emblem" />
-                <span className="ll-script ll-brand-word">Lady Luxe</span>
-              </a>
-              <p>
-                A maison de couture for the midnight hours. Evening wear in garnet, amaranth and
-                gold — cut, finished and archived by hand.
-              </p>
-              <div className="mt-4">
-                <a className="ll-social mr-2" href="https://instagram.com/ladyluxeclub" target="_blank" rel="noopener" aria-label="Instagram">
-                  <i className="fab fa-instagram" />
-                </a>
-                <a className="ll-social mr-2" href="https://pinterest.com/ladyluxeclub" target="_blank" rel="noopener" aria-label="Pinterest">
-                  <i className="fab fa-pinterest-p" />
-                </a>
-                <a className="ll-social" href="https://facebook.com/ladyluxeclub" target="_blank" rel="noopener" aria-label="Facebook">
-                  <i className="fab fa-facebook-f" />
-                </a>
-              </div>
-            </div>
-            <div className="col-lg-3 col-md-4 mb-5 mb-lg-0">
-              <h3 className="ll-eyebrow mb-4">Correspondence</h3>
-              <ul className="list-unstyled ll-contact ll-contact--page">
-                {DESKS.map((desk) => (
-                  <li key={desk.email}>
-                    <span>{desk.label}</span>
-                    <a href={`mailto:${desk.email}`}>{desk.email}</a>
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-3" style={{ color: "rgba(237,231,199,.4)", fontSize: ".8rem" }}>
-                Replies within two working days. Always by a person.
-              </p>
-            </div>
-            <div className="col-lg-5 col-md-8">
-              <h3 className="ll-eyebrow mb-4">The Private List</h3>
-              <p style={{ color: "rgba(237,231,199,.65)", fontSize: ".92rem" }}>
-                Collection previews and archive releases, before anyone else. Two letters a
-                season, no more.
-              </p>
-              <NewsletterForm />
-            </div>
-          </div>
-          <hr />
-          <div className="ll-footer-bottom">
-            <span>© 2026 Lady Luxe. All rights reserved.</span>
-            <span>Cut for the midnight hours · Finished with care</span>
+            </Link>
           </div>
         </div>
-      </footer>
+      </section>
 
-      <LuxeRuntime />
-    </>
+      {/* ===================== FEATURED FILMS ===================== */}
+      <Suspense fallback={<div style={{ minHeight: "30rem" }} />}>
+        <FeaturedFilms />
+      </Suspense>
+
+      {/* ===================== THE HOUSES (BRAND MARQUEE) ===================== */}
+      <section
+        aria-label="The houses we carry"
+        className="section pb-0 ll-marquee-section ll-marquee--houses ll-reveal"
+      >
+        <div className="container text-center">
+          <p className="ll-eyebrow mb-2">The Houses We Carry</p>
+          <BrandMarquee speed={44}>
+            {BRAND_ORDER.map((b) => (
+              <Link
+                key={b}
+                href={`/brands?b=${brandSlug(b)}`}
+                className="ll-brand-logo"
+                style={{
+                  fontFamily: "var(--ll-font-display)",
+                  fontWeight: 700,
+                  fontSize: "clamp(1.7rem, 2.6vw, 2.4rem)",
+                  letterSpacing: ".14em",
+                  color: "var(--ll-gold-soft)",
+                  textDecoration: "none",
+                }}
+              >
+                {b}
+              </Link>
+            ))}
+          </BrandMarquee>
+        </div>
+      </section>
+
+      {/* ===================== COLLECTION MARQUEE ===================== */}
+      <Suspense fallback={<MarqueeFallback />}>
+        <CollectionMarquee />
+      </Suspense>
+
+      {/* ===================== MAISON ===================== */}
+      <section id="maison" className="section section-lg ll-reveal" aria-label="The maison">
+        <div className="container">
+          <div className="row justify-content-center text-center mb-5">
+            <div className="col-lg-8">
+              <p className="ll-eyebrow mb-3">Est. MMXXV</p>
+              <h2 className="ll-script" style={{ fontSize: "clamp(2.2rem, 5vw, 3.4rem)" }}>
+                The Maison
+              </h2>
+              <div className="ll-divider"><span /></div>
+              <p className="ll-felipa" style={{ color: "var(--ll-gold-soft)", fontSize: "1.15rem", lineHeight: 1.9 }}>
+                {MOTTO}
+              </p>
+              <p className="lead">A small house, on purpose. Three disciplines, one standard.</p>
+            </div>
+          </div>
+          <div className="row">
+            {MAISON.map((card) => (
+              <div className="col-md-4 mb-4 mb-md-0" key={card.title}>
+                <article className="ll-journal-card">
+                  <h3 className="ll-felipa h5">{card.title}</h3>
+                  <p>{card.copy}</p>
+                </article>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-5">
+            <Link href="/maison" className="ll-btn">
+              Discover the Maison
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== FROM THE JOURNAL ===================== */}
+      <Suspense fallback={null}>
+        <JournalTeaser />
+      </Suspense>
+    </main>
+  );
+}
+
+/* ===================== FROM THE JOURNAL =====================
+   Latest post + link to the full journal. */
+async function JournalTeaser() {
+  const post = latestPost();
+  return (
+    <section className="section pb-5 ll-reveal" aria-label="From the journal">
+      <div className="container">
+        <div className="row justify-content-center text-center mb-4">
+          <div className="col-lg-8">
+            <p className="ll-eyebrow mb-2">The Private List</p>
+            <h2 className="ll-script" style={{ fontSize: "clamp(2rem, 4.5vw, 3.2rem)" }}>
+              From the Journal
+            </h2>
+            <p style={{ color: "var(--ll-cream-70)", fontWeight: 300 }}>
+              One letter a month — lifestyle, fashion notes, new releases &amp; member perks.
+            </p>
+          </div>
+        </div>
+        {post && (
+          <div className="row justify-content-center mb-4">
+            <div className="col-lg-8">
+              <Link href={`/blog/${post.slug}`} className="ll-journal-card d-block">
+                <p className="ll-eyebrow mb-2" style={{ fontSize: ".65rem" }}>{post.category}</p>
+                <h3 className="ll-felipa h4">{post.title}</h3>
+                <p style={{ color: "var(--ll-cream-70)", marginBottom: 0 }}>{post.metaDescription}</p>
+              </Link>
+            </div>
+          </div>
+        )}
+        <div className="text-center">
+          <Link href="/blog" className="ll-btn">
+            Read the Journal
+          </Link>
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -341,7 +315,7 @@ function MarqueeFallback() {
   return (
     <section
       id="collection"
-      className="ll-marquee-section ll-marquee--collection"
+      className="ll-marquee-section ll-marquee--collection ll-reveal"
       aria-label="Current collection"
     >
       <div className="container text-center mb-5">
@@ -359,12 +333,16 @@ function MarqueeFallback() {
 }
 
 async function CollectionMarquee() {
-  const ensembles = await getEnsembles();
+  const [ensembles, products] = await Promise.all([getEnsembles(), getMarqueeProducts()]);
+  const cards = [
+    ...ensembles.map((e) => ({ ...e, isProduct: false })),
+    ...products,
+  ];
 
   return (
     <section
       id="collection"
-      className="ll-marquee-section ll-marquee--collection"
+      className="ll-marquee-section ll-marquee--collection ll-reveal"
       aria-label="Current collection"
       data-ll-sentinel="1"
     >
@@ -374,58 +352,65 @@ async function CollectionMarquee() {
           The Midnight Collection
         </h2>
         <p className="ll-felipa mt-3" style={{ color: "var(--ll-cream-70)" }}>
-          {ensembles.length} ensembles, each composed by the house. Hover a card to meet it.
+          {cards.length} pieces, each composed by the house. Hover a card to meet it.
         </p>
       </div>
       <div className="ll-marquee">
         <div className="ll-marquee__track">
           {/* two groups: the visible set + its seamless loop twin, both SSR'd.
               lady-luxe.js leaves a two-group track untouched (zero DOM writes),
-              so a bind is hydration-safe whenever it fires. <LuxeMarquee />
-              below binds the cards only after THIS boundary has hydrated. */}
+              so a bind is hydration-safe whenever it fires. */}
           {[false, true].map((twin) => (
             <div
               key={twin ? "clone" : "primary"}
               className="ll-marquee__group"
               aria-hidden={twin || undefined}
             >
-              {ensembles.length === 0 && (
+              {cards.length === 0 && (
                 <p className="lead px-4" style={{ color: "var(--ll-cream-70)" }}>
                   The collection is being dressed — return shortly.
                 </p>
               )}
-              {ensembles.map((ens) => (
-                <a
-                  key={ens.sku}
+              {cards.map((c) => (
+                <Link
+                  key={c.sku}
                   className="ll-video-card"
-                  href="#collection"
+                  href={c.isProduct ? `/product/${c.sku}` : `/ensemble/${c.sku}`}
                   tabIndex={twin ? -1 : undefined}
                 >
                   <div className="ll-video-card__media">
-                    {ens.img && <img src={ens.img} alt={twin ? "" : ens.name} loading="lazy" />}
+                    {c.img && <img src={c.img} alt={twin ? "" : c.name} loading="lazy" />}
                     <div className="ll-video-card__scrim" />
                   </div>
-                  {!twin && <span className="ll-video-card__hint">Numbered piece</span>}
+                  {!twin && (
+                    <span className="ll-video-card__hint">
+                      {c.isProduct ? "Numbered piece" : `${c.pieces}-piece ensemble`}
+                    </span>
+                  )}
                   <div className="ll-video-card__info">
                     <div>
-                      <p className="ll-video-card__name">{ens.name}</p>
+                      <p className="ll-video-card__name">{c.name}</p>
                       <p className="ll-video-card__tag">
-                        {ens.pieces}-piece ensemble · composed by the house
+                        {c.isProduct ? "Ready to wear · composed by the house" : "Composed by the house"}
                       </p>
                     </div>
-                    <span className="ll-video-card__price">{money(ens.price)}</span>
+                    <span className="ll-video-card__price">{money(c.price)}</span>
                   </div>
-                </a>
+                </Link>
               ))}
             </div>
           ))}
         </div>
       </div>
-      {/* hydration sentinel — binds the marquee cards post-hydration (see LuxeMarquee.tsx) */}
       <div className="container text-center mt-5">
-        <a href="#contact" className="ll-btn" data-scroll>
+        <Link
+          href="https://formserver.ladyluxeclub.com/forms/lady_luxe"
+          className="ll-btn"
+          target="_blank"
+          rel="noopener"
+        >
           Request the Lookbook
-        </a>
+        </Link>
       </div>
     </section>
   );

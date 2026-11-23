@@ -4,6 +4,7 @@ import { useEffect } from "react";
 
 type LadyLuxe = {
   bindHoverVideos?: (root: Document) => void;
+  bindReveals?: (root: Document) => void;
 };
 
 /**
@@ -26,6 +27,7 @@ export function useLuxeBind(opts?: { arm?: boolean }) {
           document.documentElement.setAttribute("data-ll-armed", "");
         }
         w.LadyLuxe.bindHoverVideos(document);
+        w.LadyLuxe.bindReveals?.(document);
         return true;
       }
       return false;

@@ -32297,6 +32297,13 @@ article a:hover {
   font-style: italic;
   font-display: swap;
 }
+@font-face {
+  font-family: 'Cinzel';
+  src: url('/brand/fonts/Cinzel-VariableFont_wght.woff2') format('woff2');
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
 
 /* ---- Palette tokens ---------------------------------------------------- */
 :root {
@@ -32304,6 +32311,7 @@ article a:hover {
   --ll-amaranth: #660428;
   --ll-amaranth-2: #9C0735;
   --ll-gold: #D4AF37;
+  --ll-gold-soft: #E8C558;          /* brightened metallic for small print */
   --ll-cream: #EDE7C7;
 
   --ll-gold-40: rgba(212, 175, 55, .4);
@@ -32318,7 +32326,7 @@ article a:hover {
 
   --ll-font-script: 'Monsieur La Doulaise', cursive;
   --ll-font-display: 'Felipa', serif;
-  --ll-font-body: 'Montserrat LL', 'Montserrat', sans-serif;
+  --ll-font-body: 'Cinzel', 'Montserrat LL', 'Montserrat', serif;
 }
 
 /* ---- Type utilities ---------------------------------------------------- */
@@ -32340,7 +32348,7 @@ article a:hover {
   font-size: .72rem;
   letter-spacing: .38em;
   text-transform: uppercase;
-  color: var(--ll-gold-40);
+  color: var(--ll-gold-soft);
 }
 .ll-gold-text { color: var(--ll-gold); }
 .ll-cream-text { color: var(--ll-cream); }
@@ -32816,6 +32824,15 @@ p, span, li, label, small, td, th { color: inherit; }
     linear-gradient(90deg, rgba(48, 0, 26, .55) 0%, transparent 50%, rgba(48, 0, 26, .55) 100%);
 }
 
+/* Umbrella effect — the hero block sits wider than the page copy below it */
+.ll-hero-stack {
+  max-width: 58rem;
+  padding: 0 1rem;
+}
+@media (max-width: 767px) {
+  .ll-hero-stack { max-width: 100%; padding: 0; }
+}
+
 /* ---- video card section tuning for this kit ---------------------------------- */
 #collection .ll-video-card,
 #collection .ll-photo-card { background-color: #3A021F; }
@@ -32830,11 +32847,12 @@ p, span, li, label, small, td, th { color: inherit; }
 .navbar-nav .nav-link {
   font-family: var(--ll-font-body) !important;
   font-weight: 700;
-  font-size: .74rem;
-  letter-spacing: .24em;
+  font-size: .66rem;
+  letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--ll-cream-70) !important;
-  padding: .6rem 1rem !important;
+  padding: .6rem .6rem !important;
+  white-space: nowrap;
 }
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link:focus { color: var(--ll-gold) !important; }
@@ -32868,6 +32886,20 @@ p, span, li, label, small, td, th { color: inherit; }
 /* slight vertical padding relief so the band reads as a deliberate stage */
 .ll-marquee-section { padding-top: 4.2rem; padding-bottom: 4.6rem; }
 
+/* ---- the houses band: brand names, doubled, glowing on the dark band ---- */
+.ll-marquee--houses { padding-top: 3.4rem; padding-bottom: 3.6rem; }
+.ll-marquee--houses::before,
+.ll-marquee--houses::after { display: none; }   /* no hairlines between adjacent bands */
+.ll-brand-logo {
+  opacity: .88;
+  transition: opacity .35s ease, text-shadow .35s ease;
+  text-shadow: 0 2px 22px rgba(212, 175, 55, .22);
+}
+.ll-brand-logo:hover {
+  opacity: 1;
+  text-shadow: 0 2px 30px rgba(212, 175, 55, .5);
+}
+
 /* marquee stage tuning on this kit's surfaces */
 .ll-marquee--collection .ll-video-card,
 .ll-marquee--collection .ll-photo-card {
@@ -32896,7 +32928,7 @@ p, span, li, label, small, td, th { color: inherit; }
 }
 .ll-emblem:hover { transform: scale(1.05); }
 .ll-brand-word {
-  font-size: 2rem;
+  font-size: 1.7rem;
   line-height: 1;
   white-space: nowrap;
   text-shadow: 0 2px 18px rgba(212, 175, 55, .25);
@@ -33096,3 +33128,28 @@ p, span, li, label, small, td, th { color: inherit; }
 @media (prefers-reduced-motion: reduce) {
   .ll-emblem, .ll-social, .ll-journal-card, .ll-posh-slot { transition: none !important; }
 }
+
+/* ---- Scroll fade-in reveal (engine binds .ll-reveal) --------------------- */
+.ll-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .9s ease, transform .9s cubic-bezier(.23, 1, .32, 1);
+}
+.ll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .ll-reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* ---- Gold scrollbar ------------------------------------------------------- */
+html { scrollbar-color: var(--ll-gold) #1B000D; }           /* Firefox */
+::-webkit-scrollbar { width: 12px; }
+::-webkit-scrollbar-track { background: #1B000D; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #E8C558, #B08D2E);
+  border-radius: 10px;
+  border: 3px solid #1B000D;
+}
+::-webkit-scrollbar-thumb:hover { background: #F0D070; }

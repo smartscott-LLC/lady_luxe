@@ -98,9 +98,35 @@
     });
   }
 
+  /* ---- scroll fade-in reveal -------------------------------------------- */
+  /* sections with .ll-reveal fade up as they enter the viewport; below-fold
+     content stays hidden until scrolled to. IntersectionObserver, unobserve
+     after reveal. Reduced-motion users see everything (CSS handles it). */
+  function bindReveals(root) {
+    if (REDUCED) return;
+    if (!('IntersectionObserver' in window)) {
+      root.querySelectorAll('.ll-reveal').forEach(function (el) {
+        el.classList.add('is-visible');
+      });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    root.querySelectorAll('.ll-reveal:not(.is-visible)').forEach(function (el) {
+      io.observe(el);
+    });
+  }
+
   window.LadyLuxe = {
     bindHoverVideos: bind,
-    bindMarquees: bindMarquees
+    bindMarquees: bindMarquees,
+    bindReveals: bindReveals
   };
 
   /* Auto-bind on plain sites only. The <html> element opts in via

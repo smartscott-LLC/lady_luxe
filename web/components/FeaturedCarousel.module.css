@@ -27,8 +27,9 @@
   overflow: hidden;
   background: var(--ll-black-45);
   border: 1px solid var(--ll-gold-25);
-  transform: translateX(calc(var(--d) * 12.5rem)) scale(0.82);
-  opacity: 0.45;
+  /* outer ring — third level */
+  transform: translateX(calc(var(--d) * 13.5rem)) scale(0.74) translateY(1.4rem);
+  opacity: 0.38;
   transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.5s;
 }
 
@@ -36,7 +37,7 @@
   width: 19rem;
   height: 27rem;
   margin: -13.5rem 0 0 -9.5rem;
-  transform: translateX(0) scale(1);
+  transform: translateX(0) scale(1) translateY(0);
   opacity: 1;
   z-index: 3;
   border-color: var(--ll-gold-40);
@@ -44,11 +45,14 @@
 }
 
 .near {
+  /* second ring — middle level */
+  transform: translateX(calc(var(--d) * 11.5rem)) scale(0.88) translateY(0.5rem);
+  opacity: 0.72;
   z-index: 2;
 }
 
 .far {
-  opacity: 0.12;
+  opacity: 0.2;
 }
 
 .hidden {
@@ -65,13 +69,21 @@
 
 .cardLink {
   position: absolute;
+  inset: 0;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.label {
+  position: absolute;
   inset: auto 0 0 0;
   padding: 0.7rem 0.9rem;
   background: linear-gradient(transparent, rgba(23, 20, 26, 0.92));
-  text-decoration: none;
   display: flex;
   flex-direction: column;
   gap: 2px;
+  pointer-events: none;
 }
 
 .name {
@@ -84,6 +96,11 @@
 }
 
 .price {
+  font-family: var(--ll-font-body);
   font-size: 0.82rem;
-  color: var(--ll-gold);
+  color: var(--ll-gold-soft);
+}
+
+.center:hover {
+  transform: translateX(0) scale(1.02) translateY(-0.3rem);
 }
