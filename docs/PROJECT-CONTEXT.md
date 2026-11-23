@@ -220,8 +220,9 @@ Turntable Studio (localhost:3002) ──spawns──▶ generate_turntable.py �
 - 2026-11-23: **Platform cuts of v2** (`Videos/social/lady_luxe_comm2_{1x1,4x5,9x16}.mp4`):
   1080-wide, blur-fill extension for verticals (full composition preserved),
   Nov 20 gold wordmark+URL overlays, h264 yuv420p faststart CRF 18.
-  ElevenLabs VO script for the 14s kdenlive cut drafted ("Composed by the
-  House" + 2 alternates, with timing map).
+  **Audio is FINAL in the master** — owner auditioned ~100 ElevenLabs voices
+  and selected this one (distinguished, breathy-not-overly, tempo fits);
+  no kdenlive VO swap planned. Cuts ship with master audio.
 - 2026-11-21: **Final brand floors (owner):** Beauty Night $45 · YesX $45 ·
   Gracya $49 · Irall $45 · Irall Erotic $43 · Provocative $47 · SOH $54 ·
   Roza $35. Frontline batch fully decidable; Irall/Irall Erotic clean.
