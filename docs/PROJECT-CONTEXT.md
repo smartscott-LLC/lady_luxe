@@ -217,6 +217,11 @@ Turntable Studio (localhost:3002) ──spawns──▶ generate_turntable.py �
   logo open on plum → white lace / chandelier bedroom → black lace
   bustier → red corset finale. Owner verdict: "clearly the best" —
   smoothest voice timing and graphics; this is the canonical ad asset.
+- 2026-11-23: **Platform cuts of v2** (`Videos/social/lady_luxe_comm2_{1x1,4x5,9x16}.mp4`):
+  1080-wide, blur-fill extension for verticals (full composition preserved),
+  Nov 20 gold wordmark+URL overlays, h264 yuv420p faststart CRF 18.
+  ElevenLabs VO script for the 14s kdenlive cut drafted ("Composed by the
+  House" + 2 alternates, with timing map).
 - 2026-11-21: **Final brand floors (owner):** Beauty Night $45 · YesX $45 ·
   Gracya $49 · Irall $45 · Irall Erotic $43 · Provocative $47 · SOH $54 ·
   Roza $35. Frontline batch fully decidable; Irall/Irall Erotic clean.
