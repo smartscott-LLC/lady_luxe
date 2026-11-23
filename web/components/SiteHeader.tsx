@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -15,43 +16,47 @@ const LINKS = [
 ];
 
 /**
- * Shared header on every page. Concierge button kept for visual parity but
- * disconnected (dangling) pending its final destination.
+ * Shared header on every page. Navbar collapse is React-managed (no jQuery
+ * dependency — the kit's Bootstrap collapse throws when it reads React's
+ * internal fiber properties as data attributes). Concierge button kept for
+ * visual parity but disconnected (dangling) pending its final destination.
  */
 export default function SiteHeader() {
   const pathname = usePathname();
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const closeMenu = () => setMenuOpen(false);
 
   return (
     <header className="header-global">
       <nav
         id="navbar-main"
         aria-label="Primary navigation"
-        className="navbar navbar-main navbar-expand-xl headroom navbar-light navbar-transparent"
+        className={`navbar navbar-main navbar-expand-xl headroom navbar-light navbar-transparent${menuOpen ? " navbar-open" : ""}`}
       >
         <div className="container position-relative">
           <Link className="navbar-brand" href="/">
             <img className="ll-emblem" src="/brand/lady-luxe-emblem.webp" alt="Lady Luxe emblem" />
             <span className="ll-script ll-brand-word">Lady Luxe</span>
           </Link>
-          <div className="navbar-collapse collapse" id="navbar_global">
+          <div
+            className={`navbar-collapse collapse${menuOpen ? " show" : ""}`}
+            id="navbar_global"
+          >
             <div className="navbar-collapse-header">
               <div className="row">
                 <div className="col-6 collapse-brand">
-                  <Link href="/" className="navbar-brand">
+                  <Link href="/" className="navbar-brand" onClick={closeMenu}>
                     <img className="ll-emblem" src="/brand/lady-luxe-emblem.webp" alt="Lady Luxe emblem" />
                     <span className="ll-script">Lady Luxe</span>
                   </Link>
                 </div>
                 <div className="col-6 collapse-close">
-                  <a
-                    href="#navbar_global"
+                  <button
                     className="fas fa-times"
-                    data-toggle="collapse"
-                    data-target="#navbar_global"
-                    aria-controls="navbar_global"
-                    aria-expanded="false"
-                    title="close"
+                    onClick={closeMenu}
                     aria-label="Toggle navigation"
+                    style={{ background: "none", border: "none", color: "var(--ll-gold)", fontSize: "1.2rem", cursor: "pointer" }}
                   />
                 </div>
               </div>
@@ -59,19 +64,15 @@ export default function SiteHeader() {
             <ul className="navbar-nav navbar-nav-hover align-items-xl-center ml-xl-auto">
               {LINKS.map((l) => {
                 const active = !l.external && pathname === l.href;
+                const cls = `nav-link${active ? " active" : ""}`;
                 return (
                   <li className="nav-item" key={l.href}>
                     {l.external ? (
-                      <a
-                        className={`nav-link${active ? " active" : ""}`}
-                        href={l.href}
-                        target="_blank"
-                        rel="noopener"
-                      >
+                      <a className={cls} href={l.href} target="_blank" rel="noopener" onClick={closeMenu}>
                         {l.label}
                       </a>
                     ) : (
-                      <Link className={`nav-link${active ? " active" : ""}`} href={l.href}>
+                      <Link className={cls} href={l.href} onClick={closeMenu}>
                         {l.label}
                       </Link>
                     )}
@@ -79,7 +80,11 @@ export default function SiteHeader() {
                 );
               })}
               <li className="nav-item d-xl-block ml-xl-4">
-                <a href="#" className="btn btn-primary" onClick={(e) => e.preventDefault()}>
+                <a
+                  href="#"
+                  className="btn btn-primary"
+                  onClick={(e) => { e.preventDefault(); closeMenu(); }}
+                >
                   <span className="mr-1"><i className="fas fa-feather-alt" /></span> Concierge
                 </a>
               </li>
@@ -88,10 +93,9 @@ export default function SiteHeader() {
           <button
             className="navbar-toggler ml-2"
             type="button"
-            data-toggle="collapse"
-            data-target="#navbar_global"
+            onClick={() => setMenuOpen((o) => !o)}
             aria-controls="navbar_global"
-            aria-expanded="false"
+            aria-expanded={menuOpen}
             aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon" />
