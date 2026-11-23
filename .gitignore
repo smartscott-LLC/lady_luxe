@@ -40,3 +40,6 @@ desktop.ini
 /output/
 gui_data/
 .vercel
+__pycache__/
+*.pdf
+nexusquant/
