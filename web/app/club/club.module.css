@@ -217,13 +217,52 @@
 
 
 /* ---- club crest ---- */
-.crest {
+.back {
+  display: inline-block;
+  margin-bottom: 0.9rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ll-cream-45);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.back:hover {
+  color: var(--ll-gold);
+}
+
+/* the house banner — bleeds past the column and fades into the page */
+.bannerWrap {
+  position: relative;
+  margin: 0 -1.75rem 0;
+  border-radius: 0 0 14px 14px;
+  overflow: hidden;
+}
+
+.banner {
+  width: 100%;
   display: block;
-  width: 92px;
-  height: 92px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 1px solid var(--ll-gold-25);
-  margin: 0 auto 1.25rem;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+}
+
+.bannerWrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(27, 0, 13, 0.05) 40%,
+    rgba(27, 0, 13, 0.85) 90%,
+    var(--ll-midnight)
+  );
+}
+
+/* the seal + plaque — star of the page, overlapping the banner's fade */
+.crest {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 210px;
+  margin: -72px auto 1.25rem;
+  filter: drop-shadow(0 14px 30px rgba(0, 0, 0, 0.5));
 }

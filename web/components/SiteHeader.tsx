@@ -34,7 +34,7 @@ const INTIMATES = [
     img: "/brand/imagery/seal-stamp.webp",
   },
   {
-    href: "/#collection",
+    href: "/ensembles",
     title: "Custom Combinations",
     copy: "Ensembles composed as one gesture — corset, stockings, gloves.",
     img: "/brand/imagery/corset-line-maroon.webp",

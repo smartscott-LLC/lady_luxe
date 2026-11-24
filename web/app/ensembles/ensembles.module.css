@@ -1,0 +1,115 @@
+.page {
+  min-height: 100vh;
+  padding: 8rem 1.5rem 4rem;
+  background: var(--ll-midnight);
+  color: var(--ll-cream);
+}
+
+.inner {
+  max-width: 68rem;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--ll-gold-soft);
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-family: var(--ll-font-display);
+  font-weight: 400;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--ll-gold);
+  margin-bottom: 0.75rem;
+}
+
+.sub {
+  font-weight: 300;
+  color: var(--ll-cream-70);
+  margin-bottom: 2.5rem;
+  max-width: 44rem;
+}
+
+.count {
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ll-cream-45);
+  margin-bottom: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 1.4rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  text-decoration: none;
+  background: rgba(48, 0, 26, 0.55);
+  border: 1px solid var(--ll-gold-25);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--ll-gold);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4);
+}
+
+.image {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  display: block;
+}
+
+.imageEmpty {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background: var(--ll-gold-12);
+}
+
+.pieces {
+  margin: 0.75rem 1rem 0;
+  font-size: 0.64rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ll-gold-soft);
+}
+
+.name {
+  margin: 0.2rem 1rem 0;
+  font-family: var(--ll-font-body);
+  font-size: 0.95rem;
+  color: var(--ll-cream);
+  line-height: 1.35;
+}
+
+.story {
+  margin: 0.35rem 1rem 0;
+  font-size: 0.78rem;
+  font-weight: 300;
+  color: var(--ll-cream-70);
+  line-height: 1.5;
+}
+
+.price {
+  margin: 0.55rem 1rem 1rem;
+  font-size: 0.9rem;
+  color: var(--ll-gold);
+}
+
+.empty {
+  color: var(--ll-cream-70);
+  font-weight: 300;
+}

@@ -55,7 +55,12 @@ async function BrandProducts({ brand }: { brand: string }) {
   );
 
   if (products.length === 0) {
-    return <p className={styles.empty}>No pieces from this house yet — it is being dressed.</p>;
+    return (
+      <p className={styles.empty}>
+        The {brand} floor is being dressed — the Circle hears first when it
+        opens. <Link href="/club">Join the Club</Link> to hear the moment it does.
+      </p>
+    );
   }
 
   return (
