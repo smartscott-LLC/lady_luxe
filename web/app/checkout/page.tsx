@@ -309,7 +309,7 @@ export default function CheckoutPage() {
                   <span>{shipping === 0 ? "Free" : `$${shipping.toFixed(2)}`}</span>
                 </p>
                 <p className={styles.duty}>
-                  <span>Duties (prepaid by Lady Luxe)</span>
+                  <span>Duties (prepaid by Lady Luxe)*</span>
                   <span>collected at checkout</span>
                 </p>
               </div>
@@ -354,11 +354,12 @@ export default function CheckoutPage() {
                   ? "Processing…"
                   : status === "card-loading"
                     ? "Loading card form…"
-                    : `Pay $${(subtotal + shipping).toFixed(2)}`}
+                    : `Pay $${(subtotal + shipping).toFixed(2)}*`}
               </button>
               <p className={styles.fine}>
-                Duties &amp; import charges are prepaid by Lady Luxe — shown on
-                your receipt, never re-billed.
+                * The charge also includes duties &amp; import charges, prepaid
+                and handled by Lady Luxe — itemised line by line on your Square
+                receipt, never re-billed.
               </p>
             </div>
           </div>
