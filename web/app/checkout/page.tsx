@@ -16,10 +16,13 @@ type OrderResult = {
 };
 
 const CART_KEY = "lady-luxe-cart";
-// Production Square env (SQUARE_ENV=production in project .env).
+// Sandbox app ids (sandbox-sq0idb-…) need the sandbox SDK build; production
+// app ids use the production build. Picking by prefix keeps both honest.
 const SQUARE_APP_ID = process.env.NEXT_PUBLIC_SQUARE_APP_ID ?? "";
 const SQUARE_LOCATION_ID = process.env.NEXT_PUBLIC_SQUARE_LOCATION_ID ?? "";
-const SQUARE_SDK_URL = "https://web.squarecdn.com/v1/square.js";
+const SQUARE_SDK_URL = SQUARE_APP_ID.startsWith("sandbox-")
+  ? "https://sandbox.web.squarecdn.com/v1/square.js"
+  : "https://web.squarecdn.com/v1/square.js";
 
 declare global {
   interface Window {
@@ -77,6 +80,7 @@ export default function CheckoutPage() {
   const cardRef = useRef<{
     tokenize: () => Promise<{ status: string; token?: string; errors?: unknown[] }>;
   } | null>(null);
+  const attachGenRef = useRef(0);
 
   useEffect(() => {
     const lines = readCart();
@@ -101,35 +105,39 @@ export default function CheckoutPage() {
 
   // Mount the Square card form once the cart page is shown.
   useEffect(() => {
-    let cancelled = false;
+    // each effect run gets a generation; stale runs drop out after every
+    // await, so StrictMode / remounts can never mount a second card form
+    const gen = ++attachGenRef.current;
+    let disposed = false;
     (async () => {
       try {
         setStatus((s) => (s === "idle" ? "card-loading" : s));
         await loadSquareSdk();
+        if (gen !== attachGenRef.current) return;
         const payments = await window.Square!.payments(
           SQUARE_APP_ID,
           SQUARE_LOCATION_ID,
         );
+        if (gen !== attachGenRef.current) return;
         const card = await payments.card({});
+        if (gen !== attachGenRef.current) return;
         await card.attach("#card-container");
-        if (!cancelled) {
-          cardRef.current = card;
-          setStatus("ready");
-        }
+        if (gen !== attachGenRef.current || disposed) return;
+        cardRef.current = card;
+        setStatus("ready");
       } catch (err) {
-        if (!cancelled) {
-          setError(
-            "Card form could not load. " +
-              (SQUARE_APP_ID
-                ? String(err)
-                : "NEXT_PUBLIC_SQUARE_APP_ID / NEXT_PUBLIC_SQUARE_LOCATION_ID are not set in web/.env.local."),
-          );
-          setStatus("error");
-        }
+        if (gen !== attachGenRef.current || disposed) return;
+        setError(
+          "Card form could not load. " +
+            (SQUARE_APP_ID
+              ? String(err)
+              : "NEXT_PUBLIC_SQUARE_APP_ID / NEXT_PUBLIC_SQUARE_LOCATION_ID are not set in web/.env.local."),
+        );
+        setStatus("error");
       }
     })();
     return () => {
-      cancelled = true;
+      disposed = true;
     };
   }, []);
 
@@ -163,7 +171,8 @@ export default function CheckoutPage() {
         return;
       }
       const resp = await fetch(
-        `${process.env.NEXT_PUBLIC_SUPABASE_URL}/functions/v1/checkout`,
+        process.env.NEXT_PUBLIC_CHECKOUT_URL ??
+          `${process.env.NEXT_PUBLIC_SUPABASE_URL}/functions/v1/checkout`,
         {
           method: "POST",
           headers: {
@@ -242,6 +251,7 @@ export default function CheckoutPage() {
   return (
     <main className={styles.page}>
       <div className={styles.inner}>
+        <p className={styles.eyebrow}>Lady Luxe · Secure Checkout</p>
         <h1 className={styles.title}>Checkout</h1>
 
         {cart.length === 0 ? (
@@ -284,6 +294,23 @@ export default function CheckoutPage() {
                 <p className={styles.duty}>
                   <span>Duties (prepaid by Lady Luxe)</span>
                   <span>collected at checkout</span>
+                </p>
+              </div>
+
+              <div className={styles.arrives}>
+                <img
+                  src="/brand/imagery/packaging-box.webp"
+                  alt="The Lady Luxe gift box — black box, garnet ribbon, house seal"
+                  loading="lazy"
+                />
+                <img
+                  src="/brand/imagery/packaging-bag.webp"
+                  alt="The Lady Luxe carrying bag — corset emblem in gold"
+                  loading="lazy"
+                />
+                <p>
+                  Every order leaves the house like this — grosgrain ribbon,
+                  the house seal, and gold-monogrammed tissue.
                 </p>
               </div>
             </div>

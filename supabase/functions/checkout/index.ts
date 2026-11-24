@@ -26,6 +26,23 @@ const FREE_SHIPPING_OVER_USD = 150;
 const CURRENCY = "USD";
 const SQUARE_VERSION = "2024-10-17";
 
+// Square environment switch — "sandbox" points the charge at
+// connect.squareupsandbox.com with the sandbox token + location.
+// Anything else (or unset) is production, so deployed behaviour is unchanged.
+const SQUARE_ENV = (Deno.env.get("SQUARE_ENV") ?? "production").trim().toLowerCase();
+const SQUARE_API_BASE =
+  SQUARE_ENV === "sandbox"
+    ? "https://connect.squareupsandbox.com"
+    : "https://connect.squareup.com";
+const squareAccessToken = () =>
+  Deno.env.get(
+    SQUARE_ENV === "sandbox" ? "SQUARE_SANDBOX_ACCESS_TOKEN" : "SQUARE_ACCESS_TOKEN",
+  ) ?? "";
+const squareLocationId = () =>
+  Deno.env.get(
+    SQUARE_ENV === "sandbox" ? "SQUARE_SANDBOX_LOCATION_ID" : "SQUARE_LOCATION_ID",
+  ) ?? "";
+
 const cors = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers":
@@ -194,11 +211,11 @@ Deno.serve(async (req: Request) => {
       });
     }
 
-    // 4. Charge Square (production). Payments API, idempotent by order id.
-    const payResp = await fetch("https://connect.squareup.com/v2/payments", {
+    // 4. Charge Square (env-selected). Payments API, idempotent by order id.
+    const payResp = await fetch(`${SQUARE_API_BASE}/v2/payments`, {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${Deno.env.get("SQUARE_ACCESS_TOKEN") ?? ""}`,
+        Authorization: `Bearer ${squareAccessToken()}`,
         "Square-Version": SQUARE_VERSION,
         "Content-Type": "application/json",
       },
@@ -206,7 +223,7 @@ Deno.serve(async (req: Request) => {
         source_id: paymentToken,
         idempotency_key: order.id,
         amount_money: { amount: cents(total), currency: CURRENCY },
-        location_id: Deno.env.get("SQUARE_LOCATION_ID") ?? "",
+        location_id: squareLocationId(),
         autocomplete: true,
         note: `Lady Luxe order ${order.id}`,
         statement_description_identifier: "ladyluxeclub.com",
