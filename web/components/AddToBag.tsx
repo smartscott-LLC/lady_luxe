@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { ttTrack } from "@/lib/tiktok";
 
 const CART_KEY = "lady-luxe-cart";
 
@@ -35,6 +36,14 @@ export default function AddToBag({
         JSON.stringify([{ sku, name, price, quantity: 1 }]),
       );
     }
+    ttTrack("AddToCart", {
+      content_id: sku,
+      content_name: name,
+      content_type: "product",
+      quantity: 1,
+      value: price,
+      currency: "USD",
+    });
     router.push("/bag");
   };
 

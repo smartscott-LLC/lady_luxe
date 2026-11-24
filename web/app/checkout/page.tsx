@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { ttTrack } from "@/lib/tiktok";
 import styles from "./checkout.module.css";
 
 type CartLine = { sku: string; name: string; price: number; quantity: number };
@@ -77,7 +78,16 @@ export default function CheckoutPage() {
   } | null>(null);
 
   useEffect(() => {
-    setCart(readCart());
+    const lines = readCart();
+    setCart(lines);
+    if (lines.length > 0) {
+      ttTrack("InitiateCheckout", {
+        content_type: "product",
+        quantity: lines.reduce((s, l) => s + l.quantity, 0),
+        value: lines.reduce((s, l) => s + l.price * l.quantity, 0),
+        currency: "USD",
+      });
+    }
   }, []);
 
   // Mount the Square card form once the cart page is shown.
@@ -167,6 +177,17 @@ export default function CheckoutPage() {
       localStorage.removeItem(CART_KEY);
       setResult(data);
       setStatus("paid");
+      ttTrack("PlaceAnOrder", {
+        content_type: "product",
+        quantity: cart.reduce((s, l) => s + l.quantity, 0),
+        value: data.total,
+        currency: "USD",
+      });
+      ttTrack("CompletePayment", {
+        content_type: "product",
+        value: data.total,
+        currency: "USD",
+      });
     } catch (err) {
       setStatus("ready");
       setError(String(err instanceof Error ? err.message : err));
