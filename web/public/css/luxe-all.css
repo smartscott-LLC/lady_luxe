@@ -33191,6 +33191,21 @@ html { scrollbar-color: var(--ll-gold) #1B000D; }           /* Firefox */
 }
 
 
+/* ---- desktop navbar fit ----------------------------------------------------------------
+   8 links + Concierge need ~1222px — at common desktop widths the container is
+   ~1220px, so with the kit's 1rem/side link padding the row is exactly full:
+   zero spare space for ml-auto, and the brand script's swashes land on
+   FEATURED. Compress link padding + guarantee clearance after the brand. */
+@media (min-width: 1200px) {
+  .navbar-main .navbar-nav .nav-link {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .navbar-main .navbar-brand {
+    margin-right: 1.75rem;
+  }
+}
+
 /* ---- atelier interlude band (homepage) ---- */
 .ll-band {
   position: relative;
