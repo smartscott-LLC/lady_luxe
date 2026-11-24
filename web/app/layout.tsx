@@ -61,6 +61,15 @@ export default function RootLayout({
         <link rel="stylesheet" href="/css/luxe-all.css?v=8" />
       </head>
       <body>
+        {/* Google Tag Manager — no-JS fallback must sit right after <body> */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-KFQSK3TH"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
         {/* Organization structured data — house identity for the index */}
         <script
           type="application/ld+json"
@@ -94,6 +103,10 @@ export default function RootLayout({
         {/* Kit vendor bundle — jQuery → Popper → Bootstrap → Headroom → kit init.
             The Lady Luxe engine is loaded by <LuxeRuntime /> (single owner). */}
         <Script src="/js/kit.bundle.js" strategy="afterInteractive" />
+        {/* Google Tag Manager (GTM-KFQSK3TH) — canonical container loader */}
+        <Script id="gtm" strategy="afterInteractive">
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KFQSK3TH');`}
+        </Script>
         {/* TikTok Pixel — base code (Events Manager, "tiktok_pixel") */}
         <Script id="tiktok-pixel" strategy="afterInteractive">
           {`!function (w, d, t) {
