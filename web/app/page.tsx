@@ -7,6 +7,7 @@ import { createClient } from "@/utils/supabase/server";
 import HeroVideo from "@/components/HeroVideo";
 import FeaturedCarousel, { FeaturedItem } from "@/components/FeaturedCarousel";
 import BrandMarquee from "@/components/BrandMarquee";
+import LuxeStreamBind from "@/components/LuxeStreamBind";
 import { BRAND_ORDER, brandSlug } from "@/lib/brand";
 
 export const metadata = {
@@ -92,6 +93,7 @@ async function FeaturedFilms() {
   if (items.length === 0) return null;
   return (
     <section id="featured" aria-label="Featured films" className="section pt-5 ll-reveal">
+      <LuxeStreamBind />
       <div className="container text-center">
         <p className="ll-eyebrow mb-2">Featured</p>
         <h2 className="ll-script" style={{ fontSize: "clamp(2rem, 4.5vw, 3.2rem)" }}>
@@ -293,6 +295,7 @@ async function JournalTeaser() {
   const post = latestPost();
   return (
     <section className="section pb-5 ll-reveal" aria-label="From the journal">
+      <LuxeStreamBind />
       <div className="container">
         <div className="row justify-content-center text-center mb-4">
           <div className="col-lg-8">

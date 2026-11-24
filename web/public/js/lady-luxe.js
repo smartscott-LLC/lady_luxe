@@ -101,26 +101,60 @@
   /* ---- scroll fade-in reveal -------------------------------------------- */
   /* sections with .ll-reveal fade up as they enter the viewport; below-fold
      content stays hidden until scrolled to. IntersectionObserver, unobserve
-     after reveal. Reduced-motion users see everything (CSS handles it). */
-  function bindReveals(root) {
+     after reveal. Reduced-motion users see everything (CSS handles it).
+     A persistent observer + MutationObserver: streamed islands (carousel,
+     marquees, journal) can insert .ll-reveal sections AFTER the first bind
+     on slow cold connections — late arrivals get observed too, so nothing
+     is ever left at opacity 0. Insert-time work is registration only; no
+     DOM writes that could trip hydration. */
+  var revealIo = null;
+  var revealMo = null;
+
+  function observeRevealTargets(root) {
     if (REDUCED) return;
     if (!('IntersectionObserver' in window)) {
-      root.querySelectorAll('.ll-reveal').forEach(function (el) {
+      root.querySelectorAll('.ll-reveal:not(.is-visible)').forEach(function (el) {
         el.classList.add('is-visible');
       });
       return;
     }
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    if (!revealIo) {
+      revealIo = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealIo.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    }
     root.querySelectorAll('.ll-reveal:not(.is-visible)').forEach(function (el) {
-      io.observe(el);
+      revealIo.observe(el);
     });
+  }
+
+  function bindReveals(root) {
+    observeRevealTargets(root);
+    if (revealMo || !('MutationObserver' in window) || !document.body) return;
+    revealMo = new MutationObserver(function (muts) {
+      muts.forEach(function (m) {
+        Array.prototype.forEach.call(m.addedNodes, function (n) {
+          if (n.nodeType !== 1) return;
+          var targets = [];
+          if (n.matches && n.matches('.ll-reveal:not(.is-visible)')) targets.push(n);
+          if (n.querySelectorAll) {
+            targets = targets.concat(Array.prototype.slice.call(
+              n.querySelectorAll('.ll-reveal:not(.is-visible)')
+            ));
+          }
+          targets.forEach(function (el) {
+            if (revealIo) revealIo.observe(el);
+            else el.classList.add('is-visible');   // no IO support: show it
+          });
+        });
+      });
+    });
+    revealMo.observe(document.body, { childList: true, subtree: true });
   }
 
   window.LadyLuxe = {

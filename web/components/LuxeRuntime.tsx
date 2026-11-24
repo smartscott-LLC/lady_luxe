@@ -15,5 +15,5 @@ import { useLuxeBind } from "./useLuxeBind";
  */
 export default function LuxeRuntime() {
   useLuxeBind();
-  return <Script src="/js/lady-luxe.js" strategy="afterInteractive" />;
+  return <Script src="/js/lady-luxe.js?v=2" strategy="afterInteractive" />;
 }
