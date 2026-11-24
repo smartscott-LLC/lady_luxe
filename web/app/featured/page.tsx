@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import Link from "next/link";
 import { createClient } from "@/utils/supabase/server";
 import FeaturedCarousel, { FeaturedItem } from "@/components/FeaturedCarousel";
+import LuxeStreamBind from "@/components/LuxeStreamBind";
 
 export const metadata = {
   title: "Featured — Lady Luxe",
@@ -44,19 +45,36 @@ async function FeaturedGrid() {
 
   return (
     <>
+      <LuxeStreamBind />
       <FeaturedCarousel items={items} />
       <div className="row mt-5">
         {items.map((item) => (
           <div className="col-md-4 col-lg-3 mb-4" key={item.sku}>
-            <Link href={`/product/${item.sku}`} className="ll-journal-card d-block" style={{ padding: 0, overflow: "hidden" }}>
-              <div style={{ position: "relative", paddingTop: "133%", background: "var(--ll-black-45)" }}>
+            <Link
+              href={`/product/${item.sku}`}
+              className="ll-video-card d-block"
+              style={{
+                padding: 0,
+                overflow: "hidden",
+                borderRadius: "10px",
+                border: "1px solid var(--ll-gold-25)",
+              }}
+            >
+              <div className="ll-video-card__media" style={{ position: "relative", paddingTop: "133%" }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={item.poster ?? ""}
-                  alt={item.name}
-                  loading="lazy"
+                <video
+                  muted
+                  loop
+                  playsInline
+                  preload="none"
+                  poster={item.poster ?? ""}
                   style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
-                />
+                >
+                  <source src={item.mp4} type="video/mp4" />
+                  {item.webm ? <source src={item.webm} type="video/webm" /> : null}
+                </video>
+                <div className="ll-video-card__scrim" />
+                <div className="ll-video-card__progress"><i /></div>
               </div>
               <div style={{ padding: "1rem 1.2rem" }}>
                 <p className="ll-felipa mb-1" style={{ fontSize: "1.02rem" }}>{item.name}</p>

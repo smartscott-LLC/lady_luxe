@@ -81,7 +81,7 @@ function DrawerContent({ id, onClose }: { id: DrawerId; onClose: () => void }) {
             <img src="/brand/imagery/lookbook-autumn.webp" alt="" loading="lazy" />
             <span>
               <span className="ll-drawer-entry-title">The Autumn Edit</span>
-              <span className="ll-drawer-entry-copy">The lookbook — the season in one spread.</span>
+              <span className="ll-drawer-entry-copy">The lookbook — request it, and it arrives by email.</span>
             </span>
           </a>
         </div>

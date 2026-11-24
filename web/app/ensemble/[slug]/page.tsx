@@ -42,6 +42,9 @@ function EnsembleView({ bundle }: { bundle: Bundle }) {
   return (
     <main className={styles.page}>
       <div className={styles.inner}>
+        <Link className={styles.back} href="/#collection">
+          ← The Collection
+        </Link>
         <nav className={styles.crumbs}>
           <Link href="/">Lady Luxe</Link>
           <span aria-hidden>—</span>

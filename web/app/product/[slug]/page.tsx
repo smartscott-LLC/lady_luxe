@@ -2,30 +2,12 @@ import { Suspense } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { createClient } from "@/utils/supabase/server";
+import { brandFromSupplierSku, brandSlug } from "@/lib/brand";
 import TurntablePlayer, { TurntableMedia } from "@/components/TurntablePlayer";
 import AddToBag from "@/components/AddToBag";
 import styles from "./product.module.css";
 
 const RETAIL_MARKUP = 2.4;
-
-/** Brand label from the AlterEgo supplier SKU prefix (BEAUTYNIGHT… → Beauty Night). */
-function brandFromSupplierSku(supplierSku: string): string {
-  const prefixes: [string, string][] = [
-    ["BEAUTYNIGHT", "Beauty Night"],
-    ["IRALLEROTIC", "Irall Erotic"],
-    ["BLACKSECRET", "Black Secret"],
-    ["SHIRLEYOFHOLLYWOOD", "Shirley of Hollywood"],
-    ["PROVOCATIVE", "Provocative"],
-    ["GRACYA", "Gracya"],
-    ["IRALL", "Irall"],
-    ["ROZA", "Roza"],
-    ["YES", "YesX"],
-  ];
-  for (const [prefix, label] of prefixes) {
-    if (supplierSku.toUpperCase().startsWith(prefix)) return label;
-  }
-  return "Lady Luxe";
-}
 
 type ProductMedia = {
   alt?: string;
@@ -69,6 +51,7 @@ function ProductView({ product }: { product: Product }) {
     (m) => m.type === "turntable" && m.mp4
   ) as TurntableMedia | undefined;
   const retail = Number(product.retail_price) || Number(product.wholesale_cost) * RETAIL_MARKUP;
+  const brand = brandFromSupplierSku(product.supplier_sku);
 
   const productLd = {
     "@context": "https://schema.org",
@@ -98,8 +81,13 @@ function ProductView({ product }: { product: Product }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productLd) }}
       />
       <div className={styles.inner}>
+        <Link className={styles.back} href={`/brands?b=${brandSlug(brand)}`}>
+          ← Back to {brand}
+        </Link>
         <nav className={styles.crumbs}>
           <Link href="/">Lady Luxe</Link>
+          <span aria-hidden>—</span>
+          <Link href={`/brands?b=${brandSlug(brand)}`}>{brand}</Link>
           <span aria-hidden>—</span>
           <span>{product.name}</span>
         </nav>
@@ -127,7 +115,7 @@ function ProductView({ product }: { product: Product }) {
           </div>
 
           <div className={styles.infoColumn}>
-            <p className={styles.brand}>{brandFromSupplierSku(product.supplier_sku)}</p>
+            <p className={styles.brand}>{brand}</p>
             <h1 className={styles.name}>{product.name}</h1>
             {product.tag && <p className={styles.tag}>{product.tag}</p>}
 

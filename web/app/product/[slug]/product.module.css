@@ -1,13 +1,28 @@
 .page {
   min-height: 100vh;
-  background: #17141a;
-  color: #e8e2d9;
-  padding: 48px 24px 96px;
+  background: var(--ll-midnight, #1b000d);
+  color: var(--ll-cream, #ede7c7);
+  padding: 8rem 24px 96px;
 }
 
 .inner {
   max-width: 1100px;
   margin: 0 auto;
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 18px;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ll-cream-45, rgba(237, 231, 199, 0.45));
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.back:hover {
+  color: var(--ll-gold, #d4af37);
 }
 
 .crumbs {
@@ -16,12 +31,12 @@
   font-size: 13px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #9a9184;
+  color: var(--ll-cream-45, rgba(237, 231, 199, 0.45));
   margin-bottom: 28px;
 }
 
 .crumbs a {
-  color: #c9a962;
+  color: var(--ll-gold, #d4af37);
   text-decoration: none;
 }
 
@@ -45,7 +60,7 @@
 
 .stageColumn {
   position: sticky;
-  top: 32px;
+  top: 96px;
 }
 
 @media (max-width: 760px) {
@@ -58,6 +73,7 @@
   width: 100%;
   border-radius: 16px;
   display: block;
+  border: 1px solid var(--ll-gold-25, rgba(212, 175, 55, 0.25));
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
 }
 
@@ -72,32 +88,34 @@
   font-size: 12px;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: #c9a962;
+  color: var(--ll-gold-soft, #e8c558);
 }
 
 .name {
-  font-size: 40px;
-  line-height: 1.1;
-  font-weight: normal;
-  color: #e8e2d9;
+  font-family: var(--ll-font-body, cinzel);
+  font-size: clamp(1.9rem, 3.4vw, 2.5rem);
+  line-height: 1.15;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--ll-cream, #ede7c7);
   margin: 0;
 }
 
 .tag {
   font-style: italic;
-  color: #9a9184;
+  color: var(--ll-cream-70, rgba(237, 231, 199, 0.7));
   margin: 0;
 }
 
 .price {
   font-size: 28px;
-  color: #c9a962;
+  color: var(--ll-gold, #d4af37);
   margin: 8px 0 0;
 }
 
 .currency {
   font-size: 14px;
-  color: #9a9184;
+  color: var(--ll-cream-45, rgba(237, 231, 199, 0.45));
   letter-spacing: 0.1em;
 }
 
@@ -111,14 +129,14 @@
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #7fb069;
+  color: var(--success-green, #7cb98f);
   border: 1px solid rgba(127, 176, 105, 0.45);
   border-radius: 999px;
   padding: 4px 12px;
 }
 
 .story {
-  color: #b8b0a4;
+  color: var(--ll-cream-70, rgba(237, 231, 199, 0.7));
   line-height: 1.7;
   max-width: 52ch;
   margin: 8px 0 0;
@@ -132,25 +150,26 @@
   font-size: 15px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #17141a;
-  background: linear-gradient(160deg, #e8c987, #c9a962);
+  color: var(--ll-midnight, #1b000d);
+  background: linear-gradient(135deg, var(--ll-gold, #d4af37), #b8912e);
   border: none;
-  border-radius: 12px;
+  border-radius: 999px;
   cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .add-to-bag:hover {
-  filter: brightness(1.08);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(212, 175, 55, 0.28);
 }
 
 .fine {
   font-size: 12px;
-  color: #9a9184;
+  color: var(--ll-cream-45, rgba(237, 231, 199, 0.45));
   max-width: 46ch;
 }
 
-
-/* ---- ensemble archive seal (ensemble detail) ---- */
+/* ---- ensemble archive certificate (ensemble detail) ---- */
 .archiveNote {
   display: flex;
   align-items: flex-start;
@@ -164,7 +183,7 @@
   aspect-ratio: 4 / 5;
   object-fit: cover;
   border-radius: 8px;
-  border: 1px solid var(--ll-gold-25);
+  border: 1px solid var(--ll-gold-25, rgba(212, 175, 55, 0.25));
   flex: 0 0 auto;
 }
 
@@ -173,5 +192,5 @@
   font-size: 0.72rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--ll-cream-45);
+  color: var(--ll-cream-45, rgba(237, 231, 199, 0.45));
 }
