@@ -7,9 +7,34 @@ import SiteFooter from "@/components/SiteFooter";
 import LuxeRuntime from "@/components/LuxeRuntime";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.ladyluxeclub.com"),
   title: "Lady Luxe — Maison de Couture",
   description:
     "A maison de couture for the midnight hours. Evening wear in garnet, amaranth and gold — cut, finished and archived by hand.",
+  openGraph: {
+    type: "website",
+    siteName: "Lady Luxe",
+    title: "Lady Luxe — Maison de Couture",
+    description:
+      "Evening wear in garnet, amaranth and gold — composed, numbered and archived by the house.",
+    locale: "en_US",
+    url: "https://www.ladyluxeclub.com",
+    images: [
+      {
+        url: "/brand/imagery/campaign-chaise.webp",
+        width: 1536,
+        height: 864,
+        alt: "The Lady Luxe autumn campaign — garnet silk on the chaise",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Lady Luxe — Maison de Couture",
+    description:
+      "Evening wear in garnet, amaranth and gold — composed, numbered and archived by the house.",
+    images: ["/brand/imagery/campaign-chaise.webp"],
+  },
   icons: {
     icon: [{ url: "/brand/favicon.ico" }, { url: "/brand/favicon-32.png", sizes: "32x32", type: "image/png" }],
     apple: "/brand/apple-touch-icon.png",
@@ -36,6 +61,27 @@ export default function RootLayout({
         <link rel="stylesheet" href="/css/luxe-all.css?v=8" />
       </head>
       <body>
+        {/* Organization structured data — house identity for the index */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Lady Luxe",
+              url: "https://www.ladyluxeclub.com",
+              logo: "https://www.ladyluxeclub.com/brand/lady-luxe-emblem.webp",
+              description:
+                "A maison de couture for the midnight hours — evening wear composed, numbered and archived by the house.",
+              slogan: "Elegance not extravagance",
+              sameAs: [
+                "https://instagram.com/ladyluxeclub",
+                "https://pinterest.com/ladyluxeclub",
+                "https://facebook.com/ladyluxeclub",
+              ],
+            }),
+          }}
+        />
         {/* Shared navigation — every page carries the header and footer.
             usePathname suspends on dynamic routes (params unknown at build),
             so the boundary prerenders the identical bar without the active

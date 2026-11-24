@@ -48,6 +48,21 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   return (
     <main className={styles.page}>
       <div className={styles.inner}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Article",
+              headline: post.title,
+              description: post.metaDescription,
+              ...(post.date ? { datePublished: post.date } : {}),
+              ...(post.cover ? { image: `https://www.ladyluxeclub.com${post.cover}` } : {}),
+              author: { "@type": "Organization", name: "Lady Luxe" },
+              publisher: { "@type": "Organization", name: "Lady Luxe" },
+            }),
+          }}
+        />
         {post.cover && (
           // eslint-disable-next-line @next/next/no-img-element
           <img className={styles.heroArt} src={post.cover} alt="" />

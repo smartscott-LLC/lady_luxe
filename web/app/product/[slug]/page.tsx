@@ -70,8 +70,33 @@ function ProductView({ product }: { product: Product }) {
   ) as TurntableMedia | undefined;
   const retail = Number(product.retail_price) || Number(product.wholesale_cost) * RETAIL_MARKUP;
 
+  const productLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    sku: product.sku,
+    description:
+      product.story ??
+      product.tag ??
+      `${product.name} — composed, numbered and archived by the house.`,
+    brand: { "@type": "Brand", name: brandFromSupplierSku(product.supplier_sku) },
+    image: images.slice(0, 4).map((m) => m.url),
+    offers: {
+      "@type": "Offer",
+      url: `https://www.ladyluxeclub.com/product/${encodeURIComponent(product.sku)}`,
+      priceCurrency: "USD",
+      price: retail.toFixed(2),
+      availability: "https://schema.org/InStock",
+      itemCondition: "https://schema.org/NewCondition",
+    },
+  };
+
   return (
     <main className={styles.page}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productLd) }}
+      />
       <div className={styles.inner}>
         <nav className={styles.crumbs}>
           <Link href="/">Lady Luxe</Link>
