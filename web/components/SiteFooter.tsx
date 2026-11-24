@@ -70,6 +70,9 @@ export default function SiteFooter() {
           </div>
         </div>
         <hr />
+        <div className="ll-footer-crest">
+          <img src="/brand/imagery/crest-ivory.webp" alt="Lady Luxe crest" loading="lazy" />
+        </div>
         <div className="ll-footer-bottom">
           <span>© 2026 Lady Luxe. All rights reserved.</span>
           <span>Cut for the midnight hours · Finished with care</span>

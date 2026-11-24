@@ -98,3 +98,15 @@
 .back:hover {
   color: var(--ll-gold);
 }
+
+
+/* ---- editorial cover ---- */
+.heroArt {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--ll-gold-25);
+  margin-bottom: 1.6rem;
+}

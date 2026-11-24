@@ -29,6 +29,7 @@ function latestPost() {
           title: data.title ?? f,
           category: data.category ?? "Journal",
           metaDescription: data.metaDescription ?? "",
+          cover: data.cover ?? "",
           date: data.date ?? "",
         };
       })
@@ -45,14 +46,17 @@ const MOTTO =
 const MAISON = [
   {
     title: "The Ensembles",
+    art: "/brand/imagery/corset-line-refined.webp",
     copy: "Corset, stockings, gloves — composed as one gesture. The house dresses the whole look, so you never have to assemble it.",
   },
   {
     title: "Numbered & Archived",
+    art: "/brand/imagery/seal-numbered.webp",
     copy: "Every ensemble is numbered on release and entered in the house record. When the number is gone, it's gone.",
   },
   {
     title: "The Circle",
+    art: "/brand/imagery/monogram-gold.webp",
     copy: "Members of the Circle see each release first. Sign-ups are open — membership is free, always.",
   },
 ];
@@ -226,6 +230,20 @@ export default function Home() {
         <CollectionMarquee />
       </Suspense>
 
+      {/* ===================== ATELIER INTERLUDE ===================== */}
+      <section className="ll-band ll-reveal" aria-label="Inside the atelier">
+        <img
+          src="/brand/imagery/banner-still-life.webp"
+          alt="A still life from the Lady Luxe atelier — corsetry, ribbon and gold thread"
+          loading="lazy"
+        />
+        <div className="ll-band__scrim" aria-hidden />
+        <div className="ll-band__caption container">
+          <p className="ll-eyebrow mb-1">Inside the Maison</p>
+          <p className="ll-felipa">Cut, finished and archived by hand.</p>
+        </div>
+      </section>
+
       {/* ===================== MAISON ===================== */}
       <section id="maison" className="section section-lg ll-reveal" aria-label="The maison">
         <div className="container">
@@ -246,6 +264,7 @@ export default function Home() {
             {MAISON.map((card) => (
               <div className="col-md-4 mb-4 mb-md-0" key={card.title}>
                 <article className="ll-journal-card">
+                  <img className="ll-discipline-art" src={card.art} alt="" loading="lazy" />
                   <h3 className="ll-felipa h5">{card.title}</h3>
                   <p>{card.copy}</p>
                 </article>
@@ -290,9 +309,29 @@ async function JournalTeaser() {
           <div className="row justify-content-center mb-4">
             <div className="col-lg-8">
               <Link href={`/blog/${post.slug}`} className="ll-journal-card d-block">
-                <p className="ll-eyebrow mb-2" style={{ fontSize: ".65rem" }}>{post.category}</p>
-                <h3 className="ll-felipa h4">{post.title}</h3>
-                <p style={{ color: "var(--ll-cream-70)", marginBottom: 0 }}>{post.metaDescription}</p>
+                <div className="row align-items-center">
+                  {post.cover && (
+                    <div className="col-md-5 mb-3 mb-md-0">
+                      <img
+                        src={post.cover}
+                        alt=""
+                        loading="lazy"
+                        style={{
+                          width: "100%",
+                          display: "block",
+                          borderRadius: ".5rem",
+                          aspectRatio: "3 / 2",
+                          objectFit: "cover",
+                        }}
+                      />
+                    </div>
+                  )}
+                  <div className={post.cover ? "col-md-7" : "col-12"}>
+                    <p className="ll-eyebrow mb-2" style={{ fontSize: ".65rem" }}>{post.category}</p>
+                    <h3 className="ll-felipa h4">{post.title}</h3>
+                    <p style={{ color: "var(--ll-cream-70)", marginBottom: 0 }}>{post.metaDescription}</p>
+                  </div>
+                </div>
               </Link>
             </div>
           </div>

@@ -1,12 +1,11 @@
 ---
-title: "Editorial Story"
-category: "**Title:** Midnight in Velvet: A Story of Unapologetic Indulgence"
-metaDescription: "**Category:** Stories & Inspiration"
+title: "Midnight in Velvet: A Story of Unapologetic Indulgence"
+category: "Stories & Inspiration"
+metaDescription: "Step inside the world of Lady Luxe with an atmospheric evening story celebrating confidence, luxury lace, and the quiet magic of dressing for yourself."
+cover: "/brand/imagery/story-lacing.webp"
 date: "2026-11-21"
 slug: "midnight-in-velvet"
 ---
-
-**Meta Description:** Step inside the world of Lady Luxe with an atmospheric evening story celebrating confidence, luxury lace, and the quiet magic of dressing for yourself.
 
 The rain tapped a soft, steady rhythm against the tall apartment windows, blurring the city lights below into streaks of amber and gold. Inside, the air was warm, scented faintly with vanilla, bergamot, and the lingering smoke of a freshly lit candle.
 

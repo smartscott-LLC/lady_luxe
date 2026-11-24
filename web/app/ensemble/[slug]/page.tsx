@@ -66,6 +66,11 @@ function EnsembleView({ bundle }: { bundle: Bundle }) {
               <span className={styles.currency}> USD</span>
             </p>
             {bundle.story && <p className={styles.story}>{bundle.story}</p>}
+            <div className={styles.archiveNote}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/brand/imagery/seal-no001.webp" alt="House archive seal" loading="lazy" />
+              <span>Entered in the house record · numbered on release</span>
+            </div>
             <p className={styles.fine}>
               Ensembles are composed by the house and entered in the archive. To request a piece,
               use the Concierge — the Circle sees each release first.

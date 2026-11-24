@@ -19,7 +19,7 @@ function loadPost(slug: string) {
   if (!fs.existsSync(file)) return null;
   const raw = fs.readFileSync(file, "utf-8");
   const { data, content } = matter(raw);
-  return { title: data.title ?? "", category: data.category ?? "", metaDescription: data.metaDescription ?? "", date: data.date ?? "", content };
+  return { title: data.title ?? "", category: data.category ?? "", metaDescription: data.metaDescription ?? "", cover: data.cover ?? "", date: data.date ?? "", content };
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Record<string, any>> {
@@ -48,6 +48,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   return (
     <main className={styles.page}>
       <div className={styles.inner}>
+        {post.cover && (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img className={styles.heroArt} src={post.cover} alt="" />
+        )}
         <p className={styles.category}>{post.category}</p>
         <h1 className={styles.title}>{post.title}</h1>
         <div className={styles.prose}>

@@ -141,6 +141,7 @@ export default function ClubPage() {
     return (
       <main className={styles.page}>
         <div className={styles.inner}>
+          <img className={styles.crest} src="/brand/imagery/square-club.webp" alt="The LL Club crest" loading="lazy" />
           <p className={styles.eyebrow}>The LL Club</p>
           <h1 className={styles.title}>
             Welcome{member?.display_name ? `, ${member.display_name}` : ""} ✦
@@ -202,6 +203,7 @@ export default function ClubPage() {
   return (
     <main className={styles.page}>
       <div className={styles.inner}>
+        <img className={styles.crest} src="/brand/imagery/square-club.webp" alt="The LL Club crest" loading="lazy" />
         <p className={styles.eyebrow}>The LL Club</p>
         <h1 className={styles.title}>
           {mode === "signup" ? "Join the Club" : "Welcome back"}

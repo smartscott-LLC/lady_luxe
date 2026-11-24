@@ -42,7 +42,8 @@
   display: flex;
   flex-direction: column;
   gap: 0.45rem;
-  padding: 1.5rem 1.6rem;
+  padding: 0;
+  overflow: hidden;
   border: 1px solid var(--ll-gold-25);
   border-radius: 10px;
   background: rgba(48, 0, 26, 0.55);
@@ -63,7 +64,21 @@
   color: var(--ll-gold);
 }
 
-.title {
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 1.35rem 1.6rem 1.5rem;
+}
+
+.cover {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.cardTitle {
   font-family: var(--ll-font-display);
   font-size: 1.2rem;
   color: var(--ll-cream);

@@ -15,34 +15,37 @@ export type FeaturedItem = {
 
 /**
  * Featured carousel — 5-visible film row, center enlarged.
- * Auto-advances; hover pauses the sweep and plays the hovered film;
- * click goes to the product. Films are the 360° turntables.
+ * Hover pauses the sweep and plays the hovered film;
+ * unhovering starts a 2s cooldown, then the 3s cadence resumes.
+ * Click goes to the product. Films are the 360° turntables.
  */
 export default function FeaturedCarousel({ items }: { items: FeaturedItem[] }) {
   const [active, setActive] = useState(0);
-  const [hovering, setHovering] = useState<number | null>(null);
+  const [hovering, setHovering] = useState(false);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
   const count = items.length;
 
-  // auto-advance every 3s while not hovering
+  // 2s cooldown after unhover, then auto-advance every 3s while not hovering
   useEffect(() => {
-    if (hovering !== null || count < 2) return;
-    const t = setInterval(() => setActive((a) => (a + 1) % count), 3000);
-    return () => clearInterval(t);
+    if (hovering || count < 2) return;
+    let sweep: ReturnType<typeof setInterval> | undefined;
+    const cooldown = setTimeout(() => {
+      sweep = setInterval(() => setActive((a) => (a + 1) % count), 3000);
+    }, 2000);
+    return () => {
+      clearTimeout(cooldown);
+      if (sweep) clearInterval(sweep);
+    };
   }, [hovering, count]);
 
   const play = (i: number) => {
-    setHovering(i);
     const v = videoRefs.current[i];
     if (v) v.play().catch(() => {});
   };
 
   const stop = (i: number) => {
-    setHovering(null);
     const v = videoRefs.current[i];
     if (v) v.pause(); // pause, never reset
-    // no delay after unhover: advance immediately, then the 3s cadence resumes
-    setActive((a) => (a + 1) % count);
   };
 
   const offset = (i: number) => {
@@ -55,7 +58,12 @@ export default function FeaturedCarousel({ items }: { items: FeaturedItem[] }) {
   if (count === 0) return null;
 
   return (
-    <div className={styles.stage}>
+    <div
+      className={styles.stage}
+      onMouseEnter={() => setHovering(true)}
+      // leaving starts the 2s cooldown; the cadence resumes quietly after it
+      onMouseLeave={() => setHovering(false)}
+    >
       <div className={styles.track}>
         {items.map((item, i) => {
           const d = offset(i);

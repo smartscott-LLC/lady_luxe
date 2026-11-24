@@ -148,3 +148,28 @@
   color: #9a9184;
   max-width: 46ch;
 }
+
+
+/* ---- ensemble archive seal (ensemble detail) ---- */
+.archiveNote {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin: 1.4rem 0 0;
+}
+
+.archiveNote img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid var(--ll-gold-25);
+  flex: 0 0 auto;
+}
+
+.archiveNote span {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ll-cream-45);
+}

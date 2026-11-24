@@ -1,12 +1,11 @@
 ---
-title: "Fashion Trends"
-category: "**Title:** Beyond the Boudoir: Luxury Lingerie Trends Redefining Elegance This Season"
-metaDescription: "**Category:** Fashion & Trends"
+title: "Beyond the Boudoir: Luxury Lingerie Trends Redefining Elegance This Season"
+category: "Fashion & Trends"
+metaDescription: "Discover the latest luxury lingerie trends at Lady Luxe. From sheer layering to sculpted corsetry by Roza, Gracya, and Shirley of Hollywood, elevate your wardrobe today."
+cover: "/brand/imagery/corset-line-maroon.webp"
 date: "2026-11-21"
 slug: "beyond-the-boudoir-luxury-lingerie-trends"
 ---
-
-**Meta Description:** Discover the latest luxury lingerie trends at Lady Luxe. From sheer layering to sculpted corsetry by Roza, Gracya, and Shirley of Hollywood, elevate your wardrobe today.
 
 Luxury lingerie has never been just about what lies beneath—it is a celebration of artistry, confidence, and personal style. This season, the boundary between intimate apparel and high fashion continues to blur, inviting you to embrace intricate lace, luminous satin, and architectural silhouettes both in and out of the bedroom.
 

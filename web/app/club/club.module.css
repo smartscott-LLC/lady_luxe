@@ -214,3 +214,16 @@
 .link {
   color: var(--ll-gold);
 }
+
+
+/* ---- club crest ---- */
+.crest {
+  display: block;
+  width: 92px;
+  height: 92px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid var(--ll-gold-25);
+  margin: 0 auto 1.25rem;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+}

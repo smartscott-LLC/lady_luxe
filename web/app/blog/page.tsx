@@ -18,6 +18,7 @@ function getAllPosts() {
         title: data.title ?? f,
         category: data.category ?? "Journal",
         metaDescription: data.metaDescription ?? "",
+        cover: data.cover ?? "",
         date: data.date ?? "",
       };
     })
@@ -30,9 +31,15 @@ async function PostIndex() {
     <div className={styles.list}>
       {posts.map((p) => (
         <Link key={p.slug} href={`/blog/${p.slug}`} className={styles.card}>
-          <span className={styles.category}>{p.category}</span>
-          <span className={styles.title}>{p.title}</span>
-          <span className={styles.excerpt}>{p.metaDescription}</span>
+          {p.cover && (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img className={styles.cover} src={p.cover} alt="" loading="lazy" />
+          )}
+          <span className={styles.cardBody}>
+            <span className={styles.category}>{p.category}</span>
+            <span className={styles.cardTitle}>{p.title}</span>
+            <span className={styles.excerpt}>{p.metaDescription}</span>
+          </span>
         </Link>
       ))}
     </div>

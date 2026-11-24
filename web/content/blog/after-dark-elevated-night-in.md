@@ -1,12 +1,11 @@
 ---
-title: "Fresh Ideas for Nighttime Escapades"
-category: "**Title:** After Dark: 5 Elevated Ideas to Spark Your Next Night In"
-metaDescription: "**Category:** Nighttime Escapades"
+title: "After Dark: 5 Elevated Ideas to Spark Your Next Night In"
+category: "Nighttime Escapades"
+metaDescription: "Turn an ordinary evening into an unforgettable escape. Explore 5 fresh nighttime date ideas paired with bold luxury pieces from Irall Erotic, Provocative, and YesX."
+cover: "/brand/imagery/portrait-window.webp"
 date: "2026-11-21"
 slug: "after-dark-elevated-night-in"
 ---
-
-**Meta Description:** Turn an ordinary evening into an unforgettable escape. Explore 5 fresh nighttime date ideas paired with bold luxury pieces from Irall Erotic, Provocative, and YesX.
 
 There is something undeniably magnetic about trading a crowded restaurant for a private, curated evening behind closed doors. Whether you are celebrating an anniversary, breaking out of a midweek routine, or simply craving a little extra spark, the right atmosphere—and the right wardrobe—can transform an ordinary night into an unforgettable escapade.
 

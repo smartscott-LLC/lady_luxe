@@ -33180,3 +33180,78 @@ html { scrollbar-color: var(--ll-gold) #1B000D; }           /* Firefox */
     font-size: 1.3rem;
   }
 }
+
+
+/* ---- atelier interlude band (homepage) ---- */
+.ll-band {
+  position: relative;
+  overflow: hidden;
+}
+.ll-band img {
+  display: block;
+  width: 100%;
+  height: clamp(16rem, 30vw, 28rem);
+  object-fit: cover;
+}
+.ll-band__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(27, 0, 13, 0) 45%, rgba(27, 0, 13, 0.8) 100%);
+  pointer-events: none;
+}
+.ll-band__caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 2.2rem;
+  text-align: center;
+}
+.ll-band__caption .ll-eyebrow {
+  color: var(--ll-gold-soft);
+}
+.ll-band__caption .ll-felipa {
+  margin: 0;
+  color: var(--ll-cream);
+  font-size: clamp(1.05rem, 2.2vw, 1.5rem);
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.55);
+}
+
+/* ---- discipline line art (maison cards) ---- */
+.ll-discipline-art {
+  width: 84px;
+  height: 84px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid var(--ll-gold-25);
+  margin-bottom: 1.1rem;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.4);
+}
+
+/* ---- maison page banner ---- */
+.ll-maison-banner {
+  max-width: 52rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.ll-maison-banner img {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--ll-gold-25);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* ---- footer crest ---- */
+.ll-footer-crest {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1.1rem;
+}
+.ll-footer-crest img {
+  width: 78px;
+  height: 78px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--ll-gold-25);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
