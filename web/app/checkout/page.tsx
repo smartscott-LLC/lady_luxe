@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ttTrack } from "@/lib/tiktok";
+import { gaEvent, gaItem } from "@/lib/ga";
 import styles from "./checkout.module.css";
 
 type CartLine = { sku: string; name: string; price: number; quantity: number };
@@ -81,11 +82,19 @@ export default function CheckoutPage() {
     const lines = readCart();
     setCart(lines);
     if (lines.length > 0) {
+      const items = lines.map((l) =>
+        gaItem({ id: l.sku, name: l.name, quantity: l.quantity, price: l.price }),
+      );
       ttTrack("InitiateCheckout", {
         content_type: "product",
         quantity: lines.reduce((s, l) => s + l.quantity, 0),
         value: lines.reduce((s, l) => s + l.price * l.quantity, 0),
         currency: "USD",
+      });
+      gaEvent("begin_checkout", {
+        currency: "USD",
+        value: lines.reduce((s, l) => s + l.price * l.quantity, 0),
+        items,
       });
     }
   }, []);
@@ -177,6 +186,9 @@ export default function CheckoutPage() {
       localStorage.removeItem(CART_KEY);
       setResult(data);
       setStatus("paid");
+      const items = cart.map((l) =>
+        gaItem({ id: l.sku, name: l.name, quantity: l.quantity, price: l.price }),
+      );
       ttTrack("PlaceAnOrder", {
         content_type: "product",
         quantity: cart.reduce((s, l) => s + l.quantity, 0),
@@ -187,6 +199,12 @@ export default function CheckoutPage() {
         content_type: "product",
         value: data.total,
         currency: "USD",
+      });
+      gaEvent("purchase", {
+        transaction_id: data.order_id,
+        currency: "USD",
+        value: data.total,
+        items,
       });
     } catch (err) {
       setStatus("ready");

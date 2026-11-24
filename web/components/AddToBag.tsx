@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { ttTrack } from "@/lib/tiktok";
+import { gaEvent, gaItem } from "@/lib/ga";
 
 const CART_KEY = "lady-luxe-cart";
 
@@ -43,6 +44,11 @@ export default function AddToBag({
       quantity: 1,
       value: price,
       currency: "USD",
+    });
+    gaEvent("add_to_cart", {
+      currency: "USD",
+      value: price,
+      items: [gaItem({ id: sku, name, quantity: 1, price })],
     });
     router.push("/bag");
   };
