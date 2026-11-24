@@ -33,7 +33,7 @@ export default function RootLayout({
           href="/vendor/@fortawesome/fontawesome-free/css/all.min.css"
         />
         {/* Combined brand + kit stylesheet: neumorphism → brand → theme (bump v on brand edits) */}
-        <link rel="stylesheet" href="/css/luxe-all.css?v=4" />
+        <link rel="stylesheet" href="/css/luxe-all.css?v=5" />
       </head>
       <body>
         {/* Shared navigation — every page carries the header and footer.
