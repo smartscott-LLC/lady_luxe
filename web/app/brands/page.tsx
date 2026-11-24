@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Suspense } from "react";
 import { createClient } from "@/utils/supabase/server";
-import { BRAND_ORDER, brandFromSupplierSku, brandSlug, supplierPrefixForBrand } from "@/lib/brand";
+import { BRAND_ORDER, brandFromSupplierSku, brandSlug, brandSkuLookup, IRALL_EROTIC_SKUS } from "@/lib/brand";
 import styles from "./brands.module.css";
 
 /** Counts live products per brand, straight from the database. */
@@ -38,21 +38,31 @@ async function BrandIndex() {
   );
 }
 
-/** Product grid for one brand (?b=<slug>). */
+/** Product grid for one brand (?b=<slug>) — the house's full live floor. */
 async function BrandProducts({ brand }: { brand: string }) {
   const supabase = await createClient();
-  const prefix = supplierPrefixForBrand(brand) ?? brand.toUpperCase();
-  const { data } = await supabase
+  const lookup = brandSkuLookup(brand);
+  let query = supabase
     .from("products")
     .select("sku, name, supplier_sku, retail_price, media")
-    .eq("status", "live")
-    .gte("retail_price", 65)
-    .like("supplier_sku", `${prefix}%`)
-    .order("retail_price", { ascending: false });
+    .eq("status", "live");
 
-  const products = (data ?? []).filter(
-    (p: any) => Number(p.retail_price) >= 65,
-  );
+  query =
+    lookup.mode === "exact"
+      ? query.in("supplier_sku", lookup.values)
+      : query.like("supplier_sku", `${lookup.values[0]}%`);
+
+  // the Irall Erotic pieces share the plain IRALL prefix — keep them off
+  // the Irall floor so each house shows its own line
+  if (brand === "Irall") {
+    for (const eroticSku of IRALL_EROTIC_SKUS) {
+      query = query.neq("supplier_sku", eroticSku);
+    }
+  }
+
+  const { data } = await query.order("retail_price", { ascending: false });
+
+  const products = data ?? [];
 
   if (products.length === 0) {
     return (
