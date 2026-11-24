@@ -33157,14 +33157,15 @@ html { scrollbar-color: var(--ll-gold) #1B000D; }           /* Firefox */
 }
 ::-webkit-scrollbar-thumb:hover { background: #F0D070; }
 
+/* headroom's will-change:transform traps the navbar in a z-auto stacking
+   context — the hero's z-index:2 would paint over anything the navbar
+   opens (mobile collapse panel, nav drawers). Lift the whole navbar. */
+.navbar-main.headroom {
+  z-index: 1050;
+}
+
 /* ---- mobile navbar collapse — brand midnight surface ---------------------- */
 @media (max-width: 1199.98px) {
-  /* headroom's will-change:transform traps the navbar (and its z-1050
-     collapse panel) in a z-auto stacking context — the hero container's
-     z-index:2 then paints OVER the opened menu. Lift the whole navbar. */
-  .navbar-main.headroom {
-    z-index: 1050;
-  }
   .navbar-collapse.collapsing,
   .navbar-collapse.show {
     background: linear-gradient(180deg, #24000F 0%, #1B000D 100%) !important;
@@ -33204,6 +33205,153 @@ html { scrollbar-color: var(--ll-gold) #1B000D; }           /* Firefox */
   .navbar-main .navbar-brand {
     margin-right: 1.75rem;
   }
+}
+
+/* ---- nav trigger buttons (Intimates / Brands / The LL Club) --------------- */
+.ll-nav-trigger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+}
+.ll-nav-trigger:focus-visible {
+  outline: 1px solid var(--ll-gold);
+  outline-offset: 2px;
+}
+.ll-nav-caret {
+  font-size: 0.55rem;
+  margin-left: 0.3rem;
+  opacity: 0.55;
+  vertical-align: 1px;
+}
+
+/* ---- nav drawer ------------------------------------------------------------ */
+.ll-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 0, 8, 0.62);
+  z-index: 1070;
+  animation: ll-fade 0.25s ease;
+}
+.ll-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(26rem, 94vw);
+  background: linear-gradient(180deg, #24000F 0%, #16000C 100%);
+  border-left: 1px solid var(--ll-gold-25);
+  box-shadow: -30px 0 80px rgba(0, 0, 0, 0.6);
+  z-index: 1080;
+  padding: 2.4rem 2rem 2.2rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  animation: ll-drawer-in 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+}
+@keyframes ll-drawer-in {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+@keyframes ll-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.ll-drawer-close {
+  position: absolute;
+  top: 1.05rem;
+  right: 1.05rem;
+  background: none;
+  border: none;
+  color: var(--ll-gold);
+  font-size: 1.15rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0.3rem;
+}
+.ll-drawer-close:hover { color: var(--ll-gold-soft); }
+.ll-drawer-title {
+  font-size: 2rem;
+  color: var(--ll-gold);
+  margin-bottom: 1.3rem;
+}
+.ll-drawer-entry {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.85rem 0.9rem;
+  border: 1px solid var(--ll-gold-25);
+  border-radius: 10px;
+  background: rgba(48, 0, 26, 0.45);
+  text-decoration: none;
+  margin-bottom: 0.8rem;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.ll-drawer-entry:hover {
+  border-color: var(--ll-gold);
+  transform: translateX(-4px);
+}
+.ll-drawer-entry img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--ll-gold-25);
+  flex: 0 0 auto;
+}
+.ll-drawer-entry-title {
+  display: block;
+  font-family: var(--ll-font-display);
+  font-size: 0.95rem;
+  color: var(--ll-cream);
+  letter-spacing: 0.04em;
+}
+.ll-drawer-entry-copy {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 300;
+  color: var(--ll-cream-70);
+  line-height: 1.45;
+  margin-top: 2px;
+}
+.ll-drawer-hero {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--ll-gold-25);
+  margin-bottom: 1.2rem;
+}
+.ll-drawer-brands {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+.ll-drawer-brand {
+  display: block;
+  padding: 0.68rem 0.2rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.14);
+  color: var(--ll-cream);
+  font-family: var(--ll-font-display);
+  letter-spacing: 0.12em;
+  font-size: 0.92rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.2s, padding-left 0.2s;
+}
+.ll-drawer-brand:hover {
+  color: var(--ll-gold);
+  padding-left: 0.55rem;
+}
+.ll-drawer-fine {
+  font-size: 0.78rem;
+  font-weight: 300;
+  color: var(--ll-cream-45);
+  margin-top: auto;
+  padding-top: 1rem;
+  line-height: 1.6;
 }
 
 /* ---- atelier interlude band (homepage) ---- */
