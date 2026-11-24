@@ -25320,7 +25320,10 @@ button.section-slack:focus {
     display: none;
 }
 
-@media (max-width: 991.98px) {
+/* This navbar expands at 1200px (navbar-expand-xl), so the mobile menu
+   design — overlay panel, brand/close header, stacked links — must apply
+   all the way up to 1199.98px, not just 991.98px. */
+@media (max-width: 1199.98px) {
     .navbar-nav .nav-link {
         padding: .625rem 0;
         display: flex;
@@ -33156,6 +33159,12 @@ html { scrollbar-color: var(--ll-gold) #1B000D; }           /* Firefox */
 
 /* ---- mobile navbar collapse — brand midnight surface ---------------------- */
 @media (max-width: 1199.98px) {
+  /* headroom's will-change:transform traps the navbar (and its z-1050
+     collapse panel) in a z-auto stacking context — the hero container's
+     z-index:2 then paints OVER the opened menu. Lift the whole navbar. */
+  .navbar-main.headroom {
+    z-index: 1050;
+  }
   .navbar-collapse.collapsing,
   .navbar-collapse.show {
     background: linear-gradient(180deg, #24000F 0%, #1B000D 100%) !important;

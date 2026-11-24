@@ -35,7 +35,7 @@ function HeaderNav({ pathname }: { pathname: string | null }) {
         aria-label="Primary navigation"
         className={`navbar navbar-main navbar-expand-xl headroom navbar-light navbar-transparent${menuOpen ? " navbar-open" : ""}`}
       >
-        <div className="container position-relative">
+        <div className="container">
           <Link className="navbar-brand" href="/">
             <img className="ll-emblem" src="/brand/lady-luxe-emblem.webp" alt="Lady Luxe emblem" />
             <span className="ll-script ll-brand-word">Lady Luxe</span>

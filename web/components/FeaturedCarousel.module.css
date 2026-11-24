@@ -4,7 +4,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: visible;
+  /* clip the outer rings — invisible far cards otherwise stretch the
+     document horizontally and give the page a phantom sideways scroll */
+  overflow: hidden;
 }
 
 .track {
