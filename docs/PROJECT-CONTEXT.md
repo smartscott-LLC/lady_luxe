@@ -247,6 +247,27 @@ Turntable Studio (localhost:3002) ──spawns──▶ generate_turntable.py �
   filter ≥ 65; /private-reserve lists the rest. Naming: **"Private Reserve"
   is permanent** (owner, Nov 21) — not a placeholder, no future rename.
 
+- 2026-11-23: **Brand imagery integrated + carousel cooldown** (`ed429c8`).
+  Owner's image drop (`Downloads/catalog/images_4_site/`) converted to webp
+  (PIL, q88) into `web/public/brand/imagery/` — 14 unique assets (the
+  `logo-black-corset-line (1).png` duplicate skipped). Placements: atelier
+  still-life full-bleed band between the collection marquee and Maison
+  (homepage), discipline line-art medallions on both maison card grids,
+  corsetry banner on /maison, Club crest on /club (join + dashboard),
+  `seal-no001` archive note on ensemble detail, ivory crest in the footer,
+  cover art on all 4 journal posts (frontmatter `cover:` → blog list, post
+  page, homepage teaser). **Reserved, not yet placed**: `seal-stamp`,
+  `portrait-archived`, `square-ensemble`. Journal frontmatter was carrying
+  `**Title:**` junk in category/metaDescription — cleaned; blog.module.css
+  had a duplicate `.title` class that crushed the page h1 (renamed to
+  `.cardTitle`). FeaturedCarousel: hover is stage-level (per-card unhover
+  no longer advances — that was the warp-speed bug), and unhovering starts
+  a **2s cooldown** before the 3s cadence resumes (owner, Nov 23). All
+  timing verified via real Chromium pointer events: cadence advances while
+  unhovered, freezes with pointer inside the stage, resumes ~5s after
+  leave. Carousel pausing during dev-server background-tab tests is
+  throttled timers, not a bug.
+
 ## Session resume checklist
 
 1. Read this file + `git log --oneline -20`.
