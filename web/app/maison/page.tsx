@@ -54,8 +54,8 @@ export default function MaisonPage() {
 
         <figure className="ll-maison-banner mb-5 ll-reveal">
           <img
-            src="/brand/imagery/banner-hero-corset.webp"
-            alt="Corsetry from the Lady Luxe atelier"
+            src="/brand/imagery/campaign-robe.webp"
+            alt="The Lady Luxe campaign — white silk robe, garnet ribbon, morning light"
             loading="lazy"
           />
         </figure>
@@ -70,6 +70,67 @@ export default function MaisonPage() {
               </article>
             </div>
           ))}
+        </div>
+
+        {/* ===================== THE HOUSE EXPERIENCE ===================== */}
+        <div className="row justify-content-center mb-4 ll-reveal">
+          <div className="col-lg-8 text-center">
+            <p className="ll-eyebrow mb-2">The House Experience</p>
+            <h2 className="ll-script" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.6rem)" }}>
+              Cut, wrapped &amp; sealed
+            </h2>
+            <p className="lead" style={{ color: "var(--ll-cream-70)" }}>
+              Every order leaves the house like this — grosgrain ribbon, the house
+              seal, tissue monogrammed in gold, and the number that says
+              it&rsquo;s yours.
+            </p>
+          </div>
+        </div>
+        <div className="row justify-content-center mb-5 ll-reveal">
+          <div className="col-md-5 mb-3 mb-md-0">
+            <img
+              className="ll-maison-duo"
+              src="/brand/imagery/packaging-box.webp"
+              alt="The Lady Luxe gift box — black box, garnet ribbon, house seal"
+              loading="lazy"
+            />
+          </div>
+          <div className="col-md-5">
+            <img
+              className="ll-maison-duo"
+              src="/brand/imagery/packaging-bag.webp"
+              alt="The Lady Luxe carrying bag — corset emblem in gold"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        {/* ===================== CORRESPONDENCE ===================== */}
+        <div className="row justify-content-center mb-5 ll-reveal">
+          <div className="col-lg-9">
+            <div className="ll-maison-correspondence">
+              <img
+                src="/brand/imagery/stationery-flatlay.webp"
+                alt="House correspondence — garnet card, sealed envelope, letterhead"
+                loading="lazy"
+              />
+              <div>
+                <p className="ll-eyebrow mb-1">Correspondence</p>
+                <p className="ll-felipa" style={{ color: "var(--ll-cream-70)", fontSize: "1.02rem", lineHeight: 1.7, marginBottom: "1rem" }}>
+                  Every reply is written by a person, on the house letterhead —
+                  sealed, and sent within two working days.
+                </p>
+                <a
+                  href="https://formserver.ladyluxeclub.com/forms/lady_luxe"
+                  className="ll-btn"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Write to the House
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="row justify-content-center text-center">

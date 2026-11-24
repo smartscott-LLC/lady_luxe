@@ -71,6 +71,19 @@ function DrawerContent({ id, onClose }: { id: DrawerId; onClose: () => void }) {
               </span>
             </Link>
           ))}
+          <a
+            className="ll-drawer-entry"
+            href="https://formserver.ladyluxeclub.com/forms/lady_luxe"
+            target="_blank"
+            rel="noopener"
+            onClick={onClose}
+          >
+            <img src="/brand/imagery/lookbook-autumn.webp" alt="" loading="lazy" />
+            <span>
+              <span className="ll-drawer-entry-title">The Autumn Edit</span>
+              <span className="ll-drawer-entry-copy">The lookbook — the season in one spread.</span>
+            </span>
+          </a>
         </div>
         <p className="ll-drawer-fine">
           Each piece is numbered on release and entered in the house record.

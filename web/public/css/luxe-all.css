@@ -33354,6 +33354,31 @@ html { scrollbar-color: var(--ll-gold) #1B000D; }           /* Firefox */
   line-height: 1.6;
 }
 
+/* ---- maison experience duo + correspondence card ---- */
+.ll-maison-duo {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--ll-gold-25);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+}
+.ll-maison-correspondence {
+  display: flex;
+  gap: 1.4rem;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1.4rem;
+  border: 1px solid var(--ll-gold-25);
+  border-radius: 12px;
+  background: rgba(48, 0, 26, 0.45);
+}
+.ll-maison-correspondence img {
+  width: 220px;
+  border-radius: 8px;
+  border: 1px solid var(--ll-gold-25);
+  flex: 0 0 auto;
+}
+
 /* ---- atelier interlude band (homepage) ---- */
 .ll-band {
   position: relative;

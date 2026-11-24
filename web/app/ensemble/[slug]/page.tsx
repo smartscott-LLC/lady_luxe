@@ -68,7 +68,11 @@ function EnsembleView({ bundle }: { bundle: Bundle }) {
             {bundle.story && <p className={styles.story}>{bundle.story}</p>}
             <div className={styles.archiveNote}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/brand/imagery/seal-no001.webp" alt="House archive seal" loading="lazy" />
+              <img
+                src="/brand/imagery/certificate-ensemble.webp"
+                alt="Ensemble certificate — numbered and entered in the house record"
+                loading="lazy"
+              />
               <span>Entered in the house record · numbered on release</span>
             </div>
             <p className={styles.fine}>

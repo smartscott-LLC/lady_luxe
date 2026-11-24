@@ -235,8 +235,8 @@ export default function Home() {
       {/* ===================== ATELIER INTERLUDE ===================== */}
       <section className="ll-band ll-reveal" aria-label="Inside the atelier">
         <img
-          src="/brand/imagery/banner-still-life.webp"
-          alt="A still life from the Lady Luxe atelier — corsetry, ribbon and gold thread"
+          src="/brand/imagery/campaign-chaise.webp"
+          alt="The Lady Luxe autumn campaign — garnet silk on the chaise"
           loading="lazy"
         />
         <div className="ll-band__scrim" aria-hidden />
