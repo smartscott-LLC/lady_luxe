@@ -21,8 +21,9 @@ const LINKS = [
  * internal fiber properties as data attributes). Concierge button kept for
  * visual parity but disconnected (dangling) pending its final destination.
  */
-export default function SiteHeader() {
-  const pathname = usePathname();
+
+/** Presentational nav — pathname as a prop so a static fallback can render it. */
+function HeaderNav({ pathname }: { pathname: string | null }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const closeMenu = () => setMenuOpen(false);
@@ -63,7 +64,7 @@ export default function SiteHeader() {
             </div>
             <ul className="navbar-nav navbar-nav-hover align-items-xl-center ml-xl-auto">
               {LINKS.map((l) => {
-                const active = !l.external && pathname === l.href;
+                const active = pathname !== null && !l.external && pathname === l.href;
                 const cls = `nav-link${active ? " active" : ""}`;
                 return (
                   <li className="nav-item" key={l.href}>
@@ -104,4 +105,20 @@ export default function SiteHeader() {
       </nav>
     </header>
   );
+}
+
+export default function SiteHeader() {
+  const pathname = usePathname();
+  return <HeaderNav pathname={pathname} />;
+}
+
+/**
+ * Prerender fallback for routes whose params aren't known at build time
+ * (/ensemble/[slug], /product/[slug]). Cache Components: usePathname
+ * suspends there, so the Suspense boundary in app/layout.tsx renders this
+ * identical bar minus the active-link highlight, and the real header
+ * streams in without layout shift.
+ */
+export function SiteHeaderFallback() {
+  return <HeaderNav pathname={null} />;
 }

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import Script from "next/script";
 import "./globals.css";
-import SiteHeader from "@/components/SiteHeader";
+import SiteHeader, { SiteHeaderFallback } from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import LuxeRuntime from "@/components/LuxeRuntime";
 
@@ -35,8 +36,13 @@ export default function RootLayout({
         <link rel="stylesheet" href="/css/luxe-all.css?v=4" />
       </head>
       <body>
-        {/* Shared navigation — every page carries the header and footer */}
-        <SiteHeader />
+        {/* Shared navigation — every page carries the header and footer.
+            usePathname suspends on dynamic routes (params unknown at build),
+            so the boundary prerenders the identical bar without the active
+            highlight and the real header streams in. */}
+        <Suspense fallback={<SiteHeaderFallback />}>
+          <SiteHeader />
+        </Suspense>
         {children}
         <SiteFooter />
         {/* Kit vendor bundle — jQuery → Popper → Bootstrap → Headroom → kit init.
