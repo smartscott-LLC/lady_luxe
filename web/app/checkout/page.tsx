@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { ttTrack } from "@/lib/tiktok";
 import { gaEvent, gaItem } from "@/lib/ga";
 import styles from "./checkout.module.css";
@@ -70,7 +71,9 @@ function readCart(): CartLine[] {
 }
 
 export default function CheckoutPage() {
+  const router = useRouter();
   const [cart, setCart] = useState<CartLine[]>([]);
+  const [loaded, setLoaded] = useState(false);
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<
     "idle" | "card-loading" | "ready" | "submitting" | "paid" | "error"
@@ -101,10 +104,24 @@ export default function CheckoutPage() {
         items,
       });
     }
+    setLoaded(true);
   }, []);
 
-  // Mount the Square card form once the cart page is shown.
+  // Flow gate: direct-URL visitors with an empty bag are guided back to
+  // /bag instead of staring at a dead end. The paid confirmation is exempt —
+  // the bag is empty by then. (The financial area itself is server-gated:
+  // the Edge Function re-prices and requires a real Square token, so the
+  // URL alone exposes nothing.)
   useEffect(() => {
+    if (loaded && status !== "paid" && cart.length === 0) {
+      router.replace("/bag");
+    }
+  }, [loaded, status, cart.length, router]);
+
+  // Mount the Square card form only once the bag has items — an empty-bag
+  // visit never spins up a card form at all.
+  useEffect(() => {
+    if (!loaded || cart.length === 0) return;
     // each effect run gets a generation; stale runs drop out after every
     // await, so StrictMode / remounts can never mount a second card form
     const gen = ++attachGenRef.current;
@@ -139,7 +156,7 @@ export default function CheckoutPage() {
     return () => {
       disposed = true;
     };
-  }, []);
+  }, [loaded, cart.length]);
 
   const subtotal = cart.reduce((s, l) => s + l.price * l.quantity, 0);
   const shipping = subtotal >= 150 || subtotal === 0 ? 0 : 9.95;
