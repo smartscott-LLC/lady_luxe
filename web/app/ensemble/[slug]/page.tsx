@@ -2,6 +2,8 @@ import { Suspense } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { createClient } from "@/utils/supabase/server";
+import { brandFromSupplierSku, brandSlug } from "@/lib/brand";
+import TurntablePlayer, { TurntableMedia } from "@/components/TurntablePlayer";
 import styles from "../../product/[slug]/product.module.css";
 
 export const metadata = {
@@ -9,11 +11,20 @@ export const metadata = {
   description: "A numbered ensemble, composed by the house.",
 };
 
+type BundleMedia = {
+  url?: string;
+  alt?: string;
+  type?: string;
+  mp4?: string;
+  webm?: string;
+  poster?: string;
+};
+
 type Bundle = {
   sku: string;
   name: string;
   price: number;
-  media: { url?: string; alt?: string }[] | null;
+  media: BundleMedia[] | null;
   story: string | null;
   pieces: number;
 };
@@ -38,7 +49,11 @@ async function getBundle(sku: string): Promise<Bundle | null> {
 }
 
 function EnsembleView({ bundle }: { bundle: Bundle }) {
-  const img = bundle.media?.[0]?.url;
+  const media = bundle.media ?? [];
+  const tt = media.find(
+    (m) => m.type === "turntable" && m.mp4,
+  ) as TurntableMedia | undefined;
+  const img = media.find((m) => m.type === "image")?.url ?? media[0]?.url;
   return (
     <main className={styles.page}>
       <div className={styles.inner}>
@@ -53,9 +68,19 @@ function EnsembleView({ bundle }: { bundle: Bundle }) {
 
         <div className={styles.grid}>
           <div className={styles.stageColumn}>
-            {img && (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img className={styles.hero} src={img} alt={bundle.media?.[0]?.alt ?? bundle.name} />
+            {tt && tt.mp4 ? (
+              <TurntablePlayer
+                mp4={tt.mp4}
+                webm={tt.webm}
+                poster={tt.poster ?? img}
+                poses={tt.poses ?? []}
+                alt={`${bundle.name} — 360° turntable`}
+              />
+            ) : (
+              img && (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img className={styles.hero} src={img} alt={bundle.name} />
+              )
             )}
           </div>
           <div className={styles.infoColumn}>
