@@ -268,6 +268,32 @@ Turntable Studio (localhost:3002) ──spawns──▶ generate_turntable.py �
   leave. Carousel pausing during dev-server background-tab tests is
   throttled timers, not a bug.
 
+- 2026-11-23 (later): **Drawer navigation + campaign imagery + prod fixes.**
+  SiteHeader restructured: Intimates / Brands / The LL Club are trigger
+  buttons opening a slide-out drawer (backdrop, Esc/X close, scroll lock);
+  Maison, Journal, Contact, Bag stay links; nav is 7 items + Concierge.
+  Drawer content: Intimates → Featured / Private Reserve / Custom
+  Combinations / The Autumn Edit lookbook (→ Concierge form); Brands →
+  9 houses; The Circle → Join free / Log in / Your membership (the Login +
+  account access entry point). Places reserved imagery: square-ensemble,
+  seal-stamp, portrait-archived. Fixes along the way: header
+  CLIENT_HOOK_DYNAMIC prerender failure (Suspense fallback pattern),
+  reveal-on-scroll race on cold connections (LuxeStreamBind per island +
+  engine MutationObserver + lady-luxe.js ?v=2), luxe-all.css bumped to
+  **v8** (cache-bust each brand edit — stale v4 read as "no hamburger"),
+  kit mobile-menu block widened to 1199.98px (navbar-expand-xl deadzone),
+  navbar z-index 1050 (headroom will-change trapped it under the hero),
+  carousel stage clipped (phantom 1714px horizontal scroll), desktop nav
+  padding 0.5rem (row was exactly full — brand script touched FEATURED).
+  TikTok Pixel live (DC2EGKJC77U6OQMIG9SG, base + AddToCart /
+  InitiateCheckout / PlaceAnOrder / CompletePayment via web/lib/tiktok.ts).
+  Campaign imagery placed: homepage band → campaign-chaise; Maison banner
+  → campaign-robe; ensemble archive note → certificate-ensemble (No.
+  014/100); Maison gains The House Experience (packaging duo) +
+  Correspondence card (stationery). **Still unplaced for marketing:**
+  poster-gown, portrait-back-corset, story-robe. Deploys: Vercel
+  (smartscott-LLC, auto on push); production = www.ladyluxeclub.com.
+
 ## Session resume checklist
 
 1. Read this file + `git log --oneline -20`.
