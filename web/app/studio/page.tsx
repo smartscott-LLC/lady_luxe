@@ -16,6 +16,16 @@ type Sheet = {
   status: string;
   csv_content: string;
   emails: string[];
+  invoices: { order_id: string; email: string; html: string }[];
+};
+
+const printInvoice = (inv: { html: string; email: string }) => {
+  const w = window.open("", "_blank");
+  if (!w) return;
+  w.document.write(inv.html);
+  w.document.close();
+  w.focus();
+  w.print();
 };
 
 /**
@@ -154,6 +164,15 @@ export default function StudioPage() {
                   <button className={styles.ghost} onClick={() => download(s)}>
                     Download CSV
                   </button>
+                  {(s.invoices ?? []).map((inv, i) => (
+                    <button
+                      key={inv.order_id}
+                      className={styles.ghost}
+                      onClick={() => printInvoice(inv)}
+                    >
+                      Print invoice {i + 1}
+                    </button>
+                  ))}
                   {s.status !== "submitted" && (
                     <button
                       className={styles.ghost}
