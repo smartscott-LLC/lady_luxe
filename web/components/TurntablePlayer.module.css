@@ -9,12 +9,23 @@
   position: relative;
   border-radius: 16px;
   overflow: hidden;
-  background: #17141a;
+  background: var(--ll-midnight, #1b000d);
   box-shadow:
     inset 1px 1px 2px rgba(255, 255, 255, 0.06),
     inset -1px -1px 2px rgba(0, 0, 0, 0.5),
     0 18px 40px rgba(0, 0, 0, 0.45);
   aspect-ratio: 3 / 4;
+}
+
+/* vertical films keep their full frame — nothing cropped */
+.stagePortrait {
+  aspect-ratio: auto;
+  max-width: 21rem;
+  margin: 0 auto;
+}
+
+.stagePortrait .film {
+  height: auto;
 }
 
 .film {

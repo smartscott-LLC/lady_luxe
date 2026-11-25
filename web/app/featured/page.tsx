@@ -19,6 +19,7 @@ async function FeaturedGrid() {
     .gte("retail_price", 65)
     .contains("media", JSON.stringify([{ type: "turntable" }]))
     .order("retail_price", { ascending: false })
+    .gte("retail_price", 70)
     .limit(90);
 
   const items: FeaturedItem[] = (data ?? []).map((p: any) => {

@@ -37,6 +37,14 @@ export default function TurntablePlayer({
 }: TurntableMedia) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [activePose, setActivePose] = useState<number | null>(null);
+  const [portrait, setPortrait] = useState(false);
+
+  // vertical films (the ensembles' owner footage) get a taller, narrower
+  // stage so nothing is cropped — the head stays in frame
+  const onMeta = () => {
+    const v = videoRef.current;
+    if (v && v.videoHeight > v.videoWidth) setPortrait(true);
+  };
 
   const play = () => {
     videoRef.current?.play().catch(() => {});
@@ -58,7 +66,7 @@ export default function TurntablePlayer({
 
   return (
     <figure className={styles.wrap} data-ll-turntable>
-      <div className={styles.stage}>
+      <div className={`${styles.stage}${portrait ? ` ${styles.stagePortrait}` : ""}`}>
         <video
           ref={videoRef}
           className={styles.film}
@@ -67,6 +75,7 @@ export default function TurntablePlayer({
           playsInline
           preload="metadata"
           poster={poster}
+          onLoadedMetadata={onMeta}
           onMouseEnter={play}
           onMouseLeave={pause}
         >

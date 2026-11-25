@@ -193,7 +193,7 @@ def stage_animate(sku):
     proc = subprocess.run(
         [sys.executable, str(ROOT / "generate_turntable.py"),
          "--input", str(composite), "--bg-mode", "keep", "--duration", "10",
-         "--seed", str(SEED), "--log-format", "json"],
+         "--seed", str(SEED), "--network", "relaxed", "--log-format", "json"],
         cwd=str(ROOT), capture_output=True, text=True, timeout=3600)
     if proc.returncode != 0:
         tail = (proc.stderr or proc.stdout or "")[-400:]

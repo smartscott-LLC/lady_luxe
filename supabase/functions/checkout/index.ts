@@ -68,7 +68,8 @@ interface CartItem {
 }
 
 interface PricedLine {
-  product_id: string;
+  product_id: string | null;
+  bundle_id?: string | null;
   sku: string;
   variant?: string | null;
   name: string;
@@ -114,26 +115,67 @@ Deno.serve(async (req: Request) => {
     const rows: any[] = await rest.json();
     const bySku = new Map(rows.map((r) => [r.sku, r]));
 
+    // ensemble SKUs price from the bundles table — the set ships as one
+    // order line, and bundle_items carries the pieces for the upload sheet
+    const bundleSkus = skus.filter((s) => !bySku.has(s));
+    const bundlesBySku = new Map<string, any>();
+    if (bundleSkus.length) {
+      const brest = await fetch(
+        `${env}/rest/v1/bundles?sku=in.(${bundleSkus.map((s) => `"${s}"`).join(",")})&select=id,sku,name,price,live`,
+        { headers: { apikey: key, Authorization: `Bearer ${key}` } },
+      );
+      if (brest.ok) {
+        for (const b of (await brest.json()) as any[]) {
+          if (b.live) bundlesBySku.set(b.sku, b);
+        }
+      }
+    }
+
     const priced: PricedLine[] = [];
     for (const item of items) {
       const row = bySku.get(item.sku);
+      const bundle = bundlesBySku.get(item.sku);
       const qty = Math.floor(Number(item.quantity));
-      if (!row || row.status !== "live" || !qty || qty < 1 || qty > 10) {
+      if (!row && !bundle) {
         return json(
           { error: `invalid cart item: ${item.sku} (unknown or out of range)` },
           400,
         );
       }
-      const unit = Math.round(Number(row.wholesale_cost) * RETAIL_MARKUP * 100) / 100;
-      priced.push({
-        product_id: row.id,
-        sku: row.sku,
-        variant: item.variant ?? null,
-        name: row.name,
-        unit_price: unit,
-        quantity: qty,
-        duty_rate: Number(row.duty_rate) || 0,
-      });
+      if (!qty || qty < 1 || qty > 10) {
+        return json(
+          { error: `invalid cart item: ${item.sku} (quantity out of range)` },
+          400,
+        );
+      }
+      if (row && row.status === "live") {
+        const unit = Math.round(Number(row.wholesale_cost) * RETAIL_MARKUP * 100) / 100;
+        priced.push({
+          product_id: row.id,
+          sku: row.sku,
+          variant: item.variant ?? null,
+          name: row.name,
+          unit_price: unit,
+          quantity: qty,
+          duty_rate: Number(row.duty_rate) || 0,
+        });
+      } else if (bundle) {
+        priced.push({
+          product_id: null,
+          bundle_id: bundle.id,
+          sku: bundle.sku,
+          variant: null,
+          name: bundle.name,
+          unit_price: Number(bundle.price),
+          quantity: qty,
+          duty_rate: 0,
+        });
+      } else {
+        return json(
+          { error: `invalid cart item: ${item.sku} (unknown or out of range)` },
+          400,
+        );
+      }
     }
 
     // 2. Totals — duties are prepaid by Lady Luxe, shown as their own line.
@@ -181,6 +223,7 @@ Deno.serve(async (req: Request) => {
     const itemRows = priced.map((l) => ({
       order_id: order.id,
       product_id: l.product_id,
+      bundle_id: l.bundle_id ?? null,
       name: l.name,
       unit_price: l.unit_price,
       quantity: l.quantity,

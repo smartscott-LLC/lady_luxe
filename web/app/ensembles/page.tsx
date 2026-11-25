@@ -37,16 +37,31 @@ async function EnsemblesCollection() {
       <div className={styles.grid}>
         {ensembles.map((b: any) => {
           const media = Array.isArray(b.media) ? b.media : [];
-          const img = media[0]?.url;
+          const img = media.find((m: any) => m.type === "image")?.url;
+          const film = media.find((m: any) => m.type === "turntable" && m.mp4);
           const pieces = b.bundle_items?.[0]?.count ?? 0;
           return (
-            <Link key={b.sku} href={`/ensemble/${b.sku}`} className={styles.card}>
-              {img ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img src={img} alt={b.name} className={styles.image} loading="lazy" />
-              ) : (
-                <div className={styles.imageEmpty} />
-              )}
+            <Link key={b.sku} href={`/ensemble/${b.sku}`} className="ll-video-card">
+              <div className={styles.cardMedia}>
+                {film ? (
+                  <video
+                    className={styles.image}
+                    muted
+                    loop
+                    playsInline
+                    preload="none"
+                    poster={img}
+                  >
+                    <source src={film.mp4} type="video/mp4" />
+                  </video>
+                ) : img ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src={img} alt={b.name} className={styles.image} loading="lazy" />
+                ) : (
+                  <div className={styles.imageEmpty} />
+                )}
+                <div className="ll-video-card__scrim" />
+              </div>
               <span className={styles.pieces}>
                 {pieces}-piece set
               </span>

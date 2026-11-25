@@ -2,8 +2,8 @@ import { Suspense } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { createClient } from "@/utils/supabase/server";
-import { brandFromSupplierSku, brandSlug } from "@/lib/brand";
-import TurntablePlayer, { TurntableMedia } from "@/components/TurntablePlayer";
+import ProductGallery from "@/components/ProductGallery";
+import AddToBag from "@/components/AddToBag";
 import styles from "../../product/[slug]/product.module.css";
 
 export const metadata = {
@@ -49,40 +49,22 @@ async function getBundle(sku: string): Promise<Bundle | null> {
 }
 
 function EnsembleView({ bundle }: { bundle: Bundle }) {
-  const media = bundle.media ?? [];
-  const tt = media.find(
-    (m) => m.type === "turntable" && m.mp4,
-  ) as TurntableMedia | undefined;
-  const img = media.find((m) => m.type === "image")?.url ?? media[0]?.url;
   return (
     <main className={styles.page}>
       <div className={styles.inner}>
-        <Link className={styles.back} href="/#collection">
-          ← The Collection
+        <Link className={styles.back} href="/ensembles">
+          ← The Ensembles
         </Link>
         <nav className={styles.crumbs}>
-          <Link href="/">Lady Luxe</Link>
+          <Link href="/ensembles">Ensembles</Link>
           <span aria-hidden>—</span>
           <span>{bundle.name}</span>
         </nav>
 
         <div className={styles.grid}>
-          <div className={styles.stageColumn}>
-            {tt && tt.mp4 ? (
-              <TurntablePlayer
-                mp4={tt.mp4}
-                webm={tt.webm}
-                poster={tt.poster ?? img}
-                poses={tt.poses ?? []}
-                alt={`${bundle.name} — 360° turntable`}
-              />
-            ) : (
-              img && (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img className={styles.hero} src={img} alt={bundle.name} />
-              )
-            )}
-          </div>
+            <div className={styles.stageColumn}>
+              <ProductGallery media={bundle.media ?? []} name={bundle.name} />
+            </div>
           <div className={styles.infoColumn}>
             <p className={styles.brand}>Composed by the house</p>
             <h1 className={styles.name}>{bundle.name}</h1>
@@ -104,18 +86,15 @@ function EnsembleView({ bundle }: { bundle: Bundle }) {
               <span>Entered in the house record · numbered on release</span>
             </div>
             <p className={styles.fine}>
-              Ensembles are composed by the house and entered in the archive. To request a piece,
-              use the Concierge — the Circle sees each release first.
+              Ensembles are composed by the house and entered in the archive —
+              the set ships as one order in official packaging.
             </p>
             <div className="mt-4">
-              <a
-                href="https://formserver.ladyluxeclub.com/forms/lady_luxe"
-                className="ll-btn ll-btn--solid"
-                target="_blank"
-                rel="noopener"
-              >
-                Request via Concierge
-              </a>
+              <AddToBag
+                sku={bundle.sku}
+                name={bundle.name}
+                price={bundle.price}
+              />
             </div>
           </div>
         </div>
