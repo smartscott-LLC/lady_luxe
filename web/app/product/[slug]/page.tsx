@@ -45,11 +45,20 @@ async function getProduct(slug: string): Promise<Product | null> {
   return (data as Product) ?? null;
 }
 
-function ProductView({ product }: { product: Product }) {
+function ProductView({
+  product,
+  from,
+}: {
+  product: Product;
+  from?: string;
+}) {
   const media = Array.isArray(product.media) ? product.media : [];
   const images = media.filter((m) => m.type === "image" && m.url);
   const retail = Number(product.retail_price) || Number(product.wholesale_cost) * RETAIL_MARKUP;
   const brand = brandFromSupplierSku(product.supplier_sku);
+  const fromFeatured = from === "featured";
+  const backHref = fromFeatured ? "/featured" : `/brands?b=${brandSlug(brand)}`;
+  const backLabel = fromFeatured ? "← Back to Featured" : `← Back to ${brand}`;
 
   const productLd = {
     "@context": "https://schema.org",
@@ -79,8 +88,8 @@ function ProductView({ product }: { product: Product }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productLd) }}
       />
       <div className={styles.inner}>
-        <Link className={styles.back} href={`/brands?b=${brandSlug(brand)}`}>
-          ← Back to {brand}
+        <Link className={styles.back} href={backHref}>
+          {backLabel}
         </Link>
         <nav className={styles.crumbs}>
           <Link href="/">Lady Luxe</Link>
@@ -131,22 +140,31 @@ function ProductView({ product }: { product: Product }) {
   );
 }
 
-export default function ProductPage({
+export default async function ProductPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ slug: string }>;
+  searchParams: Promise<{ from?: string }>;
 }) {
   return (
     <Suspense fallback={<div className={styles.page} />}>
-      <ProductLoader params={params} />
+      <ProductLoader params={params} searchParams={searchParams} />
     </Suspense>
   );
 }
 
 /** Data access (params + Supabase) lives inside the Suspense boundary so the route can prerender. */
-async function ProductLoader({ params }: { params: Promise<{ slug: string }> }) {
+async function ProductLoader({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ slug: string }>;
+  searchParams: Promise<{ from?: string }>;
+}) {
   const { slug } = await params;
+  const { from } = await searchParams;
   const product = await getProduct(slug);
   if (!product) notFound();
-  return <ProductView product={product} />;
+  return <ProductView product={product} from={from} />;
 }

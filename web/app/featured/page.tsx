@@ -16,10 +16,9 @@ async function FeaturedGrid() {
     .from("products")
     .select("sku, name, retail_price, media")
     .eq("status", "live")
-    .gte("retail_price", 65)
+    .gte("retail_price", 70)
     .contains("media", JSON.stringify([{ type: "turntable" }]))
     .order("retail_price", { ascending: false })
-    .gte("retail_price", 70)
     .limit(90);
 
   const items: FeaturedItem[] = (data ?? []).map((p: any) => {
@@ -36,6 +35,10 @@ async function FeaturedGrid() {
     };
   }).filter((f: FeaturedItem) => f.mp4);
 
+  // the priciest twelve read gaudy first — hold them for the back of the
+  // gallery, so the eye lands on the broader tier
+  const ordered: FeaturedItem[] = [...items.slice(12), ...items.slice(0, 12)];
+
   if (items.length === 0) {
     return (
       <p className="lead" style={{ color: "var(--ll-cream-70)" }}>
@@ -47,12 +50,12 @@ async function FeaturedGrid() {
   return (
     <>
       <LuxeStreamBind />
-      <FeaturedCarousel items={items} />
+      <FeaturedCarousel items={ordered} />
       <div className="row mt-5">
-        {items.map((item) => (
+        {ordered.map((item) => (
           <div className="col-md-4 col-lg-3 mb-4" key={item.sku}>
             <Link
-              href={`/product/${item.sku}`}
+              href={`/product/${item.sku}?from=featured`}
               className="ll-video-card d-block"
               style={{
                 padding: 0,

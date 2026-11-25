@@ -84,7 +84,7 @@ export default function FeaturedCarousel({ items }: { items: FeaturedItem[] }) {
               onMouseLeave={() => stop(i)}
             >
               <Link
-                href={`/product/${item.sku}`}
+                href={`/product/${item.sku}?from=featured`}
                 className={styles.cardLink}
                 aria-label={`${item.name} — $${item.price.toFixed(2)}`}
               >

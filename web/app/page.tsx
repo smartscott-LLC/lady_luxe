@@ -71,9 +71,9 @@ async function getFeaturedFilms(): Promise<FeaturedItem[]> {
     .gte("retail_price", 65)
     .contains("media", JSON.stringify([{ type: "turntable" }]))
     .order("retail_price", { ascending: false })
-    .limit(12);
+    .limit(24);
 
-  return (data ?? []).map((p: any) => {
+  const items: FeaturedItem[] = (data ?? []).map((p: any) => {
     const media = Array.isArray(p.media) ? p.media : [];
     const tt = media.find((m: any) => m.type === "turntable") ?? {};
     const image = media.find((m: any) => m.type === "image") ?? {};
@@ -86,6 +86,10 @@ async function getFeaturedFilms(): Promise<FeaturedItem[]> {
       webm: tt.webm,
     };
   }).filter((f) => f.mp4);
+
+  // the priciest twelve opened the carousel and they read gaudy — move
+  // them to the back so the first impression is the next tier
+  return [...items.slice(12), ...items.slice(0, 12)];
 }
 
 async function FeaturedFilms() {
