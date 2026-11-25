@@ -72,12 +72,21 @@
 }
 
 .cardMedia .image,
-.cardMedia img,
-.cardMedia video {
+.cardMedia img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+/* films keep their full frame in the cards — no crop, the garnet card
+   fills the letterbox */
+.cardMedia video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  background: rgba(48, 0, 26, 0.9);
 }
 
 .image {

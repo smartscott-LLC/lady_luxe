@@ -21,11 +21,13 @@ export default function AddToBag({
   name,
   price,
   sizes,
+  image,
 }: {
   sku: string;
   name: string;
   price: number;
   sizes?: SizeOption[];
+  image?: string;
 }) {
   const router = useRouter();
   const [sizeSku, setSizeSku] = useState<string | null>(null);
@@ -55,6 +57,7 @@ export default function AddToBag({
           size: chosen?.size,
           name,
           price,
+          image,
           quantity: 1,
         });
       localStorage.setItem(CART_KEY, JSON.stringify(cart));
@@ -68,6 +71,7 @@ export default function AddToBag({
             size: chosen?.size,
             name,
             price,
+            image,
             quantity: 1,
           },
         ]),

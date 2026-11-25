@@ -66,11 +66,6 @@ async function EnsemblesCollection() {
                 {pieces}-piece set
               </span>
               <span className={styles.name}>{b.name}</span>
-              {b.story && (
-                <span className={styles.story}>
-                  {b.story.length > 110 ? `${b.story.slice(0, 110)}…` : b.story}
-                </span>
-              )}
               <span className={styles.price}>
                 ${Number(b.price).toFixed(2)}
               </span>
@@ -89,9 +84,8 @@ export default function EnsemblesPage() {
         <p className={styles.eyebrow}>Custom Combinations</p>
         <h1 className={styles.title}>Ensembles</h1>
         <p className={styles.sub}>
-          Corset, stockings, garter, panties — composed as one gesture and
-          sold as a set. One order, one number in the archive, and the duties
-          travel together.
+          Lady Luxe Signature Collections — hand-chosen arrangements,
+          masterfully selected for their unrivaled opulence and elegance.
         </p>
         <Suspense
           fallback={

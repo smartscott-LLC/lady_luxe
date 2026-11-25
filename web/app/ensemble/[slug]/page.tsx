@@ -94,6 +94,9 @@ function EnsembleView({ bundle }: { bundle: Bundle }) {
                 sku={bundle.sku}
                 name={bundle.name}
                 price={bundle.price}
+                image={
+                  (bundle.media ?? []).find((m) => m.type === "image")?.url
+                }
               />
             </div>
           </div>

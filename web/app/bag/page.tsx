@@ -58,7 +58,9 @@ export default function BagPage() {
         const row = bySku.get(l.sku);
         const wholesale = row ? Number(row.wholesale_cost) : l.price;
         const media = Array.isArray(row?.media) ? row.media : [];
-        const image = media.find((m: any) => m.type === "image")?.url;
+        const image = row
+          ? media.find((m: any) => m.type === "image")?.url
+          : l.image;
         return {
           ...l,
           price: Math.round(wholesale * RETAIL_MARKUP * 100) / 100,
