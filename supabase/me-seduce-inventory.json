@@ -1,0 +1,166 @@
+[
+ {
+  "sku": "MEKAIRBLACK-G",
+  "title": "Me Seduce Kair Black",
+  "trade": 40.23,
+  "shots": [
+   "me_seduce_kair_front.jpg",
+   "me_seduce_kair_front_closeup.jpg",
+   "me_seduce_kair_back_closeup.jpg"
+  ],
+  "verdict": "ok"
+ },
+ {
+  "sku": "MEDEMI-G",
+  "title": "Me Seduce Me Seduce Demi Black",
+  "trade": 36.22,
+  "shots": [
+   "demi_2.jpg"
+  ],
+  "verdict": "ok"
+ },
+ {
+  "sku": "MEDEBBYSHORT-G",
+  "title": "Debby Short Black",
+  "trade": 34.86,
+  "shots": [
+   "me_debby_short02.jpg",
+   "me_debby_short.jpg"
+  ],
+  "verdict": "ok"
+ },
+ {
+  "sku": "MEDEBBY-G",
+  "title": "Me Seduce Me Seduce Debby Black",
+  "trade": 34.12,
+  "shots": [
+   "debby_1.jpg",
+   "debby_back_1.jpg"
+  ],
+  "verdict": "ok"
+ },
+ {
+  "sku": "MEDOTTYSETBLACK-G",
+  "title": "Dotty Set Black",
+  "trade": 33.99,
+  "shots": [
+   "me_dotty_set_black-scaled.jpg",
+   "me_dotty_set_black02.jpg",
+   "me_dotty_set_white03_2-scaled.jpg"
+  ],
+  "verdict": "ok"
+ },
+ {
+  "sku": "MEATARBLACK-G",
+  "title": "Me Seduce Atar Black",
+  "trade": 33.01,
+  "shots": [
+   "me_seduce_Atar.jpg",
+   "me_seduce_atar_back.jpg",
+   "Me_seduce_atar_back_closeup.jpg"
+  ],
+  "verdict": "ok"
+ },
+ {
+  "sku": "MEDORIS-G",
+  "title": "Me Seduce Me Seduce Doris Black",
+  "trade": 32.82,
+  "shots": [
+   "doris_1.jpg",
+   "doris_back_1.jpg"
+  ],
+  "verdict": "ok"
+ },
+ {
+  "sku": "MEDOTTYSETRED-G",
+  "title": "Dotty Set Red",
+  "trade": 30.7,
+  "shots": [
+   "me_dotty_set_red-scaled.jpg",
+   "me_dotty_set_red02.jpg",
+   "me_dotty_set_white03_1-scaled.jpg"
+  ],
+  "verdict": "ok"
+ },
+ {
+  "sku": "MEISABELLAREDSET-G",
+  "title": "Isabella Set Red",
+  "trade": 30.41,
+  "shots": [
+   "isabella_set_red_1.jpg"
+  ],
+  "verdict": "ok"
+ },
+ {
+  "sku": "MEJADEBODYBLACK-G",
+  "title": "Jade Body Black",
+  "trade": 29.03,
+  "shots": [
+   "me_jade_body-scaled.jpg",
+   "me_jade_body02.jpg",
+   "me_jade_body03-scaled.jpg"
+  ],
+  "verdict": "ok"
+ },
+ {
+  "sku": "MEIMANEBLACK-G",
+  "title": "Imane Black",
+  "trade": 28.22,
+  "shots": [
+   "me_imane_black-scaled.jpg",
+   "me_imane_black02.jpg"
+  ],
+  "verdict": "ok"
+ },
+ {
+  "sku": "MEIMANERED-G",
+  "title": "Imane Red",
+  "trade": 28.22,
+  "shots": [
+   "me_imane_red-scaled.jpg",
+   "me_imane_red02.jpg"
+  ],
+  "verdict": "ok"
+ },
+ {
+  "sku": "MEDOTTYSETWHITE-G",
+  "title": "Dotty Set White",
+  "trade": 28.0,
+  "shots": [
+   "me_dotty_set_white-scaled.jpg",
+   "me_dotty_set_white02.jpg",
+   "me_dotty_set_white03-scaled.jpg"
+  ],
+  "verdict": "ok"
+ },
+ {
+  "sku": "MEBABETTESET-G",
+  "title": "Babette Set",
+  "trade": 25.08,
+  "shots": [
+   "babette_black_back_1.jpg",
+   "babette_black_1.jpg"
+  ],
+  "verdict": "ok"
+ },
+ {
+  "sku": "MEZULMIRABLACK-G",
+  "title": "Me Seduce Zulmira Set Black",
+  "trade": 23.64,
+  "shots": [
+   "zulmira_black_web1.jpg",
+   "zulmira-black-set-back.jpg"
+  ],
+  "verdict": "ok"
+ },
+ {
+  "sku": "MEZULMIRARED-G",
+  "title": "Me Seduce Zulmira Set Red",
+  "trade": 23.64,
+  "shots": [
+   "zulmira_red_web1.jpg",
+   "Zulmira-red-set-back.jpg"
+  ],
+  "verdict": "ok"
+ }
+]

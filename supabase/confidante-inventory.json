@@ -1,0 +1,90 @@
+[
+ {
+  "sku": "CONDEVILBRA-G",
+  "title": "Confidante Devil Bra",
+  "trade": 34.08,
+  "shots": [
+   "condevilbra03.jpg",
+   "condevilbra-scaled.jpg",
+   "condevilbra02.jpg"
+  ],
+  "verdict": "ok"
+ },
+ {
+  "sku": "CONAMBERMOON3BRA-G",
+  "title": "Confidante Amber Moon 3 Bra",
+  "trade": 31.81,
+  "shots": [
+   "conambermoon3bra06.jpg",
+   "conambermoonbraback_1-scaled.jpg",
+   "ambermoon_bra_string_back_wb_1.jpg"
+  ],
+  "verdict": "ok"
+ },
+ {
+  "sku": "CONAMBERMOON2BRA-G",
+  "title": "Confidante Amber Moon 2 Bra",
+  "trade": 31.81,
+  "shots": [
+   "conambermoon2bra04.jpg",
+   "ambermoon2_bra_brief_wb_1.jpg",
+   "conambermoon2bra.jpg"
+  ],
+  "verdict": "ok"
+ },
+ {
+  "sku": "CONFORYOUNGPUSH-G",
+  "title": "Confidante Forever Young Push Up Bra",
+  "trade": 31.81,
+  "shots": [
+   "foreveryoung_pushup_bra_closeup_1.jpg",
+   "foreveryoung_pushup_bra_thong_1.jpg",
+   "conforyoungblackpush02.jpg"
+  ],
+  "verdict": "ok"
+ },
+ {
+  "sku": "CONFORYOUNGSOFT-G",
+  "title": "Confidante Forever Young Soft Bra",
+  "trade": 29.54,
+  "shots": [
+   "conforyoungblacksoft03.jpg",
+   "conforyoungsoftbrablack.jpg",
+   "conforyoungsoftbrablack02-scaled.jpg"
+  ],
+  "verdict": "ok"
+ },
+ {
+  "sku": "CONFORYOUNGREDSOFTCUP-G",
+  "title": "Confidante Forever Young Bra Red",
+  "trade": 29.54,
+  "shots": [
+   "conforeveryoung_red_1.jpg",
+   "conforeveryoung_red12.jpg",
+   "conforeveryoung_red04.jpg"
+  ],
+  "verdict": "ok"
+ },
+ {
+  "sku": "CONOPIUMBRA-G",
+  "title": "Confidante Opium Bra",
+  "trade": 27.27,
+  "shots": [
+   "conopiumbra03.jpg",
+   "conopiumbra.jpg",
+   "conopiumbra02.jpg"
+  ],
+  "verdict": "ok"
+ },
+ {
+  "sku": "CONCOOLGIRLBLACKSOFTCUP-G",
+  "title": "Confidante Cool Girl Bra",
+  "trade": 24.91,
+  "shots": [
+   "concoolgirl_black03.jpg",
+   "concoolgirl_black06-scaled.jpg",
+   "concoolgirl_black04.jpg"
+  ],
+  "verdict": "ok"
+ }
+]
