@@ -5,6 +5,7 @@ import "./globals.css";
 import SiteHeader, { SiteHeaderFallback } from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import LuxeRuntime from "@/components/LuxeRuntime";
+import BackToTop from "@/components/BackToTop";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.ladyluxeclub.com"),
@@ -100,6 +101,7 @@ export default function RootLayout({
         </Suspense>
         {children}
         <SiteFooter />
+        <BackToTop />
         {/* Kit vendor bundle — jQuery → Popper → Bootstrap → Headroom → kit init.
             The Lady Luxe engine is loaded by <LuxeRuntime /> (single owner). */}
         <Script src="/js/kit.bundle.js" strategy="afterInteractive" />
