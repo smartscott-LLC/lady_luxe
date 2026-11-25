@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./TurntablePlayer.module.css";
 
 export type TurntablePose = {
@@ -40,11 +40,19 @@ export default function TurntablePlayer({
   const [portrait, setPortrait] = useState(false);
 
   // vertical films (the ensembles' owner footage) get a taller, narrower
-  // stage so nothing is cropped — the head stays in frame
-  const onMeta = () => {
+  // stage so nothing is cropped — the head stays in frame. The metadata
+  // may already be loaded before hydration (the browser starts pulling
+  // it during HTML parse), so check on mount as well as on the event.
+  useEffect(() => {
     const v = videoRef.current;
-    if (v && v.videoHeight > v.videoWidth) setPortrait(true);
-  };
+    if (!v) return;
+    const check = () => {
+      if (v.videoHeight > v.videoWidth) setPortrait(true);
+    };
+    check();
+    v.addEventListener("loadedmetadata", check);
+    return () => v.removeEventListener("loadedmetadata", check);
+  }, []);
 
   const play = () => {
     videoRef.current?.play().catch(() => {});
@@ -75,7 +83,6 @@ export default function TurntablePlayer({
           playsInline
           preload="metadata"
           poster={poster}
-          onLoadedMetadata={onMeta}
           onMouseEnter={play}
           onMouseLeave={pause}
         >

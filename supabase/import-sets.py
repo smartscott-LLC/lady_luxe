@@ -44,7 +44,7 @@ def fetch(url):
 
 
 def upload_bytes(data: bytes, dest: str, ctype: str) -> str:
-    bucket = "videos" if dest.startswith("videos/") else "images"
+    bucket = "videos" if ctype.startswith("video/") else "images"
     req = urllib.request.Request(
         f"{URL}/storage/v1/object/{bucket}/{dest}",
         data=data, method="POST",
