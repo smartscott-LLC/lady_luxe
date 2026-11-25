@@ -321,6 +321,28 @@ The engine's job: take paid orders → emit the AlterEgo cart-upload CSV
 quantity", size-encoded SKUs) → generate the Lady Luxe invoice for the
 parcel upload. Size charts per brand: `alterego-size-guides.zip` (JPGs).
 
+**The Gift Presentation (owner's two-tier fulfilment, on hold until the
+store's revenue funds it — stock ~$2,000)**: standard orders drop-ship
+direct from AlterEgo (above). GIFT-SET orders route through the owner:
+AlterEgo ships to the OWNER's address (the engine flags gift orders and
+sets the upload's ship-to), the owner prepares the presentation and
+re-ships, adding ~1 week to delivery. The presentation kit (offered at
+a premium price):
+- Matte Black Rigid Gift Boxes — two-piece lift-off lid, gold foil
+  stamping, burgundy satin ribbon closures
+- Luxury Euro Tote Shopping Bags — heavyweight black paper, gold foil
+  logo, burgundy grosgrain/satin ribbon handles
+- Custom Monogram Tissue Paper — white/cream tissue, repeating gold
+  metallic LL monogram
+- Foil-Stamped Stationery Suite — burgundy textured cards, gold foil
+  logos, black envelopes, gold-foiled letterhead
+- Embossed Gold Wax Seal Stickers — self-adhesive metallic gold faux-wax
+  seals with the LL monogram (500-count; faster and more consistent
+  than hand-poured wax)
+Checkout implications when launched: a gift-presentation add-on with
+the ~1-week handling note, the gift flag on the order, and the
+AlterEgo ship-to pointed at the owner.
+
 
 
 1. Read this file + `git log --oneline -20`.
