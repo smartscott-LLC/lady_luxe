@@ -63,12 +63,14 @@ function cents(usd: number): number {
 
 interface CartItem {
   sku: string;
+  variant?: string;
   quantity: number;
 }
 
 interface PricedLine {
   product_id: string;
   sku: string;
+  variant?: string | null;
   name: string;
   unit_price: number;
   quantity: number;
@@ -126,6 +128,7 @@ Deno.serve(async (req: Request) => {
       priced.push({
         product_id: row.id,
         sku: row.sku,
+        variant: item.variant ?? null,
         name: row.name,
         unit_price: unit,
         quantity: qty,

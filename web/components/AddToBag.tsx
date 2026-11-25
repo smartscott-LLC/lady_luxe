@@ -1,40 +1,76 @@
 "use client";
 
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { ttTrack } from "@/lib/tiktok";
 import { gaEvent, gaItem } from "@/lib/ga";
 
 const CART_KEY = "lady-luxe-cart";
 
+export type SizeOption = { sku: string; size: string };
+
 /**
  * Adds the product to the persistent bag (localStorage) and routes to
- * /checkout. Pricing is display-only here; the checkout Edge Function
- * re-prices server-side from the database.
+ * /bag. Pricing is display-only here; the checkout Edge Function
+ * re-prices server-side from the database. When the piece carries size
+ * variants, a size is required — the chosen variant SKU rides in the
+ * cart line and is what the AlterEgo upload fulfils.
  */
 export default function AddToBag({
   sku,
   name,
   price,
+  sizes,
 }: {
   sku: string;
   name: string;
   price: number;
+  sizes?: SizeOption[];
 }) {
   const router = useRouter();
+  const [sizeSku, setSizeSku] = useState<string | null>(null);
+  const needsSize = !!sizes?.length;
+  const chosen = sizes?.find((s) => s.sku === sizeSku) ?? null;
 
   const add = () => {
+    if (needsSize && !chosen) return;
     try {
       const raw = localStorage.getItem(CART_KEY);
-      const cart: { sku: string; name: string; price: number; quantity: number }[] =
-        raw ? JSON.parse(raw) : [];
-      const existing = cart.find((l) => l.sku === sku);
+      const cart: {
+        sku: string;
+        variant?: string;
+        size?: string;
+        name: string;
+        price: number;
+        quantity: number;
+      }[] = raw ? JSON.parse(raw) : [];
+      const existing = cart.find(
+        (l) => l.sku === sku && l.variant === (chosen?.sku ?? ""),
+      );
       if (existing) existing.quantity += 1;
-      else cart.push({ sku, name, price, quantity: 1 });
+      else
+        cart.push({
+          sku,
+          variant: chosen?.sku,
+          size: chosen?.size,
+          name,
+          price,
+          quantity: 1,
+        });
       localStorage.setItem(CART_KEY, JSON.stringify(cart));
     } catch {
       localStorage.setItem(
         CART_KEY,
-        JSON.stringify([{ sku, name, price, quantity: 1 }]),
+        JSON.stringify([
+          {
+            sku,
+            variant: chosen?.sku,
+            size: chosen?.size,
+            name,
+            price,
+            quantity: 1,
+          },
+        ]),
       );
     }
     ttTrack("AddToCart", {
@@ -48,14 +84,38 @@ export default function AddToBag({
     gaEvent("add_to_cart", {
       currency: "USD",
       value: price,
-      items: [gaItem({ id: sku, name, quantity: 1, price })],
+      items: [gaItem({ id: chosen?.sku ?? sku, name, quantity: 1, price })],
     });
     router.push("/bag");
   };
 
   return (
-    <button className="add-to-bag" type="button" onClick={add}>
-      Add to bag
-    </button>
+    <div className="add-to-bag-wrap">
+      {needsSize && (
+        <select
+          className="add-to-bag-size"
+          value={sizeSku ?? ""}
+          onChange={(e) => setSizeSku(e.target.value || null)}
+          aria-label="Choose size"
+        >
+          <option value="" disabled>
+            Choose size
+          </option>
+          {sizes!.map((s) => (
+            <option key={s.sku} value={s.sku}>
+              {s.size}
+            </option>
+          ))}
+        </select>
+      )}
+      <button
+        className="add-to-bag"
+        type="button"
+        onClick={add}
+        disabled={needsSize && !chosen}
+      >
+        {needsSize && !chosen ? "Choose a size" : "Add to bag"}
+      </button>
+    </div>
   );
 }

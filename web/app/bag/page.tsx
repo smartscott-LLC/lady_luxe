@@ -5,7 +5,15 @@ import Link from "next/link";
 import { createClient } from "@/utils/supabase/client";
 import styles from "./bag.module.css";
 
-type CartLine = { sku: string; name: string; price: number; quantity: number };
+type CartLine = {
+  sku: string;
+  variant?: string;
+  size?: string;
+  name: string;
+  price: number;
+  quantity: number;
+};
+type SizeOption = { sku: string; size: string };
 type PricedLine = CartLine & { image?: string; duty_rate: number };
 
 const CART_KEY = "lady-luxe-cart";
@@ -70,9 +78,15 @@ export default function BagPage() {
     localStorage.setItem(CART_KEY, JSON.stringify(next));
   };
 
-  const setQty = (sku: string, qty: number) => {
+  const setQty = (sku: string, variant: string | undefined, qty: number) => {
     if (!lines) return;
-    update(lines.map((l) => (l.sku === sku ? { ...l, quantity: Math.max(0, Math.min(10, qty)) } : l)).filter((l) => l.quantity > 0));
+    const match = (l: CartLine) =>
+      l.sku === sku && (l.variant ?? "") === (variant ?? "");
+    update(
+      lines
+        .map((l) => (match(l) ? { ...l, quantity: Math.max(0, Math.min(10, qty)) } : l))
+        .filter((l) => l.quantity > 0),
+    );
   };
 
   const display = priced ?? [];
@@ -124,14 +138,15 @@ export default function BagPage() {
                 )}
                 <div className={styles.lineInfo}>
                   <p className={styles.lineName}>{l.name}</p>
+                  {l.size && <p className={styles.lineSize}>Size {l.size}</p>}
                   <p className={styles.linePrice}>${l.price.toFixed(2)} USD</p>
                   <div className={styles.qty}>
-                    <button onClick={() => setQty(l.sku, l.quantity - 1)} aria-label="decrease">−</button>
+                    <button onClick={() => setQty(l.sku, l.variant, l.quantity - 1)} aria-label="decrease">−</button>
                     <span className={styles.qtyNum}>{l.quantity}</span>
-                    <button onClick={() => setQty(l.sku, l.quantity + 1)} aria-label="increase">+</button>
+                    <button onClick={() => setQty(l.sku, l.variant, l.quantity + 1)} aria-label="increase">+</button>
                     <button
                       className={styles.remove}
-                      onClick={() => setQty(l.sku, 0)}
+                      onClick={() => setQty(l.sku, l.variant, 0)}
                     >
                       Remove
                     </button>

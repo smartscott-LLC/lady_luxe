@@ -18,11 +18,15 @@ const PREFIXES: [string, string][] = [
   ["IRALLEROTIC", "Irall Erotic"],
   ["BLACKSECRET", "Black Secret"],
   ["SHIRLEYOFHOLLYWOOD", "Shirley of Hollywood"],
+  ["SOH", "Shirley of Hollywood"],
   ["PROVOCATIVE", "Provocative"],
+  ["PROPR", "Provocative"],
   ["GRACYA", "Gracya"],
   ["IRALL", "Irall"],
   ["ROZA", "Roza"],
   ["YES", "YesX"],
+  ["ME", "Me Seduce"],
+  ["CON", "Confidante"],
 ];
 
 export function brandFromSupplierSku(supplierSku: string): string {

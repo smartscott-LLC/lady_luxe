@@ -142,6 +142,28 @@
   margin: 8px 0 0;
 }
 
+.add-to-bag-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 320px;
+}
+
+.add-to-bag-size {
+  padding: 10px 12px;
+  font: inherit;
+  font-size: 14px;
+  color: var(--ll-cream, #ede7c7);
+  background: rgba(27, 0, 13, 0.5);
+  border: 1px solid var(--ll-gold-25, rgba(212, 175, 55, 0.25));
+  border-radius: 8px;
+  outline: none;
+}
+
+.add-to-bag-size:focus {
+  border-color: var(--ll-gold, #d4af37);
+}
+
 .cta,
 .add-to-bag {
   margin-top: 12px;

@@ -29,6 +29,7 @@ type Product = {
   duty_rate: number;
   media: ProductMedia[] | null;
   story: string | null;
+  sizes: { sku: string; size: string }[] | null;
 };
 
 async function getProduct(slug: string): Promise<Product | null> {
@@ -36,7 +37,7 @@ async function getProduct(slug: string): Promise<Product | null> {
   const { data } = await supabase
     .from("products")
     .select(
-      "sku, name, tag, supplier_sku, wholesale_cost, retail_price, duty_rate, media, story"
+      "sku, name, tag, supplier_sku, wholesale_cost, retail_price, duty_rate, media, story, sizes"
     )
     .eq("sku", decodeURIComponent(slug))
     .eq("status", "live")
@@ -133,7 +134,12 @@ function ProductView({ product }: { product: Product }) {
               <p className={styles.story}>{product.story}</p>
             )}
 
-            <AddToBag sku={product.sku} name={product.name} price={retail} />
+            <AddToBag
+              sku={product.sku}
+              name={product.name}
+              price={retail}
+              sizes={product.sizes ?? undefined}
+            />
             <p className={styles.fine}>
               Duties &amp; import charges are prepaid by Lady Luxe — the price
               above is the price.

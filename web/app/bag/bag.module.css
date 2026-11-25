@@ -64,6 +64,14 @@
   margin-bottom: 0.25rem;
 }
 
+.lineSize {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ll-cream-45);
+  margin: 0;
+}
+
 .linePrice {
   font-size: 0.82rem;
   color: var(--ll-cream-70);

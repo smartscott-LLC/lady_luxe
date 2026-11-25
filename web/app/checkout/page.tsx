@@ -7,7 +7,14 @@ import { ttTrack } from "@/lib/tiktok";
 import { gaEvent, gaItem } from "@/lib/ga";
 import styles from "./checkout.module.css";
 
-type CartLine = { sku: string; name: string; price: number; quantity: number };
+type CartLine = {
+  sku: string;
+  variant?: string;
+  size?: string;
+  name: string;
+  price: number;
+  quantity: number;
+};
 type OrderResult = {
   order_id: string;
   total: number;
@@ -161,9 +168,11 @@ export default function CheckoutPage() {
   const subtotal = cart.reduce((s, l) => s + l.price * l.quantity, 0);
   const shipping = subtotal >= 150 || subtotal === 0 ? 0 : 9.95;
 
-  const setQty = (sku: string, quantity: number) => {
+  const setQty = (sku: string, variant: string | undefined, quantity: number) => {
+    const match = (l: CartLine) =>
+      l.sku === sku && (l.variant ?? "") === (variant ?? "");
     const next = cart
-      .map((l) => (l.sku === sku ? { ...l, quantity } : l))
+      .map((l) => (match(l) ? { ...l, quantity } : l))
       .filter((l) => l.quantity > 0);
     setCart(next);
     localStorage.setItem(CART_KEY, JSON.stringify(next));
@@ -201,6 +210,7 @@ export default function CheckoutPage() {
             paymentToken: tokenize.token,
             items: cart.map((l) => ({
               sku: l.sku,
+              variant: l.variant,
               quantity: l.quantity,
             })),
           }),
@@ -285,15 +295,16 @@ export default function CheckoutPage() {
                 <div key={l.sku} className={styles.line}>
                   <div>
                     <p className={styles.lineName}>{l.name}</p>
+                    {l.size && <p className={styles.lineVariant}>Size {l.size}</p>}
                     <p className={styles.linePrice}>
                       ${l.price.toFixed(2)} × {l.quantity}
                     </p>
                   </div>
                   <div className={styles.qty}>
-                    <button onClick={() => setQty(l.sku, l.quantity - 1)}>
+                    <button onClick={() => setQty(l.sku, l.variant, l.quantity - 1)}>
                       −
                     </button>
-                    <button onClick={() => setQty(l.sku, l.quantity + 1)}>
+                    <button onClick={() => setQty(l.sku, l.variant, l.quantity + 1)}>
                       +
                     </button>
                   </div>
