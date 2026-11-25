@@ -124,6 +124,9 @@ export default function BagPage() {
   return (
     <main className={styles.page}>
       <div className={styles.inner}>
+        <Link href="/" className={styles.back}>
+          ← Continue Browsing
+        </Link>
         <h1 className={styles.title}>Your Bag</h1>
 
         <div className={styles.grid}>

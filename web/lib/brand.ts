@@ -71,7 +71,9 @@ export function supplierPrefixForBrand(brand: string): string | null {
   return null;
 }
 
-/** Rest lookup for a brand: prefix like (most) or exact SKUs (Irall Erotic). */
+/** Rest lookup for a brand: prefix like (most) or exact SKUs (Irall Erotic).
+    The query prefixes are the FEED's SKU forms — SOH… for Shirley of
+    Hollywood and PROPR… for Provocative — not the long-form legacy prefixes. */
 export function brandSkuLookup(brand: string): {
   mode: "prefix" | "exact";
   values: string[];
@@ -79,6 +81,10 @@ export function brandSkuLookup(brand: string): {
   if (brand === "Irall Erotic") {
     return { mode: "exact", values: [...IRALL_EROTIC_SKUS] };
   }
-  const prefix = supplierPrefixForBrand(brand);
+  const overrides: Record<string, string> = {
+    "Shirley of Hollywood": "SOH",
+    "Provocative": "PROPR",
+  };
+  const prefix = overrides[brand] ?? supplierPrefixForBrand(brand);
   return prefix ? { mode: "prefix", values: [prefix] } : { mode: "prefix", values: [brand.toUpperCase()] };
 }

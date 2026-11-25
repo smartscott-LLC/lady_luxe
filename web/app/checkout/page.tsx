@@ -278,6 +278,9 @@ export default function CheckoutPage() {
   return (
     <main className={styles.page}>
       <div className={styles.inner}>
+        <Link href="/bag" className={styles.back}>
+          ← Back to the Bag
+        </Link>
         <p className={styles.eyebrow}>Lady Luxe · Secure Checkout</p>
         <h1 className={styles.title}>Checkout</h1>
 

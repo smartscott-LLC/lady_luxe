@@ -10,6 +10,21 @@
   margin: 0 auto;
 }
 
+.back {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ll-cream-45);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.back:hover {
+  color: var(--ll-gold);
+}
+
 .title {
   font-family: var(--ll-font-display);
   font-weight: 400;

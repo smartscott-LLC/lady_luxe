@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { createClient } from "@/utils/supabase/server";
 import { brandFromSupplierSku, brandSlug } from "@/lib/brand";
-import TurntablePlayer, { TurntableMedia } from "@/components/TurntablePlayer";
+import ProductGallery from "@/components/ProductGallery";
 import AddToBag from "@/components/AddToBag";
 import styles from "./product.module.css";
 
@@ -48,9 +48,6 @@ async function getProduct(slug: string): Promise<Product | null> {
 function ProductView({ product }: { product: Product }) {
   const media = Array.isArray(product.media) ? product.media : [];
   const images = media.filter((m) => m.type === "image" && m.url);
-  const turntable = media.find(
-    (m) => m.type === "turntable" && m.mp4
-  ) as TurntableMedia | undefined;
   const retail = Number(product.retail_price) || Number(product.wholesale_cost) * RETAIL_MARKUP;
   const brand = brandFromSupplierSku(product.supplier_sku);
 
@@ -95,24 +92,7 @@ function ProductView({ product }: { product: Product }) {
 
         <div className={styles.grid}>
           <div className={styles.stageColumn}>
-            {turntable && turntable.mp4 ? (
-              <TurntablePlayer
-                mp4={turntable.mp4}
-                webm={turntable.webm}
-                poster={turntable.poster ?? images[0]?.url}
-                poses={turntable.poses ?? []}
-                alt={`${product.name} — 360° turntable`}
-              />
-            ) : (
-              images[0]?.url && (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  className={styles.hero}
-                  src={images[0].url}
-                  alt={images[0].alt ?? product.name}
-                />
-              )
-            )}
+            <ProductGallery media={product.media ?? []} name={product.name} />
           </div>
 
           <div className={styles.infoColumn}>
