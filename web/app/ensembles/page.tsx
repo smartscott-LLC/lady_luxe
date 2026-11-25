@@ -41,15 +41,14 @@ async function EnsemblesCollection() {
           const film = media.find((m: any) => m.type === "turntable" && m.mp4);
           const pieces = b.bundle_items?.[0]?.count ?? 0;
           return (
-            <Link key={b.sku} href={`/ensemble/${b.sku}`} className="ll-video-card">
+            <Link key={b.sku} href={`/ensemble/${b.sku}`} className={`ll-video-card ${styles.card}`}>
               <div className={styles.cardMedia}>
                 {film ? (
                   <video
-                    className={styles.image}
                     muted
                     loop
                     playsInline
-                    preload="none"
+                    preload="metadata"
                     poster={img}
                   >
                     <source src={film.mp4} type="video/mp4" />
