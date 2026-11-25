@@ -294,7 +294,34 @@ Turntable Studio (localhost:3002) ──spawns──▶ generate_turntable.py �
   poster-gown, portrait-back-corset, story-robe. Deploys: Vercel
   (smartscott-LLC, auto on push); production = www.ladyluxeclub.com.
 
-## Session resume checklist
+## AlterEgo drop-ship & fulfilment (supplier facts, Nov 25)
+
+The full AlterEgo feed + stock file live at alterego-lingerie.com/resource/
+{full-xml,stock-xml}/DDWdFw9Y7Ozd8OJDsFJJHL3NkudyWe (12.6MB / 2.1MB).
+**Drop-shipping is confirmed**: AlterEgo dispatches direct to the customer
+in plain discreet boxes with NO AlterEgo reference — and uploads the
+seller's own invoice/note into the parcel (uploaded at order time).
+Standard orders therefore never route through the owner; only the custom
+gift-wrap option (future) is hand-packed.
+
+Key facts: same-day dispatch for orders before 1pm UK Mon–Fri · 40k SKUs
+in stock, no minimum order · delivery £5 UK / £11.99 EU / £14.99 RoW ·
+Royal Mail (24h/48h tracked, 1st class signed, Special Delivery), DPD
+(UK next day, EU), FedEx (Intl Economy/Priority) · tracking email per
+dispatch · pay GBP/EUR/USD, PayPal, bank, cards · CSV + XML feeds for
+stock/product automation · free use of their images and video media for
+the seller's own site · fault rate < 0.001% · contact
+customerservices@alterego-lingerie.com, +44 1482 623934, Mon–Fri 9–17 BST.
+
+**Order engine (future)**: the checkout already records everything it
+needs — product lines carry the size-encoded supplier SKU (`variant`),
+ensemble lines carry the `bundle_id` (pieces derive from bundle_items).
+The engine's job: take paid orders → emit the AlterEgo cart-upload CSV
+(template: `alterego_cart_upload_template.csv` — "Item SKU,Item
+quantity", size-encoded SKUs) → generate the Lady Luxe invoice for the
+parcel upload. Size charts per brand: `alterego-size-guides.zip` (JPGs).
+
+
 
 1. Read this file + `git log --oneline -20`.
 2. Check what's running: `ss -tlnp | grep -E '3000|3002'` (3000 storefront dev,

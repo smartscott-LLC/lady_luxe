@@ -117,6 +117,7 @@ function ProductView({
             <div className={styles.badges}>
               <span className={styles.badge}>Duties prepaid</span>
               <span className={styles.badge}>Ships discreetly</span>
+              <span className={styles.badge}>Dispatched in 24h</span>
             </div>
 
             {product.story && (
@@ -131,7 +132,9 @@ function ProductView({
             />
             <p className={styles.fine}>
               Duties &amp; import charges are prepaid by Lady Luxe — the price
-              above is the price.
+              above is the price. Orders dispatch within 24 hours (weekdays),
+              tracked worldwide, in discreet packaging with no reference to
+              any supplier.
             </p>
           </div>
         </div>
