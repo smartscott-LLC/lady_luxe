@@ -136,7 +136,7 @@
 }
 
 .story {
-  color: var(--ll-cream-70, rgba(237, 231, 199, 0.7));
+  color: var(--ll-cream, #ede7c7);
   line-height: 1.7;
   max-width: 52ch;
   margin: 8px 0 0;
@@ -221,7 +221,7 @@
 
 .fine {
   font-size: 12px;
-  color: var(--ll-cream-45, rgba(237, 231, 199, 0.45));
+  color: var(--ll-cream-70, rgba(237, 231, 199, 0.7));
   max-width: 46ch;
 }
 
