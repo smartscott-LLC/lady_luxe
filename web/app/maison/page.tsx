@@ -12,16 +12,19 @@ const MOTTO =
 const DISCIPLINES = [
   {
     title: "The Ensembles",
+    href: "/ensembles",
     art: "/brand/imagery/corset-line-refined.webp",
     copy: "Corset, stockings, gloves — composed as one gesture. The house dresses the whole look, so you never have to assemble it. Each ensemble is styled from a single point of view, not assembled from a catalog.",
   },
   {
     title: "Numbered & Archived",
+    href: "/ensembles",
     art: "/brand/imagery/seal-numbered.webp",
     copy: "Every ensemble is numbered on release and entered in the house record. When the number is gone, it's gone. The archive is the promise: what you buy is documented, what is documented is real.",
   },
   {
     title: "The Circle",
+    href: "/club",
     art: "/brand/imagery/monogram-gold.webp",
     copy: "Members of the Circle see each release first — early access, private pricing, and first refusal on numbered pieces. Membership is free; the only requirement is a name and an email.",
   },
@@ -63,11 +66,11 @@ export default function MaisonPage() {
         <div className="row mb-5">
           {DISCIPLINES.map((card) => (
             <div className="col-md-4 mb-4 mb-md-0" key={card.title}>
-              <article className="ll-journal-card h-100">
+              <Link href={card.href} className="ll-journal-card d-block h-100">
                 <img className="ll-discipline-art" src={card.art} alt="" loading="lazy" />
                 <h3 className="ll-felipa h5">{card.title}</h3>
                 <p>{card.copy}</p>
-              </article>
+              </Link>
             </div>
           ))}
         </div>

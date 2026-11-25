@@ -180,6 +180,20 @@ function HeaderNav({ pathname }: { pathname: string | null }) {
     setDrawer(null);
   }, [pathname]);
 
+  // any CTA on the page can open a drawer (the hero's Explore the
+  // Collection, for one) via the ll-open-drawer event
+  useEffect(() => {
+    const open = (e: Event) => {
+      const id = (e as CustomEvent).detail?.drawer;
+      if (id === "intimates" || id === "brands" || id === "club") {
+        closeMenu();
+        setDrawer(id);
+      }
+    };
+    window.addEventListener("ll-open-drawer", open);
+    return () => window.removeEventListener("ll-open-drawer", open);
+  }, []);
+
   return (
     <header className="header-global">
       <nav

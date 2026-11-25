@@ -8,6 +8,7 @@ import HeroVideo from "@/components/HeroVideo";
 import FeaturedCarousel, { FeaturedItem } from "@/components/FeaturedCarousel";
 import BrandMarquee from "@/components/BrandMarquee";
 import LuxeStreamBind from "@/components/LuxeStreamBind";
+import OpenDrawerButton from "@/components/OpenDrawerButton";
 import { BRAND_ORDER, brandSlug } from "@/lib/brand";
 
 export const metadata = {
@@ -47,16 +48,19 @@ const MOTTO =
 const MAISON = [
   {
     title: "The Ensembles",
+    href: "/ensembles",
     art: "/brand/imagery/corset-line-refined.webp",
     copy: "Corset, stockings, gloves — composed as one gesture. The house dresses the whole look, so you never have to assemble it.",
   },
   {
     title: "Numbered & Archived",
+    href: "/ensembles",
     art: "/brand/imagery/seal-numbered.webp",
     copy: "Every ensemble is numbered on release and entered in the house record. When the number is gone, it's gone.",
   },
   {
     title: "The Circle",
+    href: "/club",
     art: "/brand/imagery/monogram-gold.webp",
     copy: "Members of the Circle see each release first. Sign-ups are open — membership is free, always.",
   },
@@ -187,9 +191,12 @@ export default function Home() {
               Every piece is chosen, composed and numbered by the house — ensembles made for
               rooms with low light and long memories.
             </p>
-            <Link href="#collection" className="ll-btn ll-btn--solid mr-3 mb-3 mb-md-0">
+            <OpenDrawerButton
+              drawer="intimates"
+              className="ll-btn ll-btn--solid mr-3 mb-3 mb-md-0"
+            >
               Explore the Collection
-            </Link>
+            </OpenDrawerButton>
             <Link href="/maison" className="ll-btn mb-3 mb-md-0">
               The Maison
             </Link>
@@ -269,11 +276,11 @@ export default function Home() {
           <div className="row">
             {MAISON.map((card) => (
               <div className="col-md-4 mb-4 mb-md-0" key={card.title}>
-                <article className="ll-journal-card">
+                <Link href={card.href} className="ll-journal-card d-block">
                   <img className="ll-discipline-art" src={card.art} alt="" loading="lazy" />
                   <h3 className="ll-felipa h5">{card.title}</h3>
                   <p>{card.copy}</p>
-                </article>
+                </Link>
               </div>
             ))}
           </div>
