@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ttTrack } from "@/lib/tiktok";
 import { gaEvent, gaItem } from "@/lib/ga";
+import { fbqTrack, fbContent } from "@/lib/meta";
 import styles from "./checkout.module.css";
 
 type CartLine = {
@@ -109,6 +110,13 @@ export default function CheckoutPage() {
         currency: "USD",
         value: lines.reduce((s, l) => s + l.price * l.quantity, 0),
         items,
+      });
+      fbqTrack("InitiateCheckout", {
+        content_ids: lines.map((l) => l.variant ?? l.sku),
+        content_type: "product",
+        value: lines.reduce((s, l) => s + l.price * l.quantity, 0),
+        currency: "USD",
+        num_items: lines.reduce((s, l) => s + l.quantity, 0),
       });
     }
     setLoaded(true);
@@ -241,6 +249,12 @@ export default function CheckoutPage() {
         currency: "USD",
         value: data.total,
         items,
+      });
+      fbqTrack("Purchase", {
+        value: data.total,
+        currency: "USD",
+        contents: cart.map((l) => fbContent({ id: l.variant ?? l.sku, quantity: l.quantity })),
+        num_items: cart.reduce((s, l) => s + l.quantity, 0),
       });
     } catch (err) {
       setStatus("ready");

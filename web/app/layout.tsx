@@ -71,6 +71,16 @@ export default function RootLayout({
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
+        {/* Meta Pixel (2270741986825617) — no-JS fallback */}
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none", visibility: "hidden" }}
+            src="https://www.facebook.com/tr?id=2270741986825617&ev=PageView&noscript=1"
+            alt=""
+          />
+        </noscript>
         {/* Organization structured data — house identity for the index */}
         <script
           type="application/ld+json"
@@ -116,6 +126,19 @@ export default function RootLayout({
         />
         <Script id="ga4" strategy="afterInteractive">
           {`window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-Z5RTHM0XWR');`}
+        </Script>
+        {/* Meta Pixel (2270741986825617) — base code */}
+        <Script id="meta-pixel" strategy="afterInteractive">
+          {`!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2270741986825617');
+fbq('track', 'PageView');`}
         </Script>
         {/* TikTok Pixel — base code (Events Manager, "tiktok_pixel") */}
         <Script id="tiktok-pixel" strategy="afterInteractive">

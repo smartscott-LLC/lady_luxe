@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { ttTrack } from "@/lib/tiktok";
 import { gaEvent, gaItem } from "@/lib/ga";
+import { fbqTrack, fbContent } from "@/lib/meta";
 
 const CART_KEY = "lady-luxe-cart";
 
@@ -33,6 +34,19 @@ export default function AddToBag({
   const [sizeSku, setSizeSku] = useState<string | null>(null);
   const needsSize = !!sizes?.length;
   const chosen = sizes?.find((s) => s.sku === sizeSku) ?? null;
+
+  // Meta ViewContent fires when the piece is on the page
+  useEffect(() => {
+    import("@/lib/meta").then(({ fbqTrack }) =>
+      fbqTrack("ViewContent", {
+        content_ids: [sku],
+        content_name: name,
+        content_type: "product",
+        value: price,
+        currency: "USD",
+      }),
+    );
+  }, [sku, name, price]);
 
   const add = () => {
     if (needsSize && !chosen) return;
@@ -90,6 +104,13 @@ export default function AddToBag({
       currency: "USD",
       value: price,
       items: [gaItem({ id: chosen?.sku ?? sku, name, quantity: 1, price })],
+    });
+    fbqTrack("AddToCart", {
+      content_ids: [chosen?.sku ?? sku],
+      content_name: name,
+      content_type: "product",
+      value: price,
+      currency: "USD",
     });
     router.push("/bag");
   };
