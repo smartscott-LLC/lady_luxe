@@ -125,14 +125,18 @@ def compose_prompt(piece_names):
     for i, kind in enumerate(kinds):
         refs.append(f"the {order_words[i]} image supplies {kind}")
     garment_list = ", ".join(kinds[:-1]) + (f" and {kinds[-1]}" if len(kinds) > 1 else kinds[0])
+    legs = ""
+    if "the sheer chemise" not in kinds and "the stockings" not in kinds:
+        legs = " The suspender straps rest along her thighs and hang free."
     return (
         "TARGET CANVAS: 3:4\n\n"
         f"An editorial lingerie photograph of a model wearing {len(kinds)} {color} lace garments "
         f"shown in the reference images, worn together as one ensemble. "
         + ". ".join(refs)
         + f". The model stands full-body in a three-quarter pose in a dim boudoir with garnet silk "
-        f"drapery and warm candlelight, Vogue lingerie editorial lighting, soft shadows on her skin. "
-        f"Photorealistic with high detail; the garments keep their exact lace, cut, straps and "
+        f"drapery and warm candlelight, Vogue lingerie editorial lighting, soft shadows on her skin."
+        + legs +
+        f" Photorealistic with high detail; the garments keep their exact lace, cut, straps and "
         f"{color} color as shown in the references."
     )
 
