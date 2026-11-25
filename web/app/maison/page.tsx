@@ -78,14 +78,16 @@ export default function MaisonPage() {
         {/* ===================== THE HOUSE EXPERIENCE ===================== */}
         <div className="row justify-content-center mb-4 ll-reveal">
           <div className="col-lg-8 text-center">
-            <p className="ll-eyebrow mb-2">The House Experience</p>
+            <p className="ll-eyebrow mb-2">The Gift Presentation</p>
             <h2 className="ll-script" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.6rem)" }}>
               Cut, wrapped &amp; sealed
             </h2>
             <p className="lead" style={{ color: "var(--ll-cream-70)" }}>
-              Every order leaves the house like this — grosgrain ribbon, the house
-              seal, tissue monogrammed in gold, and the number that says
-              it&rsquo;s yours.
+              Our signature gift presentation — grosgrain ribbon, the house
+              seal, tissue monogrammed in gold — is being prepared for the
+              house, and will be offered as an addition to any order. Until
+              then, every piece travels in its maker&rsquo;s own packaging,
+              dressed just as carefully.
             </p>
           </div>
         </div>
