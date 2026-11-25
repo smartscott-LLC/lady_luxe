@@ -59,7 +59,7 @@ export default function RootLayout({
           href="/vendor/@fortawesome/fontawesome-free/css/all.min.css"
         />
         {/* Combined brand + kit stylesheet: neumorphism → brand → theme (bump v on brand edits) */}
-        <link rel="stylesheet" href="/css/luxe-all.css?v=9" />
+        <link rel="stylesheet" href="/css/luxe-all.css?v=10" />
       </head>
       <body>
         {/* Google Tag Manager — no-JS fallback must sit right after <body> */}

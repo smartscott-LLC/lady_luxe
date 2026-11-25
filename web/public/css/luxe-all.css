@@ -32381,6 +32381,7 @@ article a:hover {
 /* ---- Buttons ----------------------------------------------------------- */
 .ll-btn {
   display: inline-block;
+  vertical-align: top;
   font-family: var(--ll-font-body);
   font-weight: 700;
   font-size: .78rem;

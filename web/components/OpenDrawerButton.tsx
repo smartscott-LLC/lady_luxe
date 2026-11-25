@@ -20,6 +20,12 @@ export default function OpenDrawerButton({
     <button
       type="button"
       className={className}
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+        verticalAlign: "top",
+        lineHeight: "inherit",
+      }}
       onClick={() =>
         window.dispatchEvent(
           new CustomEvent("ll-open-drawer", { detail: { drawer } }),
