@@ -1,0 +1,296 @@
+[
+ {
+  "sku": "LL-SOHX3595BLACK-G",
+  "status": "done",
+  "input": "X3595_Black_1.jpg",
+  "dir": "/home/server/lady_luxe/output/X3595_Black_1_0f50d238",
+  "seam_rms": 2.6143,
+  "spark": 58.1002,
+  "minutes": 5.4
+ },
+ {
+  "sku": "LL-SOHX20559WHITE-G",
+  "status": "done",
+  "input": "x20559_red_back_4.jpg",
+  "dir": "/home/server/lady_luxe/output/x20559_red_back_4_95d2f79a",
+  "seam_rms": 2.4954,
+  "spark": 58.1002,
+  "minutes": 3.6
+ },
+ {
+  "sku": "LL-SOHX26918WHITE-G",
+  "status": "done",
+  "input": "shirley_of_hollywood_x26918-white-A9B6783.jpg",
+  "dir": "/home/server/lady_luxe/output/shirley_of_hollywood_x26918-white-A9B6783_aa651143",
+  "seam_rms": 2.2486,
+  "spark": 58.1002,
+  "minutes": 3.3
+ },
+ {
+  "sku": "LL-SOHXX3489RED-G",
+  "status": "done",
+  "input": "x3489_red_black_3.jpg",
+  "dir": "/home/server/lady_luxe/output/x3489_red_black_3_22b2a414",
+  "seam_rms": 3.0844,
+  "spark": 58.1002,
+  "minutes": 7.8
+ },
+ {
+  "sku": "LL-SOH20559RED-G",
+  "status": "done",
+  "input": "SOH_20559_Red_1.jpg",
+  "dir": "/home/server/lady_luxe/output/SOH_20559_Red_1_50db7d8a",
+  "seam_rms": 2.2432,
+  "spark": 58.1002,
+  "minutes": 2.6
+ },
+ {
+  "sku": "LL-SOH20559WHITE-G",
+  "status": "done",
+  "input": "20559_white_1.jpg",
+  "dir": "/home/server/lady_luxe/output/20559_white_1_8f9e1f98",
+  "seam_rms": 2.6917,
+  "spark": 58.1002,
+  "minutes": 5.4
+ },
+ {
+  "sku": "LL-SOHX3489BLACK-G",
+  "status": "done",
+  "input": "x3489_red_black_1.jpg",
+  "dir": "/home/server/lady_luxe/output/x3489_red_black_1_e3d505f8",
+  "seam_rms": 3.0339,
+  "spark": 58.1002,
+  "minutes": 3.2
+ },
+ {
+  "sku": "LL-SOHX3489RED-G",
+  "status": "done",
+  "input": "x3489_red_black_2.jpg",
+  "dir": "/home/server/lady_luxe/output/x3489_red_black_2_0f9e328f",
+  "seam_rms": 3.3759,
+  "spark": 58.1002,
+  "minutes": 5.7
+ },
+ {
+  "sku": "LL-SOHX3489WHITE-G",
+  "status": "done",
+  "input": "x3489_white_1.jpg",
+  "dir": "/home/server/lady_luxe/output/x3489_white_1_414b0d03",
+  "seam_rms": 3.1161,
+  "spark": 58.1002,
+  "minutes": 3.8
+ },
+ {
+  "sku": "LL-SOHX20559RED-G",
+  "status": "done",
+  "input": "x20559_red_1.jpg",
+  "dir": "/home/server/lady_luxe/output/x20559_red_1_bdb1bddc",
+  "seam_rms": 2.5758,
+  "spark": 58.1002,
+  "minutes": 6.2
+ },
+ {
+  "sku": "LL-SOHX20295BLACK-G",
+  "status": "failed",
+  "input": "10_pink_1",
+  "error": "usage: --input does not exist: \n/home/server/Downloads/catalog/shirley-of-hollywood/10_pink_1\n"
+ },
+ {
+  "sku": "LL-SOHX3595WHITE-G",
+  "status": "done",
+  "input": "x3595_white_2.jpg",
+  "dir": "/home/server/lady_luxe/output/x3595_white_2_888b291f",
+  "seam_rms": 2.3092,
+  "spark": 58.1002,
+  "minutes": 10.1
+ },
+ {
+  "sku": "LL-SOHXX3489BLACK-G",
+  "status": "done",
+  "input": "x3489_redblack_1.jpg",
+  "dir": "/home/server/lady_luxe/output/x3489_redblack_1_30806c16",
+  "seam_rms": 3.4132,
+  "spark": 58.1002,
+  "minutes": 6.1
+ },
+ {
+  "sku": "LL-SOH26965BLACKCORSET-G",
+  "status": "done",
+  "input": "soh_26965_black_back_web2.jpg",
+  "dir": "/home/server/lady_luxe/output/soh_26965_black_back_web2_a1ec7619",
+  "seam_rms": 2.2486,
+  "spark": 58.1002,
+  "minutes": 13.5
+ },
+ {
+  "sku": "LL-SOHX3585WHITE-G",
+  "status": "done",
+  "input": "X3585_white_1.jpg",
+  "dir": "/home/server/lady_luxe/output/X3585_white_1_aef56b26",
+  "seam_rms": 2.9846,
+  "spark": 58.1002,
+  "minutes": 4.5
+ },
+ {
+  "sku": "LL-SOH25953WHITE-G",
+  "status": "done",
+  "input": "25953_white_1.jpg",
+  "dir": "/home/server/lady_luxe/output/25953_white_1_10fc8cfe",
+  "seam_rms": 2.2523,
+  "spark": 58.1002,
+  "minutes": 8.1
+ },
+ {
+  "sku": "LL-SOH25953BLACK-G",
+  "status": "done",
+  "input": "25953blk02.jpg",
+  "dir": "/home/server/lady_luxe/output/25953blk02_459a9213",
+  "seam_rms": 2.7928,
+  "spark": 58.1002,
+  "minutes": 3.4
+ },
+ {
+  "sku": "LL-SOH20300BLACK-G",
+  "status": "done",
+  "input": "20300_black.jpg",
+  "dir": "/home/server/lady_luxe/output/20300_black_bfd48d80",
+  "seam_rms": 2.8848,
+  "spark": 58.1002,
+  "minutes": 4.0
+ },
+ {
+  "sku": "LL-SOH20300BLUE-G",
+  "status": "done",
+  "input": "20300_blue_2.jpg",
+  "dir": "/home/server/lady_luxe/output/20300_blue_2_47714215",
+  "seam_rms": 3.1071,
+  "spark": 58.1002,
+  "minutes": 3.7
+ },
+ {
+  "sku": "LL-SOH20300WHITE-G",
+  "status": "done",
+  "input": "SOH_20300_White_2.jpg",
+  "dir": "/home/server/lady_luxe/output/SOH_20300_White_2_fa2e3023",
+  "seam_rms": 1.8578,
+  "spark": 58.1002,
+  "minutes": 7.2
+ },
+ {
+  "sku": "LL-SOHXX2497BLACK-G",
+  "status": "done",
+  "input": "x2497_black_back_2.jpg",
+  "dir": "/home/server/lady_luxe/output/x2497_black_back_2_7c28b172",
+  "seam_rms": 2.0872,
+  "spark": 58.1002,
+  "minutes": 3.8
+ },
+ {
+  "sku": "LL-SOH26944BLACK-G",
+  "status": "done",
+  "input": "26944_1.jpg",
+  "dir": "/home/server/lady_luxe/output/26944_1_ecd73670",
+  "seam_rms": 2.1592,
+  "spark": 58.1002,
+  "minutes": 5.7
+ },
+ {
+  "sku": "LL-SOH90442BLACK-GG",
+  "status": "done",
+  "input": "90442-ht2019-stockings-blk-2019-a.jpg",
+  "dir": "/home/server/lady_luxe/output/90442-ht2019-stockings-blk-2019-a_7ee7f77c",
+  "seam_rms": 2.4046,
+  "spark": 58.1002,
+  "minutes": 4.3
+ },
+ {
+  "sku": "LL-SOH3273BLACK-G",
+  "status": "done",
+  "input": "3273_1.jpg",
+  "dir": "/home/server/lady_luxe/output/3273_1_50530320",
+  "seam_rms": 2.4171,
+  "spark": 58.1002,
+  "minutes": 3.5
+ },
+ {
+  "sku": "LL-SOH25246BLUE-G",
+  "status": "done",
+  "input": "25246_royal_1.jpg",
+  "dir": "/home/server/lady_luxe/output/25246_royal_1_00f06b52",
+  "seam_rms": 3.2795,
+  "spark": 58.1002,
+  "minutes": 6.6
+ },
+ {
+  "sku": "LL-SOH31059BLACK-G",
+  "status": "done",
+  "input": "31059_black_1.jpg",
+  "dir": "/home/server/lady_luxe/output/31059_black_1_548c9174",
+  "seam_rms": 2.8326,
+  "spark": 58.1002,
+  "minutes": 3.8
+ },
+ {
+  "sku": "LL-SOH25793LEOPARD-G",
+  "status": "done",
+  "input": "soh_25793_web2.jpg",
+  "dir": "/home/server/lady_luxe/output/soh_25793_web2_6ba5bd1c",
+  "seam_rms": 2.8181,
+  "spark": 58.1002,
+  "minutes": 5.7
+ },
+ {
+  "sku": "LL-SOH20365GREEN-G",
+  "status": "done",
+  "input": "SOH_20365_Green_2.jpg",
+  "dir": "/home/server/lady_luxe/output/SOH_20365_Green_2_49221519",
+  "seam_rms": 1.8478,
+  "spark": 58.1002,
+  "minutes": 5.2
+ },
+ {
+  "sku": "LL-SOH20365TURQUOISE-G",
+  "status": "done",
+  "input": "SOH_20365_Turquoise_2.jpg",
+  "dir": "/home/server/lady_luxe/output/SOH_20365_Turquoise_2_4441ae35",
+  "seam_rms": 1.5288,
+  "spark": 58.1002,
+  "minutes": 3.8
+ },
+ {
+  "sku": "LL-SOH20365PINK-G",
+  "status": "done",
+  "input": "SOH_20365_Pink_2.jpg",
+  "dir": "/home/server/lady_luxe/output/SOH_20365_Pink_2_f93b3f8f",
+  "seam_rms": 1.608,
+  "spark": 58.1002,
+  "minutes": 4.5
+ },
+ {
+  "sku": "LL-SOHX3394RED-G",
+  "status": "done",
+  "input": "x3394_red_1.jpg",
+  "dir": "/home/server/lady_luxe/output/x3394_red_1_d8121be0",
+  "seam_rms": 2.7867,
+  "spark": 58.1002,
+  "minutes": 3.6
+ },
+ {
+  "sku": "LL-SOH25908CORAL-G",
+  "status": "done",
+  "input": "25908-BB2021-GARTERED-CHEMISE-CRL-2021-B.jpg",
+  "dir": "/home/server/lady_luxe/output/25908-BB2021-GARTERED-CHEMISE-CRL-2021-B_51886726",
+  "seam_rms": 2.2449,
+  "spark": 58.1002,
+  "minutes": 2.9
+ },
+ {
+  "sku": "LL-SOHX31065BLACK-G",
+  "status": "done",
+  "input": "x31065_1.jpg",
+  "dir": "/home/server/lady_luxe/output/x31065_1_4773d47c",
+  "seam_rms": 2.4982,
+  "spark": 58.1002,
+  "minutes": 3.4
+ }
+]

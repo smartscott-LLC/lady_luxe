@@ -1,0 +1,83 @@
+[
+ {
+  "sku": "LL-MEKAIRBLACK-G",
+  "status": "done",
+  "input": "me_seduce_kair_front.jpg",
+  "dir": "/home/server/lady_luxe/output/me_seduce_kair_front_0019a897",
+  "seam_rms": 1.9187,
+  "spark": 58.1002,
+  "minutes": 3.4
+ },
+ {
+  "sku": "LL-MEDEMI-G",
+  "status": "done",
+  "input": "demi_2.jpg",
+  "dir": "/home/server/lady_luxe/output/demi_2_4b0aa7d7",
+  "seam_rms": 1.7204,
+  "spark": 58.1002,
+  "minutes": 8.5
+ },
+ {
+  "sku": "LL-MEDEBBYSHORT-G",
+  "status": "done",
+  "input": "me_debby_short.jpg",
+  "dir": "/home/server/lady_luxe/output/me_debby_short_59ee63a8",
+  "seam_rms": 2.2532,
+  "spark": 58.1002,
+  "minutes": 3.0
+ },
+ {
+  "sku": "LL-MEDEBBY-G",
+  "status": "done",
+  "input": "debby_back_1.jpg",
+  "dir": "/home/server/lady_luxe/output/debby_back_1_a8ba9568",
+  "seam_rms": 1.7184,
+  "spark": 58.1002,
+  "minutes": 4.9
+ },
+ {
+  "sku": "LL-MEDOTTYSETBLACK-G",
+  "status": "done",
+  "input": "me_dotty_set_black-scaled.jpg",
+  "dir": "/home/server/lady_luxe/output/me_dotty_set_black-scaled_05efafe0",
+  "seam_rms": 1.826,
+  "spark": 58.1002,
+  "minutes": 3.0
+ },
+ {
+  "sku": "LL-MEATARBLACK-G",
+  "status": "done",
+  "input": "me_seduce_Atar.jpg",
+  "dir": "/home/server/lady_luxe/output/me_seduce_Atar_4a201b93",
+  "seam_rms": 2.3254,
+  "spark": 58.1002,
+  "minutes": 3.5
+ },
+ {
+  "sku": "LL-MEDORIS-G",
+  "status": "done",
+  "input": "doris_back_1.jpg",
+  "dir": "/home/server/lady_luxe/output/doris_back_1_0ba98e16",
+  "seam_rms": 2.1956,
+  "spark": 58.1002,
+  "minutes": 5.4
+ },
+ {
+  "sku": "LL-MEDOTTYSETRED-G",
+  "status": "done",
+  "input": "me_dotty_set_red-scaled.jpg",
+  "dir": "/home/server/lady_luxe/output/me_dotty_set_red-scaled_1065f51b",
+  "seam_rms": 1.8446,
+  "spark": 58.1002,
+  "minutes": 4.2
+ },
+ {
+  "sku": "LL-MEISABELLAREDSET-G",
+  "status": "done",
+  "input": "isabella_set_red_1.jpg",
+  "dir": "/home/server/lady_luxe/output/isabella_set_red_1_fdfb2bf1",
+  "seam_rms": 2.3454,
+  "spark": 58.1002,
+  "minutes": 3.5
+ }
+]

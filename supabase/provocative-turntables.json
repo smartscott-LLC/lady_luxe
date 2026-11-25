@@ -1,0 +1,29 @@
+[
+ {
+  "sku": "LL-PROPR1764-G",
+  "status": "done",
+  "input": "PR1764-Back.png",
+  "dir": "/home/server/lady_luxe/output/PR1764-Back_9966fa74",
+  "seam_rms": 1.8797,
+  "spark": 58.1002,
+  "minutes": 2.4
+ },
+ {
+  "sku": "LL-PROPR1824-G",
+  "status": "done",
+  "input": "PR1824-Back.png",
+  "dir": "/home/server/lady_luxe/output/PR1824-Back_313fc28c",
+  "seam_rms": 2.1631,
+  "spark": 58.1002,
+  "minutes": 4.1
+ },
+ {
+  "sku": "LL-PROPR5080SOELEGANTROBEBLK-G",
+  "status": "done",
+  "input": "pr5080_full_back.jpg",
+  "dir": "/home/server/lady_luxe/output/pr5080_full_back_0a653ffa",
+  "seam_rms": 3.5761,
+  "spark": 58.1002,
+  "minutes": 5.5
+ }
+]

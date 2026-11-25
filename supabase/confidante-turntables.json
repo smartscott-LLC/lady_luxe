@@ -1,0 +1,56 @@
+[
+ {
+  "sku": "LL-CONDEVILBRA-G",
+  "status": "done",
+  "input": "condevilbra03.jpg",
+  "dir": "/home/server/lady_luxe/output/condevilbra03_ed826a46",
+  "seam_rms": 2.6915,
+  "spark": 58.1002,
+  "minutes": 3.3
+ },
+ {
+  "sku": "LL-CONAMBERMOON3BRA-G",
+  "status": "done",
+  "input": "conambermoon3bra06.jpg",
+  "dir": "/home/server/lady_luxe/output/conambermoon3bra06_574a0790",
+  "seam_rms": 1.9229,
+  "spark": 58.1002,
+  "minutes": 6.9
+ },
+ {
+  "sku": "LL-CONAMBERMOON2BRA-G",
+  "status": "done",
+  "input": "conambermoon2bra04.jpg",
+  "dir": "/home/server/lady_luxe/output/conambermoon2bra04_ec57f1a1",
+  "seam_rms": 1.8316,
+  "spark": 58.1002,
+  "minutes": 4.2
+ },
+ {
+  "sku": "LL-CONFORYOUNGPUSH-G",
+  "status": "done",
+  "input": "foreveryoung_pushup_bra_closeup_1.jpg",
+  "dir": "/home/server/lady_luxe/output/foreveryoung_pushup_bra_closeup_1_4204474f",
+  "seam_rms": 3.0806,
+  "spark": 58.1002,
+  "minutes": 3.6
+ },
+ {
+  "sku": "LL-CONFORYOUNGSOFT-G",
+  "status": "done",
+  "input": "conforyoungblacksoft03.jpg",
+  "dir": "/home/server/lady_luxe/output/conforyoungblacksoft03_3959a65f",
+  "seam_rms": 2.2624,
+  "spark": 58.1002,
+  "minutes": 8.0
+ },
+ {
+  "sku": "LL-CONFORYOUNGREDSOFTCUP-G",
+  "status": "done",
+  "input": "conforeveryoung_red_1.jpg",
+  "dir": "/home/server/lady_luxe/output/conforeveryoung_red_1_6eefdb4e",
+  "seam_rms": 1.9717,
+  "spark": 58.1002,
+  "minutes": 3.5
+ }
+]
