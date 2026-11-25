@@ -1,0 +1,150 @@
+.page {
+  min-height: 100vh;
+  padding: 8rem 1.5rem 4rem;
+  background: var(--ll-midnight);
+  color: var(--ll-cream);
+}
+
+.inner {
+  max-width: 52rem;
+  margin: 0 auto;
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ll-cream-45);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.back:hover {
+  color: var(--ll-gold);
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--ll-gold-soft);
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-family: var(--ll-font-display);
+  font-weight: 400;
+  font-size: clamp(1.9rem, 4vw, 2.7rem);
+  color: var(--ll-gold);
+  margin-bottom: 1.75rem;
+}
+
+.cta {
+  padding: 0.95rem 2rem;
+  font: inherit;
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ll-midnight);
+  background: linear-gradient(135deg, var(--ll-gold), #b8912e);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cta:hover:enabled {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(212, 175, 55, 0.28);
+}
+
+.cta:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.msg {
+  margin-top: 0.9rem;
+  font-size: 0.82rem;
+  color: var(--ll-gold-soft);
+}
+
+.h2 {
+  font-family: var(--ll-font-display);
+  font-weight: 400;
+  font-size: 1.15rem;
+  color: var(--ll-gold);
+  margin: 2.25rem 0 1rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.sheet {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  background: rgba(48, 0, 26, 0.55);
+  border: 1px solid var(--ll-gold-25);
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+}
+
+.sheetNo {
+  font-family: var(--ll-font-body);
+  color: var(--ll-cream);
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+.meta {
+  font-size: 0.78rem;
+  color: var(--ll-cream-70);
+  margin: 0.2rem 0 0;
+}
+
+.emails {
+  font-size: 0.72rem;
+  color: var(--ll-cream-45);
+  margin: 0.15rem 0 0;
+}
+
+.done {
+  color: var(--success-green, #7cb98f);
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.ghost {
+  padding: 0.55rem 1rem;
+  font: inherit;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ll-gold);
+  background: transparent;
+  border: 1px solid var(--ll-gold-25);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.ghost:hover {
+  border-color: var(--ll-gold);
+}
+
+.dim {
+  color: var(--ll-cream-45);
+  font-style: italic;
+}
