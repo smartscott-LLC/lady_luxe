@@ -42,6 +42,7 @@ export default function AddToBag({
         sku: string;
         variant?: string;
         size?: string;
+        image?: string;
         name: string;
         price: number;
         quantity: number;
