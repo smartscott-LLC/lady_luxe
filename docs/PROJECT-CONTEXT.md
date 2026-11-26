@@ -351,6 +351,20 @@ Turntable Studio (localhost:3002) ──spawns──▶ generate_turntable.py �
   off. Tested live: login-sync, toggle both ways, email-link leave.
   Commit 647b707.
 
+- 2026-11-26 (later): **The product feed** — `/feeds/products.xml`
+  (Google RSS 2.0 + g: namespace; the dialect Google/Meta/Pinterest/
+  TikTok/Bing all accept) and `/feeds/products.csv` share the builder in
+  `web/lib/product-feed.ts`: 385 live items, retail_price off the row
+  (0 drift vs checkout math), first catalog image, brand attribution via
+  brandFromSupplierSku (Black Secret + Ballerina prefixes added to
+  PREFIXES — attribution only), google_product_category split by
+  keyword (lingerie vs sleepwear), factual description fallback when
+  story is empty (21/385 have written copy), identifier_exists=no.
+  Items without an image are skipped. Launch day 2026-11-26 — the
+  owner's visibility play: Meta campaign live, Merchant Center submitted,
+  competitor watch on, Larven AI 3-day trial for site review + letter
+  design. Commit 600b8f0.
+
 ## AlterEgo drop-ship & fulfilment (supplier facts, Nov 25)
 
 The full AlterEgo feed + stock file live at alterego-lingerie.com/resource/
