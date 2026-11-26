@@ -24,6 +24,8 @@ export interface FeedItem {
   price: number;
   brand: string;
   category: string;
+  color: string;
+  size: string;
 }
 
 function categoryFor(name: string): string {
@@ -32,6 +34,56 @@ function categoryFor(name: string): string {
     return SLEEP;
   }
   return LINGERIE;
+}
+
+// colour from the name first, then the supplier SKU — Google's apparel
+// diagnostics demand one, and "Multicolor" beats an invented colour
+const COLOR_WORDS: [RegExp, string][] = [
+  [/claret/i, "Burgundy"],
+  [/wine/i, "Burgundy"],
+  [/bordeaux/i, "Burgundy"],
+  [/burgundy/i, "Burgundy"],
+  [/black/i, "Black"],
+  [/white/i, "White"],
+  [/ivory/i, "Ivory"],
+  [/cream/i, "Cream"],
+  [/\bred\b/i, "Red"],
+  [/emerald/i, "Emerald"],
+  [/sapphire/i, "Blue"],
+  [/\bnavy\b/i, "Navy"],
+  [/\broyal\b/i, "Royal Blue"],
+  [/\bblue\b/i, "Blue"],
+  [/\bpink\b/i, "Pink"],
+  [/\brose\b/i, "Rose"],
+  [/blush/i, "Blush"],
+  [/\bgold\b/i, "Gold"],
+  [/silver/i, "Silver"],
+  [/grey|gray/i, "Grey"],
+  [/purple|violet/i, "Purple"],
+  [/lavender/i, "Lavender"],
+  [/\bnude\b/i, "Nude"],
+  [/beige/i, "Beige"],
+  [/champagne/i, "Champagne"],
+  [/turquoise/i, "Turquoise"],
+  [/\bteal\b/i, "Teal"],
+  [/\bolive\b/i, "Olive"],
+  [/coral/i, "Coral"],
+  [/fuchsia/i, "Fuchsia"],
+  [/apricot/i, "Apricot"],
+  [/\bmint\b/i, "Mint"],
+  [/choco|brown/i, "Brown"],
+  [/\baqua\b/i, "Aqua"],
+  [/leopard|snake|zebra|animal/i, "Leopard"],
+];
+
+function colorFor(name: string, supplierSku: string): string {
+  for (const [re, color] of COLOR_WORDS) {
+    if (re.test(name)) return color;
+  }
+  for (const [re, color] of COLOR_WORDS) {
+    if (re.test(supplierSku)) return color;
+  }
+  return "Multicolor";
 }
 
 function cleanCopy(s: string): string {
@@ -87,6 +139,8 @@ export async function fetchFeedItems(): Promise<FeedItem[]> {
       "";
     if (!image) continue; // a listing without an image is refused by every platform
     const brand = brandFromSupplierSku(row.supplier_sku ?? "");
+    const sizes = Array.isArray(row.sizes) ? (row.sizes as { size?: string }[]) : [];
+    const supplierSku = row.supplier_sku ?? "";
     items.push({
       id: row.sku,
       title: cleanCopy(row.name),
@@ -96,6 +150,8 @@ export async function fetchFeedItems(): Promise<FeedItem[]> {
       price: Number(row.retail_price),
       brand,
       category: categoryFor(row.name),
+      color: colorFor(row.name, supplierSku),
+      size: sizes[0]?.size ?? "One Size",
     });
   }
   return items;
@@ -125,6 +181,10 @@ export function toXml(items: FeedItem[]): string {
 <g:google_product_category>${xmlEscape(it.category)}</g:google_product_category>
 <g:product_type>${xmlEscape(it.brand)}</g:product_type>
 <g:identifier_exists>no</g:identifier_exists>
+<g:age_group>adult</g:age_group>
+<g:gender>female</g:gender>
+<g:color>${xmlEscape(it.color)}</g:color>
+<g:size>${xmlEscape(it.size)}</g:size>
 </item>`,
     )
     .join("\n");
@@ -144,6 +204,7 @@ export function toCsv(items: FeedItem[]): string {
     "id", "title", "description", "link", "image_link",
     "condition", "availability", "price", "brand",
     "google_product_category", "product_type", "identifier_exists",
+    "age_group", "gender", "color", "size",
   ];
   const cell = (v: string) => `"${v.replace(/"/g, '""')}"`;
   const rows = items.map((it) =>
@@ -151,6 +212,7 @@ export function toCsv(items: FeedItem[]): string {
       it.id, it.title, it.description, it.link, it.image,
       "new", "in stock", `${it.price.toFixed(2)} USD`, it.brand,
       it.category, it.brand, "no",
+      "adult", "female", it.color, it.size,
     ]
       .map(cell)
       .join(","),
