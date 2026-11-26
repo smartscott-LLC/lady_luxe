@@ -27,6 +27,9 @@ const PREFIXES: [string, string][] = [
   ["YES", "YesX"],
   ["ME", "Me Seduce"],
   ["CON", "Confidante"],
+  // the component pieces — the only live SKUs carrying these prefixes
+  ["BS", "Black Secret"],
+  ["BAL", "Ballerina"],
 ];
 
 export function brandFromSupplierSku(supplierSku: string): string {
