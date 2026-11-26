@@ -11,7 +11,10 @@ export async function GET() {
   return new Response(toXml(items), {
     headers: {
       "Content-Type": "application/xml; charset=utf-8",
-      "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=86400",
+      // the platforms re-read the catalog on every pull — the roster must
+      // be fresh at pull time (a retirement or a new piece lands within
+      // the hour); the DB read costs less than a stale listing
+      "Cache-Control": "public, max-age=0, must-revalidate",
     },
   });
 }
