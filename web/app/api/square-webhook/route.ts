@@ -16,9 +16,13 @@ import { createClient } from "@/utils/supabase/server";
  */
 
 const SIGNATURE_KEY = process.env.SQUARE_WEBHOOK_SIGNATURE_KEY ?? "";
-const NOTIFICATION_URL =
-  process.env.SQUARE_WEBHOOK_NOTIFICATION_URL ??
-  "https://www.ladyluxeclub.com/api/square-webhook";
+// Square bakes the notification URL into the HMAC — the receiver must
+// verify against the same URL the dashboard configures. Both domain
+// forms are accepted so either setup verifies cleanly.
+const NOTIFICATION_URLS = [
+  "https://www.ladyluxeclub.com/api/square-webhook",
+  "https://ladyluxe.club/api/square-webhook",
+];
 
 export async function POST(request: Request) {
   const raw = await request.text();
@@ -33,12 +37,16 @@ export async function POST(request: Request) {
   if (!signature) {
     return NextResponse.json({ error: "missing signature" }, { status: 401 });
   }
-  const expected = createHmac("sha256", SIGNATURE_KEY)
-    .update(raw + NOTIFICATION_URL)
-    .digest("base64");
-  const a = Buffer.from(expected);
-  const b = Buffer.from(signature);
-  if (a.length !== b.length || !timingSafeEqual(a, b)) {
+  // the signature bakes in the notification URL — try both domain forms
+  const verified = NOTIFICATION_URLS.some((url) => {
+    const expected = createHmac("sha256", SIGNATURE_KEY)
+      .update(raw + url)
+      .digest("base64");
+    const a = Buffer.from(expected);
+    const b = Buffer.from(signature);
+    return a.length === b.length && timingSafeEqual(a, b);
+  });
+  if (!verified) {
     return NextResponse.json({ error: "invalid signature" }, { status: 401 });
   }
 
