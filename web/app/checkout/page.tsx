@@ -83,6 +83,13 @@ export default function CheckoutPage() {
   const [cart, setCart] = useState<CartLine[]>([]);
   const [loaded, setLoaded] = useState(false);
   const [email, setEmail] = useState("");
+  const [pricing, setPricing] = useState<{
+    subtotal: number;
+    discount: number;
+    shipping: number;
+    duty: number;
+    total: number;
+  } | null>(null);
   const [status, setStatus] = useState<
     "idle" | "card-loading" | "ready" | "submitting" | "paid" | "error"
   >("idle");
@@ -175,6 +182,44 @@ export default function CheckoutPage() {
 
   const subtotal = cart.reduce((s, l) => s + l.price * l.quantity, 0);
   const shipping = subtotal >= 150 || subtotal === 0 ? 0 : 9.95;
+
+  // The server prices the cart — the totals the member sees are the
+  // totals Square charges. A dry-run persists nothing and carries the
+  // member's 10% when the email earns it.
+  useEffect(() => {
+    if (!loaded || cart.length === 0 || !/\S+@\S+\.\S+/.test(email)) {
+      setPricing(null);
+      return;
+    }
+    const t = setTimeout(async () => {
+      try {
+        const resp = await fetch(
+          process.env.NEXT_PUBLIC_CHECKOUT_URL ??
+            `${process.env.NEXT_PUBLIC_SUPABASE_URL}/functions/v1/checkout`,
+          {
+            method: "POST",
+            headers: {
+              apikey: process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ?? "",
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              email,
+              dry_run: true,
+              items: cart.map((l) => ({
+                sku: l.sku,
+                variant: l.variant,
+                quantity: l.quantity,
+              })),
+            }),
+          },
+        );
+        if (resp.ok) setPricing(await resp.json());
+      } catch {
+        // the client's own math stands until the server answers
+      }
+    }, 500);
+    return () => clearTimeout(t);
+  }, [loaded, email, cart]);
 
   const setQty = (sku: string, variant: string | undefined, quantity: number) => {
     const match = (l: CartLine) =>
@@ -330,17 +375,35 @@ export default function CheckoutPage() {
               <div className={styles.totals}>
                 <p>
                   <span>Subtotal</span>
-                  <span>${subtotal.toFixed(2)}</span>
+                  <span>${(pricing?.subtotal ?? subtotal).toFixed(2)}</span>
                 </p>
+                {pricing && pricing.discount > 0 && (
+                  <p className={styles.duty}>
+                    <span>Member&rsquo;s discount — the Private List takes care of you</span>
+                    <span>−${pricing.discount.toFixed(2)}</span>
+                  </p>
+                )}
                 <p>
                   <span>Shipping &amp; Handling</span>
-                  <span>{shipping === 0 ? "Free" : `$${shipping.toFixed(2)}`}</span>
+                  <span>
+                    {(pricing?.shipping ?? shipping) === 0
+                      ? "Free"
+                      : `$${(pricing?.shipping ?? shipping).toFixed(2)}`}
+                  </span>
                 </p>
                 <p className={styles.duty}>
                   <span>Duties (prepaid by Lady Luxe)*</span>
-                  <span>collected at checkout</span>
+                  <span>
+                    {pricing ? `$${pricing.duty.toFixed(2)}` : "collected at checkout"}
+                  </span>
                 </p>
               </div>
+              {pricing && pricing.discount === 0 && status !== "paid" && (
+                <p className={styles.fine} style={{ color: "var(--ll-gold-soft)" }}>
+                  Members of the Club on the Private List take 10% off every
+                  order — <Link href="/club">join free</Link>.
+                </p>
+              )}
 
               <div className={styles.arrives}>
                 <img
@@ -385,7 +448,7 @@ export default function CheckoutPage() {
                   ? "Processing…"
                   : status === "card-loading"
                     ? "Loading card form…"
-                    : `Pay $${(subtotal + shipping).toFixed(2)}*`}
+                    : `Pay $${(pricing?.total ?? subtotal + shipping).toFixed(2)}*`}
               </button>
               <p className={styles.fine}>
                 * The charge also includes duties &amp; import charges, prepaid
