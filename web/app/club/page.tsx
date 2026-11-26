@@ -91,6 +91,7 @@ export default function ClubPage() {
         email: form.email,
         password: form.password,
         options: {
+          emailRedirectTo: `${window.location.origin}/auth/confirm`,
           data: {
             display_name: form.displayName || form.email.split("@")[0],
             marketing_consent: form.consent,
@@ -104,6 +105,16 @@ export default function ClubPage() {
           "Welcome to the Club — check your email to confirm the address, then log in."
         );
       }
+      // the welcome letter — fire-and-forget; the route only sends when
+      // the handle_new_member trigger has made the member row
+      fetch("/api/mail/welcome", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: form.email.trim(),
+          name: form.displayName || null,
+        }),
+      }).catch(() => {});
       // the signup event — Meta Lead, GA sign_up, TikTok CompleteRegistration
       fbqTrack("Lead", { content_name: "club_signup", status: true });
       gaEvent("sign_up", { method: "email" });

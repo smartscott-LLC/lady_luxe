@@ -33,6 +33,13 @@ export default function NewsletterForm() {
       }
       setState("done");
       setMsg("Welcome to the Private List.");
+      // the confirmation letter — fire-and-forget; the row is in, the
+      // letter's failure must never touch the join experience
+      fetch("/api/mail/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email.trim() }),
+      }).catch(() => {});
     } catch {
       setState("error");
       setMsg(
