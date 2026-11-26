@@ -294,6 +294,24 @@ Turntable Studio (localhost:3002) ──spawns──▶ generate_turntable.py �
   poster-gown, portrait-back-corset, story-robe. Deploys: Vercel
   (smartscott-LLC, auto on push); production = www.ladyluxeclub.com.
 
+- 2026-11-26: **Square webhook receiver live + verified** (`web/app/api/
+  square-webhook/route.ts`, commits 7944fc8→ba21b62). Verifies Square's
+  HMAC-SHA256 (body + notification URL, SQUARE_WEBHOOK_SIGNATURE_KEY from
+  Vercel production env) against four URL forms (both domains ± trailing
+  slash). `payment.updated` syncs the order status via `square_payment_id`
+  (COMPLETED→paid, FAILED/CANCELED→failed); every other event
+  (payout.*, bank_account.*, customer.*, online_checkout.*, refund.*)
+  is acknowledged 200 — a receiver never 500s an accepted event, or the
+  retry storm loops. ladyluxe.club now also serves the site (owner wired
+  Cloudflare+Vercel; it 308-redirects to www.ladyluxeclub.com). The old
+  504s were events firing at the bare domain; the 500s were the route's
+  unconfigured-key guard firing before the env landed on a deploy.
+  Verified end-to-end 2026-11-26 with self-signed Square-format events
+  against production: all 200. Subscription event trim to
+  `payment.updated` remains an owner dashboard step. Point of Sale API:
+  not used (online + drop-ship only); OAuth redirect URL: not needed
+  (direct access token).
+
 ## AlterEgo drop-ship & fulfilment (supplier facts, Nov 25)
 
 The full AlterEgo feed + stock file live at alterego-lingerie.com/resource/
