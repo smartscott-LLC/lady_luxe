@@ -338,6 +338,19 @@ Turntable Studio (localhost:3002) ──spawns──▶ generate_turntable.py �
   row, order email previewed from the real template; the production
   routes + RESEND_API_KEY on Vercel production (env via CLI).
 
+- 2026-11-26 (later): **Consent bridge — the Club tick and the Private List
+  are one surface.** The signup trigger previously dropped
+  marketing_consent (fixed: trigger carries it + gentle backfill).
+  `/api/mail/consent` (session-verified: the Bearer token must name the
+  address; forged callers 403) flips the member row AND the subscribers
+  list in one call — idempotent upsert with source "club", a re-join
+  clears a past leave. The Club page syncs consented members on login
+  (covers pre-bridge signups) and drives the toggle through it. The
+  unsubscribe links cross-flip both directions: leaving the monthly
+  letter flips member consent, silencing Club letters marks the list
+  off. Tested live: login-sync, toggle both ways, email-link leave.
+  Commit 647b707.
+
 ## AlterEgo drop-ship & fulfilment (supplier facts, Nov 25)
 
 The full AlterEgo feed + stock file live at alterego-lingerie.com/resource/
