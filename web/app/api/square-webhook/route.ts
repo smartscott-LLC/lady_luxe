@@ -17,12 +17,15 @@ import { createClient } from "@/utils/supabase/server";
 
 const SIGNATURE_KEY = process.env.SQUARE_WEBHOOK_SIGNATURE_KEY ?? "";
 // Square bakes the notification URL into the HMAC — the receiver must
-// verify against the same URL the dashboard configures. Both domain
-// forms are accepted so either setup verifies cleanly.
+// verify against the same URL the dashboard configures. Every plausible
+// form is tried (the two domains, with and without the trailing slash).
 const NOTIFICATION_URLS = [
   "https://www.ladyluxeclub.com/api/square-webhook",
+  "https://www.ladyluxeclub.com/api/square-webhook/",
   "https://ladyluxe.club/api/square-webhook",
+  "https://ladyluxe.club/api/square-webhook/",
 ];
+const DEBUG_WEBHOOK = process.env.SQUARE_WEBHOOK_DEBUG === "1";
 
 export async function POST(request: Request) {
   const raw = await request.text();
@@ -37,16 +40,33 @@ export async function POST(request: Request) {
   if (!signature) {
     return NextResponse.json({ error: "missing signature" }, { status: 401 });
   }
-  // the signature bakes in the notification URL — try both domain forms
-  const verified = NOTIFICATION_URLS.some((url) => {
+  // the signature bakes in the notification URL — try every form; if none
+  // verify and debug is on, log what arrived for comparison
+  let verified = false;
+  const candidates: string[] = [];
+  for (const url of NOTIFICATION_URLS) {
     const expected = createHmac("sha256", SIGNATURE_KEY)
       .update(raw + url)
       .digest("base64");
+    candidates.push(expected);
     const a = Buffer.from(expected);
     const b = Buffer.from(signature);
-    return a.length === b.length && timingSafeEqual(a, b);
-  });
+    if (a.length === b.length && timingSafeEqual(a, b)) {
+      verified = true;
+      break;
+    }
+  }
   if (!verified) {
+    if (DEBUG_WEBHOOK) {
+      console.log(
+        "[square-webhook] signature mismatch — received:",
+        signature,
+        "body-sha256:",
+        createHmac("sha256", SIGNATURE_KEY).update(raw).digest("base64"),
+        "candidates:",
+        JSON.stringify(candidates),
+      );
+    }
     return NextResponse.json({ error: "invalid signature" }, { status: 401 });
   }
 
