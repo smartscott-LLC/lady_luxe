@@ -57,12 +57,14 @@ function maskEmail(email: string): string {
 
 async function resolveToken(
   token: string,
-): Promise<{ list: "newsletter" | "club"; email: string } | null> {
-  const subs = await serviceSelect<{ email: string }>(
+): Promise<{ list: "newsletter" | "club"; email: string; unsubscribed_at?: string | null } | null> {
+  const subs = await serviceSelect<{ email: string; unsubscribed_at: string | null }>(
     "subscribers",
-    `select=email&token=eq.${encodeURIComponent(token)}&limit=1`,
+    `select=email,unsubscribed_at&token=eq.${encodeURIComponent(token)}&limit=1`,
   );
-  if (subs?.[0]) return { list: "newsletter", email: subs[0].email };
+  if (subs?.[0]) {
+    return { list: "newsletter", email: subs[0].email, unsubscribed_at: subs[0].unsubscribed_at };
+  }
   const members = await serviceSelect<{ email: string }>(
     "members",
     `select=email&token=eq.${encodeURIComponent(token)}&limit=1`,
@@ -96,6 +98,16 @@ export async function GET(request: Request) {
          <div style="padding-top:10px;">Nothing further will arrive from that address.</div>`,
       ),
       { status: 404, headers: { "Content-Type": "text/html; charset=utf-8" } },
+    );
+  }
+  if (target.unsubscribed_at) {
+    return new NextResponse(
+      page(
+        "The Private List",
+        `<div style="font-size:22px;color:${GOLD_SOFT};letter-spacing:1px;">You are already off the list.</div>
+         <div style="padding-top:10px;">The monthly letter will not arrive to <strong>${maskEmail(target.email)}</strong> — that leave was taken.</div>`,
+      ),
+      { headers: { "Content-Type": "text/html; charset=utf-8" } },
     );
   }
 
@@ -154,6 +166,16 @@ export async function POST(request: Request) {
          <div style="padding-top:10px;">Nothing further will arrive from that address.</div>`,
       ),
       { status: 404, headers: { "Content-Type": "text/html; charset=utf-8" } },
+    );
+  }
+  if (target.unsubscribed_at) {
+    return new NextResponse(
+      page(
+        "The Private List",
+        `<div style="font-size:22px;color:${GOLD_SOFT};letter-spacing:1px;">You are already off the list.</div>
+         <div style="padding-top:10px;">The monthly letter will not arrive to <strong>${maskEmail(target.email)}</strong> — that leave was taken.</div>`,
+      ),
+      { headers: { "Content-Type": "text/html; charset=utf-8" } },
     );
   }
 
