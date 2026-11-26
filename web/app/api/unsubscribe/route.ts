@@ -188,6 +188,11 @@ export async function POST(request: Request) {
     await servicePatch("subscribers", `token=eq.${encodeURIComponent(token)}`, {
       unsubscribed_at: now,
     });
+    // one intent, two surfaces: a member leaving the letter leaves it
+    // everywhere — the membership itself is untouched
+    await servicePatch("members", `email=eq.${encodeURIComponent(target.email)}`, {
+      marketing_consent: false,
+    });
     return new NextResponse(
       page(
         "The Private List",
@@ -201,6 +206,13 @@ export async function POST(request: Request) {
   await servicePatch("members", `token=eq.${encodeURIComponent(token)}`, {
     marketing_consent: false,
   });
+  // the monthly letter follows: silencing the Club letters silences the
+  // Private List for the same address
+  await servicePatch(
+    "subscribers",
+    `email=eq.${encodeURIComponent(target.email)}`,
+    { unsubscribed_at: now },
+  );
   return new NextResponse(
     page(
       "Club letters",

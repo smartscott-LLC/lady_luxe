@@ -72,6 +72,14 @@ export default function ClubPage() {
           marketing_consent:
             session.user.user_metadata?.marketing_consent === true,
         });
+      const loadedMember = (m.data ?? {
+        display_name:
+          session.user.user_metadata?.display_name ?? email.split("@")[0],
+        email,
+        tier: "member",
+        marketing_consent:
+          session.user.user_metadata?.marketing_consent === true,
+      }) as Member;
       const o = await supabase
         .from("orders")
         .select("id, created_at, total, status")
@@ -79,6 +87,13 @@ export default function ClubPage() {
         .order("created_at", { ascending: false })
         .limit(10);
       setOrders((o.data as any[]) ?? []);
+
+      // consented members live on the Private List too — the sync is
+      // idempotent, so a member whose signup consent predates the bridge
+      // lands on the list at their next login
+      if (loadedMember.marketing_consent) {
+        syncConsent(email, true).catch(() => {});
+      }
     })();
   }, [session]);
 
@@ -135,14 +150,28 @@ export default function ClubPage() {
     await supabase.auth.signOut();
   };
 
+  // consent sync — one intent, both surfaces; the endpoint verifies the
+  // session token names the address, so consent belongs to its owner only
+  const syncConsent = (email: string, consent: boolean) =>
+    fetch("/api/mail/consent", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${session?.access_token ?? ""}`,
+      },
+      body: JSON.stringify({ email, consent }),
+    });
+
   const toggleConsent = async () => {
-    if (!member) return;
+    if (!member || !session) return;
     const next = !member.marketing_consent;
     setMember({ ...member, marketing_consent: next });
-    await supabase
-      .from("members")
-      .update({ marketing_consent: next })
-      .eq("user_id", session.user.id);
+    // flips the member row AND the Private List in one verified call
+    try {
+      await syncConsent(member.email ?? session.user.email ?? "", next);
+    } catch {
+      // the optimistic state stands; the next login re-syncs
+    }
   };
 
   // the email-verified completion: the confirm link lands back here with
