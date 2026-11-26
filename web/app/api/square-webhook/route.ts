@@ -71,6 +71,8 @@ export async function POST(request: Request) {
   }
 
   // --- dispatch on the event type ---
+  // a webhook receiver answers 200 to everything it accepted — an event
+  // that surprises us is logged, never a 500 that re-triggers the storm
   let type = "";
   let paymentId = "";
   let paymentStatus = "";
@@ -80,19 +82,24 @@ export async function POST(request: Request) {
     const payment = event.data?.object?.payment ?? {};
     paymentId = payment.id ?? "";
     paymentStatus = payment.status ?? "";
-  } catch {
-    return NextResponse.json({ ok: true, note: "unparseable — acknowledged" });
+  } catch (parseErr) {
+    console.log(
+      "[square-webhook] parse failed:",
+      String(parseErr).slice(0, 120),
+    );
+    return NextResponse.json({ ok: true, note: "parse failed — acknowledged" });
   }
 
   // payment.updated — the charge state changed after the initial response
   if (type === "payment.updated" && paymentId) {
     try {
       const supabase = await createClient();
-      const { data: orders } = await supabase
+      const { data: orders, error: qErr } = await supabase
         .from("orders")
         .select("id, status")
         .eq("square_payment_id", paymentId)
         .limit(1);
+      if (qErr) throw new Error(qErr.message);
       const order = orders?.[0];
       const map: Record<string, string> = {
         COMPLETED: "paid",
@@ -102,7 +109,11 @@ export async function POST(request: Request) {
       };
       const next = map[paymentStatus.toUpperCase()] ?? null;
       if (order && next && next !== order.status) {
-        await supabase.from("orders").update({ status: next }).eq("id", order.id);
+        const { error: upErr } = await supabase
+          .from("orders")
+          .update({ status: next })
+          .eq("id", order.id);
+        if (upErr) throw new Error(upErr.message);
         return NextResponse.json({
           ok: true,
           event: type,
@@ -111,17 +122,20 @@ export async function POST(request: Request) {
         });
       }
       return NextResponse.json({ ok: true, event: type, note: "no change" });
-    } catch (e) {
-      // acknowledge regardless — Square stops retrying; the mismatch is
-      // logged here for the books
+    } catch (syncErr) {
+      console.log(
+        "[square-webhook] sync failed:",
+        String(syncErr).slice(0, 160),
+      );
       return NextResponse.json(
-        { ok: true, event: type, syncError: String(e).slice(0, 120) },
+        { ok: true, event: type, syncError: String(syncErr).slice(0, 120) },
         { status: 200 },
       );
     }
   }
 
-  // everything else (payout.sent, payout.paid, bank_account.created, …) —
-  // acknowledged; the seller's money movements, logged for the books
+  // everything else (payout.*, bank_account.*, customer.*,
+  // online_checkout.*…) — acknowledged; the seller's money movements and
+  // account settings, logged for the books
   return NextResponse.json({ ok: true, event: type });
 }
