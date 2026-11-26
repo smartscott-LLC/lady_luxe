@@ -3,6 +3,9 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { createClient } from "@/utils/supabase/client";
+import { ttTrack } from "@/lib/tiktok";
+import { gaEvent } from "@/lib/ga";
+import { fbqTrack } from "@/lib/meta";
 import styles from "./club.module.css";
 
 type Member = {
@@ -101,6 +104,10 @@ export default function ClubPage() {
           "Welcome to the Club — check your email to confirm the address, then log in."
         );
       }
+      // the signup event — Meta Lead, GA sign_up, TikTok CompleteRegistration
+      fbqTrack("Lead", { content_name: "club_signup", status: true });
+      gaEvent("sign_up", { method: "email" });
+      ttTrack("CompleteRegistration", { content_name: "club_signup" });
       // session (if email confirmation disabled) lands via onAuthStateChange
     } else {
       const { error } = await supabase.auth.signInWithPassword({
@@ -134,6 +141,23 @@ export default function ClubPage() {
       </main>
     );
   }
+
+  // the email-verified completion: the confirm link lands back here with
+  // ?verified=1 — fire the completion event once
+  useEffect(() => {
+    if (
+      typeof window !== "undefined" &&
+      window.location.search.includes("verified=1")
+    ) {
+      fbqTrack("CompleteRegistration", {
+        content_name: "club_signup",
+        status: true,
+      });
+      gaEvent("complete_registration", { method: "email" });
+      ttTrack("CompleteRegistration", { content_name: "club_signup" });
+      window.history.replaceState(null, "", "/club");
+    }
+  }, []);
 
   // ===== MEMBER DASHBOARD =====
   if (session && session.user) {

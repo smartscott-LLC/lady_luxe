@@ -8,7 +8,9 @@ export type FbqEvent =
   | "ViewContent"
   | "AddToCart"
   | "InitiateCheckout"
-  | "Purchase";
+  | "Purchase"
+  | "Lead"
+  | "CompleteRegistration";
 
 export function fbqTrack(event: FbqEvent, params?: Record<string, unknown>) {
   if (typeof window === "undefined") return;

@@ -7,7 +7,8 @@ export type TtqEvent =
   | "AddToCart"
   | "InitiateCheckout"
   | "PlaceAnOrder"
-  | "CompletePayment";
+  | "CompletePayment"
+  | "CompleteRegistration";
 
 export function ttTrack(event: TtqEvent, params?: Record<string, unknown>) {
   if (typeof window === "undefined") return;

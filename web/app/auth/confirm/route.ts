@@ -16,7 +16,8 @@ export async function GET(request: Request) {
   try {
     if (code) {
       const { error } = await supabase.auth.exchangeCodeForSession(code);
-      if (!error) return NextResponse.redirect(`${origin}/club`);
+      if (!error)
+        return NextResponse.redirect(`${origin}/club?verified=1`);
     } else if (tokenHash && type) {
       const { error } = await supabase.auth.verifyOtp({
         token_hash: tokenHash,
@@ -28,7 +29,8 @@ export async function GET(request: Request) {
           | "email_change"
           | "email",
       });
-      if (!error) return NextResponse.redirect(`${origin}/club`);
+      if (!error)
+        return NextResponse.redirect(`${origin}/club?verified=1`);
     }
   } catch {
     // fall through to the Club page
