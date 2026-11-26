@@ -75,6 +75,13 @@ export default function SiteFooter() {
         </div>
         <div className="ll-footer-bottom">
           <span>© 2026 Lady Luxe. All rights reserved.</span>
+          <span>
+            <Link href="/returns">Returns &amp; Delivery</Link>
+            {" · "}
+            <Link href="/maison">The Maison</Link>
+            {" · "}
+            <Link href="/club">The Club</Link>
+          </span>
           <span>Cut for the midnight hours · Finished with care</span>
         </div>
       </div>

@@ -134,7 +134,7 @@ function escapeHtml(s: string): string {
 const money = (n: number) =>
   `$${n.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 
-const footerBrand = `Lady Luxe · Maison de Couture · Dispatched from the United Kingdom<br>
+const footerBrand = `Lady Luxe · Maison de Couture · 700 E 8th St., Unit 14E, Kansas City, MO 64106 · Dispatched from the United Kingdom<br>
 Questions, requests, anything at all — write to <a href="mailto:${REPLY_TO}" style="color:${GOLD_SOFT};text-decoration:none;">${REPLY_TO}</a>`;
 
 function unsubFooter(reason: string, url: string): string {

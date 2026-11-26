@@ -61,6 +61,129 @@ function cents(usd: number): number {
   return Math.round(usd * 100);
 }
 
+/* ------------------------------------------------------- the thank-you letter
+   The copy mirrors web/lib/mail.ts — keep the two in step when the wording
+   changes. Pure typographic luxury: the midnight/amaranth/gold/cream palette,
+   serif stacks with Georgia fallbacks (email clients can't load webfonts). */
+
+const MAIL_SITE = "https://www.ladyluxeclub.com";
+const MAIL_FROM = "Lady Luxe Atelier <orders@ladyluxeclub.com>";
+const MAIL_REPLY_TO = "info@ladyluxeclub.com";
+const M_GOLD = "#D4AF37";
+const M_GOLD_SOFT = "#E8C558";
+const M_CREAM = "#EDE7C7";
+const M_CREAM_DIM = "rgba(237,231,199,.55)";
+const M_MIDNIGHT = "#30001A";
+const M_AMARANTH = "#660428";
+const M_HAIRLINE = "rgba(212,175,55,.35)";
+
+const esc = (s: string) =>
+  s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+const moneh = (n: number) =>
+  `$${n.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+
+function orderThankYouHtml(o: {
+  orderId: string;
+  lines: { name: string; variant?: string | null; quantity: number; unit_price: number }[];
+  subtotal: number;
+  shipping: number;
+  duty: number;
+  total: number;
+  receiptUrl?: string | null;
+}): string {
+  const rows = o.lines
+    .map(
+      (l) => `<tr>
+  <td style="padding:10px 0;border-bottom:1px solid ${M_HAIRLINE};font-size:14px;">
+    ${esc(l.name)}${l.variant ? `<br><span style="color:${M_CREAM_DIM};font-size:12px;">Size ${esc(l.variant)}</span>` : ""}
+  </td>
+  <td align="center" style="padding:10px 0;border-bottom:1px solid ${M_HAIRLINE};font-size:14px;color:${M_CREAM_DIM};">×${l.quantity}</td>
+  <td align="right" style="padding:10px 0;border-bottom:1px solid ${M_HAIRLINE};font-size:14px;color:${M_GOLD_SOFT};">${moneh(l.unit_price * l.quantity)}</td>
+</tr>`,
+    )
+    .join("\n");
+
+  const content = `
+    Dear Madame,
+    <div style="padding-top:14px;font-family:'Felipa',Georgia,'Times New Roman',serif;font-size:24px;letter-spacing:1px;color:${M_GOLD_SOFT};">Thank you — your order is confirmed.</div>
+    <div style="padding-top:10px;">Your pieces are being prepared and will leave our house within 24 hours, in plain, discreet packaging. Royal Mail, DPD or FedEx will carry them to your door, and a tracking note will follow the moment they are dispatched.</div>
+    <div style="height:1px;background:${M_HAIRLINE};margin:22px 0;"></div>
+    <div style="color:${M_CREAM_DIM};font-size:12px;letter-spacing:2px;">ORDER Nº ${o.orderId.slice(0, 8).toUpperCase()}</div>
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="padding-top:10px;">
+      ${rows}
+      <tr><td style="padding:10px 0;font-size:14px;color:${M_CREAM_DIM};">Subtotal</td><td></td><td align="right" style="padding:10px 0;font-size:14px;">${moneh(o.subtotal)}</td></tr>
+      <tr><td style="padding:2px 0;font-size:14px;color:${M_CREAM_DIM};">Shipping${o.shipping === 0 ? " — complimentary" : ""}</td><td></td><td align="right" style="padding:2px 0;font-size:14px;">${o.shipping === 0 ? "—" : moneh(o.shipping)}</td></tr>
+      ${o.duty > 0 ? `<tr><td style="padding:2px 0;font-size:14px;color:${M_CREAM_DIM};">Duties prepaid</td><td></td><td align="right" style="padding:2px 0;font-size:14px;">${moneh(o.duty)}</td></tr>` : ""}
+      <tr><td style="padding:12px 0;font-size:15px;color:${M_GOLD};letter-spacing:1px;">TOTAL</td><td></td><td align="right" style="padding:12px 0;font-size:16px;color:${M_GOLD_SOFT};">${moneh(o.total)}</td></tr>
+    </table>
+    ${o.receiptUrl ? `<div style="padding-top:8px;font-size:13px;">Your payment receipt: <a href="${o.receiptUrl}" style="color:${M_GOLD_SOFT};">view receipt</a></div>` : ""}
+    <div style="height:1px;background:${M_HAIRLINE};margin:22px 0;"></div>
+    <div style="color:${M_CREAM_DIM};font-size:13px;">Every parcel leaves in an unmarked box — the maison's name appears on nothing but the piece inside. If anything is not as it should be, write to us and we will make it right.</div>
+    <div style="padding-top:6px;color:${M_GOLD_SOFT};font-style:italic;">With love, the Lady Luxe Maison</div>
+  `;
+
+  return `<!doctype html>
+<html>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
+<body style="margin:0;padding:0;background:#1b0910;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#1b0910;">
+<tr><td align="center" style="padding:36px 12px;">
+  <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:600px;max-width:100%;background:linear-gradient(165deg,${M_MIDNIGHT} 0%,${M_AMARANTH} 100%);background-color:${M_MIDNIGHT};">
+  <tr><td style="padding:40px 44px 8px;" align="center">
+    <div style="font-family:'Felipa',Georgia,serif;font-size:30px;letter-spacing:6px;color:${M_GOLD};">LADY LUXE</div>
+    <div style="font-family:Georgia,serif;font-style:italic;font-size:13px;color:${M_CREAM_DIM};padding-top:4px;">Maison de Couture</div>
+  </td></tr>
+  <tr><td style="padding:18px 44px 0;"><div style="height:1px;background:${M_HAIRLINE};"></div></td></tr>
+  <tr><td style="padding:30px 44px 8px;font-family:Georgia,serif;color:${M_CREAM};font-size:15px;line-height:1.75;">
+    ${content}
+  </td></tr>
+  <tr><td style="padding:10px 44px 0;"><div style="height:1px;background:${M_HAIRLINE};"></div></td></tr>
+  <tr><td style="padding:20px 44px 40px;font-family:Georgia,serif;font-size:11px;line-height:1.7;color:${M_CREAM_DIM};">
+    Lady Luxe · Maison de Couture · 700 E 8th St., Unit 14E, Kansas City, MO 64106 · Dispatched from the United Kingdom<br>
+    Questions, requests, anything at all — write to <a href="mailto:${MAIL_REPLY_TO}" style="color:${M_GOLD_SOFT};text-decoration:none;">${MAIL_REPLY_TO}</a> · <a href="${MAIL_SITE}" style="color:${M_GOLD_SOFT};text-decoration:none;">${MAIL_SITE.replace("https://", "")}</a>
+  </td></tr>
+  </table>
+</td></tr>
+</table>
+</body>
+</html>`;
+}
+
+async function sendOrderThankYou(o: {
+  email: string;
+  orderId: string;
+  lines: { name: string; variant?: string | null; quantity: number; unit_price: number }[];
+  subtotal: number;
+  shipping: number;
+  duty: number;
+  total: number;
+  receiptUrl?: string | null;
+}): Promise<{ ok: boolean; error?: string }> {
+  const resendKey = Deno.env.get("RESEND_API_KEY") ?? "";
+  if (!resendKey) {
+    return { ok: false, error: "RESEND_API_KEY not set" };
+  }
+  const resp = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${resendKey}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      from: MAIL_FROM,
+      to: [o.email],
+      subject: `Your Lady Luxe order Nº ${o.orderId.slice(0, 8).toUpperCase()} — confirmed`,
+      html: orderThankYouHtml(o),
+      reply_to: MAIL_REPLY_TO,
+    }),
+  });
+  const body = (await resp.json().catch(() => ({}))) as { message?: string };
+  if (!resp.ok) {
+    return { ok: false, error: body.message ?? `resend ${resp.status}` };
+  }
+  return { ok: true };
+}
+
 interface CartItem {
   sku: string;
   variant?: string;
@@ -308,6 +431,20 @@ Deno.serve(async (req: Request) => {
         meta: { priced, mode: "square", receipt: pay?.payment?.receipt_url },
       }),
     });
+
+    // 6. The thank-you letter — best effort: a mail outage must never
+    //    stand between the member and their confirmation.
+    const mail = await sendOrderThankYou({
+      email,
+      orderId: order.id,
+      lines: priced,
+      subtotal,
+      shipping,
+      duty,
+      total,
+      receiptUrl: pay?.payment?.receipt_url ?? null,
+    });
+    if (!mail.ok) console.log("order email:", mail.error);
 
     return json({
       mode: "paid",
