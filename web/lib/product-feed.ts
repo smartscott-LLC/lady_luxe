@@ -15,6 +15,15 @@ const SITE = "https://www.ladyluxeclub.com";
 const LINGERIE = "Apparel & Accessories > Clothing > Underwear & Socks > Lingerie";
 const SLEEP = "Apparel & Accessories > Clothing > Sleepwear & Loungewear";
 
+// pieces that exist only to make the ensembles whole — they are sold as
+// the set under its LL-ENS-* SKU and are never advertised on their own
+const ENSEMBLE_ONLY = new Set([
+  "LL-BEAUTYNIGHTBN6612CATHERINE-G",
+  "LL-BAL589WHITE-G",
+  "LL-BS249BLACK-G",
+  "LL-IRALLASTRIDGLOVESWHITE-G",
+]);
+
 export interface FeedItem {
   id: string;
   title: string;
@@ -115,7 +124,7 @@ function descriptionFor(
   );
 }
 
-export async function fetchFeedItems(): Promise<FeedItem[]> {
+async function fetchProductItems(): Promise<FeedItem[]> {
   const rows =
     (await serviceSelect<{
       sku: string;
@@ -132,6 +141,7 @@ export async function fetchFeedItems(): Promise<FeedItem[]> {
 
   const items: FeedItem[] = [];
   for (const row of rows) {
+    if (ENSEMBLE_ONLY.has(row.sku)) continue; // sold only as part of a set
     const media = Array.isArray(row.media) ? (row.media as { type?: string; url?: string }[]) : [];
     const image =
       media.find((m) => m.type === "image" && m.url)?.url ??
@@ -152,6 +162,63 @@ export async function fetchFeedItems(): Promise<FeedItem[]> {
       category: categoryFor(row.name),
       color: colorFor(row.name, supplierSku),
       size: sizes[0]?.size ?? "One Size",
+    });
+  }
+  return items;
+}
+
+/**
+ * The feed roster — the ensembles first (the house's signature sets,
+ * advertised under their LL-ENS-* SKU), then every individually sold
+ * piece. Pieces that exist only inside ensembles are not here.
+ */
+export async function fetchFeedItems(): Promise<FeedItem[]> {
+  const [ensembles, products] = await Promise.all([
+    fetchEnsembleItems(),
+    fetchProductItems(),
+  ]);
+  return [...ensembles, ...products];
+}
+
+/**
+ * The ensembles — the house's own sets, advertised under their LL-ENS-*
+ * SKU with the set price. The pieces they contain stay off the feed when
+ * they exist only to make the set whole (ENSEMBLE_ONLY).
+ */
+async function fetchEnsembleItems(): Promise<FeedItem[]> {
+  const rows =
+    (await serviceSelect<{
+      sku: string;
+      name: string;
+      price: string | number;
+      media: unknown;
+      story: string;
+    }>("bundles", "select=sku,name,price,media,story&live=eq.true&order=price.desc")) ?? [];
+
+  const items: FeedItem[] = [];
+  for (const row of rows) {
+    const media = Array.isArray(row.media) ? (row.media as { type?: string; url?: string }[]) : [];
+    const image =
+      media.find((m) => m.type === "image" && m.url)?.url ??
+      media.find((m) => m.url)?.url ??
+      "";
+    if (!image) continue;
+    const written = cleanCopy(row.story ?? "");
+    items.push({
+      id: row.sku,
+      title: cleanCopy(row.name),
+      description:
+        written ||
+        cleanCopy(
+          `${row.name} by Lady Luxe — the full set, styled as one. Dispatched plain and discreet from the United Kingdom within 24 hours.`,
+        ),
+      link: `${SITE}/ensemble/${row.sku}`,
+      image,
+      price: Number(row.price),
+      brand: "Lady Luxe",
+      category: LINGERIE,
+      color: "Multicolor",
+      size: "One Size",
     });
   }
   return items;
