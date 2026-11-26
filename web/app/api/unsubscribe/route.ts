@@ -150,7 +150,11 @@ export async function POST(request: Request) {
   const token = (searchParams.get("token") ?? "").trim();
   const listHint = searchParams.get("list");
 
-  let target: { list: "newsletter" | "club"; email: string } | null = null;
+  let target: {
+    list: "newsletter" | "club";
+    email: string;
+    unsubscribed_at?: string | null;
+  } | null = null;
   if (token) {
     target = await resolveToken(token);
     if (target && listHint && listHint !== target.list) {
