@@ -145,14 +145,6 @@ export default function ClubPage() {
       .eq("user_id", session.user.id);
   };
 
-  if (loading) {
-    return (
-      <main className={styles.page}>
-        <p className={styles.empty}>Opening the Club…</p>
-      </main>
-    );
-  }
-
   // the email-verified completion: the confirm link lands back here with
   // ?verified=1 — fire the completion event once
   useEffect(() => {
@@ -169,6 +161,14 @@ export default function ClubPage() {
       window.history.replaceState(null, "", "/club");
     }
   }, []);
+
+  if (loading) {
+    return (
+      <main className={styles.page}>
+        <p className={styles.empty}>Opening the Club…</p>
+      </main>
+    );
+  }
 
   // ===== MEMBER DASHBOARD =====
   if (session && session.user) {
