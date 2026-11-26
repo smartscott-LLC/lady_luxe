@@ -354,8 +354,11 @@ export default function CheckoutPage() {
                   loading="lazy"
                 />
                 <p>
-                  Every order leaves the house like this — grosgrain ribbon,
-                  the house seal, and gold-monogrammed tissue.
+                  The Lady Luxe gift presentation — the black box, the garnet
+                  ribbon, the house seal — is being prepared for the house and
+                  will be offered as an addition to any order. Until then, every
+                  piece travels in its maker&rsquo;s own packaging, dressed just
+                  as carefully.
                 </p>
               </div>
             </div>
