@@ -312,6 +312,32 @@ Turntable Studio (localhost:3002) ──spawns──▶ generate_turntable.py �
   not used (online + drop-ship only); OAuth redirect URL: not needed
   (direct access token).
 
+- 2026-11-26 (later): **Email flows live (Resend, ladyluxeclub.com verified
+  in Resend)**. `web/lib/mail.ts` = brand shell + three letters (order
+  thank-you, Club welcome, Private List confirmation); the palette is
+  mirrored from luxe-all.css, serif stacks with Georgia fallbacks (no
+  webfonts in email). Sends: `/api/mail/welcome` (only fires when the
+  handle_new_member trigger made a members row — forged calls 404; strict
+  once-per-member via `welcome_sent_at`), `/api/mail/newsletter`
+  (subscriber row must exist; the row's `token` becomes the unsubscribe
+  link; `confirmed_at` stamped on send). `/api/unsubscribe` = branded
+  confirm page on GET (never acts on GET — scanner prefetch), the leave
+  on POST (form or RFC 8058 one-click; List-Unsubscribe headers on both
+  letters); reused newsletter tokens answer "already off the list".
+  The checkout Edge Function (v8, deployed via MCP) sends the thank-you
+  best-effort after the order is paid — RESEND_API_KEY is in the
+  function secrets; a mail outage never blocks the confirmation.
+  Members table gained `token` + `welcome_sent_at` (migration
+  members_mail_tokens, applied via MCP). Club signup now sets
+  `emailRedirectTo: {origin}/auth/confirm`. Supabase's own verification
+  email stays a dashboard template — the branded paste lives at
+  `docs/email-templates/confirm-signup.html` (token_hash link →
+  /auth/confirm → /club?verified=1). From-addresses: orders@ / letters@
+  @ladyluxeclub.com, reply-to info@. Verified 2026-11-26: welcome +
+  newsletter letters delivered (Resend log), unsubscribe flow flips the
+  row, order email previewed from the real template; the production
+  routes + RESEND_API_KEY on Vercel production (env via CLI).
+
 ## AlterEgo drop-ship & fulfilment (supplier facts, Nov 25)
 
 The full AlterEgo feed + stock file live at alterego-lingerie.com/resource/
