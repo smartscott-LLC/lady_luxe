@@ -1,0 +1,201 @@
+.page {
+  min-height: 100vh;
+  padding: 7rem 1.5rem 4rem;
+  background: var(--ll-midnight);
+  color: var(--ll-cream);
+}
+
+.inner {
+  max-width: 74rem;
+  margin: 0 auto;
+}
+
+.empty {
+  text-align: center;
+  padding: 3rem 0;
+  color: var(--ll-cream-70);
+}
+
+.back {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--ll-gold-soft);
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+}
+
+.back:hover {
+  text-decoration: underline;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--ll-gold-soft);
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-family: var(--ll-font-display);
+  font-weight: 400;
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  color: var(--ll-gold);
+  margin-bottom: 0.5rem;
+}
+
+.sub {
+  font-weight: 300;
+  color: var(--ll-cream);
+  max-width: 46rem;
+  margin-bottom: 2rem;
+  line-height: 1.75;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stage {
+  position: relative;
+  border: 1px solid var(--ll-gold-25);
+  border-radius: 12px;
+  background:
+    radial-gradient(ellipse at 50% 30%, rgba(102, 4, 40, 0.35), transparent 65%),
+    linear-gradient(180deg, rgba(27, 9, 16, 0.9), rgba(48, 0, 26, 0.55));
+  aspect-ratio: 3 / 4;
+  max-height: 44rem;
+  overflow: hidden;
+}
+
+.stage :global(div canvas) {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.stageNote {
+  position: absolute;
+  left: 1rem;
+  bottom: 0.9rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: rgba(237, 231, 199, 0.5);
+}
+
+.panel {
+  border: 1px solid var(--ll-gold-25);
+  border-radius: 12px;
+  background: rgba(48, 0, 26, 0.55);
+  padding: 1.75rem;
+}
+
+.panelTitle {
+  font-family: var(--ll-font-display);
+  font-size: 1.15rem;
+  color: var(--ll-gold);
+  margin-bottom: 1.25rem;
+}
+
+.field {
+  margin-bottom: 1.35rem;
+}
+
+.fieldLabel {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  color: var(--ll-cream-70);
+  margin-bottom: 0.45rem;
+}
+
+.fieldLabel output {
+  color: var(--ll-gold-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+.slider {
+  width: 100%;
+  accent-color: var(--ll-gold);
+  background: transparent;
+}
+
+.braRow {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 0.35rem;
+}
+
+.braInput {
+  width: 8rem;
+  background: rgba(27, 9, 16, 0.7);
+  border: 1px solid var(--ll-gold-25);
+  border-radius: 8px;
+  color: var(--ll-cream);
+  padding: 0.55rem 0.8rem;
+  font-size: 0.9rem;
+}
+
+.braInput:focus {
+  outline: none;
+  border-color: var(--ll-gold);
+}
+
+.save {
+  width: 100%;
+  margin-top: 0.75rem;
+  color: var(--ll-midnight);
+  background: var(--ll-gold);
+  border: 0;
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  font-family: var(--ll-font-body);
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.save:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.note {
+  margin-top: 1rem;
+  font-size: 0.78rem;
+  line-height: 1.7;
+  color: rgba(237, 231, 199, 0.55);
+}
+
+.msg {
+  margin-top: 0.8rem;
+  font-size: 0.82rem;
+  color: var(--ll-gold-soft);
+  min-height: 1.2em;
+}
+
+.comingSoon {
+  margin-top: 1.5rem;
+  border-top: 1px solid rgba(212, 175, 55, 0.25);
+  padding-top: 1.1rem;
+  font-size: 0.82rem;
+  line-height: 1.7;
+  color: rgba(237, 231, 199, 0.6);
+}
+
+.comingSoon strong {
+  color: var(--ll-gold-soft);
+  font-weight: 500;
+}
