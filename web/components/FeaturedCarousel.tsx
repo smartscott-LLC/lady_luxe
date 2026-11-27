@@ -43,6 +43,17 @@ export default function FeaturedCarousel({ items }: { items: FeaturedItem[] }) {
     if (v) v.play().catch(() => {});
   };
 
+  // the center card IS the moving image — it plays on arrival and after
+  // every rotation; hover still takes over for the touched card
+  useEffect(() => {
+    if (hovering || count === 0) return;
+    const v = videoRefs.current[active];
+    if (v) v.play().catch(() => {});
+    videoRefs.current.forEach((other, i) => {
+      if (i !== active && other) other.pause(); // pause, never reset
+    });
+  }, [active, hovering, count]);
+
   const stop = (i: number) => {
     const v = videoRefs.current[i];
     if (v) v.pause(); // pause, never reset

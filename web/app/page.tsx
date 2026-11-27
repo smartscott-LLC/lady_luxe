@@ -9,7 +9,7 @@ import FeaturedCarousel, { FeaturedItem } from "@/components/FeaturedCarousel";
 import BrandMarquee from "@/components/BrandMarquee";
 import LuxeStreamBind from "@/components/LuxeStreamBind";
 import OpenDrawerButton from "@/components/OpenDrawerButton";
-import { BRAND_ORDER, brandSlug } from "@/lib/brand";
+import { BRAND_ORDER, brandFromSupplierSku, brandSlug } from "@/lib/brand";
 
 export const metadata = {
   title: "Lady Luxe — Maison de Couture",
@@ -210,33 +210,9 @@ export default function Home() {
       </Suspense>
 
       {/* ===================== THE HOUSES (BRAND MARQUEE) ===================== */}
-      <section
-        aria-label="The houses we carry"
-        className="section pb-0 ll-marquee-section ll-marquee--houses ll-reveal"
-      >
-        <div className="container text-center">
-          <p className="ll-eyebrow mb-2">The Houses We Carry</p>
-          <BrandMarquee speed={44}>
-            {BRAND_ORDER.map((b) => (
-              <Link
-                key={b}
-                href={`/brands?b=${brandSlug(b)}`}
-                className="ll-brand-logo"
-                style={{
-                  fontFamily: "var(--ll-font-display)",
-                  fontWeight: 700,
-                  fontSize: "clamp(1.7rem, 2.6vw, 2.4rem)",
-                  letterSpacing: ".14em",
-                  color: "var(--ll-gold-soft)",
-                  textDecoration: "none",
-                }}
-              >
-                {b}
-              </Link>
-            ))}
-          </BrandMarquee>
-        </div>
-      </section>
+      <Suspense fallback={<MarqueeFallback />}>
+        <HousesMarquee />
+      </Suspense>
 
       {/* ===================== COLLECTION MARQUEE ===================== */}
       <Suspense fallback={<MarqueeFallback />}>
@@ -381,6 +357,53 @@ function MarqueeFallback() {
         </p>
       </div>
       <div className="ll-marquee" style={{ minHeight: "420px" }} />
+    </section>
+  );
+}
+
+async function HousesMarquee() {
+  /* the marquee streams only the houses that actually carry pieces —
+     a house whose floor is empty (retired, re-curated) doesn't advertise
+     an empty room */
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from("products")
+    .select("supplier_sku")
+    .eq("status", "live");
+  const counts = new Map<string, number>();
+  for (const r of data ?? []) {
+    const brand = brandFromSupplierSku(r.supplier_sku);
+    counts.set(brand, (counts.get(brand) ?? 0) + 1);
+  }
+  const houses = BRAND_ORDER.filter((b) => (counts.get(b) ?? 0) > 0);
+  if (houses.length === 0) return null;
+  return (
+    <section
+      aria-label="The houses we carry"
+      className="section pb-0 ll-marquee-section ll-marquee--houses ll-reveal"
+    >
+      <div className="container text-center">
+        <p className="ll-eyebrow mb-2">The Houses We Carry</p>
+        <BrandMarquee speed={44}>
+          {houses.map((b) => (
+            <Link
+              key={b}
+              href={`/brands?b=${brandSlug(b)}`}
+              className="ll-brand-logo"
+              style={{
+                fontFamily: "var(--ll-font-display)",
+                fontWeight: 700,
+                fontSize: "clamp(1.7rem, 2.6vw, 2.4rem)",
+                letterSpacing: ".14em",
+                color: "var(--ll-gold-soft)",
+                textDecoration: "none",
+              }}
+            >
+              {b}
+            </Link>
+          ))}
+        </BrandMarquee>
+      </div>
     </section>
   );
 }

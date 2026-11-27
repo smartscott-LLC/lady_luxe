@@ -17,6 +17,42 @@
     if (!video) return;
     card.dataset.llBound = '1';
 
+    var always = card.hasAttribute('data-ll-autoplay');
+    var bar = card.querySelector('.ll-video-card__progress i');
+
+    /* always-motion cards: the video IS the image — plays while in view,
+       pauses when scrolled away, never waits for a hover */
+    if (always && !REDUCED) {
+      video.preload = 'metadata';
+      video.loop = true;
+      video.muted = true;
+      video.defaultMuted = true;
+      video.setAttribute('playsinline', '');
+      video.setAttribute('muted', '');
+      video.addEventListener('timeupdate', function () {
+        if (bar && video.duration) {
+          bar.style.width = (video.currentTime / video.duration) * 100 + '%';
+        }
+      });
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              var p = video.play();
+              if (p && p.catch) p.catch(function () {});
+            } else {
+              video.pause();
+            }
+          });
+        }, { rootMargin: '120px' });
+        io.observe(card);
+      } else {
+        var p0 = video.play();
+        if (p0 && p0.catch) p0.catch(function () {});
+      }
+      return;
+    }
+
     /* lazy: only fetch data when the card is near the viewport */
     video.preload = 'none';
     video.loop = true;
@@ -24,8 +60,6 @@
     video.defaultMuted = true;
     video.setAttribute('playsinline', '');
     video.setAttribute('muted', '');
-
-    var bar = card.querySelector('.ll-video-card__progress i');
 
     video.addEventListener('timeupdate', function () {
       if (bar && video.duration) {

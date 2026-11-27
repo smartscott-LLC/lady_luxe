@@ -33383,15 +33383,15 @@ html { scrollbar-color: var(--ll-gold) #1B000D; }           /* Firefox */
 /* ---- back to top ---------------------------------------------------------- */
 .ll-back-top {
   position: fixed;
-  right: 1.25rem;
-  bottom: 1.25rem;
-  width: 46px;
-  height: 46px;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  width: 92px;
+  height: 92px;
   border-radius: 50%;
-  border: 1px solid var(--ll-gold-40, rgba(212, 175, 55, 0.4));
-  background: rgba(27, 0, 13, 0.82);
-  color: var(--ll-gold, #d4af37);
-  font-size: 1.05rem;
+  border: 1px solid rgba(232, 197, 88, 0.75);
+  background: rgba(27, 0, 13, 0.86);
+  color: var(--ll-gold-soft, #e8c558);
+  font-size: 2.2rem;
   line-height: 1;
   cursor: pointer;
   z-index: 900;
@@ -33409,8 +33409,8 @@ html { scrollbar-color: var(--ll-gold) #1B000D; }           /* Firefox */
 }
 
 .ll-back-top:hover {
-  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.25);
-  border-color: var(--ll-gold, #d4af37);
+  box-shadow: 0 10px 30px rgba(232, 197, 88, 0.4);
+  border-color: var(--ll-gold-soft, #e8c558);
 }
 
 /* ---- atelier interlude band (homepage) ---- */

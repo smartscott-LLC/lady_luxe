@@ -82,7 +82,7 @@ export default function SiteFooter() {
             {" · "}
             <Link href="/club">The Club</Link>
           </span>
-          <span>Cut for the midnight hours · Finished with care</span>
+          <span>Sponsored by smartscott.com LLC · Built by smartscott.com LLC</span>
         </div>
       </div>
     </footer>

@@ -14,7 +14,7 @@
   font-size: 0.72rem;
   letter-spacing: 0.4em;
   text-transform: uppercase;
-  color: var(--ll-cream-45);
+  color: var(--ll-cream-70);
   margin-bottom: 0.5rem;
 }
 
@@ -28,7 +28,7 @@
 
 .sub {
   font-weight: 300;
-  color: var(--ll-cream-70);
+  color: var(--ll-cream);
   margin-bottom: 2rem;
 }
 
@@ -52,13 +52,13 @@
   justify-content: space-between;
   gap: 1rem;
   font-size: 0.88rem;
-  color: var(--ll-cream-70);
+  color: var(--ll-cream);
   margin: 0.55rem 0;
   flex-wrap: wrap;
 }
 
 .line span:first-child {
-  color: var(--ll-cream-45);
+  color: var(--ll-cream-70);
   letter-spacing: 0.05em;
 }
 

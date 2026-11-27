@@ -57,6 +57,7 @@ async function FeaturedGrid() {
             <Link
               href={`/product/${item.sku}?from=featured`}
               className="ll-video-card d-block"
+              data-ll-autoplay
               style={{
                 padding: 0,
                 overflow: "hidden",
