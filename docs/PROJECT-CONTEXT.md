@@ -365,6 +365,27 @@ Turntable Studio (localhost:3002) ──spawns──▶ generate_turntable.py �
   competitor watch on, Larven AI 3-day trial for site review + letter
   design. Commit 600b8f0.
 
+- 2026-11-27: **Launch-day state + holding pattern.** The approved Meta
+  campaign (FB/IG + one more) is in preparation; a weekend campaign is
+  scheduled on the Larven AI creative set — 51 files in
+  `~/Downloads/catalog_2/` ("LRVN POST/STATIC/VIDEO", 9:16 videos at
+  3.1s/12.3s, 4:5/9:16/1:1 images). The set was pre-flighted: platform-
+  safe across the board, the "Not underwear. Evening wear for one
+  night." frame is the policy-safe positioning; the text-heavy
+  breakdowns (POST 1/5/27) belong in organic, not paid delivery.
+  TikTok is connected — the site's pixel (Events Manager ID
+  DC2EGKJC77U6OQMIG9SG, funnel armed end-to-end) ties to the new ads
+  account. The final walkthrough batch shipped (1354949): 24 products
+  re-curated to lead with full model shots (3 cross-variant images
+  dropped), the Houses marquee streams only live floors (Black Secret
+  and Roza retired), Club text brightened, back-to-top doubled to 92px
+  in soft gold (css v11), ensembles/featured/center-card videos run
+  motion-first via the engine's data-ll-autoplay (js v3), and the
+  footer carries Sponsored by / Built by smartscott.com LLC. The owner
+  is resetting the machine and will bring the Concierge button idea
+  after the reboot. The X20559 white-robe film was re-rendered white
+  (Fast, seam RMS 2.27) and overwritten in place.
+
 ## AlterEgo drop-ship & fulfilment (supplier facts, Nov 25)
 
 The full AlterEgo feed + stock file live at alterego-lingerie.com/resource/
