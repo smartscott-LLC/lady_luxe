@@ -1,8 +1,10 @@
 import { Suspense } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import { createClient } from "@/utils/supabase/server";
 import { brandFromSupplierSku, brandSlug } from "@/lib/brand";
+import { sanitizeCopy, OCCASION_TAGS } from "@/lib/policy-safe";
 import ProductGallery from "@/components/ProductGallery";
 import AddToBag from "@/components/AddToBag";
 import styles from "./product.module.css";
@@ -45,6 +47,38 @@ async function getProduct(slug: string): Promise<Product | null> {
   return (data as Product) ?? null;
 }
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const product = await getProduct(decodeURIComponent(slug));
+  if (!product) {
+    return { title: "Not found — Lady Luxe" };
+  }
+  const brand = brandFromSupplierSku(product.supplier_sku);
+  const description =
+    sanitizeCopy(
+      product.story ??
+        product.tag ??
+        `${product.name} by ${brand} — luxury eveningwear from the maison, dispatched plain and discreet from the United Kingdom.`,
+    ).slice(0, 155) + "…";
+  const image = (Array.isArray(product.media) ? product.media : []).find(
+    (mm) => mm.type === "image" && mm.url,
+  )?.url;
+  return {
+    title: `${sanitizeCopy(product.name)} — ${brand} | Lady Luxe`,
+    description,
+    openGraph: {
+      title: `${sanitizeCopy(product.name)} — ${brand}`,
+      description,
+      images: image ? [{ url: image }] : undefined,
+      type: "website",
+    },
+  };
+}
+
 function ProductView({
   product,
   from,
@@ -66,9 +100,11 @@ function ProductView({
     name: product.name,
     sku: product.sku,
     description:
-      product.story ??
-      product.tag ??
-      `${product.name} — composed, numbered and archived by the house.`,
+      sanitizeCopy(
+        product.story ??
+          product.tag ??
+          `${product.name} — composed, numbered and archived by the house.`,
+      ) + " " + OCCASION_TAGS,
     brand: { "@type": "Brand", name: brandFromSupplierSku(product.supplier_sku) },
     image: images.slice(0, 4).map((m) => m.url),
     offers: {
@@ -78,6 +114,25 @@ function ProductView({
       price: retail.toFixed(2),
       availability: "https://schema.org/InStock",
       itemCondition: "https://schema.org/NewCondition",
+      shippingDetails: {
+        "@type": "OfferShippingDetails",
+        shippingRate: {
+          "@type": "MonetaryAmount",
+          value: "9.95",
+          currency: "USD",
+        },
+        shippingDestination: {
+          "@type": "DefinedRegion",
+          addressCountry: "US",
+        },
+      },
+      hasMerchantReturnPolicy: {
+        "@type": "MerchantReturnPolicy",
+        applicableCountry: "US",
+        returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
+        returnMethod: "https://schema.org/ReturnByMail",
+        returnFees: "https://schema.org/ReturnFeesCustomerResponsibility",
+      },
     },
   };
 

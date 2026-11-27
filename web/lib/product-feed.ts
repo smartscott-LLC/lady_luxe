@@ -37,7 +37,7 @@ export interface FeedItem {
   size: string;
 }
 
-function categoryFor(name: string): string {
+export function categoryFor(name: string): string {
   const n = name.toLowerCase();
   if (/dress|nightdress|gown|robe|chemise|slip|pyjama|pajama|lounge|kimono|sleep/.test(n)) {
     return SLEEP;
