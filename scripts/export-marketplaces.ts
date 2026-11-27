@@ -72,13 +72,16 @@ function care(): string {
 function padTo350(s: string): string {
   const filler =
     " A house piece in the luxury eveningwear register — bridal trousseau, duchesse satin, corsetry and silk loungewear, dispatched plain and discreet from the United Kingdom.";
-  let out = s;
-  while (out.length < 350 && filler.length) {
-    out += filler[out.length % filler.length] === " " ? " " : "";
-    if (out.length < 350) out += filler.slice(0, Math.min(60, 350 - out.length));
-    if (out.length < 350) out += " ";
+  let out = s.trim();
+  while (out.length < 350) {
+    out += filler;
   }
-  return out.slice(0, 500).trim();
+  // end on a whole sentence or word, never mid-word
+  if (out.length > 500) {
+    const cut = out.lastIndexOf(". ", 497);
+    out = (cut > 340 ? out.slice(0, cut + 1) : out.slice(0, out.lastIndexOf(" ", 497)));
+  }
+  return out.trim();
 }
 
 interface Row {
@@ -183,7 +186,10 @@ async function main() {
       `${c.name}. ${storyBit}${pieceLine} Condition: New with tags (NWT) — original packaging, never worn. ${care()}`,
     );
     if (desc.length < 350) desc = padTo350(desc);
-    if (desc.length > 500) desc = desc.slice(0, 497).trimEnd() + "…";
+    if (desc.length > 500) {
+      const cut = desc.lastIndexOf(" ", 497);
+      desc = desc.slice(0, cut > 340 ? cut : 497).trimEnd() + "…";
+    }
     const color = (c.name.match(/(black|white|red|burgundy|claret|ivory|cream|navy|purple|lavender|pink|gold)/i)?.[0] ?? "").toLowerCase();
     const typeWord = c.kind === "ensemble" ? "Ensemble" : /corset|basque|bustier/.test(c.name.toLowerCase()) ? "Corset" : /robe|peignoir|gown|dressing/.test(c.name.toLowerCase()) ? "Robe" : "Set";
     // keyword-first, no doubled color, no supplier codes
