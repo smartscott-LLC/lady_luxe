@@ -23,6 +23,13 @@ type Measurements = {
   braSize?: string;
 };
 
+type RailGarment = {
+  id: string;
+  name: string;
+  source_type: string;
+  glb_url: string;
+};
+
 const DEFAULTS: Measurements = { bust: 34, waist: 26, hip: 36, height: 66 };
 
 export default function FittingRoomPage() {
@@ -33,6 +40,8 @@ export default function FittingRoomPage() {
   const [m, setM] = useState<Measurements>(DEFAULTS);
   const [token, setToken] = useState("");
   const [saveState, setSaveState] = useState<"idle" | "busy" | "saved" | "error">("idle");
+  const [rail, setRail] = useState<RailGarment[]>([]);
+  const [worn, setWorn] = useState<string | null>(null);
 
   useEffect(() => {
     (async () => {
@@ -57,6 +66,16 @@ export default function FittingRoomPage() {
         }
       } catch {
         // the defaults stand until the member sets their own
+      }
+      // the garment rail — what hangs in the room today
+      try {
+        const resp = await fetch("/api/fitting/garments");
+        if (resp.ok) {
+          const body = (await resp.json()) as { garments: RailGarment[] };
+          setRail(body.garments);
+        }
+      } catch {
+        // the rail stays empty rather than breaking the room
       }
       setReady(true);
     })();
@@ -106,7 +125,13 @@ export default function FittingRoomPage() {
 
         <div className={styles.grid}>
           <div className={styles.stage}>
-            {ready && <FittingAvatar m={m} mode="stand" />}
+            {ready && (
+              <FittingAvatar
+                m={m}
+                mode="stand"
+                garmentUrl={worn ? rail.find((g) => g.id === worn)?.glb_url ?? null : null}
+              />
+            )}
             <span className={styles.stageNote}>
               Drag to turn the room · scroll to step closer
             </span>
@@ -218,11 +243,29 @@ export default function FittingRoomPage() {
             </p>
 
             <p className={styles.comingSoon}>
-              <strong>The garments are being cut.</strong> The first looks to
-              hang on your form come from the Featured floor and the
-              Ensembles — the house&rsquo;s higher-end pieces, prepared as
-              individual assets. The room opens fully when they arrive.
+              <strong>The Atelier Rail.</strong> Pieces that exist only on
+              your mannequin — never sold, never repeated. Choose one and
+              she wears it; choose none and she stands bare.
             </p>
+            {rail.length > 0 && (
+              <div className={styles.rail}>
+                <button
+                  className={`${styles.railItem} ${worn === null ? styles.railItemOn : ""}`}
+                  onClick={() => setWorn(null)}
+                >
+                  Bare form
+                </button>
+                {rail.map((g) => (
+                  <button
+                    key={g.id}
+                    className={`${styles.railItem} ${worn === g.id ? styles.railItemOn : ""}`}
+                    onClick={() => setWorn(g.id)}
+                  >
+                    {g.name}
+                  </button>
+                ))}
+              </div>
+            )}
 
             <Link href="/club" className={styles.back}>
               ← Back to the Club

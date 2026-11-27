@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useEffect, useMemo } from "react";
+import { Suspense, useEffect, useMemo, useState } from "react";
 import {
   Environment,
   Lightformer,
@@ -16,11 +16,11 @@ import { SkeletonUtils } from "three-stdlib";
  * The Concierge's private mannequin — ported from the working club
  * avatar studio (cheeks/mini_model_maker) and rebuilt for Lady Luxe.
  *
- * Violet.glb: a Tripo-built, Mixamo-rigged avatar with named parts and
- * two Mixamo clips (the runway walk), served from the house's fitting
- * bucket. The measurement sliders drive the skeleton itself — Spine2
- * for the bust, Spine1 for the waist, Hips for the hip — presentation
- * proportions, never a fit prediction.
+ * The staging numbers below are the engine's own hand-tuned values,
+ * adopted as the starting point; the garment auto-fit and the
+ * measurement bone-scaling are the maison's additions.
+ *
+ * Presentation, never a fit prediction — the page says as much.
  */
 
 export const BASE_AVATAR_URL =
@@ -33,44 +33,19 @@ export interface AvatarMeasurements {
   height: number;
 }
 
-// the authored baseline the mesh was built around
+// the authored baseline the sliders are relative to
 const BASELINE = { bust: 34, waist: 26, hip: 36, height: 66 };
-
-/**
- * Applies the member's measurements to the skeleton by bone scale:
- *   bust  → Spine2 (chest)  · waist → Spine1 · hip → Hips (x/z only)
- *   height → Hips y (the whole frame rises with the member)
- * The ratios are relative to the authored baseline, clamped so the
- * silhouette stays elegant.
- */
-function applyMeasurements(
-  scene: THREE.Object3D,
-  m: AvatarMeasurements,
-) {
-  const clamp = (v: number, lo = 0.78, hi = 1.3) =>
-    Math.min(hi, Math.max(lo, v));
-  const spine2 = scene.getObjectByName("mixamorig:Spine2");
-  const spine1 = scene.getObjectByName("mixamorig:Spine1");
-  const hips = scene.getObjectByName("mixamorig:Hips");
-  const bustRatio = clamp(m.bust / BASELINE.bust);
-  const waistRatio = clamp(m.waist / BASELINE.waist);
-  const hipRatio = clamp(m.hip / BASELINE.hip);
-  const heightRatio = clamp(m.height / BASELINE.height, 0.85, 1.18);
-  if (spine2) spine2.scale.set(bustRatio, 1, bustRatio);
-  if (spine1) spine1.scale.set(waistRatio, 1, waistRatio);
-  if (hips) {
-    hips.scale.set(hipRatio, heightRatio, hipRatio);
-  }
-}
 
 function AvatarModel({
   modelUrl,
   m,
   animate,
+  onReady,
 }: {
   modelUrl: string;
   m: AvatarMeasurements;
   animate: boolean;
+  onReady?: (object: THREE.Object3D) => void;
 }) {
   const gltf = useGLTF(modelUrl);
   const object = useMemo(() => {
@@ -84,7 +59,7 @@ function AvatarModel({
         }
       }
     });
-    // the house silhouette: the base layer dressed in midnight
+    // the base layer dressed in the house's midnight
     clone.traverse((child) => {
       if (child instanceof THREE.Mesh && child.material instanceof THREE.MeshStandardMaterial) {
         const name = (child.name || "").toLowerCase();
@@ -116,68 +91,168 @@ function AvatarModel({
     };
   }, [actions, names, animate]);
 
-  // measurements → the skeleton, live
+  // measurements → the skeleton: bust → Spine2 (chest), waist → Spine1,
+  // hip → Hips (x/z only) — relative to the authored baseline, clamped
   useEffect(() => {
-    applyMeasurements(object, m);
+    const clamp = (v: number, lo = 0.78, hi = 1.3) => Math.min(hi, Math.max(lo, v));
+    const bustRatio = clamp(m.bust / BASELINE.bust);
+    const waistRatio = clamp(m.waist / BASELINE.waist);
+    const hipRatio = clamp(m.hip / BASELINE.hip);
+    const spine2 = object.getObjectByName("mixamorig:Spine2");
+    const spine1 = object.getObjectByName("mixamorig:Spine1");
+    const hips = object.getObjectByName("mixamorig:Hips");
+    if (spine2) spine2.scale.set(bustRatio, 1, bustRatio);
+    if (spine1) spine1.scale.set(waistRatio, 1, waistRatio);
+    if (hips) hips.scale.set(hipRatio, 1, hipRatio);
   }, [object, m]);
 
-  return <primitive object={object} />;
+  useEffect(() => {
+    onReady?.(object);
+  }, [object, onReady]);
+
+  return (
+    // the engine's hand-tuned staging: the GLB is authored small — the
+    // 3.15 wrapper normalizes it into the stage's world
+    <group scale={3.15}>
+      <primitive object={object} position={[0, -0.25, 0]} />
+    </group>
+  );
+}
+
+/**
+ * A garment asset hung on the mannequin. Meshy pieces are free meshes:
+ * the fit is a runtime heuristic — the piece is scaled to the avatar's
+ * frame (72% of her height) and seated on the platform's center. The
+ * placement manifest refines what the heuristic can't know.
+ */
+function GarmentModel({
+  garmentUrl,
+  avatar,
+}: {
+  garmentUrl: string;
+  avatar: THREE.Object3D | null;
+}) {
+  const gltf = useGLTF(garmentUrl);
+  const fitted = useMemo(() => {
+    const clone = SkeletonUtils.clone(gltf.scene);
+    clone.traverse((child) => {
+      if (child instanceof THREE.Mesh) {
+        child.castShadow = true;
+      }
+    });
+    return clone;
+  }, [gltf.scene]);
+
+  useEffect(() => {
+    if (!avatar) return;
+    // the avatar's world frame, measured — never assumed
+    avatar.updateWorldMatrix(true, true);
+    const box = new THREE.Box3().setFromObject(avatar);
+    const size = new THREE.Vector3();
+    box.getSize(size);
+    const avatarHeight = size.y || 3.4;
+    const target = avatarHeight * 0.72;
+
+    const gBox = new THREE.Box3().setFromObject(fitted);
+    const gSize = new THREE.Vector3();
+    gBox.getSize(gSize);
+    const maxDim = Math.max(gSize.x, gSize.y, gSize.z) || 1;
+    const s = target / maxDim;
+    fitted.scale.setScalar(s);
+
+    const gBox2 = new THREE.Box3().setFromObject(fitted);
+    const c = new THREE.Vector3();
+    gBox2.getCenter(c);
+    fitted.position.x -= c.x;
+    fitted.position.z -= c.z;
+    fitted.position.y += box.min.y + avatarHeight * 0.04 - gBox2.min.y;
+  }, [fitted, avatar]);
+
+  return <primitive object={fitted} />;
 }
 
 export default function FittingAvatar({
   m,
   modelUrl = BASE_AVATAR_URL,
   mode = "stand",
+  garmentUrl,
 }: {
   m: AvatarMeasurements;
   modelUrl?: string;
   /** stand: the platform pirouette · runway: the Mixamo walk */
   mode?: "stand" | "runway";
+  garmentUrl?: string | null;
 }) {
+  const [avatar, setAvatar] = useState<THREE.Object3D | null>(null);
+
+  // the height wrapper: the member's frame rises with her height
+  const heightRatio = Math.min(1.18, Math.max(0.85, m.height / BASELINE.height));
+
   return (
     <Canvas
       shadows
-      dpr={[1, 2]}
-      camera={{ position: [0, 1.4, 3.4], fov: 34 }}
+      dpr={[1, 1.5]}
+      camera={{ position: [0, 1.6, 10], fov: 34 }}
+      gl={{ antialias: true, alpha: true }}
       style={{ width: "100%", height: "100%" }}
     >
-      <color attach="background" args={["#1b0910"]} />
-      <fog attach="fog" args={["#1b0910", 6, 14]} />
+      <color attach="background" args={["#0c0409"]} />
       <Suspense fallback={null}>
-        <AvatarModel modelUrl={modelUrl} m={m} animate={mode === "runway"} />
-        <Platform />
+        <group scale={[1, heightRatio, 1]}>
+          <AvatarModel
+            modelUrl={modelUrl}
+            m={m}
+            animate={mode === "runway"}
+            onReady={setAvatar}
+          />
+          {garmentUrl ? (
+            <Suspense fallback={null}>
+              <GarmentModel garmentUrl={garmentUrl} avatar={avatar} />
+            </Suspense>
+          ) : null}
+        </group>
+        <Stage />
         <Environment resolution={256}>
-          <Lightformer intensity={2.2} color="#ffe3b0" position={[3, 4, 4]} scale={[4, 6, 1]} />
-          <Lightformer intensity={1.6} color="#d4af37" position={[-4, 3, -3]} scale={[5, 5, 1]} />
-          <Lightformer intensity={0.9} color="#660428" position={[0, 2, 5]} scale={[6, 3, 1]} />
+          <Lightformer intensity={2} position={[0, 5, 2]} scale={[8, 8, 1]} />
+          <Lightformer intensity={1.2} color="#d4af37" position={[-5, 2, 0]} rotation-y={Math.PI / 2} scale={[8, 2, 1]} />
+          <Lightformer intensity={1.2} color="#660428" position={[5, 2, 0]} rotation-y={-Math.PI / 2} scale={[8, 2, 1]} />
         </Environment>
         <OrbitControls
-          target={[0, 0.95, 0]}
+          makeDefault
+          target={[0, 1.55, 0]}
           enablePan={false}
-          minDistance={2.2}
-          maxDistance={5.5}
-          maxPolarAngle={Math.PI / 1.9}
+          minDistance={6.5}
+          maxDistance={13}
+          minPolarAngle={Math.PI / 3.2}
+          maxPolarAngle={Math.PI / 1.75}
           autoRotate={mode === "stand"}
-          autoRotateSpeed={0.9}
+          autoRotateSpeed={0.7}
         />
       </Suspense>
     </Canvas>
   );
 }
 
-function Platform() {
+function Stage() {
   return (
-    <group>
-      {/* the mahogany-and-gold stand */}
-      <mesh position={[0, -0.06, 0]} receiveShadow>
-        <cylinderGeometry args={[1.05, 1.15, 0.12, 48]} />
-        <meshStandardMaterial color="#2a1015" roughness={0.35} metalness={0.5} />
+    <>
+      <ambientLight intensity={0.75} />
+      <directionalLight
+        position={[4, 6, 5]}
+        intensity={2.4}
+        castShadow
+        shadow-mapSize-width={1024}
+        shadow-mapSize-height={1024}
+      />
+      <mesh rotation-x={-Math.PI / 2} position-y={-0.7} receiveShadow>
+        <circleGeometry args={[3.1, 64]} />
+        <meshStandardMaterial color="#111015" roughness={0.72} metalness={0.18} />
       </mesh>
-      <mesh position={[0, 0.005, 0]}>
-        <torusGeometry args={[1.05, 0.03, 10, 64]} />
-        <meshStandardMaterial color="#d4af37" roughness={0.25} metalness={0.85} />
+      <mesh rotation-x={-Math.PI / 2} position-y={-0.692}>
+        <ringGeometry args={[2.35, 2.45, 64]} />
+        <meshBasicMaterial color="#d4af37" transparent opacity={0.75} />
       </mesh>
-    </group>
+    </>
   );
 }
 
