@@ -1,5 +1,6 @@
 import Link from "next/link";
 import NewsletterForm from "@/components/NewsletterForm";
+import { SOCIAL_PROFILES } from "@/lib/socials";
 
 const DESKS = [
   { label: "Owner", email: "owner@ladyluxeclub.com" },
@@ -30,15 +31,19 @@ export default function SiteFooter() {
               {MOTTO}
             </p>
             <div className="mt-4">
-              <a className="ll-social mr-2" href="https://instagram.com/ladyluxeclub" target="_blank" rel="noopener" aria-label="Instagram">
-                <i className="fab fa-instagram" />
-              </a>
-              <a className="ll-social mr-2" href="https://pinterest.com/ladyluxeclub" target="_blank" rel="noopener" aria-label="Pinterest">
-                <i className="fab fa-pinterest-p" />
-              </a>
-              <a className="ll-social" href="https://facebook.com/ladyluxeclub" target="_blank" rel="noopener" aria-label="Facebook">
-                <i className="fab fa-facebook-f" />
-              </a>
+              {SOCIAL_PROFILES.map((s) => (
+                <a
+                  key={s.platform}
+                  className="ll-social mr-2"
+                  href={s.url}
+                  target="_blank"
+                  rel="noopener"
+                  aria-label={s.label}
+                  title={s.platform}
+                >
+                  <i className={s.icon} />
+                </a>
+              ))}
             </div>
           </div>
           <div className="col-lg-3 col-md-4 mb-5 mb-lg-0">
