@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { createClient } from "@/utils/supabase/server";
@@ -10,12 +11,7 @@ export const metadata: Metadata = {
     "The full Lady Luxe collection: luxury eveningwear, bridal trousseau, corsetry and silk loungewear — every live piece of the house on one page, dispatched plain and discreet from the UK.",
 };
 
-/**
- * The full catalog on one page — every live piece of the house, newest
- * first. The policy-safe sanitizer keeps the listing copy filter-clean;
- * the data is straight from the live floor.
- */
-export default async function ProductsPage() {
+async function ProductsGrid() {
   const supabase = await createClient();
   const { data } = await supabase
     .from("products")
@@ -26,6 +22,46 @@ export default async function ProductsPage() {
   const products = data ?? [];
 
   return (
+    <>
+      <p className={styles.count}>{products.length} pieces · newest first</p>
+      <div className={styles.grid}>
+        {products.map((p) => {
+          const media = Array.isArray(p.media) ? p.media : [];
+          const image = media.find((mm: any) => mm.type === "image" && mm.url)?.url;
+          const brand = brandFromSupplierSku(p.supplier_sku ?? "");
+          const retail = Number(p.retail_price) || 0;
+          return (
+            <Link key={p.sku} href={`/product/${p.sku}`} className={styles.card}>
+              <div className={styles.media}>
+                {image ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src={image} alt={p.name} loading="lazy" />
+                ) : (
+                  <div className={styles.mediaEmpty} />
+                )}
+              </div>
+              <span className={styles.body}>
+                <span className={styles.brand}>{brand}</span>
+                <span className={styles.name}>{p.name}</span>
+                <span className={styles.price}>
+                  ${retail.toFixed(2)} <span className={styles.usd}>USD</span>
+                </span>
+              </span>
+            </Link>
+          );
+        })}
+      </div>
+    </>
+  );
+}
+
+/**
+ * The full catalog on one page — every live piece of the house, newest
+ * first. The grid streams from the live floor; the copy stays
+ * policy-safe for the filters.
+ */
+export default function ProductsPage() {
+  return (
     <main className={styles.page}>
       <div className={styles.inner}>
         <p className={styles.eyebrow}>The Maison</p>
@@ -35,48 +71,9 @@ export default async function ProductsPage() {
           and loungewear from the houses we carry, each dispatched within 24
           hours in plain, discreet packaging.
         </p>
-        <p className={styles.count}>
-          {products.length} pieces · newest first
-        </p>
-
-        {products.length === 0 ? (
-          <p className={styles.empty}>
-            The collection is between fittings — return shortly.
-          </p>
-        ) : (
-          <div className={styles.grid}>
-            {products.map((p) => {
-              const media = Array.isArray(p.media) ? p.media : [];
-              const image = media.find((mm: any) => mm.type === "image" && mm.url)?.url;
-              const brand = brandFromSupplierSku(p.supplier_sku ?? "");
-              const retail = Number(p.retail_price) || 0;
-              return (
-                <Link
-                  key={p.sku}
-                  href={`/product/${p.sku}`}
-                  className={styles.card}
-                >
-                  <div className={styles.media}>
-                    {image ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img src={image} alt={p.name} loading="lazy" />
-                    ) : (
-                      <div className={styles.mediaEmpty} />
-                    )}
-                  </div>
-                  <span className={styles.body}>
-                    <span className={styles.brand}>{brand}</span>
-                    <span className={styles.name}>{p.name}</span>
-                    <span className={styles.price}>
-                      ${retail.toFixed(2)} <span className={styles.usd}>USD</span>
-                    </span>
-                  </span>
-                </Link>
-              );
-            })}
-          </div>
-        )}
-
+        <Suspense fallback={<p className={styles.empty}>Opening the collection…</p>}>
+          <ProductsGrid />
+        </Suspense>
         <Link href="/" className={styles.back}>
           ← Back to the maison
         </Link>
