@@ -10,7 +10,6 @@ import BrandMarquee from "@/components/BrandMarquee";
 import LuxeStreamBind from "@/components/LuxeStreamBind";
 import OpenDrawerButton from "@/components/OpenDrawerButton";
 import { BRAND_ORDER, brandFromSupplierSku, brandSlug } from "@/lib/brand";
-import { SOCIAL_URLS } from "@/lib/socials";
 
 export const metadata = {
   title: "Lady Luxe — Maison de Couture",
@@ -171,31 +170,8 @@ const money = (n: number | null | undefined) =>
   new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(Number(n) || 0);
 
 export default function Home() {
-  const organizationLd = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "Lady Luxe",
-    url: "https://www.ladyluxeclub.com",
-    logo: "https://www.ladyluxeclub.com/brand/lady-luxe-emblem.webp",
-    description:
-      "A maison de couture for the midnight hours — luxury eveningwear, corsetry and silk loungewear, dispatched plain and discreet from the United Kingdom.",
-    email: "info@ladyluxeclub.com",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "700 E 8th St., Unit 14E",
-      addressLocality: "Kansas City",
-      addressRegion: "MO",
-      postalCode: "64106",
-      addressCountry: "US",
-    },
-    sameAs: SOCIAL_URLS,
-  };
   return (
     <main>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationLd) }}
-      />
       {/* ===================== HERO ===================== */}
       <section className="ll-hero" aria-label="Lady Luxe — introduction">
         <div className="ll-hero-backdrop">

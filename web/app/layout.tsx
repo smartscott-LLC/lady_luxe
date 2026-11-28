@@ -6,6 +6,7 @@ import SiteHeader, { SiteHeaderFallback } from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import LuxeRuntime from "@/components/LuxeRuntime";
 import BackToTop from "@/components/BackToTop";
+import { SOCIAL_URLS } from "@/lib/socials";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.ladyluxeclub.com"),
@@ -94,11 +95,16 @@ export default function RootLayout({
               description:
                 "A maison de couture for the midnight hours — evening wear composed, numbered and archived by the house.",
               slogan: "Elegance not extravagance",
-              sameAs: [
-                "https://instagram.com/ladyluxeclub",
-                "https://pinterest.com/ladyluxeclub",
-                "https://facebook.com/ladyluxeclub",
-              ],
+              email: "info@ladyluxeclub.com",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "700 E 8th St., Unit 14E",
+                addressLocality: "Kansas City",
+                addressRegion: "MO",
+                postalCode: "64106",
+                addressCountry: "US",
+              },
+              sameAs: SOCIAL_URLS,
             }),
           }}
         />
