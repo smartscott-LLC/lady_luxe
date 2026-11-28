@@ -2,16 +2,16 @@ import Link from "next/link";
 import styles from "./privacy.module.css";
 
 /**
- * The Privacy Policy — the maison's data conduct, in plain terms.
- * It matches what the house actually does: member records on our
- * database, payments by Square (card data never touches our servers),
- * letters delivered by Resend, and the three analytics pixels
- * (Meta, Google Analytics 4, TikTok) carried by the site.
+ * The Privacy Policy — ported from the house's own template (the club
+ * cheeky document) and rewritten to reflect THIS app: the Lady Luxe
+ * storefront. Every line describes what actually happens here —
+ * orders on Supabase, payments on Square, letters by Resend, the
+ * three analytics pixels, the measurement book on the member record.
  */
 export const metadata = {
   title: "Privacy Policy — Lady Luxe",
   description:
-    "What Lady Luxe collects, why, and how it is protected and removed — member records, the Private List, payments by Square, and the analytics that keep the house discoverable.",
+    "What the House knows, what it does not do, and how to have it erased — the Lady Luxe privacy policy in plain terms.",
 };
 
 export default function PrivacyPage() {
@@ -21,9 +21,12 @@ export default function PrivacyPage() {
         <p className={styles.eyebrow}>The House Rules</p>
         <h1 className={styles.title}>Privacy Policy</h1>
         <p className={styles.sub}>
-          A house that keeps its clients&rsquo; confidences keeps their trust.
-          This page says plainly what we collect, why, and how it is
-          protected — and how to have it erased.
+          What the House knows, what it does with it, and what it will never
+          do — in plain terms.
+        </p>
+
+        <p className={styles.note}>
+          <strong>A living document</strong> — refined as the house grows.
         </p>
 
         <section className={styles.section}>
@@ -31,66 +34,101 @@ export default function PrivacyPage() {
           <div className={styles.text}>
             <ul className={styles.list}>
               <li>
-                <strong>Orders:</strong> your email, the pieces ordered, the
-                order total and the shipping address — so the parcel reaches
+                <strong>Account basics:</strong> email and password (via
+                Supabase Auth), your display name if you choose one.
+              </li>
+              <li>
+                <strong>Orders:</strong> the pieces ordered, the order total,
+                and the shipping address you give us — so the parcel reaches
                 you and the receipt is honest.
               </li>
               <li>
-                <strong>The Club:</strong> your email, display name and
-                consent choices. If you use the Fitting Room, your
-                measurements are kept on your member file, for your eyes and
-                your mannequin only.
+                <strong>The Private List:</strong> your email address, the
+                list you joined from, and your consent choice.
               </li>
               <li>
-                <strong>The Private List:</strong> your email address and the
-                list you joined from.
+                <strong>The Fitting Room:</strong> your measurements, kept on
+                your member file. They dress your private mannequin and are
+                visible to you alone.
               </li>
               <li>
-                <strong>The room itself:</strong> anonymous analytics — pages
-                seen, pieces viewed, carts begun — through Meta Pixel, Google
-                Analytics 4, Google Tag Manager and the TikTok pixel. These
-                set cookies in your browser; your browser can refuse them.
+                <strong>Usage basics:</strong> pages seen, pieces viewed,
+                carts begun — through Meta Pixel, Google Analytics 4, Google
+                Tag Manager and the TikTok pixel. These set cookies in your
+                browser; your browser can refuse them.
               </li>
             </ul>
           </div>
         </section>
 
         <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>What we never collect</h2>
+          <h2 className={styles.sectionTitle}>What we do NOT do</h2>
+          <div className={styles.text}>
+            <ul className={styles.list}>
+              <li>
+                We do <strong>not sell</strong> personal data. Not now, not
+                ever.
+              </li>
+              <li>We do not share your details with advertisers.</li>
+              <li>
+                Card numbers never touch our servers — payments run entirely
+                on Square&rsquo;s rails, and we see only the receipt and the
+                last four digits.
+              </li>
+              <li>We do not train anything on your data.</li>
+              <li>We do not message you on anyone&rsquo;s behalf but the house.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section className={styles.section}>
+          <h2 className={styles.sectionTitle}>Why we collect it</h2>
           <div className={styles.text}>
             <p>
-              Card numbers never touch our servers. Payments run entirely on
-              Square&rsquo;s rails — we see only the last four digits, the
-              receipt and the payment reference. We do not sell, rent or
-              trade your details, and we do not share them with advertisers
-              beyond the analytics above.
+              To run the store (orders, payments, fulfilment), to deliver the
+              letters you asked for (the Private List), to keep the doors
+              open and the room safe (analytics, security), and to stay
+              legal (financial records, refunds, duties).
             </p>
           </div>
         </section>
 
         <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>The houses we work with</h2>
+          <h2 className={styles.sectionTitle}>Your rights</h2>
           <div className={styles.text}>
             <ul className={styles.list}>
-              <li>Supabase — the database and storage under the maison</li>
-              <li>Square — payment processing and receipts</li>
-              <li>Resend — delivery of our letters and confirmations</li>
-              <li>Meta, Google and TikTok — the analytics pixels described above</li>
+              <li>
+                <strong>See it:</strong> request a copy of what we hold.
+              </li>
+              <li>
+                <strong>Fix it:</strong> your consent choices and
+                measurements live on the <Link href="/club">Club page</Link>.
+              </li>
+              <li>
+                <strong>Stop the letters:</strong> every letter carries an
+                unsubscribe link — one click, and it stops.
+              </li>
+              <li>
+                <strong>Delete it:</strong> write to{" "}
+                <a href="mailto:info@ladyluxeclub.com">info@ladyluxeclub.com</a>{" "}
+                and your record is erased within thirty days.
+              </li>
+              <li>
+                <strong>Complain:</strong> to us first, always — and you keep
+                your rights under applicable law (e.g., GDPR/CCPA).
+              </li>
             </ul>
           </div>
         </section>
 
         <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>Your rights, your levers</h2>
+          <h2 className={styles.sectionTitle}>Consent</h2>
           <div className={styles.text}>
             <p>
-              Every letter carries an unsubscribe link — one click and the
-              letters stop. Your consent choices live on the{" "}
-              <Link href="/club">Club page</Link>, where you may change them
-              at any time. To correct or erase anything else — your member
-              record, your measurements, your order history — write to{" "}
-              <a href="mailto:info@ladyluxeclub.com">info@ladyluxeclub.com</a>{" "}
-              and we will act within thirty days, with a reply from a person.
+              The newsletter consent has its own checkbox at signup — separate,
+              explicit, and reversible on the Club page at any time. You tick
+              it; that&rsquo;s the whole transaction. Un-tick it and the
+              letters, and the member discount that rides on them, stop.
             </p>
           </div>
         </section>
@@ -107,14 +145,14 @@ export default function PrivacyPage() {
         </section>
 
         <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>Where the data lives</h2>
+          <h2 className={styles.sectionTitle}>The houses we work with</h2>
           <div className={styles.text}>
-            <p>
-              Member records, orders and subscriptions are kept on our
-              managed database with access restricted to the house. Returns
-              and remedies are described on the{" "}
-              <Link href="/returns">Returns &amp; Delivery</Link> page.
-            </p>
+            <ul className={styles.list}>
+              <li>Supabase — the database and storage under the maison</li>
+              <li>Square — payment processing and receipts</li>
+              <li>Resend — delivery of our letters and confirmations</li>
+              <li>Meta, Google and TikTok — the analytics pixels described above</li>
+            </ul>
           </div>
         </section>
 
