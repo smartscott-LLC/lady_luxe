@@ -80,6 +80,8 @@ export default function SiteFooter() {
             {" · "}
             <Link href="/returns">Returns &amp; Delivery</Link>
             {" · "}
+            <Link href="/privacy">Privacy Policy</Link>
+            {" · "}
             <Link href="/maison">The Maison</Link>
             {" · "}
             <Link href="/club">The Club</Link>
