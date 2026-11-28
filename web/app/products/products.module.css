@@ -1,0 +1,129 @@
+.page {
+  min-height: 100vh;
+  padding: 7rem 1.5rem 4rem;
+  background: var(--ll-midnight);
+  color: var(--ll-cream);
+}
+
+.inner {
+  max-width: 78rem;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--ll-gold-soft);
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-family: var(--ll-font-display);
+  font-weight: 400;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--ll-gold);
+  margin-bottom: 0.6rem;
+}
+
+.sub {
+  font-weight: 300;
+  color: var(--ll-cream);
+  max-width: 44rem;
+  margin-bottom: 2.25rem;
+  line-height: 1.75;
+}
+
+.count {
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(237, 231, 199, 0.5);
+  margin-bottom: 1.75rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--ll-gold-25);
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(48, 0, 26, 0.45);
+  text-decoration: none;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.card:hover {
+  border-color: var(--ll-gold);
+  transform: translateY(-2px);
+}
+
+.media {
+  position: relative;
+  padding-top: 133%;
+  background: rgba(27, 9, 16, 0.7);
+}
+
+.media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mediaEmpty {
+  position: absolute;
+  inset: 0;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.9rem 1rem 1.05rem;
+}
+
+.brand {
+  font-size: 0.66rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--ll-gold-soft);
+}
+
+.name {
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: var(--ll-cream);
+}
+
+.price {
+  font-size: 0.92rem;
+  color: var(--ll-gold-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+.empty {
+  text-align: center;
+  padding: 3rem 0;
+  color: var(--ll-cream-70);
+}
+
+.back {
+  display: inline-block;
+  margin-top: 2rem;
+  color: var(--ll-gold-soft);
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+}
+
+.back:hover {
+  text-decoration: underline;
+}
